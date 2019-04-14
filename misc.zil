@@ -8,7 +8,7 @@
 
 <GLOBAL WINNER:OBJECT 0>
 
-<GLOBAL PTHE:STRING ". The "> 
+<GLOBAL PTHE:STRING ". The ">
 <GLOBAL PA:STRING ". A ">
 <GLOBAL CHANGES:STRING " changes your mind.|
 ">
@@ -69,46 +69,44 @@
 
 <GLOBAL MIDSCREEN:NUMBER 0>
 
-<ROUTINE GO () 
-       	 <SETG MIDSCREEN </ <GETB 0 33> 2>>
+<ROUTINE GO ()
+	 <SETG MIDSCREEN </ <GETB 0 33> 2>>
 	 <INC MIDSCREEN>
 	 <COND (<L? ,MIDSCREEN 32>
 		<CRLF>
 		<TOO-NARROW>
 		<QUIT>)>
-	 
+
 	 <PUTB ,INSAVE-A 0 0>
 	 <PUTB ,INSAVE-B 0 0>
 	 <PUTB ,INSAVE-C 0 0>
-	 	 
+
 	 <SETG RATS ,RODENTS>
 	 <SETG WINNER ,PLAYER>
-	 <CLEAR -1>
-	 <INIT-STATUS-LINE>
+	 <V-$REFRESH>
 	 <CRLF>
-	 
+
        ; <TELL "for ">
        ; <HLIGHT ,H-ITALIC>
        ; <TELL "Challenger">
        ; <HLIGHT ,H-NORMAL>
        ; <CARRIAGE-RETURNS 7>
-	 
+
 	 <COPYRIGHT>
 	 <CRLF>
-	 	 
+
        ; <TELL CR "[">
        ; <RELEASE>
        ; <TELL "]" CR>
-	 
+
 	 <GET-KEY>
-	 <CLEAR -1>
-	 <INIT-STATUS-LINE>
+	 <V-$REFRESH>
 	 <BOOT-SCREEN>
 	 <DO-MAIN-LOOP>
 	 <AGAIN>>
 
 <ROUTINE GET-KEY ("AUX" X)
-         <TELL CR "[Press any key to begin.]" CR>
+	 <TELL CR "[Press any key to begin.]" CR>
 	 <SET X <INPUT 1>>
 	 <RTRUE>>
 
@@ -119,7 +117,7 @@
 <GLOBAL P-MULT?:FLAG <>>
 
 <ROUTINE MAIN-LOOP ("AUX" ICNT OCNT NUM CNT OBJ TBL (V <>)
-		          PTBL OBJ1 TMP X)
+			  PTBL OBJ1 TMP X)
      <SET CNT 0>
      <SET OBJ <>>
      <SET PTBL T>
@@ -184,7 +182,7 @@
 			  <TELL "[There isn't anything to ">
 			  <SET TMP <GET ,P-ITBL ,P-VERBN>>
 			  <COND (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
-			         <TELL "talk to">)
+				 <TELL "talk to">)
 				(<OR <T? ,P-MERGED>
 				     <T? ,P-OFLAG>>
 				 <PRINTB <GET .TMP 0>>)
@@ -273,7 +271,7 @@
 <GLOBAL GAME-VERBS:TABLE
 	<PTABLE
 	 V?INVENTORY ; V?WAIT ; V?WAIT-FOR V?TELL V?TIME V?SCORE
-         V?SAVE V?RESTORE V?SCRIPT V?UNSCRIPT V?DIAGNOSE V?HELP
+	 V?SAVE V?RESTORE V?SCRIPT V?UNSCRIPT V?DIAGNOSE V?HELP
 	 V?VERBOSE V?BRIEF V?SUPER-BRIEF V?VERSION V?QUIT V?$REFRESH
 	 V?$VERIFY V?$ID V?NOTIFY V?$CREDITS V?$COMMAND V?$PRAMS
        ; "V?$UNRECORD V?$COMMAND V?$RANDOM"
@@ -322,37 +320,37 @@
 		<RFALSE>)>>
 
 <ROUTINE ACCESSIBLE? (OBJ)
-         <COND (<EQUAL? .OBJ <> ,NOT-HERE-OBJECT>
+	 <COND (<EQUAL? .OBJ <> ,NOT-HERE-OBJECT>
 		<RFALSE>)
 	       (<EQUAL? <META-LOC .OBJ> ,WINNER ,HERE ,GLOBAL-OBJECTS>
-	        <RTRUE>)
+		<RTRUE>)
 	       (<VISIBLE? .OBJ>
-	        <RTRUE>)
-	       (T 
+		<RTRUE>)
+	       (T
 		<RFALSE>)>>
 
 <ROUTINE VISIBLE? (OBJ "AUX" L)
-         <COND (<EQUAL? .OBJ <> ,NOT-HERE-OBJECT> 
+	 <COND (<EQUAL? .OBJ <> ,NOT-HERE-OBJECT>
 		<RFALSE>)>
 	 <SET L <LOC .OBJ>>
 	 <COND (<EQUAL? .L <> ,GLOBAL-OBJECTS>
 		<RFALSE>)
 	       (<EQUAL? .L ,HERE ,PLAYER ,WINNER>
-	        <RTRUE>)
-               (<AND <EQUAL? .L ,LOCAL-GLOBALS>
+		<RTRUE>)
+	       (<AND <EQUAL? .L ,LOCAL-GLOBALS>
 		     <GLOBAL-IN? .OBJ ,HERE>>
 		<RTRUE>)
-               (<AND <SEE-INSIDE? .L>
+	       (<AND <SEE-INSIDE? .L>
 		     <VISIBLE? .L>>
-	        <RTRUE>)
-               (T
-	        <RFALSE>)>>
+		<RTRUE>)
+	       (T
+		<RFALSE>)>>
 
 <ROUTINE SEE-INSIDE? (THING)
 	 <COND (<ZERO? .THING>
 		<RFALSE>)
 	       (<T? ,P-MOBY-FLAG>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<IS? .THING ,SURFACE>
 		<RTRUE>)
 	       (<AND <OR <IS? .THING ,PERSON>
@@ -361,7 +359,7 @@
 		<RTRUE>)
 	       (<AND <IS? .THING ,CONTAINER>
 		     <OR <IS? .THING ,OPENED>
-		         <IS? .THING ,TRANSPARENT>>>
+			 <IS? .THING ,TRANSPARENT>>>
 		<RTRUE>)
 	       (T
 	    	<RFALSE>)>>
@@ -377,22 +375,24 @@
 		       (T
 			<SET OBJ <LOC .OBJ>>)>>>
 
-<ROUTINE INIT-STATUS-LINE ()
+<ROUTINE V-$REFRESH ("OPT" (NEW T))
 	 <SETG OLD-HERE <>>
 	 <SETG OLD-LEN 0>
 	 <SETG DO-WINDOW <>>
+	 <COND (<T? .NEW>
+		<CLEAR -1>)>
 	 <SPLIT 1>
 	 <SCREEN ,S-WINDOW>
 	 <BUFOUT <>>
 	 <CURSET 1 1>
 	 <HLIGHT ,H-INVERSE>
 	 <PRINT-SPACES <GETB 0 33>>
+	 <SCREEN ,S-TEXT>
 	 <BUFOUT T>
 	 <HLIGHT ,H-NORMAL>
-	 <SCREEN ,S-TEXT>
 	 <RTRUE>>
 
-<GLOBAL SL-TABLE:TABLE <ITABLE NONE 80>>
+<GLOBAL SL-TABLE:TABLE <ITABLE 82 (BYTE) 0>>
 <GLOBAL OLD-HERE:OBJECT <>>
 <GLOBAL OLD-LEN:NUMBER 0>
 
@@ -403,26 +403,24 @@
 		<BUFOUT <>>
 		<HLIGHT ,H-NORMAL>
 		<HLIGHT ,H-INVERSE>
-		
-	      ; <DIROUT ,D-SCREEN-OFF>	        ; "Screen off."
+
 		<DIROUT ,D-TABLE-ON ,SL-TABLE>  ; "Table on."
 		<SAY-HERE>
-	        <DIROUT ,D-TABLE-OFF> 	        ; "Table off."
-	      ; <DIROUT ,D-SCREEN-ON>		; "Screen on."
-		
+		<DIROUT ,D-TABLE-OFF> 		; "Table off."
+	      
 		<CURSET 1 <- ,MIDSCREEN </ ,OLD-LEN 2>>> ; "Erase old desc."
 		<PRINT-SPACES ,OLD-LEN>
-		
+
 		<SETG OLD-LEN <GET ,SL-TABLE 0>> ; "Print new HERE desc."
 		<CURSET 1 <- ,MIDSCREEN </ ,OLD-LEN 2>>>
 		<SAY-HERE>
-		
-		<HLIGHT ,H-NORMAL>
-		<BUFOUT T> ; "Back to main screen."
-		<SCREEN ,S-TEXT>)>
+
+		<SCREEN ,S-TEXT>
+		<BUFOUT T>
+		<HLIGHT ,H-NORMAL>)>
 	 <RTRUE>>
-		
-<ROUTINE PRINT-SPACES (N) 
+
+<ROUTINE PRINT-SPACES (N)
 	 <REPEAT ()
 		 <COND (<L? <SET N <- .N 1>> 0>
 			<RTRUE>)
@@ -435,7 +433,7 @@
 		<TELL "Darkness">)
 	       (T
 		<TELL D ,HERE>
-	        <COND (<HERE? DEATH THE-END ON-SAT>
+		<COND (<HERE? DEATH THE-END ON-SAT>
 		       <RTRUE>)
 		      (<HERE? HALFWAY>
 		       <TELL ,STAIR-DIR>)>
@@ -452,7 +450,7 @@
 	 <RTRUE>>
 
 <ROUTINE TELL-TIME ("AUX" H)
-         <TELL " says it's ">
+	 <TELL " says it's ">
 	 <SET H <COND (<G? ,HOURS 12>
 		       <- ,HOURS 12>)
 	       	      (<ZERO? ,HOURS>
@@ -462,8 +460,8 @@
 	 <TELL N .H ":">
 	 <COND (<L? ,MINUTES 10>
 		<TELL "0">)>
-         <TELL N ,MINUTES ":">
-         <COND (<L? ,SECONDS 10>
+	 <TELL N ,MINUTES ":">
+	 <COND (<L? ,SECONDS 10>
 		<TELL "0">)>
 	 <TELL N ,SECONDS>
 	 <COND (<G? ,HOURS 11>
@@ -512,7 +510,7 @@
 <OBJECT GLOBAL-OBJECTS
 	(FLAGS LOCATION LIGHTED INDOORS PLACE FOODBIT
 	       NODESC NOARTICLE VOWEL PLURAL NOALL FERRIC SEEN
-	       TOUCHED SURFACE CONTAINER OPENABLE DOORLIKE DESERT 
+	       TOUCHED SURFACE CONTAINER OPENABLE DOORLIKE DESERT
 	       OPENED TRANSPARENT LOCKED TAKEABLE TRYTAKE SHADOWY
 	       BUYABLE CLOTHING WORN LIVING PERSON FEMALE WINDY
 	       TOOL VEHBIT READABLE GREETED FLIPPED TOLD
@@ -555,11 +553,11 @@
 	 <RTRUE>>
 
 <ROUTINE TO-DO-THING-USE (STR1 STR2)
-	 <TELL "[To " .STR1 " something, use the command: " 
+	 <TELL "[To " .STR1 " something, use the command: "
 	       .STR2 " THING.]" CR>
 	 <RTRUE>>
 
-<ROUTINE CANT-USE (PTR "AUX" BUF) 
+<ROUTINE CANT-USE (PTR "AUX" BUF)
 	<SETG QUOTE-FLAG <>>
 	<SETG P-OFLAG <>>
 	<SETG INLEN 0>
@@ -585,7 +583,7 @@
 	(FLAGS NODESC TOUCHED SURFACE)
 	(SYNONYM WALL WALLS)
 	(ACTION WALLS-F)>
-	 
+
 <ROUTINE WALLS-F ()
 	 <COND (<NOT <IS? ,HERE ,INDOORS>>
 		<CANT-SEE-ANY ,WALLS>
@@ -614,7 +612,7 @@
 		<RFATAL>)>
 	 <YOU-DONT-NEED ,WALLS>
 	 <RFATAL>>
-		
+
 <OBJECT CEILING
 	(LOC GLOBAL-OBJECTS)
 	(FLAGS NODESC TOUCHED)
@@ -657,7 +655,7 @@
 	(SIZE 5)
 	(VALUE 0)
 	(ACTION HANDS-F)>
-       
+
 "CHILLY = hands not scorched."
 
 <ROUTINE HANDS-F ()
@@ -674,7 +672,7 @@
 		      (<QUEUED? I-BEE>
 		       <TELL "swollen from the bee sting." CR>
 		       <RTRUE>)>
-		<TELL "still there." CR>		      
+		<TELL "still there." CR>
 		<RTRUE>)
 	       (<VERB? COUNT>
 		<TELL "You have ">
@@ -769,8 +767,8 @@
 		<IMPOSSIBLE>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
-			
+		<RFALSE>)>>
+
 <OBJECT MOUTH
 	(LOC GLOBAL-OBJECTS)
 	(DESC "your mouth")
@@ -786,7 +784,7 @@
 			      <PERFORM ,V?DRINK ,PRSO>
 			      <RTRUE>)>
 		       <PERFORM ,V?EAT ,PRSO>
-                       <RTRUE>)
+		       <RTRUE>)
 		      (<VERB? TOUCH-TO>
 		       <PERFORM ,V?TASTE ,PRSO>
 		       <RTRUE>)>)
@@ -827,7 +825,7 @@
 		<RTRUE>)>
 	 <YOU-DONT-NEED ,EYES>
 	 <RFATAL>>
-		
+
 <OBJECT HEAD
 	(LOC GLOBAL-OBJECTS)
 	(DESC "your head")
@@ -853,14 +851,14 @@
 	(CAPACITY 1000)>
 
 <OBJECT ME
-        (LOC GLOBAL-OBJECTS)
+	(LOC GLOBAL-OBJECTS)
 	(SYNONYM I ME MYSELF BODY)
 	(ADJECTIVE MY)
 	(DESC "yourself")
 	(FLAGS PERSON LIVING TOUCHED NOARTICLE)
 	(ACTION ME-F)>
 
-<ROUTINE ME-F ("OPTIONAL" (CONTEXT <>) "AUX" OBJ NXT (ANY <>)) 
+<ROUTINE ME-F ("OPTIONAL" (CONTEXT <>) "AUX" OBJ NXT (ANY <>))
 	 <COND (<THIS-PRSI?>
 		<COND (<VERB? THROW THROW-OVER>
 		       <WASTE-OF-TIME>
@@ -868,7 +866,7 @@
 		      (<VERB? COVER>
 		       <COND (<PRSO? GIRL>
 			      <COND (<IS? ,PLANES ,SEEN>
-				     <TELL 
+				     <TELL
 "You try your best to shield the girl." CR>
 				     <RTRUE>)>
 			      <GIRL-SHIES>
@@ -908,7 +906,7 @@
 		<TELL ,CANT "help doing that." CR>
 		<RTRUE>)
 	       (<VERB? FIND FOLLOW>
-	        <TELL "You're right here." CR>
+		<TELL "You're right here." CR>
 		<RTRUE>)
 	       (<VERB? RAPE SUCK KISS>
 		<TELL "Desperate?" CR>
@@ -931,7 +929,7 @@
 	(SYNONYM YOU YOURSELF)
 	(FLAGS NODESC NOARTICLE)
 	(ACTION YOU-F)>
-	       
+
 <ROUTINE YOU-F ()
 	 <COND (<VERB? WHO WHAT WHERE>
 		<TELL "Good question." CR>
@@ -1004,13 +1002,13 @@
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE OBJECT-IS-LOCKED ()
 	 <TELL ,CANT "do that. It's locked." CR>
 	 <RTRUE>>
 
 <ROUTINE CANT-SEE-ANY ("OPTIONAL" (THING <>) (STRING? <>))
-         <SETG CLOCK-WAIT? T>
+	 <SETG CLOCK-WAIT? T>
 	 <PCLEAR>
 	 <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
 	 <TELL ,CANT>
@@ -1032,21 +1030,21 @@
 	 <RTRUE>>
 
 <ROUTINE HOW? ()
-         <TELL "How do you ">
+	 <TELL "How do you ">
 	 <COND (<PROB 50>
 		<TELL "expect ">)
 	       (T
 		<TELL "intend ">)>
 	 <TELL "to do that?" CR>
 	 <RTRUE>>
-	 			      
+
 <ROUTINE NOT-LIKELY (THING STR)
 	 <TELL "It" <PICK-NEXT ,LIKELIES> " that " THE .THING>
 	 <SPACE>
 	 <TELL .STR ,PERIOD>
 	 <RTRUE>>
 
-<GLOBAL LIKELIES:TABLE 
+<GLOBAL LIKELIES:TABLE
 	<LTABLE 2
 	 " isn't likely"
 	 " seems doubtful"
@@ -1106,13 +1104,13 @@
 		<NOT-IN ,PRSO T>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>	 
+		<RFALSE>)>>
 
 <OBJECT GROUND
 	(LOC GLOBAL-OBJECTS)
 	(DESC "ground")
 	(SYNONYM SURFACE GROUND GROUNDS EARTH ICE)
-        (FLAGS NODESC)
+	(FLAGS NODESC)
 	(ACTION GROUND-F)>
 
 <ROUTINE GROUND-F ("AUX" OBJ NXT)
@@ -1187,7 +1185,7 @@
 	 <COND (<THIS-PRSI?>
 		<COND (<VERB? PUT>
 		       <COND (<PRSO? CRANE>
-			      <TELL CTHEO 
+			      <TELL CTHEO
 				    " would get crumpled" ,IF-YOU-DID>
 			      <RTRUE>)
 			     (<OR <PRSO? BAG>
@@ -1196,7 +1194,7 @@
 			      <YOUD-HAVE-TO "empty" ,PRSO>
 			      <RTRUE>)
 			     (<G? <GETP ,PRSO ,P?SIZE> 3>
-			      <TELL CTHEO " is too big to fit in " 
+			      <TELL CTHEO " is too big to fit in "
 				    D ,PRSI ,PERIOD>
 			      <RTRUE>)>
 		       <RFALSE>)>
@@ -1205,7 +1203,7 @@
 		<SET OBJ <FIRST? ,PRSO>>
 		<COND (<T? .OBJ>
 		       <TELL "You have ">
-		       <PRINT-CONTENTS ,PRSO>)		      
+		       <PRINT-CONTENTS ,PRSO>)
 		      (T
 		       <TELL "There's nothing">)>
 		<TELL " in " D ,PRSO ,PERIOD>
@@ -1221,7 +1219,7 @@
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-  
+
 <ROUTINE IN-POCKET ("OPTIONAL" (CONTEXT <>))
 	 <COND (<NOT <EQUAL? .CONTEXT ,M-CONT>>
 		<RFALSE>)
@@ -1245,7 +1243,7 @@
 	 <DIROUT ,D-TABLE-OFF>
        ; <DIROUT ,D-SCREEN-ON>
 	 <SET LEN <GET ,SL-TABLE 0>>
-         <INC LEN>
+	 <INC LEN>
 	 <COND (<L? .LEN 2>
 		<RTRUE>)
 	       (<BAND <GETB 0 1> 8>
@@ -1278,7 +1276,7 @@
 			<RETURN>)>
 		 <INC PTR>>
 	 <RTRUE>>
-	       
+
 <ROUTINE WRONG-WINNER? ()
 	 <COND (<EQUAL? ,WINNER ,PLAYER>
 		<RFALSE>)>
@@ -1429,15 +1427,15 @@
 		<RFALSE>)>>
 
 <ROUTINE HANDLE-PLACE? (INSIDE "OPTIONAL" (N <>) (E <>) (S <>) (W <>)
-			                  (OUT <>) "AUX" (CNT 0))
+					  (OUT <>) "AUX" (CNT 0))
 	 <COND (<T? .N>
 		<INC CNT>)>
 	 <COND (<T? .E>
-	        <INC CNT>)>
+		<INC CNT>)>
 	 <COND (<T? .S>
 		<INC CNT>)>
 	 <COND (<T? .W>
-	        <INC CNT>)>
+		<INC CNT>)>
        ; <COND (<T? .OUT>
 		<INC CNT>)>
 	 <COND (<VERB? EXAMINE LOOK-ON LOOK-INSIDE LOOK-DOWN SEARCH>
@@ -1480,7 +1478,7 @@
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <ROUTINE ALREADY-DOING-THAT ()
 	 <TELL ,YOURE-ALREADY "doing that." CR>
 	 <RTRUE>>
@@ -1599,7 +1597,7 @@
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <ROUTINE TAKE-A-MOMENT-TO (OBJ "OPTIONAL" (STR <>))
 	 <TELL "Perhaps you should take a moment to examine the ">
 	 <COND (<T? .STR>
@@ -1629,7 +1627,7 @@
 	 <COND (<ZERO? ,FLIP?>
 		<TELL "east">)
 	       (T
-	        <TELL "west">)>
+		<TELL "west">)>
 	 <RTRUE>>
 
 <ROUTINE SAY-WEST ()
@@ -1662,8 +1660,8 @@
 	 <LTABLE 2 "firm" "permanent" "immovab" "secure">
 	 <LTABLE 2 "attached" "affixed">>>
 
-<ROUTINE NOUN-USED? (WORD1 "OPTIONAL" (WORD2 <>) (WORD3 <>) 
-		           "AUX" O I OOF IOF)
+<ROUTINE NOUN-USED? (WORD1 "OPTIONAL" (WORD2 <>) (WORD3 <>)
+			   "AUX" O I OOF IOF)
 	 <SET O <GET ,P-NAMW 0>>
 	 <SET I <GET ,P-NAMW 1>>
 	 <SET OOF <GET ,P-OFW 0>>
@@ -1721,7 +1719,7 @@
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		   
+
 <ROUTINE HERE-F ()
 	 <COND (<VERB? EXAMINE LOOK-ON LOOK-INSIDE SEARCH WATCH>
 		<V-LOOK>
@@ -1745,7 +1743,7 @@
 	 <HLIGHT ,H-BOLD>
 	 <TELL "[This might be a good time to use the SAVE command.]" CR>
 	 <HLIGHT ,H-NORMAL>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 "WINDOW [table] [left-margin], where [table] is a global PLTABLE
  with the 1st element = width of window, followed by strings (0 for blank).
@@ -1753,7 +1751,7 @@
 
 <ROUTINE WINDOW (TABLE "OPTIONAL" (MARGIN 0)
 		       "AUX" (Y 4) (I 2) WIDTH LINES STR PLINES)
-	 
+
 	 <SET LINES <GET .TABLE 0>>
 	 <SET PLINES .LINES>
 	 <SET WIDTH <GET .TABLE 1>>
@@ -1762,15 +1760,15 @@
 		  <RTRUE>)
 	       (<ZERO? .MARGIN>
 		<SET MARGIN <- ,MIDSCREEN </ .WIDTH 2>>>)> ; "Center"
-	 	 
+
 	 <SPLIT <+ .LINES 4>> ; "Set up the window."
 	 <SCREEN ,S-WINDOW>
 	 <BUFOUT <>>
 	 <HLIGHT ,H-INVERSE>
-	 
+
 	 <CURSET .Y .MARGIN>
 	 <PRINT-SPACES .WIDTH>
-	 
+
 	 <REPEAT ()
 		 <INC Y>
 		 <CURSET .Y .MARGIN>
@@ -1786,14 +1784,13 @@
 			<TELL .STR>
 			<PRINTC 32>)>
 		 <INC I>>
-	 
-	 <BUFOUT T>
+
 	 <HLIGHT ,H-NORMAL>
 	 <SCREEN ,S-TEXT>
+	 <BUFOUT T>
 	 <SPLIT 1>
+	 ; "Send window to printer."
 
-       ; "Send window to printer."
-	
 	 <DIROUT ,D-SCREEN-OFF>
 	 <SET I 2>
 	 <CRLF>
@@ -1814,7 +1811,7 @@
 	 <CRLF>
 	 <DIROUT ,D-SCREEN-ON>
 	 <RTRUE>>
-		 
+
 <OBJECT SOUND
 	(LOC GLOBAL-OBJECTS)
 	(DESC "sound")
@@ -1832,7 +1829,7 @@
 		<RTRUE>)
 	       (<OR <INTBL? ,PRSA ,SEEVERBS ,NSVERBS>
 		    <INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>>
-		<IMPOSSIBLE>		       
+		<IMPOSSIBLE>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -1902,7 +1899,7 @@
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <ROUTINE YOUD-FALL-OFF (OBJ)
 	 <TELL "You'd ">
 	 <COND (<PROB 50>
@@ -2003,12 +2000,12 @@
 	 <TELL " you know,">
 	 <HLIGHT ,H-NORMAL>
 	 <COND (<ZERO? .ST>
-	        <TELL "\"">)
+		<TELL "\"">)
 	       (T
 		<ST-QUOTE>)>
 	 <TELL <PICK-NEXT <GET ,MUTTERS 0>> "s a voice in your ear." CR>
 	 <RTRUE>>
-	 
+
 ; <ROUTINE THIS-IS-NOT (STR)
 	 <TELL "[Sorry. This is ">
 	 <ITALICIZE "Trinity,">
@@ -2034,7 +2031,7 @@
 		  " giggle" " sigh"  " intone" " snicker" " whisper">
 	 <LTABLE 2 "Smart move" "Had me worried there" "Thanks" "Good idea"
 		   "Well done" "Thanks again">>>
-		    
+
 <ROUTINE NONE-AT-MOMENT ()
 	 <TELL ,CANT "see any at the moment." CR>
 	 <RTRUE>>

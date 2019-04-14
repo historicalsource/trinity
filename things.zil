@@ -46,9 +46,7 @@
 		<CANT-SEE-MUCH>
 		<RTRUE>)
 	       (<HERE-F>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT PATH
 	(LOC GLOBAL-OBJECTS)
@@ -76,9 +74,7 @@
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,PUTVERBS ,NUMPUTS>
 		<PERFORM ,V?DROP ,PRSO>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>		       
+		<RTRUE>)>>
 
 <OBJECT METEOR
 	(LOC GLOBAL-OBJECTS)
@@ -101,9 +97,7 @@
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		<CANT-FROM-HERE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT SKY
 	(LOC GLOBAL-OBJECTS)
@@ -136,9 +130,7 @@
 	       (<OR <INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		    <ENTERING?>>
 		<IMPOSSIBLE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT BREEZE
 	(LOC GLOBAL-OBJECTS)
@@ -156,12 +148,12 @@
 		<TELL "It's transparent." CR>
 		<RTRUE>)
 	       (<VERB? TOUCH REACH-IN LISTEN>
-		<TELL "It ">
+		<TELL "It whi">
 		<COND (<HERE? IN-SKY ON-BIRD>
-		       <TELL "whips past ">)
+		       <TELL "ps past">)
 		      (T
-		       <TELL "whispers in ">)>
-		<TELL "your ears." CR>
+		       <TELL "spers in">)>
+		<TELL " your ears." CR>
 		<RTRUE>)
 	       (<OR <ENTERING?>
 		    <EXITING?>>
@@ -193,9 +185,7 @@
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		<CANT-FROM-HERE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT SUN
 	(LOC GLOBAL-OBJECTS)
@@ -211,14 +201,14 @@
 		<CANT-SEE-FROM-HERE ,SUN>
 		<RFATAL>)
 	       (<VERB? EXAMINE LOOK-INSIDE>
-	        <TELL CTHE ,SUN>
+		<TELL CTHE ,SUN>
 		<COND (<IS? ,HERE ,SHADOWY>
 		       <TELL " broods silently in the "
 			     <GET ,SHDIRS 2> "ern sky." CR>
 		       <RTRUE>)
 		      (<OR <IS? ,HERE ,DESERT>
 			   <HERE? NSAND WSAND ESAND SSAND AT-SDOORS
-			          IN-ORBIT ON-SAT IN-SHACK TOWER-PLAT
+				  IN-ORBIT ON-SAT IN-SHACK TOWER-PLAT
 				  ON-TOWER ON-CIST IN-CIST IN-MILL>>
 		       <TELL " is still below the " D ,HORIZON ,PERIOD>
 		       <RTRUE>)
@@ -235,10 +225,8 @@
 	       (<OR <INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		    <ENTERING?>>
 		<IMPOSSIBLE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		       
+		<RTRUE>)>>
+
 <OBJECT GARDENS
 	(LOC LOCAL-GLOBALS)
 	(DESC "Kensington Gardens")
@@ -259,9 +247,7 @@
 		       <DO-WALK ,P?OUT>
 		       <RTRUE>)>
 		<V-WALK-AROUND>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT WRISTWATCH
 	(LOC PLAYER)
@@ -302,10 +288,8 @@
 		<RTRUE>)
 	       (<VERB? CLOSE>
 		<ITS-ALREADY "closed">
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		     		       
+		<RTRUE>)>>
+
 <ROUTINE FORGOT-HOW ()
 	 <TELL "You forgot how to operate your electronic " D ,PRSO
 	       " long ago." CR>
@@ -327,9 +311,7 @@
 		<TELL CTHE ,COIN " is worth fifty pence, not thirty." CR>
 		<RFATAL>)
 	       (<HANDLE-COIN? "fifty">
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE HANDLE-COIN? ("OPTIONAL" (STR <>))
 	 <COND (<AND <T? .STR>
@@ -349,9 +331,7 @@
 		       <TELL "Heads." CR>
 		       <RTRUE>)>
 		<TELL "Tails." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT SCOIN
 	(DESC "small coin")
@@ -371,9 +351,7 @@
 		<SETG LAYAWAY 3>
 		<RFALSE>)
 	       (<HANDLE-COIN? "twenty">
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT CREDIT-CARD
 	(LOC POCKET)
@@ -386,15 +364,12 @@
 	(ADJECTIVE MY CREDIT CHARGE)
 	(ACTION CREDIT-CARD-F)>
 
- <ROUTINE CREDIT-CARD-F ()
+<ROUTINE CREDIT-CARD-F ()
 	 <COND (<VERB? EXAMINE LOOK-ON READ>
 		<TELL CTHEO " is embossed ">
 		<COND (<IS? ,PRSO ,FLIPPED>
 		       <TELL "(backwards) ">)>
-		<TELL "with the usual codes. It expires tomorrow." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<TELL "with the usual codes. It expires tomorrow." CR>)>>
 
 <OBJECT PIGEONS
 	(LOC LOCAL-GLOBALS)
@@ -410,7 +385,7 @@
 		<TELL CTHEO " stare back at you hungrily." CR>
 		<RTRUE>)
 	       (<FEED-THE-BIRDS?>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<VERB? LISTEN>
 		<TELL CTHEO " coo incessantly." CR>
 		<RTRUE>)
@@ -420,9 +395,7 @@
 	       (<OR <INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		    <ENTERING?>>
 		<TELL CTHE ,PIGEONS " deftly avoid you." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE FEED-THE-BIRDS? ()
 	 <COND (<THIS-PRSO?>
@@ -451,9 +424,7 @@
 		      (T
 		       <TELL " don't seem to care about ">)>
 		<TELL THEO ,PERIOD>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT FLWALK
 	(LOC GLOBAL-OBJECTS)
@@ -469,9 +440,7 @@
 		<CANT-SEE-ANY>
 		<RFATAL>)
 	       (<HANDLE-PLACE? ,FLOWER-WALK <> <> <> ,PAL-GATE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT PGATE
 	(LOC GLOBAL-OBJECTS)
@@ -487,9 +456,7 @@
 		<CANT-SEE-ANY>
 		<RFATAL>)
 	       (<HANDLE-GATES?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT BLGATE
 	(LOC GLOBAL-OBJECTS)
@@ -518,9 +485,7 @@
 		<CANT-SEE-ANY>
 		<RFATAL>)
 	       (<HANDLE-GATES?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT LGATE
 	(LOC GLOBAL-OBJECTS)
@@ -536,9 +501,7 @@
 		<CANT-SEE-ANY>
 		<RFATAL>)
 	       (<HANDLE-GATES?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE HANDLE-GATES? ()
 	 <COND (<THIS-PRSI?>
@@ -563,9 +526,7 @@
 	       (<VERB? CLOSE>
 		<TELL ,CANT "do that. ">
 		<DESCRIBE-GATE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE DESCRIBE-GATE ()
 	 <TELL "The gate is swarming with ">
@@ -579,8 +540,7 @@
 		<TELL "snicker at">)
 	       (T
 		<TELL "ignore">)>
-	 <TELL " your hopeless attempt." CR>
-	 <RTRUE>>
+	 <TELL " your hopeless attempt." CR>>
 
 <OBJECT IFENCE
 	(LOC LOCAL-GLOBALS)
@@ -607,10 +567,8 @@
 		<RTRUE>)
 	       (<EXITING?>
 		<NOT-IN ,PRSO T>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		
+		<RTRUE>)>>
+
 <OBJECT LNWALK
 	(LOC GLOBAL-OBJECTS)
 	(DESC "Lancaster Walk")
@@ -630,7 +588,7 @@
 	       (<HERE? BROAD-WALK PAL-GATE LION-GATE>
 		<RETURN ,BWALK>)
 	       (T
-		<RETURN ,PATH>)>>	
+		<RETURN ,PATH>)>>
 
 <ROUTINE LNWALK-F ()
 	 <COND (<NOT <HERE? LAN-WALK LAN-GATE FLOWER-WALK ROUND-POND>>
@@ -638,9 +596,7 @@
 		<RFATAL>)
 	       (<HANDLE-PLACE? ,LAN-WALK ,LAN-GATE ,LONG-WATER ,FLOWER-WALK
 			       ,ROUND-POND>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT TERRACE
 	(LOC GLOBAL-OBJECTS)
@@ -655,10 +611,8 @@
 		<CANT-SEE-ANY>
 		<RFATAL>)
 	       (<HERE-F>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-	  
+		<RTRUE>)>>
+
 <OBJECT LWATER
 	(LOC GLOBAL-OBJECTS)
 	(DESC "Long Water")
@@ -668,9 +622,9 @@
 	(CAPACITY 100)
 	(GENERIC GENERIC-WATER-F)
 	(ACTION LWATER-F)>
-		
+
 <ROUTINE GENERIC-WATER-F (TBL)
-	 <COND (<EQUAL? ,P-IT-OBJECT ,RPOND ,GRPOND ,LWATER>		    
+	 <COND (<EQUAL? ,P-IT-OBJECT ,RPOND ,GRPOND ,LWATER>
 		<RETURN ,P-IT-OBJECT>)
 	       (<HERE? ROUND-POND>
 		<RETURN ,RPOND>)
@@ -682,7 +636,7 @@
 		<RETURN ,GRPOND>)
 	       (T
 		<REFERRING>
-		<RETURN ,NOT-HERE-OBJECT>)>>	       
+		<RETURN ,NOT-HERE-OBJECT>)>>
 
 <ROUTINE LWATER-F ()
 	 <COND (<VERB? FIND>
@@ -738,9 +692,7 @@
 			       (T ,P?DOWN)>>
 		<RTRUE>)
 	       (<HANDLE-WATER?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE SEE-IT-SPARKLE ()
 	 <TELL "You can see it sparkling">
@@ -806,7 +758,7 @@
 		<TELL "The sight of a ">
 		<COND (<T? ,RAID?>
 		       <TELL "frightened ">)>
-		<TELL 
+		<TELL
 "child relieving itself in the pond" ,CHANGES>
 		<RTRUE>)
 	       (<OR <GETTING-INTO?>
@@ -814,13 +766,11 @@
 		<DO-WALK ,P?IN>
 		<RTRUE>)
 	       (<HANDLE-WATER?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-	       
+		<RTRUE>)>>
+
 <ROUTINE HANDLE-WATER? ()
 	 <COND (<THIS-PRSI?>
-		<COND (<VERB? TAKE PUSH-TO>			   
+		<COND (<VERB? TAKE PUSH-TO>
 		       <RFALSE>)
 		      (<INTBL? ,PRSA ,PUTVERBS ,NUMPUTS>
 		       <COND (<OR <PRSO? BALL CRANE>
@@ -861,9 +811,7 @@
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		<SPLASHES>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE OPAQUE-WATER ()
 	 <TELL "Little can be seen ">
@@ -923,7 +871,7 @@
 		<RTRUE>)
 	       (<VERB? FOLD CLOSE>
 		<ITS-ALREADY "folded quite nicely, thank you">
-		<RTRUE>)  
+		<RTRUE>)
 	       (<VERB? CUT RIP MUNG WRAP-AROUND>
 		<RUIN-LOVELY-CRANE>
 		<RTRUE>)
@@ -946,23 +894,18 @@
 		       <TELL "You lean over the edge of the " D ,RPOND
 ", and pluck the " D ,PRSO " out of the water." CR>
 		       <UPDATE-SCORE 3>)>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE RUIN-LOVELY-CRANE ()
-	 <TELL "And ruin the lovely " D ,PRSO "? Unthinkable." CR>
-	 <RTRUE>>
+	 <TELL "And ruin the lovely " D ,PRSO "? Unthinkable." CR>>
 
 ; <ROUTINE STOP-TWINKLE? ()
 	 <COND (<IS? ,PRSO ,LIGHTED>
 		<UNMAKE ,PRSO ,LIGHTED>
 		<DEQUEUE I-NEWCRANE>
-		<TELL CR 
+		<TELL CR
 "The edges of the paper stop twinkling." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT OCRANE
 	(DESC "piece of paper")
@@ -973,15 +916,9 @@
 	(SIZE 3)
 	(MASS 1)
 	(GENERIC GENERIC-BIRD-F)
-	(ACTION OCRANE-F)>
+	(ACTION HANDLE-OPEN-BIRD?)>
 
 "CHILLY = not folded by girl."
-
-<ROUTINE OCRANE-F ()
-	 <COND (<HANDLE-OPEN-BIRD?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
 
 <OBJECT BAD-CRANE
 	(DESC "crumpled piece of paper")
@@ -993,15 +930,7 @@
 	(SIZE 3)
 	(MASS 1)
 	(GENERIC GENERIC-BIRD-F)
-	(ACTION BAD-CRANE-F)>
-
-"CHILLY = not folded by girl."
-
-<ROUTINE BAD-CRANE-F ()
-	 <COND (<HANDLE-OPEN-BIRD?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>  
+	(ACTION HANDLE-OPEN-BIRD?)>
 
 <ROUTINE HANDLE-OPEN-BIRD? ()
 	 <COND (<THIS-PRSI?>
@@ -1015,7 +944,7 @@
 		<TELL "\" are scrawled on the " D ,PRSO ,PERIOD>
 		<RTRUE>)
 	       (<VERB? WRAP-AROUND>
-	        <COND (<PRSI? PRSO>
+		<COND (<PRSI? PRSO>
 		       <EQUAL? <GET ,P-NAMW 1> ,W?BIRD ,W?CRANE ,W?ORIGAMI>
 		       <FUMBLE>
 		       <RTRUE>)>
@@ -1032,15 +961,12 @@
 		<RTRUE>)
 	       (<VERB? FOLD REPAIR CLOSE>
 		<FUMBLE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE FUMBLE ()
 	 <TELL "Your fumbling attempt to ">
 	 <PRINTB ,P-PRSA-WORD>
-	 <TELL " the paper back into a bird fails." CR>
-	 <RTRUE>>
+	 <TELL " the paper back into a bird fails." CR>>
 
 <OBJECT POND-BIRDS
 	(LOC ROUND-POND)
@@ -1053,24 +979,19 @@
 
 <ROUTINE POND-BIRDS-F ()
 	 <COND (<VERB? EXAMINE WATCH>
-		<TELL CTHEO " stare back at you coolly." CR>
-		<RTRUE>)
+		<TELL CTHEO " stare back at you coolly." CR>)
 	       (<FEED-THE-BIRDS?>
 		<RTRUE>)
 	       (<VERB? LISTEN>
-		<TELL CTHEO " honk incessantly." CR>
-		<RTRUE>)
+		<TELL CTHEO " honk incessantly." CR>)
 	       (<AND <THIS-PRSO?>
 		     <INTBL? ,PRSA ,TALKVERBS ,NTVERBS>>
 		<TELL CTHE ,POND-BIRDS " honk in reply." CR>
 		<RFATAL>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
-		<TELL CTHE ,POND-BIRDS " paddle out of reach." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>> 
+		<TELL CTHE ,POND-BIRDS " paddle out of reach." CR>)>>
 
-<OBJECT BOAT 
+<OBJECT BOAT
 	(LOC ROUND-POND)
 	(DESC "toy boats")
 	(FLAGS TRYTAKE NODESC PLURAL)
@@ -1080,19 +1001,15 @@
 
 <ROUTINE BOAT-F ()
 	 <COND (<VERB? EXAMINE WATCH>
-		<TELL CTHEO 
+		<TELL CTHEO
 " are crafted of paper and sticks. They bob freely among the "
-D ,POND-BIRDS ", who can barely conceal their outrage." CR>
-		<RTRUE>)
+D ,POND-BIRDS ", who can barely conceal their outrage." CR>)
 	       (<VERB? SWIM DIVE WALK-TO FOLLOW SIT LIE-DOWN ENTER>
 		<DO-WALK ,P?IN>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
-		<TELL CTHE ,BOAT " are far out of reach." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-	 	
+		<TELL CTHE ,BOAT " are far out of reach." CR>)>>
+
 <OBJECT DIAL
 	(LOC WABE)
 	(DESC "sundial")
@@ -1100,20 +1017,18 @@ D ,POND-BIRDS ", who can barely conceal their outrage." CR>
 	(CAPACITY 6)
 	(SYNONYM SUNDIAL DIAL FACE SHADOW LEGEND WORDS SHAFT SUNLIGHT LIGHT)
 	(ADJECTIVE SUN HANDSOME ANTIQUE GOLDEN)
-        (DESCFCN DESCRIBE-DIAL)
+	(DESCFCN DESCRIBE-DIAL)
 	(ACTION DIAL-F)>
 
 "TOUCHED = quote given."
 
 <ROUTINE DESCRIBE-DIAL (CONTEXT)
 	 <COND (<EQUAL? .CONTEXT ,M-OBJDESC>
-		<TELL 
+		<TELL
 "A shaft of golden sunlight falls across a handsome antique "
 D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 		<LOOK-AT-DIAL ,DIAL>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE DIAL-F ()
 	 <COND (<NOUN-USED? ,W?SUNLIGHT ,W?LIGHT>
@@ -1125,7 +1040,7 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 		    <ADJ-USED? ,W?GOLDEN>>
 		<USELESS>
 		<RTRUE>)>
-	 <RETURN <HANDLE-DIAL? ,DIAL>>> 
+	 <RETURN <HANDLE-DIAL? ,DIAL>>>
 
 <OBJECT BDIAL
 	(LOC ON-GNOMON)
@@ -1161,11 +1076,8 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 		<TELL "At the center of the " D ,PLATFORM
 " stands a handsome antique " D ,BDIAL>
 		<LOOK-AT-DIAL ,BDIAL>
-		<TELL 
-" The circumference is enclosed in a wide " D ,RING ".">
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<TELL
+" The circumference is enclosed in a wide " D ,RING ".">)>>
 
 <ROUTINE BDIAL-F ()
 	 <COND (<NOUN-USED? ,W?SHADOW>
@@ -1173,7 +1085,7 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 	       (<AND <THIS-PRSO?>
 		     <VERB? TURN-TO TUNE-TO POINT-AT PUSH-TO TURN MOVE
 			    LOOSEN SPIN PUSH SWING>>
-	        <TELL CTHEO " is firmly imbedded in the " D ,PLATFORM
+		<TELL CTHEO " is firmly imbedded in the " D ,PLATFORM
 ", and cannot be moved. But the " D ,RING " around its perimeter">
 		<WOBBLES>
 		<RTRUE>)>
@@ -1214,7 +1126,7 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 		       <TELL "MURER XADE SUPMET">)>
 	 	<TELL "\" emblazoned across the bottom. A ">
 	 	<COND (<ZERO? .G>
-		       <TELL D ,DIAL-HOLE 
+		       <TELL D ,DIAL-HOLE
 			     " is set into the center of the dial">)
 	       	      (T
 		       <TELL "triangular " D ,GNOMON
@@ -1243,9 +1155,7 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 		<RTRUE>)
 	       (<VERB? LOOK-UNDER LOOK-BEHIND>
 		<LOOK-UNDER-DIAL>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE LOOK-UNDER-DIAL ()
 	 <TELL "There's nothing " <PICK-NEXT ,YAWNS>>
@@ -1294,20 +1204,18 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 		       <TELL "a little after">)
 		      (T
 		       <TELL "a bit before">)>)>
-	 <TELL " the " <GET ,SYMBOL-NAMES ,OSIGN> " symbol">
-	 <RTRUE>>
+	 <TELL " the " <GET ,SYMBOL-NAMES ,OSIGN> " symbol">>
 
 <ROUTINE SAY-BETWEEN ()
 	 <TELL "between the " <GET ,SYMBOL-NAMES ,OSIGN>
-	       " and " <GET ,SYMBOL-NAMES <+ ,OSIGN 1>> 
-	       " " D ,SYMBOLS>
-	 <RTRUE>>
+	       " and " <GET ,SYMBOL-NAMES <+ ,OSIGN 1>>
+	       " " D ,SYMBOLS>>
 
 <GLOBAL SYMBOL-NAMES:TABLE
 	<PTABLE "first" "first" "second" "second"
-	        "third" "third" "fourth" "fourth" 
+		"third" "third" "fourth" "fourth"
 		"fifth" "fifth" "sixth" "sixth"
-	        "seventh" "seventh" ; "seventh">>
+		"seventh" "seventh" ; "seventh">>
 
 <OBJECT RING
 	(LOC BDIAL)
@@ -1365,7 +1273,7 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 		       <RTRUE>)
 		      (<PRSI? BDIAL>
 		       <COND (<EQUAL? <GET ,P-NAMW 1> ,W?SHADOW>
-			      <TELL 
+			      <TELL
 "The arrow already lies within the " D ,DSHADOW " on the " D ,GNOMON ,PERIOD>
 			      <RTRUE>)>
 		       <SPECIFY-SYMBOL>
@@ -1503,7 +1411,7 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 			     (T
 			      <FIRST-MOVE T>)>
 		       <NEW-OSIGN .X>
-		       <RTRUE>)		      
+		       <RTRUE>)
 		      (T
 		       <TELL CTHEO " can't be moved that way." CR>)>
 		<RTRUE>)
@@ -1520,7 +1428,7 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 		<COND (<NOT <IS? ,PRSO ,TOUCHED>>
 		       <FIRST-MOVE .G>)
 		      (T
-		       <TELL 
+		       <TELL
 "The sun races across the sky as you casually spin the " D ,RING>
 		       <COND (<T? .G>
 			      <TELL ,PTHE "arrow ">
@@ -1539,31 +1447,24 @@ D ,DIAL ", erected at the exact center of the " D ,CLEARING>
 		       <PRSO-NOT-MOVING>
 		       <RTRUE>)>
 		<HOW?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE WOBBLES ()
-	 <TELL " wobbles a bit when you touch it." CR>
-	 <RTRUE>>
-
+	 <TELL " wobbles a bit when you touch it." CR>>
 
 <ROUTINE ALREADY-POINTING ()
-	 <TELL ,ARROW-ON "in " D ,RIGHT ,PERIOD>
-	 <RTRUE>>
+	 <TELL ,ARROW-ON "in " D ,RIGHT ,PERIOD>>
 
 <ROUTINE SPECIFY-SYMBOL ()
 	 <TELL "[You must specify just ">
-         <ITALICIZE "one">
-	 <TELL " of the seven " D ,SYMBOLS " on the " D ,DIAL 
-"; for example, TURN THE RING TO THE FOURTH SYMBOL or POINT THE ARROW TO OMEGA.]" CR>
-	 <RTRUE>>
+	 <ITALICIZE "one">
+	 <TELL " of the seven " D ,SYMBOLS " on the " D ,DIAL
+"; for example, TURN THE RING TO THE FOURTH SYMBOL or POINT THE ARROW TO OMEGA.]" CR>>
 
 <ROUTINE READ-ARROW ()
 	 <MAKE ,RING ,SEEN>
 	 <TELL " is pointing to the " <GET ,SYMBOL-NAMES ,OSIGN>
-	       " symbol on the dial." CR>
-	 <RTRUE>>	
+	       " symbol on the dial." CR>>
 
 <ROUTINE FIRST-MOVE ("OPTIONAL" (P <>))
 	 <MAKE ,RING ,TOUCHED>
@@ -1583,9 +1484,8 @@ You let go of the ring with a cry. The sun instantly stops, and the strange vibr
 	 <RTRUE>>
 
 <ROUTINE SECOND-MOVE ()
-	 <TELL 
-"The sun sweeps across the sky as you rotate the " D ,PRSO ". It ">
-	 <RTRUE>>
+	 <TELL
+"The sun sweeps across the sky as you rotate the " D ,PRSO ". It ">>
 
 <OBJECT DIAL-HOLE
 	(LOC DIAL)
@@ -1597,11 +1497,7 @@ You let go of the ring with a cry. The sun instantly stops, and the strange vibr
 	(ADJECTIVE THREADED)
 	(ACTION DIAL-HOLE-F)>
 
-<ROUTINE DIAL-HOLE-F ()
-	 <COND (<HANDLE-HOLE? ,DIAL>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+<ROUTINE DIAL-HOLE-F () <HANDLE-HOLE? ,DIAL>>
 
 <OBJECT BDIAL-HOLE
 	(LOC BDIAL)
@@ -1613,11 +1509,7 @@ You let go of the ring with a cry. The sun instantly stops, and the strange vibr
 	(ADJECTIVE THREADED)
 	(ACTION BDIAL-HOLE-F)>
 
-<ROUTINE BDIAL-HOLE-F ()
-	 <COND (<HANDLE-HOLE? ,BDIAL>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+<ROUTINE BDIAL-HOLE-F () <HANDLE-HOLE? ,BDIAL>>
 
 <ROUTINE HANDLE-HOLE? (D)
 	 <COND (<AND <IN? ,GNOMON .D>
@@ -1652,13 +1544,10 @@ You let go of the ring with a cry. The sun instantly stops, and the strange vibr
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>
 		<IMPOSSIBLE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE EXAMINE-HOLE ()
-	 <TELL "t-handed thread, and is set in the center of the dial." CR>
-	 <RTRUE>>
+	 <TELL "t-handed thread, and is set in the center of the dial." CR>>
 
 <OBJECT ROSE
 	(LOC LOCAL-GLOBALS)
@@ -1673,15 +1562,13 @@ You let go of the ring with a cry. The sun instantly stops, and the strange vibr
 		<TELL CTHEO " on the dial appears quite ordinary">
 		<COND (<AND <HERE? ON-GNOMON>
 			    <T? ,FLIP?>>
-		       <TELL 
+		       <TELL
 ", except that the headings are all backwards">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (<HANDLE-GLYPHS?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-			   
+		<RTRUE>)>>
+
 <OBJECT SYMBOLS
 	(LOC LOCAL-GLOBALS)
 	(DESC "symbols")
@@ -1696,7 +1583,7 @@ You let go of the ring with a cry. The sun instantly stops, and the strange vibr
 
 <ROUTINE SYMBOLS-F ()
 	 <COND (<VERB? EXAMINE READ LOOK-INSIDE SEARCH LOOK-UP>
-		<TELL "The seven " D ,PRSO 
+		<TELL "The seven " D ,PRSO
 " are arranged in a circle. The series begins with a Greek omega and runs ">
 		<COND (<T? ,FLIP?>
 		       <TELL "counter">)>
@@ -1712,20 +1599,17 @@ You let go of the ring with a cry. The sun instantly stops, and the strange vibr
 		<COND (<NOT <IS? ,PRSO ,SEEN>>
 		       <MAKE ,PRSO ,SEEN>
 		       <SETG DO-WINDOW <GET ,QUOTES ,MATTHEW>>
-		       <RFATAL>)>		       
+		       <RFATAL>)>
 		<RTRUE>)
 	       (<VERB? COUNT>
-		<TELL "There are exactly seven." CR>
-		<RTRUE>)
+		<TELL "There are exactly seven." CR>)
 	       (<AND <VERB? TURN-TO TUNE-TO POINT-AT PUSH-TO>
 		     <THIS-PRSI?>
 		     <NOT <PRSO? RING BDIAL>>>
 		<IMPOSSIBLE>
 		<RTRUE>)
 	       (<HANDLE-GLYPHS?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE HANDLE-GLYPHS? ()
 	 <COND (<THIS-PRSI?>
@@ -1738,9 +1622,7 @@ You let go of the ring with a cry. The sun instantly stops, and the strange vibr
 		<RFALSE>)
 	       (<INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>
 		<IMPOSSIBLE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT GNOMON
 	(LOC DIAL)
@@ -1786,7 +1668,7 @@ You let go of the ring with a cry. The sun instantly stops, and the strange vibr
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL 
+		<TELL
 "It's a triangular piece of metal, about a quarter-inch thick and four inches long">
 		<COND (<IS? ,GNOMON ,NODESC>
 		       <TELL ", screwed into the center of the " D ,DIAL>)
@@ -1817,7 +1699,7 @@ D ,DIAL ,PERIOD>
 		       <COND (<ZERO? ,SUN-MOVING?>
 			      <SETG SUN-MOVING? T>
 			      <TELL " straightens itself and">)>
-		       <TELL " silently retracts into the " 
+		       <TELL " silently retracts into the "
 			     D ,FLOOR ,PERIOD>)>
 		<RTRUE>)
 	       (<AND <VERB? TAKE TOUCH MOVE LOOSEN PULL PUSH SHAKE
@@ -1840,43 +1722,39 @@ D ,DIAL ,PERIOD>
 			    <NOT <GNOMON-FITS?>>>
 		       <COND (<NOT <IS? ,PRSO ,SEEN>>
 			      <MAKE ,PRSO ,SEEN>
-			      <TELL 
+			      <TELL
 "You twist and push the " D ,PRSO " into the hole on the " D ,PRSI
 ", but it doesn't seem to fit very well. A quick glance shows the reason why. ">)>
-		       <TELL 
+		       <TELL
 "The thread on the bolt doesn't match the thread in the dial's hole." CR>
 		       <RTRUE>)
 		      (T
 		       <MOVE ,GNOMON ,PRSI>
 		       <MAKE ,GNOMON ,NODESC>
 		       <MAKE ,GNOMON ,NOALL>
-		       <TELL 
+		       <TELL
 "You screw the " D ,GNOMON " into the hole on the " D ,DIAL ,PERIOD>
 		       <COND (<HERE? ON-GNOMON>
 			      <MOVE ,LEVER ,HERE>
 			      <THIS-IS-IT ,LEVER>
 			      <TELL CR "A long metal " D ,LEVER
-" silently rises out of the " D ,FLOOR 
-". As it clicks to a stop, the ring around the " D ,BDIAL 
+" silently rises out of the " D ,FLOOR
+". As it clicks to a stop, the ring around the " D ,BDIAL
 " emits a brilliant twinkle of light." CR>
 			      <COND (<NOT <IS? ,LEVER ,TOUCHED>>
 				     <MAKE ,LEVER ,TOUCHED>
 				     <UPDATE-SCORE 5>
 				     <CRLF>
-				     <VOICE-MUTTERS 
+				     <VOICE-MUTTERS
 				      "The Gnomon Conquest" <>>)>)>)>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE GNOMON-FITS? ()
 	 <COND (<OR <AND <T? ,FLIP?>
-		         <NOT <IS? ,GNOMON ,FLIPPED>>>
+			 <NOT <IS? ,GNOMON ,FLIPPED>>>
 		    <AND <ZERO? ,FLIP?>
-		         <IS? ,GNOMON ,FLIPPED>>>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+			 <IS? ,GNOMON ,FLIPPED>>>
+		<RTRUE>)>>
 
 <OBJECT LEVER
 	(DESC "lever")
@@ -1894,9 +1772,7 @@ D ,DIAL ,PERIOD>
 	 <COND (<EQUAL? .CONTEXT ,M-OBJDESC>
 		<TELL "A long metal " D ,LEVER>
 		<SAY-LEVER>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>		
+		<RTRUE>)>>
 
 <ROUTINE SAY-LEVER ()
 	 <TELL " stands ">
@@ -1957,9 +1833,7 @@ D ,DIAL ,PERIOD>
 		<RTRUE>)
 	       (<VERB? LAMP-ON LAMP-OFF OPEN CLOSE OPEN-WITH>
 		<HOW?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>> 
+		<RTRUE>)>>
 
 <ROUTINE LOWER-LEVER ()
 	 <SETG SUN-MOVING? <>>
@@ -1974,31 +1848,26 @@ D ,DIAL ,PERIOD>
 	 <RTRUE>>
 
 <ROUTINE SAY-GRIND (STR)
-	 <TELL " the " D ,LEVER 
+	 <TELL " the " D ,LEVER
 " you hear a loud, mechanical groan below your feet. The " D ,FLOOR
 " lurches and " .STR
 "; you feel a momentary dizziness, and a brief gust of wind">
-	 <ALL-IS-STILL>
-	 <RTRUE>>
+	 <ALL-IS-STILL>>
 
 <ROUTINE ALL-IS-STILL ()
 	 <TELL ". Then ">
 	 <COND (<PROB 50>
-		<TELL "everything is quiet." CR>
-		<RTRUE>)>
-	 <TELL "all is still." CR>
-	 <RTRUE>>
+		<TELL "everything is quiet." CR>)
+	       (T <TELL "all is still." CR>)>>
 
 <ROUTINE LEVER-MOVED (STR)
 	 <TELL CTHE ,LEVER " is moved " .STR
-	       " as far as it can go." CR>
-	 <RTRUE>>
+	       " as far as it can go." CR>>
 
 <ROUTINE CANT-PRSA-LEVER ()
 	 <PRINT ,CANT>
-         <PRINTB ,P-PRSA-WORD>
-	 <TELL " the " D ,LEVER>
-	 <RTRUE>>
+	 <PRINTB ,P-PRSA-WORD>
+	 <TELL " the " D ,LEVER>>
 
 <OBJECT BEDS
 	(LOC FLOWER-WALK)
@@ -2035,27 +1904,21 @@ D ,DIAL ,PERIOD>
 		<RTRUE>)
 	       (<VERB? SMELL>
 		<SMELL-FLOWERS>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE LOOK-IN-BEDS ()
 	 <TELL "You can see ">
 	 <PRINT-CONTENTS ,BEDS>
-	 <TELL " half-hidden among the blossoms." CR>
-	 <RTRUE>>
+	 <TELL " half-hidden among the blossoms." CR>>
 
 <ROUTINE SMELL-FLOWERS ()
-	 <TELL "The air is filled with a delicate fragrance." CR>
-	 <RTRUE>>
+	 <TELL "The air is filled with a delicate fragrance." CR>>
 
 <ROUTINE UNTIDY-BEDS ()
-	 <TELL "That would make the " D ,BEDS " appear most untidy." CR>
-	 <RTRUE>>
+	 <TELL "That would make the " D ,BEDS " appear most untidy." CR>>
 
 <ROUTINE LOVELY ()
-	 <TELL CTHE ,FLOWERS " are lovely to behold." CR>
-	 <RTRUE>>
+	 <TELL CTHE ,FLOWERS " are lovely to behold." CR>>
 
 <OBJECT FLOWERS
 	(LOC LOCAL-GLOBALS)
@@ -2086,9 +1949,7 @@ D ,DIAL ,PERIOD>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,HURTVERBS ,NHVERBS>
 		<UNTIDY-BEDS>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>  
+		<RTRUE>)>>
 
 <OBJECT THICKET
 	(LOC WABE)
@@ -2100,7 +1961,7 @@ D ,DIAL ,PERIOD>
 
 <ROUTINE THICKET-F ()
 	 <COND (<VERB? EXAMINE LOOK-INSIDE LOOK-DOWN SEARCH LOOK>
-		<TELL "The surrounding " D ,PRSO 
+		<TELL "The surrounding " D ,PRSO
 		      " is dense and full of thorns." CR>
 		<RTRUE>)
 	       (<EXITING?>
@@ -2114,10 +1975,8 @@ D ,DIAL ,PERIOD>
 	       (<AND <THIS-PRSO?>
 		     <INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>>
 		<IMPOSSIBLE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		       
+		<RTRUE>)>>
+
 <OBJECT CLEARING
 	(LOC WABE)
 	(DESC "clearing")
@@ -2133,10 +1992,8 @@ D ,DIAL ,PERIOD>
 		<LOOK-UNDER-DIAL>
 		<RTRUE>)
 	       (<HERE-F>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-	       
+		<RTRUE>)>>
+
 <OBJECT MEMORIAL
 	(LOC GLOBAL-OBJECTS)
 	(DESC "Albert Memorial")
@@ -2168,10 +2025,8 @@ D ,DIAL ,PERIOD>
 		<RTRUE>)
 	       (<EXITING?>
 		<WHICH-WAY-OUT>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		 
+		<RTRUE>)>>
+
 <OBJECT BWALK
 	(LOC GLOBAL-OBJECTS)
 	(DESC "Broad Walk")
@@ -2187,10 +2042,8 @@ D ,DIAL ,PERIOD>
 		<RFATAL>)
 	       (<HANDLE-PLACE? ,BROAD-WALK ,LION-GATE ,ROUND-POND
 			       ,PAL-GATE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		      
+		<RTRUE>)>>
+
 <OBJECT VICTORIA
 	(LOC BROAD-WALK)
 	(DESC "statue of Queen Victoria")
@@ -2201,17 +2054,14 @@ D ,DIAL ,PERIOD>
 
 <ROUTINE VICTORIA-F ()
 	 <COND (<VERB? EXAMINE>
-		<TELL "She wasn't much to look at." CR>
-		<RTRUE>)
+		<TELL "She wasn't much to look at." CR>)
 	       (<ENTERING?>
 		<DO-WALK ,P?WEST>
 		<RTRUE>)
 	       (<GETTING-INTO?>
 		<TOURISTS-SNICKER>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		       		       
+		<RTRUE>)>>
+
 <OBJECT BAG
 	(DESC "bag of crumbs")
 	(FLAGS FOODBIT TAKEABLE CONTAINER OPENABLE OPENED BUYABLE)
@@ -2227,7 +2077,7 @@ D ,DIAL ,PERIOD>
 "SEEN = seen by roadrunner."
 
 <GLOBAL CCNT:NUMBER 5> "# handfuls of crumbs left in BAG"
-<GLOBAL APPETITE:NUMBER 0> "Meep takes 4 moves to eat entire bag." 
+<GLOBAL APPETITE:NUMBER 0> "Meep takes 4 moves to eat entire bag."
 
 <ROUTINE SAID-CRUMBS? ()
 	 <COND (<NOT <IN? ,BAG ,PLAYER>>
@@ -2242,16 +2092,12 @@ D ,DIAL ,PERIOD>
 		<RFALSE>)
 	       (<OR <NOUN-USED? ,W?CRUMBS ,W?BREAD ,W?HANDFUL>
 		    <NOUN-USED? ,W?FEED ,W?BIRDFEED ,W?FOOD>>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE CRUMBS? (X)
 	 <COND (<OR <EQUAL? .X ,W?CRUMBS ,W?BREAD ,W?HANDFUL>
 		    <EQUAL? .X ,W?FEED ,W?BIRDFEED ,W?FOOD>>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE BAG-F ()
 	 <COND (<THIS-PRSI?>
@@ -2285,7 +2131,7 @@ D ,DIAL ,PERIOD>
 		       <IMPOSSIBLE>
 		       <RTRUE>)
 		      (<PRSI? POCKET>
-		       <TELL "You try to empty the " D ,PRSO " into " 
+		       <TELL "You try to empty the " D ,PRSO " into "
 D ,POCKET ", but crumbs pile up around the edges">
 		       <DROP-CRUMBS>
 		       <RTRUE>)
@@ -2295,10 +2141,10 @@ D ,POCKET ", but crumbs pile up around the edges">
 		      (<OR <PRSI? GROUND FLOOR>
 			   <IS? ,PRSI ,SURFACE>
 			   <AND <IS? ,PRSI ,CONTAINER>
-			        <IS? ,PRSI ,OPENED>>>
+				<IS? ,PRSI ,OPENED>>>
 		       <EMPTY-OUT-BAG>
 		       <RTRUE>)>
-	        <RFALSE>)
+		<RFALSE>)
 	       (<VERB? EMPTY POUR>
 		<COND (<DONT-HAVE? ,PRSO>
 		       <RTRUE>)>
@@ -2343,7 +2189,7 @@ D ,POCKET ", but crumbs pile up around the edges">
 		       <PRINT ,PERIOD>
 		       <COND (<NOT <IS? ,RUBY ,SEEN>>
 		       	      <GET-RUBY>
-		       	      <TELL CR 
+		       	      <TELL CR
 "As you munch the bread, your teeth clamp down on something hard. Ouch! You spit out the particle with a muffled curse.|
 |
 A brilliant ruby lands ">
@@ -2366,36 +2212,29 @@ A brilliant ruby lands ">
 		       <SAY-DROPPED>
 		       <COND (<IS? ,HERE ,WINDY>
 		       	      <CRLF>
-			      <PIGEONS-EAT-BAG>)>)> 
+			      <PIGEONS-EAT-BAG>)>)>
 		<RTRUE>)
 	       (<DO-BAG?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE DO-BAG? ()
 	 <COND (<AND <VERB? FILL>
 		     <IS? ,PRSI ,WATERY>>
-		<TELL CTHEO 
-" would get all soggy if you tried that." CR>
-		<RTRUE>)
+		<TELL CTHEO
+" would get all soggy if you tried that." CR>)
 	       (<VERB? CLOSE>
-		<TELL CTHEO " refuses to stay closed." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<TELL CTHEO " refuses to stay closed." CR>)>>
 
 <ROUTINE LOOK-ON-HUNGRY (OBJ)
 	 <TELL ,PTHE D .OBJ " look">
 	 <COND (<NOT <IS? .OBJ ,PLURAL>>
 		<TELL "s">)>
-	 <TELL " on hungrily">
-	 <RTRUE>>
+	 <TELL " on hungrily">>
 
 <ROUTINE PIGEONS-EAT-BAG ()
 	 <EMPTY-BAG>
 	 <SETG P-THEM-OBJECT ,PIGEONS>
-	 <TELL CTHE ,PIGEONS 
+	 <TELL CTHE ,PIGEONS
 " flock eagerly around the bag. Soon the bread crumbs are history." CR>
 	 <COND (<NOT <IS? ,RUBY ,SEEN>>
 		<GET-RUBY>
@@ -2408,13 +2247,11 @@ A brilliant ruby lands ">
 	 <COND (<IS? ,RUBY ,SEEN>
 		<RTRUE>)>
 	 <GET-RUBY>
-	 <TELL CR 
-"As you rummage through the crumbs, your fingers brush against something solid. A brilliant ruby slips out of the bag and falls to the ground." CR>
-	 <RTRUE>>
+	 <TELL CR
+"As you rummage through the crumbs, your fingers brush against something solid. A brilliant ruby slips out of the bag and falls to the ground." CR>>
 
 <ROUTINE EMPTY-PRSO-FIRST ()
-	 <TELL "Maybe you should empty the " D ,PRSO " first." CR>
-	 <RTRUE>>
+	 <TELL "Maybe you should empty the " D ,PRSO " first." CR>>
 
 <ROUTINE CRUMBS-INTO-PRAM ()
 	 <COND (<NOT <IS? ,PRSI ,OPENED>>
@@ -2433,12 +2270,11 @@ In moments, the pram is covered with greedy " D ,PIGEONS
 	 <GET-RUBY T>
 	 <TELL "As you brush the last few " D ,PIGEONS " off the pram ">
 	 <NOTICE-RUBY>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <ROUTINE SAY-CRUMBS-FALL ()
 	 <EMPTY-BAG>
-	 <TELL "Bread crumbs fall out of the bag">
-	 <RTRUE>>
+	 <TELL "Bread crumbs fall out of the bag">>
 
 <ROUTINE EMPTY-OUT-BAG ()
 	 <SAY-CRUMBS-FALL>
@@ -2456,11 +2292,10 @@ In moments, the pram is covered with greedy " D ,PIGEONS
 		      (T
 		       <TELL "several">)>
 		<TELL " handfuls">)>
-	 <TELL " left in the " D ,BAG ,PERIOD>
-	 <RTRUE>>
+	 <TELL " left in the " D ,BAG ,PERIOD>>
 
 <ROUTINE EMPTY-BAG ()
-         <SETG APPETITE 0>
+	 <SETG APPETITE 0>
 	 <MOVE ,EBAG <LOC ,BAG>>
 	 <REMOVE ,BAG>
 	 <SETG CCNT 0>
@@ -2475,8 +2310,7 @@ In moments, the pram is covered with greedy " D ,PIGEONS
 		<TELL "the last ">)
 	       (T
 		<TELL "a ">)>
-	 <TELL "handful of crumbs">
-	 <RTRUE>>
+	 <TELL "handful of crumbs">>
 
 <ROUTINE TAKE-CRUMBS ()
 	 <TELL "You take ">
@@ -2485,7 +2319,7 @@ In moments, the pram is covered with greedy " D ,PIGEONS
 	 <COND (<AND <VERB? PUT PUT-ON THROW THROW-OVER PUT-UNDER
 			    PUT-BEHIND>
 		     <PRSO? BAG>>
-	        <TELL "But before you can ">
+		<TELL "But before you can ">
 		<COND (<VERB? PUT PUT-ON PUT-UNDER PUT-BEHIND>
 		       <TELL "put them ">
 		       <COND (<VERB? PUT>
@@ -2525,7 +2359,7 @@ In moments, the pram is covered with greedy " D ,PIGEONS
 		       <REMOVE ,EBAG>
 		       <UNMAKE ,EBAG ,TOUCHED>
 		       <SETG P-IT-OBJECT ,BAG>)>
-	        <INC CCNT>
+		<INC CCNT>
 		<TELL "jiggle around inside the " D ,FILM
 		      " until you scoop them all up with the bag." CR>
 		<RTRUE>)
@@ -2543,7 +2377,7 @@ In moments, the pram is covered with greedy " D ,PIGEONS
 		      (T
 		       <TELL D ,GROUND>)>)>
 	 <COND (<NOT <IS? ,RUBY ,SEEN>>
-		<GET-RUBY>		
+		<GET-RUBY>
 		<TELL ".|
 |
 As the ">
@@ -2590,12 +2424,10 @@ The ruby ">
 		<TELL "at your feet">)
 	       (T
 		<TELL "on the ground">)>
-	 <TELL " is bigger than a walnut, with finely cut facets that sparkle with crimson fire. It must have been in the " D ,BAG ,PERIOD>
-	 <RTRUE>>
+	 <TELL " is bigger than a walnut, with finely cut facets that sparkle with crimson fire. It must have been in the " D ,BAG ,PERIOD>>
 
 <ROUTINE FEEL-STALE ()
-	 <TELL "The crumbs feel dry and stale." CR>
-	 <RTRUE>>
+	 <TELL "The crumbs feel dry and stale." CR>>
 
 <OBJECT EBAG
 	(DESC "paper bag")
@@ -2606,7 +2438,7 @@ The ruby ">
 	(SIZE 3)
 	(MASS 1)
 	(VALUE 0)
-        (GENERIC GENERIC-BAG-F)
+	(GENERIC GENERIC-BAG-F)
 	(ACTION EBAG-F)>
 
 "TOUCHED = BAG emptied."
@@ -2620,16 +2452,14 @@ The ruby ">
 	(SIZE 3)
 	(MASS 1)
 	(VALUE 0)
-        (GENERIC GENERIC-BAG-F)
+	(GENERIC GENERIC-BAG-F)
 	(CONTFCN IN-EBAG)
 	(ACTION EBAG-F)>
 
 <ROUTINE IN-EBAG ("OPTIONAL" (CONTEXT <>))
 	 <COND (<AND <EQUAL? .CONTEXT ,M-CONT>
 		     <TAKE-OUT-EBAG?>>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>	 
+		<RTRUE>)>>
 
 <ROUTINE TAKE-OUT-EBAG? ("AUX" L)
 	 <SET L <LOC ,EBAG>>
@@ -2637,8 +2467,7 @@ The ruby ">
 		<YOUD-HAVE-TO "take out" ,EBAG>
 	      ; <TELL "You'd have to take the " D ,EBAG
 	       	      " out of " THE .L " first." CR>
-		<RTRUE>)>
-	 <RFALSE>>
+		<RTRUE>)>>
 
 <ROUTINE EBAG-F ()
 	 <COND (<SAID-CRUMBS?>
@@ -2657,9 +2486,7 @@ The ruby ">
 		<WASTE-OF-TIME>
 		<RTRUE>)
 	       (<DO-BAG?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT GBAG
 	(LOC BWOMAN)
@@ -2688,15 +2515,12 @@ The ruby ">
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		<NO-TOUCHIN>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE NO-TOUCHIN ()
 	 <MAKE ,BWOMAN ,SEEN>
-	 <TELL 
-"The woman slaps " D ,HANDS " away. \"No touchin' the merchandise!\"" CR>
-	 <RTRUE>>
+	 <TELL
+"The woman slaps " D ,HANDS " away. \"No touchin' the merchandise!\"" CR>>
 
 <ROUTINE GENERIC-BAG-F (TBL)
 	 <COND (<IS? ,EBAG ,TOUCHED>
@@ -2705,15 +2529,13 @@ The ruby ">
 
 <ROUTINE TRY-BUY ()
 	 <COND (<NOT <HERE? BROAD-WALK>>
-		<TELL "There's nobody here to sell you any." CR>
-		<RTRUE>)
+		<TELL "There's nobody here to sell you any." CR>)
 	       (<PRSI? COIN SCOIN CREDIT-CARD>
 		<PERFORM ,V?GIVE ,PRSI ,BWOMAN>
 		<RTRUE>)
 	       (<T? ,PRSI>
 		<MAKE ,BWOMAN ,SEEN>
-		<TELL CTHE ,BWOMAN " scowls. \"I ain't no pawn shop!\"" CR>
-		<RTRUE>)
+		<TELL CTHE ,BWOMAN " scowls. \"I ain't no pawn shop!\"" CR>)
 	       (<GOT? ,COIN>
 		<BUY-WITH ,COIN>
 		<RTRUE>)
@@ -2764,20 +2586,14 @@ The ruby ">
 		<MAKE ,PRSO ,TOUCHED>
 		<TELL "As you reach down to touch the ruby, ">
 		<MEEP-GETS-RUBY>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>	
-		
+		<RTRUE>)>>
+
 <ROUTINE TRUBY-F ()
 	 <COND (<VERB? EXAMINE LOOK-INSIDE>
-		<SPARKLE-WITH "crimson">
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<SPARKLE-WITH "crimson">)>>
 
 <ROUTINE SPARKLE-WITH (STR)
-	 <TELL "Its finely cut edges sparkle with " .STR " fire." CR>
-	 <RTRUE>>
+	 <TELL "Its finely cut edges sparkle with " .STR " fire." CR>>
 
 <OBJECT EMERALD
 	(DESC "emerald")
@@ -2791,11 +2607,8 @@ The ruby ">
 
 <ROUTINE EMERALD-F ()
 	 <COND (<VERB? EXAMINE LOOK-INSIDE>
-		<SPARKLE-WITH "green">
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		       		
+		<SPARKLE-WITH "green">)>>
+
 <OBJECT GPRAM
 	(LOC LOCAL-GLOBALS)
 	(DESC "perambulators")
@@ -2810,9 +2623,7 @@ The ruby ">
 		<TELL "They're probably full of British babies." CR>
 		<RTRUE>)
 	       (<HANDLE-BABES?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE GENERIC-PRAM-F (TABLE)
 	 <RETURN ,PRAM>>
@@ -2820,14 +2631,14 @@ The ruby ">
 <OBJECT PRAM
 	(LOC LION-GATE)
 	(DESC "perambulator")
-        (FLAGS TRYTAKE CONTAINER OPENABLE)
+	(FLAGS TRYTAKE CONTAINER OPENABLE)
 	(SYNONYM PERAMBULA PRAM CARRIAGE WHEELS BUGGY STROLLER)
 	(ADJECTIVE BABY)
 	(CAPACITY 30)
 	(DESCFCN DESCRIBE-PRAM)
 	(GENERIC GENERIC-PRAM-F)
 	(ACTION PRAM-F)>
-		
+
 <ROUTINE DESCRIBE-PRAM ("OPTIONAL" (CONTEXT <>))
 	 <COND (<NOT <EQUAL? .CONTEXT ,M-OBJDESC>>
 		<RFALSE>)>
@@ -2836,8 +2647,7 @@ The ruby ">
 		     <IS? ,PRAM ,OPENED>>
 		<TELL ". Inside it you see ">
 		<PRINT-CONTENTS ,PRAM>)>
-	 <TELL ".">
-	 <RTRUE>>
+	 <TELL ".">>
 
 <GLOBAL IN-PRAM?:FLAG <>>
 
@@ -2855,9 +2665,9 @@ The ruby ">
 		     <T? ,IN-PRAM?>>
 		<TELL "Aside from " D ,ME ", you see ">
 		<PRINT-CONTENTS ,PRAM>
-	        <TELL " in the " D ,PRAM ,PERIOD>
+		<TELL " in the " D ,PRAM ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<VERB? ENTER CLIMB-ON SIT LIE-DOWN CLIMB-UP STAND-ON STAND>
 		<COND (<AND <T? ,IN-PRAM?>
 			    <NOT <VERB? STAND-ON STAND>>>
@@ -2868,22 +2678,22 @@ The ruby ">
 		       <RTRUE>)
 		      (<VERB? STAND-ON STAND>
 		       <COND (<ZERO? ,IN-PRAM?>
-			      <TELL "You clamber into the " D ,PRSO 
+			      <TELL "You clamber into the " D ,PRSO
 " and slowly rise to your feet, knees wobbling">)
 			     (T
 			      <SETG OLD-HERE <>>
 		       	      <SETG IN-PRAM? <>>
 		       	      <UNMAKE ,PRSO ,NODESC>
-			      <TELL 
+			      <TELL
 "With wobbling knees, you slowly rise to your feet">)>
 		       <TELL ,PCR>
 		       <ITALICIZE "Crash!">
-		       <TELL 
+		       <TELL
 " The pram skitters away and deposits you on the ground">
 		       <COND (<AND <ZERO? ,RAID?>
 				   <NOT <HERE? WABE>>>
 			      <TELL ", much to the amusement of passersby">)>
-		       <TELL 
+		       <TELL
 ".|
 |
 With as much dignity as possible, you rise to your feet and discipline the pram with an angry kick." CR>
@@ -2900,12 +2710,12 @@ With as much dignity as possible, you rise to your feet and discipline the pram 
 		       <TELL "With great difficulty, ">
 		       <COND (<AND <ZERO? ,RAID?>
 				   <NOT <HERE? WABE>>>
-		              <TELL
+			      <TELL
 "and much to the amusement of passersby, ">)>
 		       <TELL "you jam yourself into the unfortunate "
 			     D ,PRSO ,PERIOD>)>
 		<RTRUE>)
-	       
+
 	       (<OR <EXITING?>
 		    <VERB? CLIMB-DOWN LEAP>>
 		<COND (<ZERO? ,IN-PRAM?>
@@ -2923,7 +2733,7 @@ With as much dignity as possible, you rise to your feet and discipline the pram 
 			   <AND <PRSI? GRPOND>
 				<HERE? BROAD-WALK>>>
 		       <DO-WALK ,P?EAST>
-		       <RTRUE>)		      
+		       <RTRUE>)
 		      (<PRSI? INTDIR>
 		       <MOVE ,PRSO ,PLAYER>
 		       <DO-WALK ,P-DIRECTION>
@@ -2950,8 +2760,7 @@ With as much dignity as possible, you rise to your feet and discipline the pram 
 		<RTRUE>)
 	       (<AND <VERB? CLOSE>
 		     <T? ,IN-PRAM?>>
-		<CANT-WHILE-IN-PRAM>
-		<RTRUE>)
+		<CANT-WHILE-IN-PRAM>)
 	       (<AND <VERB? KICK SHAKE RAPE>
 		     <ZERO? ,IN-PRAM?>
 		     <NOT <HERE? WABE>>>
@@ -2959,14 +2768,10 @@ With as much dignity as possible, you rise to your feet and discipline the pram 
 		       <TELL "Pass">)
 		      (T
 		       <TELL "Flee">)>
-		<TELL "ing " D ,NANNIES " look on in horror." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		       
+		<TELL "ing " D ,NANNIES " look on in horror." CR>)>>
+
 <ROUTINE CANT-WHILE-IN-PRAM ()
-	 <TELL "That'd be easier to do if you got out of the pram first." CR>
-	 <RTRUE>>
+	 <TELL "That'd be easier to do if you got out of the pram first." CR>>
 
 <OBJECT BPRAM
 	(LOC LONG-WATER)
@@ -2985,25 +2790,18 @@ With as much dignity as possible, you rise to your feet and discipline the pram 
 		<RFALSE>)
 	       (<VERB? EXAMINE>
 		<TELL CTHE ,PRAM
-" is lying on its side, bent and useless." CR>
-		<RTRUE>)
+" is lying on its side, bent and useless." CR>)
 	       (<VERB? TAKE RAISE>
 		<TELL CTHEO
-" topples over on its side again. It's quite useless." CR>
-		<RTRUE>)
+" topples over on its side again. It's quite useless." CR>)
 	       (<VERB? PUSH-TO MOVE PULL PUSH>
-		<TELL CTHEO 
-"'s days of carefree rolling are over." CR>
-		<RTRUE>)
+		<TELL CTHEO
+"'s days of carefree rolling are over." CR>)
 	       (<VERB? OPEN OPEN-WITH CLOSE>
 		<TELL "The top of the " D ,PRAM
-		      " is hopelessly broken." CR>
-		<RTRUE>)
+		      " is hopelessly broken." CR>)
 	       (<VERB? ENTER CLIMB-ON SIT LIE-DOWN CLIMB-UP STAND-ON STAND>
-		<TELL CTHEO " would never support you now." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>		      
+		<TELL CTHEO " would never support you now." CR>)>>
 
 <OBJECT NOTICE
 	(LOC LAN-WALK)
@@ -3021,17 +2819,14 @@ With as much dignity as possible, you rise to your feet and discipline the pram 
 		<MAKE ,NOTICE ,TOUCHED>
 		<TELL "The words ">
 		<ITALICIZE "Do Not Walk On The Grass">
-		<TELL " are sternly printed on the " D ,NOTICE ,PERIOD>
-		<RTRUE>)
+		<TELL " are sternly printed on the " D ,NOTICE ,PERIOD>)
 	       (<OR <INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		    <ENTERING?>>
 		<COND (<IS? ,NOTICE ,TOUCHED>
 		       <GRASS-STOPS-YOU "As you approach the notice">
 		       <RFATAL>)>
 		<READ-NOTICE-FIRST>
-		<RFATAL>)
-	       (T
-	       	<RFALSE>)>>
+		<RFATAL>)>>
 
 <OBJECT GRASS
 	(LOC LOCAL-GLOBALS)
@@ -3065,8 +2860,7 @@ You hear a mutter of sinister little " D ,VOICES
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-ON LOOK-INSIDE SEARCH>
-		<TELL "It seems innocent enough." CR>
-		<RTRUE>)
+		<TELL "It seems innocent enough." CR>)
 	       (<VERB? CROSS CLIMB-ON ENTER WALK-TO CLIMB-OVER
 		       STAND-ON SIT LIE-DOWN LEAP THROUGH WALK-AROUND>
 		<COND (<IS? ,NOTICE ,TOUCHED>
@@ -3077,7 +2871,7 @@ You hear a mutter of sinister little " D ,VOICES
 	       (<AND <EQUAL? ,PRSI <> ,HANDS>
 		     <VERB? TAKE TOUCH CUT RIP MOVE PULL LOOSEN DIG
 			    LOOK-UNDER SQUEEZE MUNG HIT SHAKE REACH-IN PICK
-			    PLAY KISS KICK>> 
+			    PLAY KISS KICK>>
 		<COND (<IS? ,NOTICE ,TOUCHED>
 		       <GRASS-STOPS-YOU "As you bend to touch the grass">
 		       <RFATAL>)>
@@ -3088,21 +2882,18 @@ You hear a mutter of sinister little " D ,VOICES
 		<UNMAKE ,PRSO ,CHILLY>
 		<TELL
 "You hear tiny " D ,VOICES " giggling \"Shh! Shh! Quiet!\" for a moment">
-		<ALL-IS-STILL>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-	        
+		<ALL-IS-STILL>)>>
+
 <ROUTINE GRASS-STOPS-YOU (STR "OPTIONAL" (UMB? <>))
 	 <MAKE ,GRASS ,CHILLY>
 	 <COND (<NOT <IS? ,GRASS ,TOUCHED>>
 		<MAKE ,GRASS ,TOUCHED>
 		<TELL .STR " you sense a strange motion around you. Looking down, you watch with horror as the "
 D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
-	 <TELL 
+	 <TELL
 "Angry green stalks whip around your legs, pull you to the ground and drag you, kicking and screaming, back to the paved " D ,CSURFACE
-" of the " D ,LNWALK ,PCR 
-"A chorus of offended little " D ,VOICES 
+" of the " D ,LNWALK ,PCR
+"A chorus of offended little " D ,VOICES
 " subsides as you regain your footing">
 	 <COND (<OR <T? .UMB?>
 		    <AND <HELD? ,PARASOL>
@@ -3127,20 +2918,16 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 	 <COND (<VERB? EXAMINE LOOK-ON READ>
 		<TELL "According to a plaque, the " D ,PRSO " is called ">
 		<ITALICIZE "Physical Energy.">
-		<CRLF>
-		<RTRUE>)
+		<CRLF>)
 	       (<GETTING-INTO?>
-		<TELL CTHE ,ENERGY "'s design would make that difficult." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		  
+		<TELL CTHE ,ENERGY "'s design would make that difficult." CR>)>>
+
 <OBJECT BALL
-        (LOC BEDS)
+	(LOC BEDS)
 	(DESC "soccer ball")
 	(FLAGS TAKEABLE)
-        (SYNONYM BALL FOOTBALL)
-        (ADJECTIVE ABANDONED SOCCER FOOT)
+	(SYNONYM BALL FOOTBALL)
+	(ADJECTIVE ABANDONED SOCCER FOOT)
 	(SIZE 7)
 	(MASS 5)
 	(VALUE 1)
@@ -3159,7 +2946,7 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		     	    <VERB? HIT LOOSEN TAKE TAKE-WITH TOUCH
 				   TOUCH-TO SHAKE>>
 		       <NICE-TRY>
-	               <RTRUE>)
+		       <RTRUE>)
 	       	      (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		       <CANT-REACH ,BALL>
 		       <RTRUE>)>
@@ -3175,11 +2962,8 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		       <TELL "there's nobody here ">)
 		      (T
 		       <TELL "nobody stops ">)>
-		<TELL "to admire your athletic prowess." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-	       
+		<TELL "to admire your athletic prowess." CR>)>>
+
 <OBJECT PARASOL
 	(LOC JWOMAN)
 	(DESC "umbrella")
@@ -3201,8 +2985,12 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		    <ADJ-USED? ,W?PARROT\'S>>
 		<COND (<VERB? EXAMINE LOOK-ON>
 		       <TELL "The parrot's head stares back at you." CR>
+		       <RTRUE>)
+		      (<VERB? TAKE MOVE PULL>
+		       <TELL "The handle is ">
+		       <ATTACHED-TO>
 		       <RTRUE>)>
-		<USELESS>
+		<YOU-DONT-NEED "umbrella's handle" T>
 		<RTRUE>)
 	       (<THIS-PRSI?>
 		<COND (<VERB? THROW THROW-OVER>
@@ -3213,7 +3001,7 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		       <TELL CTHEO " glances off the " D ,PRSI " and ">
 		       <LANDS-AT-YOUR-FEET>
 		       <COND (<IN? ,PRSI ,TREE>
-		       	      <TELL CR CTHEI 
+		       	      <TELL CR CTHEI
 			       " teeters uncertainly for a moment." CR>)>
 		       <RTRUE>)
 		      (<VERB? PUT PUT-ON>
@@ -3221,7 +3009,7 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		       	      <CANT-REACH ,PRSI>
 		       	      <RTRUE>)>
 		       <PRSO-SLIDES-OFF-PRSI>
-		       <RTRUE>)> 
+		       <RTRUE>)>
 		<RFALSE>)
 	       (<AND <VERB? FILL>
 		     <IS? ,PRSI ,WATERY>>
@@ -3237,7 +3025,7 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		<TELL "The">
 		<OPEN-CLOSED ,PRSO>
 		<COND (<IN? ,PRSO ,TREE>
-		       <TELL 
+		       <TELL
 " dangles in the tree overhead, high out of reach. It">)
 		      (T
 		       <TELL "'">)>
@@ -3247,7 +3035,7 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		       <READ-SLOGAN>
 		       <RTRUE>)>
 		<PRINT ,PERIOD>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<VERB? READ LOOK-ON>
 		<COND (<IN? ,PRSO ,TREE>
 		       <CANT-FROM-HERE>
@@ -3257,13 +3045,13 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		       <READ-SLOGAN>
 		       <RTRUE>)>
 		<YOUD-HAVE-TO "open" ,PRSO>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<IN? ,PRSO ,TREE>
 		<COND (<AND <T? ,PRSI>
 		     	    <VERB? HIT LOOSEN TAKE TAKE-WITH TOUCH
 				   TOUCH-TO SHAKE>>
 		       <NICE-TRY>
-	               <RTRUE>)
+		       <RTRUE>)
 		      (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		       <CANT-REACH ,PARASOL>
 		       <RTRUE>)>
@@ -3275,7 +3063,7 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		       <TELL "As you pick up the " D ,PRSO
 " and smooth the wrinkles, you notice a touristy slogan printed around the outside: \"" ,ALLPRAMS "\"" CR>
 		       <UPDATE-SCORE 5>)>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<VERB? STAND-UNDER>
 		<COND (<NOT <IN? ,PARASOL ,PLAYER>>
 		       <YOUD-HAVE-TO "be holding" ,PRSO>
@@ -3285,7 +3073,7 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		       <RTRUE>)
 		      (T
 		       <ALREADY-DOING-THAT>)>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<AND <VERB? OPEN OPEN-WITH UNFOLD>
 		     <EQUAL? ,PRSI <> ,HANDS>>
 		<COND (<DONT-HAVE? ,PRSO>
@@ -3309,11 +3097,11 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		       <RTRUE>)
 		      (<NOT <IS? ,HERE ,WINDY>>
 		       <RFALSE>)>
-		
+
 		<TELL "The ">
 		<SAY-WIND>
 		<TELL " fills the " D ,PRSO " the moment you open it. You">
-		
+
 		<COND (<ZERO? ,IN-PRAM?>
 		       <TELL "'">)
 		      (T
@@ -3328,11 +3116,11 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		<COND (<HERE? LAN-GATE LION-GATE AT-TERRACE>
 		       <COND (<AND <HERE? LION-GATE AT-TERRACE>
 				   <IS? ,WWIND ,SEEN>>
-		              <COND (<HERE? LION-GATE>
+			      <COND (<HERE? LION-GATE>
 				     <TELL " past " D ,TERRACE>)>
 			      <SETG HERE ,LAN-GATE>
-		              <MOVE ,PLAYER ,HERE>
-		              <TELL " to the " D ,LGATE ", where">)
+			      <MOVE ,PLAYER ,HERE>
+			      <TELL " to the " D ,LGATE ", where">)
 			     (<AND <HERE? LAN-GATE AT-TERRACE>
 				   <IS? ,EWIND ,SEEN>>
 			      <COND (<HERE? LAN-GATE>
@@ -3344,10 +3132,10 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 			      <TELL " until">)>
 		       <TELL " you collide with a crowd of ">
 		       <SAY-TOURISTS>)
-		      
+
 		      (<HERE? WABE>
 		       <TELL " until you plow into the " D ,THICKET>)
-		      
+
 		      (<HERE? PAL-GATE FLOWER-WALK>
 		       <COND (<AND <HERE? PAL-GATE>
 				   <IS? ,WWIND ,SEEN>>
@@ -3366,17 +3154,17 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 			      <TELL D ,BEDS>)
 			     (T
 			      <SAY-TOURISTS>)>)
-		      
-		      (<IS? ,WWIND ,SEEN> 
+
+		      (<IS? ,WWIND ,SEEN>
 		       <COND (<HERE? BROAD-WALK ROUND-POND>
 			      <COND (<HERE? BROAD-WALK>
 				     <TELL " past the " D ,RPOND>)>
 			      <COND (<ZERO? ,IN-PRAM?>
 				     <SETG HERE ,LAN-WALK>
-		                     <MOVE ,PLAYER ,HERE>)>
-			      <TELL " to the " D ,LNWALK 
+				     <MOVE ,PLAYER ,HERE>)>
+			      <TELL " to the " D ,LNWALK
 				    ", where you roll">)>
-		       
+
 		       <TELL " onto the " D ,GRASS ,PCR>
 		       <COND (<T? ,IN-PRAM?>
 			      <GO-TO-LONG-WATER>
@@ -3391,12 +3179,12 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 			      <COND (<HERE? LAN-WALK>
 				     <TELL " past the " D ,RPOND>)>
 			      <SETG HERE ,BROAD-WALK>
-		              <MOVE ,PLAYER ,HERE>
+			      <MOVE ,PLAYER ,HERE>
 			      <TELL " to the " D ,BROAD-WALK ", where">)
 			     (T
 			      <TELL " until">)>
 		       <TELL " you careen into the " D ,VICTORIA>)>
-		
+
 		<COND (<T? ,IN-PRAM?>
 		       <SETG OLD-HERE <>>
 		       <SETG IN-PRAM? <>>
@@ -3415,11 +3203,7 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 		       <RTRUE>)
 		      (<NOT <IS? ,PRSO ,OPENED>>
 		       <ITS-ALREADY "closed">
-		       <RTRUE>)
-		      (T
-		       <RFALSE>)>)     
-	       (T
-		<RFALSE>)>>
+		       <RTRUE>)>)>>
 
 <ROUTINE READ-SLOGAN ()
        ; <MAKE ,PRSO ,SEEN>
@@ -3427,9 +3211,8 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 	 <COND (<IS? ,PRSO ,FLIPPED>
 		<TELL "snedraG notgnisneK eht ot dael smarp llA">)
 	       (T
-	        <TELL "All prams lead to the " D ,GARDENS>)>
-	 <TELL "\" is printed around the outside." CR>
-	 <RTRUE>>
+		<TELL "All prams lead to the " D ,GARDENS>)>
+	 <TELL "\" is printed around the outside." CR>>
 
 <ROUTINE TREE-SWITCH ()
 	 <MOVE ,PRSO ,TREE>
@@ -3437,10 +3220,10 @@ D ,GRASS " begins to ripple and writhe with vegetable indignance!" CR CR>)>
 	 <MOVE ,PRSI ,LAN-GATE>
 	 <UNMAKE ,PRSI ,NODESC>
 	 <SETG P-IT-OBJECT ,PRSI>
-	 <TELL CTHEO 
+	 <TELL CTHEO
 " lodges itself in the tree beside the " D ,PRSI ".|
 |
-The " D ,PRSI 
+The " D ,PRSI
 " teeters uncertainly for a moment, then tumbles out of the tree and lands at your feet." CR>
 	 <RTRUE>>
 
@@ -3450,8 +3233,7 @@ The " D ,PRSI
 		<TELL "your arm">)
 	       (T
 		<TELL THEI>)>
-	 <TELL " isn't long enough to reach " THEO ,PERIOD>
-	 <RTRUE>>
+	 <TELL " isn't long enough to reach " THEO ,PERIOD>>
 
 <ROUTINE GO-TO-LONG-WATER ()
 	 <SETG IN-PRAM? <>>
@@ -3481,14 +3263,14 @@ The " D ,PRSI
 	 <DEQUEUE I-BIKES>
 	 <QUEUE I-LONDON-HOLE -1>
 	 <UNMAKE ,WWIND ,SEEN>
-	 <TELL 
+	 <TELL
 "You zoom down a long slope, barely missing several trees and boulders. Peering over the top of the "
 D ,PRAM ", you see the " D ,LWATER
 " coming closer and closer. Unable to stop, and too stupid to let go of the "
 D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 	 <ITALICIZE "Crash!">
 	 <CARRIAGE-RETURNS>
-       ; <TELL 
+       ; <TELL
 "You come to your senses empty-handed and aching all over" ,PCR>
 	 <V-LOOK>
 	 <PAIN-REGAIN>
@@ -3496,13 +3278,11 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 
 <ROUTINE PAIN-REGAIN ()
 	 <TELL CR "Painfully, you regain your footing">
-	 <AND-SNAP>
-	 <RTRUE>>
+	 <AND-SNAP>>
 
 <ROUTINE AND-SNAP ()
 	 <UNMAKE ,PARASOL ,OPENED>
-	 <TELL " and snap the " D ,PARASOL " shut." CR>
-	 <RTRUE>>
+	 <TELL " and snap the " D ,PARASOL " shut." CR>>
 
 <OBJECT TREE
 	(LOC LAN-GATE)
@@ -3521,8 +3301,7 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 	 <TELL "A">
 	 <COND (<IS? .X ,VOWEL>
 		<TELL "n">)>
-         <TELL " " D .X " is wedged in the branches overhead.">
-	 <RTRUE>>
+	 <TELL " " D .X " is wedged in the branches overhead.">>
 
 <ROUTINE TREE-F ("AUX" (ST 0) WORD)
 	 <COND (<THIS-PRSI?>
@@ -3535,13 +3314,13 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 		<TELL "It's quite a nice tree, actually">
 		<SET WORD <FIRST? ,TREE>>
 		<COND (<T? .WORD>
-		       <TELL ", except for " THE .WORD 
+		       <TELL ", except for " THE .WORD
 			     " wedged in its branches">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (<VERB? ENTER CLIMB-ON CLIMB-UP CLIMB-OVER SIT LIE-DOWN
 		       STAND-ON STAND REACH-IN>
-		<NO-FOOTHOLDS>    
+		<NO-FOOTHOLDS>
 		<RTRUE>)
 	       (<OR <EXITING?>
 		    <VERB? LEAP CLIMB-DOWN>>
@@ -3567,8 +3346,8 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 		<IMPOSSIBLE>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
-		 
+		<RFALSE>)>>
+
 <OBJECT PAN
 	(LOC LONG-WATER)
 	(DESC "statue")
@@ -3579,16 +3358,12 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 
 <ROUTINE PAN-F ()
 	 <COND (<VERB? EXAMINE READ LOOK-ON>
-		<TELL CTHE ,PAN 
-" portrays a carefree little boy playing a set of pipes." CR>
-		<RTRUE>)
+		<TELL CTHE ,PAN
+" portrays a carefree little boy playing a set of pipes." CR>)
 	       (<VERB? CLIMB-ON CLIMB-OVER CLIMB-UP SIT STAND-ON ENTER
 		       LIE-DOWN>
-		<TELL CTHE ,PAN "'s design prevents this." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		 
+		<TELL CTHE ,PAN "'s design prevents this." CR>)>>
+
 <OBJECT SIRENS
 	(LOC GLOBAL-OBJECTS)
 	(DESC "sirens")
@@ -3603,8 +3378,7 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 		<TELL ,CANT "hear any" ,AT-MOMENT CR>
 		<RFATAL>)
 	       (<VERB? LISTEN>
-		<TELL CTHEO " rise and fall with fateful urgency." CR>
-		<RTRUE>)
+		<TELL CTHEO " rise and fall with fateful urgency." CR>)
 	       (<VERB? WALK-TO FOLLOW>
 		<V-WALK-AROUND>
 		<RTRUE>)
@@ -3613,10 +3387,8 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		<CANT-FROM-HERE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		       
+		<RTRUE>)>>
+
 <OBJECT MISSILE
 	(LOC LOCAL-GLOBALS)
 	(DESC "missile")
@@ -3643,17 +3415,14 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 		       <TELL "floating ">)>
 		<TELL D ,MISSILE
 " is impressively large, sixty or seventy feet from nose to tail, aiming straight downward. A crimson hammer and sickle are lovingly painted on the hull."
-		      CR>
-		<RTRUE>)
+		      CR>)
 	       (<VERB? CLIMB-ON CLIMB-OVER RIDE SIT STAND-ON LIE-DOWN>
 		<THIS-IS-NOT "Dr. Strangelove">
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		<CANT-FROM-HERE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-		      
+		<RTRUE>)>>
+
 <OBJECT LWDOOR
 	(LOC LOCAL-GLOBALS)
 	(DESC "white door")
@@ -3692,37 +3461,34 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 	       (<AND <NOT <HERE? IN-WATER>>
 		     <INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>>
 		<CANT-FROM-HERE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE UNEASY-DOOR ()
-	 <TELL 
-"Looking directly at the " D ,PRSO " makes you uneasy. It's as if your eyes can't decide whether it's really there or not." CR>
-	 <RTRUE>>
+	 <TELL
+"Looking directly at the " D ,PRSO " makes you uneasy. It's as if your eyes can't decide whether it's really there or not." CR>>
 
 <ROUTINE GO-INTO-LWDOOR ("AUX" (ST 0) X)
 	 <COND (<BROLLY-OPEN?>
 		<RFALSE>)>
-	 
+
 	 <MOVE ,MEEP ,TS6>
 	 <QUEUE I-FMEEP -1>
 	 <PUTP ,MEEP ,P?CONTFCN ,IN-TS6>
 
        ; <MEEP-TO-ZERO>
-	 
+
 	 <SETG RAID? <>>
 	 <SETG FREEZE? <>>
 	 <DEQUEUE I-LONDON-HOLE>
 	 <DEQUEUE I-MEEP>
 	 <DEQUEUE I-RUBY>
-	 
+
 	 <QUEUE I-SHADOW -1>
 	 <QUEUE I-BUBBLES -1>
 	 <QUEUE I-METEOR -1>
 	 <QUEUE I-MAGPIE -1>
 	 <QUEUE I-LUMP -1>
-	 
+
 	 <COND (<G? ,HCNT 1>
 		<TELL "As y">)
 	       (T
@@ -3734,7 +3500,7 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 		<TELL " as it slips through ">)
 	       (T
 		<TELL "of ">)>
-	 <TELL THE ,LWDOOR ,PCR 
+	 <TELL THE ,LWDOOR ,PCR
 "All color abruptly drains from the landscape. Trees, sky and sun flatten into a spherical shell, with you at the very center. A hissing in your ears becomes a rumble, then a roar as the walls of the shell collapse inward, faster and faster" ,PCR>
 	 <COND (<EQUAL? <GETB 0 30> 5>
 		<INC ST>
@@ -3769,7 +3535,7 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 	       (T
 		<ST-QUOTE>)>
 	 <ARTICULATES>
-	 <TELL 
+	 <TELL
 "\"No!\" your mind shudders. \"That's not a " D ,INTDIR "!\"" CR CR>
 	 <COND (<ZERO? .ST>
 		<TELL "\"">)
@@ -3800,7 +3566,7 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 	 <SCREEN ,S-WINDOW>
 	 <BUFOUT <>>
 	 <CURSET 10 25>
-	 <BIG-TRINITY>	       
+	 <BIG-TRINITY>
 	 <CURSET 12 29>
 	 <FANTASY>
 	 <CURSET 13 15>
@@ -3809,18 +3575,17 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 	 <TRADEMARK>
 	 <SCREEN ,S-TEXT>
 	 <SET X <INPUT 1>>
-	 <CLEAR -1>
-	 <INIT-STATUS-LINE>
+         <V-$REFRESH>
 	 <TELL CR "You step out of the " D ,TS0-DOOR ,PCR>
 	 <GOTO ,IN-MEADOW>
-         <I-SHADOW>
-	 <RTRUE>> 
-				       	        	       	 
+	 <I-SHADOW>
+	 <RTRUE>>
+
 <ROUTINE MEEP-TO-ZERO ()
 	 <MOVE ,MEEP ,AT-ZERO>
-         <MAKE ,MEEP ,CHILLY>
-         <MAKE ,MEEP ,TAKEABLE>
-         <UNMAKE ,MEEP ,TRYTAKE>		       
+	 <MAKE ,MEEP ,CHILLY>
+	 <MAKE ,MEEP ,TAKEABLE>
+	 <UNMAKE ,MEEP ,TRYTAKE>
 	 <PUTP ,MEEP ,P?CONTFCN 0>
        ; <MAKE ,RUBY ,TOUCHED>
 	 <MAKE ,RUBY ,SEEN>
@@ -3834,12 +3599,10 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 		<TELL "\"">)
 	       (T
 		<ST-QUOTE>)>
-	 <TELL CR CR "You turn, but see no one." CR>
-	 <RTRUE>>
+	 <TELL CR CR "You turn, but see no one." CR>>
 
 <ROUTINE ARTICULATES ()
-	 <TELL CR CR "The space around you articulates. ">
-	 <RTRUE>>
+	 <TELL CR CR "The space around you articulates. ">>
 
 <OBJECT EWIND
 	(LOC LOCAL-GLOBALS)
@@ -3860,12 +3623,9 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 <ROUTINE EWIND-F ()
 	 <COND (<OR <T? ,FREEZE?>
 		    <NOT <IS? ,EWIND ,SEEN>>>
-		<TELL CTHE ,EWIND " seems to have stopped." CR>
-		<RTRUE>)
+		<TELL CTHE ,EWIND " seems to have stopped." CR>)
 	       (<HANDLE-WIND?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE GENERIC-WIND-F (TBL)
 	 <COND (<IS? ,EWIND ,SEEN>
@@ -3884,32 +3644,24 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 <ROUTINE WWIND-F ()
 	 <COND (<OR <T? ,FREEZE?>
 		    <NOT <IS? ,WWIND ,SEEN>>>
-		<TELL CTHE ,WWIND " seems to have stopped." CR>
-		<RTRUE>)
+		<TELL CTHE ,WWIND " seems to have stopped." CR>)
 	       (<HANDLE-WIND?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE HANDLE-WIND? ()
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
 	       (<VERB? EXAMINE WATCH>
-		<TELL ,CANT "see wind!" CR>
-		<RTRUE>)
+		<TELL ,CANT "see wind!" CR>)
 	       (<AND <VERB? LISTEN TOUCH>
 		     <EQUAL? ,PRSI <> ,HANDS>>
-		<TELL "It blows briskly through the trees." CR>
-		<RTRUE>)
+		<TELL "It blows briskly through the trees." CR>)
 	       (<VERB? SMELL>
-		<TELL "It smells unusually fresh." CR>
-		<RTRUE>)
+		<TELL "It smells unusually fresh." CR>)
 	       (<VERB? LAMP-ON LAMP-OFF>
 		<IMPOSSIBLE>
-	        <RTRUE>)
-	       (T
-		<RFALSE>)>>
-		
+		<RTRUE>)>>
+
 <OBJECT STAIR
 	(LOC LOCAL-GLOBALS)
 	(DESC "stairway")
@@ -3945,10 +3697,8 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 		       <CANT-SEE-MUCH>
 		       <RTRUE>)>)>
 	 <COND (<HANDLE-STAIRS? ,ON-GNOMON>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-	 
+		<RTRUE>)>>
+
 <ROUTINE HANDLE-STAIRS? (TOP)
 	 <COND (<NOT <EQUAL? ,HERE .TOP>>
 		<SET TOP <>>)>
@@ -3959,9 +3709,7 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 			      <TELL "them ">)
 			     (T
 			      <TELL "it ">)>
-		       <TELL "later." CR>
-		       <RTRUE>)>
-		<RFALSE>)
+		       <TELL "later." CR>)>)
 	       (<VERB? WALK-TO FOLLOW USE>
 		<DO-WALK <COND (<ZERO? .TOP> ,P?UP) (T ,P?DOWN)>>
 		<RTRUE>)
@@ -3988,9 +3736,7 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 		       <ALREADY-AT-BOTTOM>
 		       <RTRUE>)>
 		<CANT-SEE-MUCH>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT GPLATFORM
 	(LOC ON-GNOMON)
@@ -4004,8 +3750,7 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 	 <COND (<THIS-PRSI?>
 		<COND (<VERB? PUT PUT-ON THROW>
 		       <PERFORM ,V?DROP ,PRSO>
-		       <RTRUE>)>
-		<RFALSE>)
+		       <RTRUE>)>)
 	       (<VERB? EXAMINE LOOK-ON SEARCH>
 		<V-LOOK>
 		<RTRUE>)
@@ -4015,9 +3760,7 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 	       (<OR <VERB? CLIMB-DOWN>
 		    <EXITING?>>
 		<DO-WALK ,P?DOWN>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT STRUCTURE
 	(LOC LOCAL-GLOBALS)
@@ -4039,16 +3782,13 @@ D ,PARASOL ", you bravely close your eyes and pinch your nose shut" ,PCR>
 	       (<VERB? EXAMINE LOOK-ON>
 		<TELL "High and broad as it is, the " D ,STRUCTURE
 " is only a few feet thick. Its "
-D ,CSURFACE " is smooth and featureless, except for the " 
-D ,STAIR " along the diagonal edge." CR>
-		<RTRUE>)
+D ,CSURFACE " is smooth and featureless, except for the "
+D ,STAIR " along the diagonal edge." CR>)
 	       (<AND <VERB? TOUCH KNOCK KISS>
 		     <EQUAL? ,PRSI <> ,HANDS>>
-		<TELL CTHE ,STRUCTURE " feels smooth and hard." CR>
-		<RTRUE>)
+		<TELL CTHE ,STRUCTURE " feels smooth and hard." CR>)
 	       (<VERB? ENTER THROUGH>
-		<TELL "There are no visible " D ,CAVE-HOLE "s." CR>
-		<RTRUE>)
+		<TELL "There are no visible " D ,CAVE-HOLE "s." CR>)
 	       (<VERB? CLIMB-ON CLIMB-UP>
 		<COND (<HERE? ON-GNOMON>
 		       <ALREADY-AT-TOP>
@@ -4059,8 +3799,7 @@ D ,STAIR " along the diagonal edge." CR>
 		<COND (<HERE? GBASE>
 		       <DO-WALK ,P?UP>
 		       <RTRUE>)>
-		<TELL ,YOURE-ALREADY "on " D ,PRSO ,PERIOD>
-		<RTRUE>)
+		<TELL ,YOURE-ALREADY "on " D ,PRSO ,PERIOD>)
 	       (<OR <VERB? CLIMB-DOWN>
 		    <EXITING?>>
 		<COND (<HERE? GBASE>
@@ -4070,9 +3809,7 @@ D ,STAIR " along the diagonal edge." CR>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>
 		<IMPOSSIBLE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT OUTER-SHADOW
 	(LOC IN-MEADOW)
@@ -4080,7 +3817,7 @@ D ,STAIR " along the diagonal edge." CR>
 	(SYNONYM SHADOW POINT TIP EDGE)
 	(ADJECTIVE DARK BLACK TRIANGULAR)
 	(DESCFCN DESCRIBE-OUTER-SHADOW)
-        (ACTION OUTER-SHADOW-F)>
+	(ACTION OUTER-SHADOW-F)>
 
 <ROUTINE DESCRIBE-OUTER-SHADOW ("OPTIONAL" (CONTEXT <>) "AUX" X)
 	 <COND (<NOT <EQUAL? .CONTEXT ,M-OBJDESC>>
@@ -4095,18 +3832,14 @@ D ,STAIR " along the diagonal edge." CR>
 	 <COND (<T? .X>
 		<TELL ". ">
 		<EXAMINE-OUTER-SHADOW>)>
-	 <TELL ".">
-	 <RTRUE>>
-	
+	 <TELL ".">>
+
 <ROUTINE OUTER-SHADOW-F ()
 	 <COND (<VERB? EXAMINE WATCH>
 		<EXAMINE-OUTER-SHADOW>
-		<PRINT ,PERIOD>
-		<RTRUE>)
+		<PRINT ,PERIOD>)
 	       (<FOLLOW-SHADOW?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE EXAMINE-OUTER-SHADOW ("AUX" DOOR)
 	 <SET DOOR <GET ,OSIGN-DOORS ,OSIGN>>
@@ -4116,7 +3849,7 @@ D ,STAIR " along the diagonal edge." CR>
 		       <TELL "lies motionless" ,AGROUND>
 		       <RTRUE>)>
 		<TELL "is sweeping slowly ">
-	        <SHDIRWARD>
+		<SHDIRWARD>
 		<RTRUE>)
 	       (<ZERO? ,SUN-MOVING?>
 		<TELL "rests ">
@@ -4142,8 +3875,7 @@ D ,STAIR " along the diagonal edge." CR>
 	 <COND (<AND <NOT <IS? .DOOR ,NOALL>>
 		     <IS? .DOOR ,OPENED>>
 		<TELL "the open door in ">)>
-	 <TELL THE ,TS0>
-	 <RTRUE>>
+	 <TELL THE ,TS0>>
 
 <OBJECT INNER-SHADOW
 	(LOC FCLEARING)
@@ -4151,7 +3883,7 @@ D ,STAIR " along the diagonal edge." CR>
 	(SYNONYM SHADOW EDGE)
 	(ADJECTIVE DARK BLACK)
 	(DESCFCN DESCRIBE-INNER-SHADOW)
-        (ACTION INNER-SHADOW-F)>
+	(ACTION INNER-SHADOW-F)>
 
 <ROUTINE DESCRIBE-INNER-SHADOW ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-OBJDESC>
@@ -4161,11 +3893,8 @@ D ,STAIR " along the diagonal edge." CR>
 		      (T
 		       <TELL <PICK-NEXT ,CREEPERS>>
 		       <SHDIRWARD>)>
-		<TELL ,AGROUND ".">
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
-	  
+		<TELL ,AGROUND ".">)>>
+
 <ROUTINE INNER-SHADOW-F ()
 	 <COND (<VERB? EXAMINE WATCH>
 		<TELL CTHEO>
@@ -4174,12 +3903,9 @@ D ,STAIR " along the diagonal edge." CR>
 		       <RTRUE>)>
 		<TELL " is sweeping slowly ">
 		<SHDIRWARD>
-		<PRINT ,PERIOD>
-		<RTRUE>)
+		<PRINT ,PERIOD>)
 	       (<FOLLOW-SHADOW?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>			
+		<RTRUE>)>>
 
 <ROUTINE FOLLOW-SHADOW? ()
 	 <COND (<AND <VERB? FOLLOW>
@@ -4193,9 +3919,7 @@ D ,STAIR " along the diagonal edge." CR>
 		<DO-WALK <GET ,SHDIRS 1>>
 		<RTRUE>)
 	       (<MOVING-SHADOW?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE MOVING-SHADOW? ()
 	 <COND (<THIS-PRSI?>
@@ -4210,14 +3934,10 @@ D ,STAIR " along the diagonal edge." CR>
 		<COND (<ZERO? ,SUN-MOVING?>
 		       <HOW?>
 		       <RTRUE>)>
-		<TELL CTHEO " is already moving." CR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<TELL CTHEO " is already moving." CR>)>>
 
 <ROUTINE PRSO-NOT-MOVING ()
-	 <TELL CTHEO " doesn't seem to be moving" ,AT-MOMENT CR>
-	 <RTRUE>>
+	 <TELL CTHEO " doesn't seem to be moving" ,AT-MOMENT CR>>
 
 <OBJECT DSHADOW
 	(LOC LOCAL-GLOBALS)
@@ -4233,8 +3953,7 @@ D ,STAIR " along the diagonal edge." CR>
 		      ,AGROUND>
 		<COND (<NOT <HERE? GBASE>>
 		       <TELL " below">)>
-		<PRINT ,PERIOD>
-		<RTRUE>)
+		<PRINT ,PERIOD>)
 	       (<VERB? LOOK-INSIDE LOOK-BEHIND LOOK-UNDER SEARCH>
 		<CANT-SEE-MUCH>
 		<RTRUE>)
@@ -4248,9 +3967,7 @@ D ,STAIR " along the diagonal edge." CR>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		<CANT-FROM-HERE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT TS0
 	(LOC IN-MEADOW)
@@ -4337,19 +4054,15 @@ D ,STAIR " along the diagonal edge." CR>
 		<TELL "Except for its size ">
 		<COND (<NOT <IS? ,TS5-DOOR ,NOALL>>
 		       <TELL "and lack of a door">)>
-		<TELL ", the " D ,PRSO " is identical to the " D ,TS5 ,PERIOD>
-		<RTRUE>)
+		<TELL ", the " D ,PRSO " is identical to the " D ,TS5 ,PERIOD>)
 	       (<AND <THIS-PRSI?>
 		     <VERB? PUT-ON>>
 		<PRSI-TOP-TOO-HIGH>
 		<RTRUE>)
 	       (<ENTERING?>
-		<TELL CTHE ,HTS " has no visible " D ,HOPENING "s." CR>
-		<RTRUE>)
+		<TELL CTHE ,HTS " has no visible " D ,HOPENING "s." CR>)
 	       (<SLIDE-OFF-STOOL?>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT TS6
 	(LOC ON-ISLE)
@@ -4373,8 +4086,7 @@ D ,STAIR " along the diagonal edge." CR>
 		       <TELL THEI>)>
 		<TELL ". ">
 		<TOO-HIGH ,TS6>
-		<RTRUE>)>
-	 <RFALSE>>	 
+		<RTRUE>)>>
 
 <ROUTINE TS-F ("AUX" DOOR)
 	 <COND (<THIS-PRSI?>
@@ -4387,14 +4099,13 @@ D ,STAIR " along the diagonal edge." CR>
 		<RFALSE>)>
 	 <SET DOOR <GETP ,PRSO ,P?TDOOR>>
 	 <COND (<VERB? EXAMINE>
-		<TELL CTHEO 
+		<TELL CTHEO
 " must be at least twelve feet from base to crown">
 		<COND (<NOT <IS? .DOOR ,NOALL>>
 		       <TELL ". A">
 		       <OPEN-CLOSED .DOOR T>
 		       <TELL " is set into its fleshy stem">)>
-		<PRINT ,PERIOD>
-		<RTRUE>)
+		<PRINT ,PERIOD>)
 	       (<VERB? LOOK-INSIDE LOOK-BEHIND>
 		<PERFORM ,V?LOOK-INSIDE .DOOR>
 		<RTRUE>)
@@ -4411,25 +4122,18 @@ D ,STAIR " along the diagonal edge." CR>
 		<ITS-CLOSED .DOOR>
 		<RTRUE>)
 	       (<SLIDE-OFF-STOOL?>
-		<RTRUE>)	       
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE PRSI-TOP-TOO-HIGH ()
-	 <TELL "The top of the " D ,PRSI " is high out of reach." CR>
-	 <RTRUE>>
+	 <TELL "The top of the " D ,PRSI " is high out of reach." CR>>
 
 <ROUTINE SLIDE-OFF-STOOL? ()
 	 <COND (<VERB? CLIMB-ON CLIMB-OVER STAND-ON CLIMB-UP SIT LIE-DOWN
 		       RIDE>
-		<TELL "You slide off the slippery " D ,TS0 ,PERIOD>
-		<RTRUE>)
+		<TELL "You slide off the slippery " D ,TS0 ,PERIOD>)
 	       (<OR <VERB? CLIMB-DOWN>
 		    <EXITING?>>
-		<TELL "You're not on the " D ,TS0 ,PERIOD>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<TELL "You're not on the " D ,TS0 ,PERIOD>)>>
 
 <OBJECT TS0-DOOR
 	(LOC LOCAL-GLOBALS)
@@ -4496,9 +4200,7 @@ D ,STAIR " along the diagonal edge." CR>
 	       (<THRU-DOOR? ,AT-FALLS ,IN-ORBIT>
 		<RTRUE>)
 	       (<HANDLE-TSDOOR? ,AT-FALLS>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <ROUTINE THRU-DOOR? (OUT IN)
 	 <COND (<THIS-PRSO?>
@@ -4522,8 +4224,7 @@ D ,STAIR " along the diagonal edge." CR>
 	       (T
 		<REMOVE ,PRSO>)>
 	 <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
-	 <TELL CTHEO " disappears through the open door." CR>
-	 <RTRUE>>
+	 <TELL CTHEO " disappears through the open door." CR>>
 
 <ROUTINE HANDLE-TSDOOR? (OUT)
 	 <COND (<THIS-PRSI?>
@@ -4531,8 +4232,7 @@ D ,STAIR " along the diagonal edge." CR>
 	       (<VERB? EXAMINE>
 		<TELL "The">
 	 	<OPEN-CLOSED ,PRSO>
-	 	<TELL " is of stately residential design." CR>
-		<RTRUE>)
+	 	<TELL " is of stately residential design." CR>)
 	       (<AND <VERB? LOOK-INSIDE LOOK-BEHIND LOOK-OUTSIDE>
 		     <IS? ,PRSO ,OPENED>
 		     <EQUAL? ,HERE .OUT>>
@@ -4554,16 +4254,13 @@ D ,STAIR " along the diagonal edge." CR>
 		<ITS-CLOSED ,PRSO>
 		<RTRUE>)
 	       (<VERB? UNLOCK>
-		<TELL CTHEO " doesn't have a keyhole." CR>
-		<RTRUE>)
+		<TELL CTHEO " doesn't have a keyhole." CR>)
 	       (<ENTERING?>
 		<DO-WALK ,P?IN>
 		<RTRUE>)
 	       (<EXITING?>
 		<NOT-IN>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT TS2-DOOR
 	(LOC LOCAL-GLOBALS)
@@ -4584,9 +4281,7 @@ D ,STAIR " along the diagonal edge." CR>
 	       (<THRU-DOOR? ,OSSUARY ,TUN1>
 		<RTRUE>)
 	       (<HANDLE-TSDOOR? ,OSSUARY>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT TS3-DOOR
 	(LOC LOCAL-GLOBALS)
@@ -4605,9 +4300,7 @@ D ,STAIR " along the diagonal edge." CR>
 	       (<THRU-DOOR? ,ON-MESA ,ON-SCAFFOLD>
 		<RTRUE>)
 	       (<HANDLE-TSDOOR? ,ON-MESA>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT TS4-DOOR
 	(LOC LOCAL-GLOBALS)
@@ -4630,9 +4323,7 @@ D ,STAIR " along the diagonal edge." CR>
 	       (<THRU-DOOR? ,IN-GARDEN ,ON-PLATFORM>
 		<RTRUE>)
 	       (<HANDLE-TSDOOR? ,IN-GARDEN>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT TS5-DOOR
 	(LOC LOCAL-GLOBALS)
@@ -4640,7 +4331,7 @@ D ,STAIR " along the diagonal edge." CR>
 	(FLAGS NODESC DOORLIKE OPENABLE)
 	(SYNONYM DOOR DOORWAY PORTAL ENTRY ENTRANCE THRESHOLD)
 	(ADJECTIVE WHITE WOOD WOODEN)
-      	(ACTION TS5-DOOR-F)>
+	(ACTION TS5-DOOR-F)>
 
 "NOALL = door used."
 
@@ -4667,9 +4358,7 @@ D ,STAIR " along the diagonal edge." CR>
 	       (<THRU-DOOR? ,ON-MOOR ,ON-BIRD>
 		<RTRUE>)
 	       (<HANDLE-TSDOOR? ,ON-MOOR>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT TS6-DOOR
 	(LOC LOCAL-GLOBALS)
@@ -4694,9 +4383,7 @@ D ,STAIR " along the diagonal edge." CR>
 		<KILL-TS6-DOOR>
 		<RFATAL>)
 	       (<HANDLE-TSDOOR? ,ON-ISLE>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT SCULPTURE
 	(LOC ARBORETUM)
@@ -4723,8 +4410,7 @@ D ,STAIR " along the diagonal edge." CR>
 	 <TELL "The words ">
 	 <ITALICIZE <COND (<ZERO? ,FLIP?> "Felix Klein 1849-1925")
 			  (T "5291-9481 nielK xileF")>>
-	 <TELL " are inscribed on the base.">
-	 <RTRUE>>
+	 <TELL " are inscribed on the base.">>
 
 <ROUTINE SCULPTURE-F ()
 	 <COND (<THIS-PRSI?>
@@ -4741,7 +4427,7 @@ D ,STAIR " along the diagonal edge." CR>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
 		<TELL CTHEO
-" looks like a crystalline bottle, eight feet high, with a polished " 
+" looks like a crystalline bottle, eight feet high, with a polished "
 D ,CSURFACE " that twists in impossible curves. ">
 		<INSIDE-BEGINS>
 		<CRLF>
@@ -4757,33 +4443,26 @@ D ,CSURFACE " that twists in impossible curves. ">
 		<RTRUE>)
 	       (<VERB? READ LOOK-ON>
 		<READ-KLEIN>
-		<CRLF>
-		<RTRUE>)
+		<CRLF>)
 	       (<VERB? LOOK-INSIDE SEARCH>
 		<TELL "Staring into the " D ,PRSO
 		      " makes your eyes hurt. ">
-		<INSIDE-BEGINS>
-		<RTRUE>)
+		<INSIDE-BEGINS>)
 	       (<VERB? REACH-IN OPEN OPEN-WITH CLOSE ENTER THROUGH CLIMB-ON
 		       CLIMB-OVER STAND-ON SIT CLIMB-UP>
 		<TELL "Easier said than done. ">
-		<INSIDE-BEGINS>
-		<RTRUE>)
+		<INSIDE-BEGINS>)
 	       (<AND <VERB? TOUCH SQUEEZE KISS KNOCK KICK>
 		     <EQUAL? ,PRSI <> ,HANDS>>
-		<TELL CTHEO " feels oddly insubstantial." CR>
-		<RTRUE>)
+		<TELL CTHEO " feels oddly insubstantial." CR>)
 	       (<INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>
-	        <PRSO-TOO-BIG>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>		
+		<PRSO-TOO-BIG>
+		<RTRUE>)>>
 
 <ROUTINE INSIDE-BEGINS ()
 	 <TELL "It's hard to tell where the outside of the " D ,ENERGY
-	       " ends and the inside begins." CR>
-	 <RTRUE>>
-		
+	       " ends and the inside begins." CR>>
+
 <OBJECT AXE
 	(LOC ARBOR-TOP)
 	(DESC "axe")
@@ -4795,28 +4474,25 @@ D ,CSURFACE " that twists in impossible curves. ">
 	(VALUE 0)
 	(SIZE 7)
 	(MASS 7)
-        (ACTION AXE-F)>
+	(ACTION AXE-F)>
 
 <ROUTINE AXE-F ()
 	 <COND (<THIS-PRSI?>
 		<COND (<AND <VERB? CUT RIP HIT MUNG OPEN-WITH>
 		     	    <IN? ,PRSO ,PLAYER>>
-		       <TELL 
+		       <TELL
 "It'd be dangerous to do that while holding " THEO ,PERIOD>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<AND <VERB? EXAMINE TOUCH>
 		     <EQUAL? ,PRSI <> ,HANDS>>
-		<TELL "The silver blade is still sharp." CR>
-		<RTRUE>)
+		<TELL "The silver blade is still sharp." CR>)
 	       (<AND <VERB? TAKE>
 		     <NOT <IS? ,PRSO ,TOUCHED>>>
 		<COND (<ITAKE>
 		       <TELL "You yank the axe out of the arborvitae." CR>
 		       <UPDATE-SCORE>)>
-		<RTRUE>)
-	       (T
-		<RFALSE>)>>
+		<RTRUE>)>>
 
 <OBJECT OAK
 	(LOC LOCAL-GLOBALS)
@@ -4853,7 +4529,7 @@ D ,CSURFACE " that twists in impossible curves. ">
 		       <RTRUE>)>
 		<TELL " is falling!" CR>
 		<RTRUE>)
-	       
+
 	       (<VERB? TAKE PUSH PULL MOVE TURN>
 		<COND (<OR <IS? ,PRSO ,TOUCHED>
 			   <IS? ,PRSO ,NOALL>>
@@ -4861,7 +4537,7 @@ D ,CSURFACE " that twists in impossible curves. ">
 		       <RTRUE>)>
 		<HAPHAZARD>
 		<RTRUE>)
-	       
+
 	       (<VERB? PUSH-TO>
 		<COND (<OR <IS? ,PRSO ,TOUCHED>
 			   <IS? ,PRSO ,NOALL>>
@@ -4869,20 +4545,20 @@ D ,CSURFACE " that twists in impossible curves. ">
 		       <RTRUE>)
 		      (<OR <PRSI? CHASM MESA>
 			   <AND <PRSI? INTDIR>
-		                <EQUAL? ,P-DIRECTION ,P?NORTH ,P?NE ,P?NW>>>
+				<EQUAL? ,P-DIRECTION ,P?NORTH ,P?NE ,P?NW>>>
 		       <DEQUEUE I-DROP-OAK>
-	               <MAKE ,PRSO ,TOUCHED>
-	               <MAKE ,PRSO ,WINDY>
+		       <MAKE ,PRSO ,TOUCHED>
+		       <MAKE ,PRSO ,WINDY>
 		       <TELL "You ">
-	               <PRINTB ,P-PRSA-WORD>
-	               <TELL 
+		       <PRINTB ,P-PRSA-WORD>
+		       <TELL
 " the teetering oak northward with all your strength. It arcs across the chasm with a leafy whoosh and crashes onto the mesa, barely missing the "
 D ,TS3 ,PERIOD>
-	               <UPDATE-SCORE 3>
+		       <UPDATE-SCORE 3>
 		       <RTRUE>)>
 		<HAPHAZARD>
 		<RTRUE>)
-	       
+
 	       (<VERB? CUT RIP MUNG KILL>
 		<COND (<NOT <IS? ,PRSO ,NOALL>>
 		       <TELL "You've already killed the oak." CR>
@@ -4902,7 +4578,7 @@ D ,TS3 ,PERIOD>
 	       (<VERB? CROSS CLIMB-OVER FOLLOW>
 		<COND (<IS? ,PRSO ,WINDY>
 		       <DO-WALK <COND (<HERE? AT-CHASM> ,P?NORTH)
-				      (T                ,P?SOUTH)>>
+				      (T		,P?SOUTH)>>
 		       <RTRUE>)
 		      (<IS? ,PRSO ,TOUCHED>
 		       <CAVORTING>
@@ -4925,7 +4601,7 @@ D ,TS3 ,PERIOD>
 <ROUTINE TRY-MOVING-OAK ()
 	 <TELL "You aren't strong enough to do that." CR>
 	 <RTRUE>>
-		      
+
 <ROUTINE CAVORTING ()
 	 <TELL "You soon tire of cavorting around the oak." CR>
 	 <RTRUE>>
@@ -4935,14 +4611,14 @@ D ,TS3 ,PERIOD>
 	 <PRINTB ,P-PRSA-WORD>
 	 <TELL " the oak only speeds its descent." CR>
 	 <RTRUE>>
-                                       
+
 <OBJECT CHASM
 	(LOC LOCAL-GLOBALS)
 	(DESC "chasm")
 	(FLAGS NODESC CONTAINER OPENED)
 	(SYNONYM CHASM CANYON EDGE BRINK ROCKS ROCK)
 	(ADJECTIVE CHASM\'S DEEP BROAD WIDE ROCK)
-        (ACTION CHASM-F)>
+	(ACTION CHASM-F)>
 
 "TOUCHED = chasm examined."
 
@@ -4965,7 +4641,7 @@ D ,TS3 ,PERIOD>
 		<NOT-IN>
 		<RTRUE>)
 	       (<VERB? LEAP DIVE ENTER CLIMB-DOWN>
-		<CHASM-FALL>		      
+		<CHASM-FALL>
 		<RTRUE>)
 	       (<VERB? CROSS CLIMB-OVER>
 		<COND (<HERE? AT-CHASM>
@@ -5003,14 +4679,14 @@ D ,TS3 ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT MESA
 	(LOC LOCAL-GLOBALS)
 	(DESC "mesa")
 	(FLAGS NODESC)
 	(SYNONYM MESA SUMMIT TOP)
-        (ACTION MESA-F)>
-			
+	(ACTION MESA-F)>
+
 <ROUTINE MESA-F ("AUX" (ON <>))
 	 <COND (<HERE? ON-MESA>
 		<SET ON T>)>
@@ -5045,7 +4721,7 @@ D ,TS3 ,PERIOD>
 		<CANT-FROM-HERE>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>	 
+		<RFALSE>)>>
 
 <OBJECT AUX-TS3
 	(LOC AT-CHASM)
@@ -5082,15 +4758,15 @@ D ,TS3 ,PERIOD>
 
 <ROUTINE DESCRIBE-LOG ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-OBJDESC>
-		<TELL 
+		<TELL
 "A splintered log lies rotting in the mist at your feet. ">
 		<SAY-GLOWS>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>  
+		<RFALSE>)>>
 
 <ROUTINE SAY-GLOWS ()
-	 <TELL 
+	 <TELL
 "Its edges flicker with the eerie phosphorescence of decay.">
 	 <RTRUE>>
 
@@ -5142,7 +4818,7 @@ D ,TS3 ,PERIOD>
 	 <COND (<T? .TOUCH?>
 		<TELL " when you try to move it">)>
 	 <TELL ". Only a big " D ,SHARD " of wood remains." CR>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <OBJECT SHARD
 	(DESC "splinter")
@@ -5195,13 +4871,13 @@ D ,TS3 ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT XRAY
 	(LOC LOCAL-GLOBALS)
 	(DESC "satellite")
 	(FLAGS NODESC)
 	(SYNONYM SATELLITE SPACECRAFT SHIP CRAFT FUSILAGE HULL)
-        (ACTION XRAY-F)>
+	(ACTION XRAY-F)>
 
 "TOUCHED = satellite seen."
 
@@ -5263,7 +4939,7 @@ D ,TS3 ,PERIOD>
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-INSIDE LOOK-UP>
-		<TELL CTHEO 
+		<TELL CTHEO
 " are remarkably bright and numerous." CR>
 		<RTRUE>)
 	       (<OR <INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
@@ -5296,7 +4972,7 @@ D ,TS3 ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT THRUSTERS
 	(LOC LOCAL-GLOBALS)
 	(DESC "maneuvering thrusters")
@@ -5318,7 +4994,7 @@ D ,TS3 ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       		       
+
 <OBJECT SPHONES
 	(LOC BOY)
 	(DESC "headphones")
@@ -5386,7 +5062,7 @@ D ,TS3 ,PERIOD>
 	       (<THIS-PRSI?>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-INSIDE SEARCH>
-		<TELL CTHEO 
+		<TELL CTHEO
 " is about the size of a small swimming pool, and">
 		<IS-FILLED>
 		<RTRUE>)
@@ -5432,7 +5108,7 @@ D ,TS3 ,PERIOD>
 
 <ROUTINE IS-FILLED ()
 	 <TELL " is filled to the brim with " D ,SOAPY-WATER ,PERIOD>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <OBJECT SOAPY-WATER
 	(LOC DISH)
@@ -5466,7 +5142,7 @@ D ,TS3 ,PERIOD>
 		<TELL CTHE .OBJ>)>
 	 <TELL " splashes all over the place." CR>
 	 <RTRUE>>
-		
+
 <ROUTINE HANDLE-SOAPY-WATER? ()
 	 <COND (<THIS-PRSI?>
 		<COND (<INTBL? ,PRSA ,PUTVERBS ,NUMPUTS>
@@ -5504,7 +5180,7 @@ D ,TS3 ,PERIOD>
 		<TELL "Yuck! " CTHEO " tastes awful." CR>
 		<RTRUE>)
 	       (<VERB? SMELL>
-		<TELL 
+		<TELL
 "Its lemony scent reminds you of dishwashing liquid." CR>
 		<RTRUE>)
 	       (<VERB? EAT BITE>
@@ -5512,14 +5188,14 @@ D ,TS3 ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE WET-AND-SLIPPERY ()
 	 <TELL "It feels wet and slippery." CR>
 	 <RTRUE>>
 
 <ROUTINE PRSO-INTO-SOAPY-WATER ()
 	 <VANISH>
-	 <TELL CTHEO " sinks without a trace into the white, " 
+	 <TELL CTHEO " sinks without a trace into the white, "
 	       D ,SOAPY-WATER ,PERIOD>
 	 <RTRUE>>
 
@@ -5534,7 +5210,7 @@ D ,TS3 ,PERIOD>
 		<TELL ", and you ">)
 	       (T
 		<TELL ", and ">)>
-	 <TELL "find " D ,ME 
+	 <TELL "find " D ,ME
 " up to your knees in white, slippery water." CR>
 	 <RTRUE>>
 
@@ -5562,7 +5238,7 @@ D ,TS3 ,PERIOD>
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL 
+		<TELL
 "It's a flat plastic stick, with hoops molded onto each end for blowing "
 D ,SBUBBLE "s." CR>
 		<RTRUE>)
@@ -5585,7 +5261,7 @@ The startled boy leaps backward at your approach, splashing water all over the p
 
 <ROUTINE LAST-BUBBLE ()
 	 <COND (<EQUAL? ,BACTION 1 2>
-		<TELL CR 
+		<TELL CR
 "His last bubble floats away over the treetops." CR>)>
 	 <RTRUE>>
 
@@ -5694,11 +5370,11 @@ The startled boy leaps backward at your approach, splashing water all over the p
 		<COND (<PRSI? AXE PARASOL GNOMON SPADE>
 		       <BREAK-FILM-WITH ,PRSI>
 		       <RTRUE>)
-                      (<AND <EQUAL? ,SUITED? 1>
+		      (<AND <EQUAL? ,SUITED? 1>
 			    <NOT <HERE? IN-ORBIT ON-SAT IN-SKY>>>
 		       <I-BUBBLE-SUIT <>>
 		       <RTRUE>)>
-		<TELL CTHEO> 
+		<TELL CTHEO>
 		<COND (<NOT <HERE? IN-ORBIT ON-SAT>>
 		       <TELL " flexes like rubber, but">)>
 		<TELL " remains intact." CR>
@@ -5711,7 +5387,7 @@ The startled boy leaps backward at your approach, splashing water all over the p
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	
+
 <ROUTINE PRSO-BOUNCES ()
 	 <TELL CTHEO " bounces off the " D ,FILM
 	       " and ricochets around until you catch it." CR>
@@ -5721,7 +5397,7 @@ The startled boy leaps backward at your approach, splashing water all over the p
 	 <POP-BUBBLE-SUIT>
 	 <TELL "The sharp ">
 	 <COND (<EQUAL? .OBJ ,AXE ,GNOMON>
-	        <TELL "edge">)
+		<TELL "edge">)
 	       (T
 		<TELL "point">)>
 	 <TELL " of " THE .OBJ " str">
@@ -5741,7 +5417,7 @@ The startled boy leaps backward at your approach, splashing water all over the p
 		       <REMOVE .OBJ>
 		       <TELL ". " CTHE .OBJ
 			     " sails off on a new orbit of its own">)>
-		
+
 		<COND (<HERE? ON-SAT>
 		       <TELL ".|
 |
@@ -5756,7 +5432,7 @@ You're blown violently away from the " D ,XRAY>
 			      <COND (<EQUAL? ,ORBCNT 7>
 				     <I-ORBIT>)>
 			      <TELL CR "The plutonium heart of the " D ,XRAY
- 				    " erupts in a searing glare">
+				    " erupts in a searing glare">
 			      <COND (<OR <NOT <IS? ,TS1-DOOR ,OPENED>>
 					 <IS? ,TS1-DOOR ,NOALL>>
 				     <STAR-WARS>
@@ -5770,13 +5446,13 @@ You're blown violently away from the " D ,XRAY>
 			      <RTRUE>)>
 		       <PRINT ,PERIOD>
 		       <GOTO ,IN-ORBIT>
-		       <ICE-VAC>		       
+		       <ICE-VAC>
 		       <RTRUE>)>
 		<PRINT ,PERIOD>
 		<ICE-VAC>
 		<RTRUE>)>
 	 <PRINT ,PERIOD>
-	 <RTRUE>>		      
+	 <RTRUE>>
 
 <ROUTINE BROLLY-FILLS? ()
 	 <COND (<AND <IN? ,PARASOL ,PLAYER>
@@ -5855,7 +5531,7 @@ You're blown violently away from the " D ,XRAY>
 			      <EMPTY-PRSO-FIRST>
 			      <RTRUE>)
 			     (<AND <IS? ,PRSI ,CHILLY>
-		            	   <PRSO? OCRANE BAD-CRANE SHROUD BANDAGE
+			    	   <PRSO? OCRANE BAD-CRANE SHROUD BANDAGE
 					  BAG EBAG SOGGY>>
 			      <VANISH>
 			      <TELL CTHEO
@@ -5883,7 +5559,7 @@ You're blown violently away from the " D ,XRAY>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-ON>
-		<TELL CTHEO 
+		<TELL CTHEO
 " is roughly the size and shape of a large grapefruit. Its " D ,CSURFACE>
 		<COND (<IS? ,PRSO ,CHILLY>
 		       <TELL " glows with heat">)
@@ -5918,13 +5594,13 @@ You're blown violently away from the " D ,XRAY>
 		       <COOL-LUMP>
 		       <RTRUE>)
 		      (<AND <IS? ,PRSO ,CHILLY>
-		            <PRSI? OCRANE BAD-CRANE SHROUD BANDAGE
+			    <PRSI? OCRANE BAD-CRANE SHROUD BANDAGE
 				   BAG EBAG>>
 		       <PERFORM ,V?PUT ,PRSI ,PRSO>
 		       <RTRUE>)>
 		<WASTE-OF-TIME>
 		<RTRUE>)
-	       
+
 	       (<VERB? TAKE TOUCH PULL PUSH MOVE PUSH-TO
 		       TURN RELEASE TAKE-OFF>
 		<COND (<IS? ,PRSO ,TRYTAKE>
@@ -5946,7 +5622,7 @@ You're blown violently away from the " D ,XRAY>
 		<RFALSE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <ROUTINE MAGNETIC ()
 	 <TELL "You feel a strong magnetic attraction." CR>
 	 <RTRUE>>
@@ -5965,16 +5641,16 @@ You're blown violently away from the " D ,XRAY>
 	 <TELL " the lump of metal with the " D ,SPADE
 	       ". But it's hopeless. Every time you ">
 	 <COND (<VERB? TAKE-WITH>
-		<TELL 
+		<TELL
 "get the awkward thing balanced, it slides off with an infuriating ">
-	        <ITALICIZE "thunk.">
+		<ITALICIZE "thunk.">
 	 	<CRLF>
 	 	<RTRUE>)>
-	 <TELL 
+	 <TELL
 "move the awkward thing a few inches, the " D ,SPADE
 " slips out from underneath." CR>
 	 <RTRUE>>
-	  
+
 <ROUTINE COOL-LUMP ()
 	 <REMOVE ,ICE>
 	 <DEQUEUE I-ICE>
@@ -6086,7 +5762,7 @@ You're blown violently away from the " D ,XRAY>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		 
+
 <OBJECT WATERFALL
 	(LOC LOCAL-GLOBALS)
 	(DESC "waterfall")
@@ -6135,7 +5811,7 @@ You're blown violently away from the " D ,XRAY>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <OBJECT CAVE-HOLE
 	(LOC LOCAL-GLOBALS)
 	(DESC "opening")
@@ -6182,7 +5858,7 @@ You're blown violently away from the " D ,XRAY>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT STREAM
 	(LOC LOCAL-GLOBALS)
 	(DESC "stream")
@@ -6233,7 +5909,7 @@ You're blown violently away from the " D ,XRAY>
 	 <COND (<HERE? DOCKSIDE>
 		<RETURN ,STYX>)>
 	 <RETURN ,STREAM>>
-		
+
 <ROUTINE HANDLE-MOUNTAIN-WATER? ()
 	 <COND (<THIS-PRSI?>
 		<COND (<INTBL? ,PRSA ,PUTVERBS ,NUMPUTS>
@@ -6245,7 +5921,7 @@ You're blown violently away from the " D ,XRAY>
 	       (<VERB? EXAMINE LOOK-INSIDE SEARCH>
 		<TELL ,CANT "make out anything ">
 		<SAY-IN-MOUNTAIN-WATER>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<VERB? DRINK-FROM DRINK TASTE>
 		<TELL "The cold water is quite refreshing." CR>
 		<RTRUE>)
@@ -6253,7 +5929,7 @@ You're blown violently away from the " D ,XRAY>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE SAY-IN-MOUNTAIN-WATER ()
 	 <TELL "in the white, foaming water." CR>
 	 <RTRUE>>
@@ -6261,7 +5937,7 @@ You're blown violently away from the " D ,XRAY>
 <ROUTINE DO-WATER? ()
 	 <COND (<OR <ENTERING?>
 		    <VERB? SWIM DIVE LIE-DOWN SIT STAND-UNDER STAND-ON>>
-		<TELL 
+		<TELL
 "One touch of the frigid water" ,CHANGES>
 		<RTRUE>)
 	       (<AND <VERB? TOUCH REACH-IN>
@@ -6269,7 +5945,7 @@ You're blown violently away from the " D ,XRAY>
 		<TELL "The water is very cold." CR>
 		<COND (<IN? ,HONEY ,PLAYER>
 		       <EXIT-HONEY>
-		       <PRINT ,PERIOD>)>		       
+		       <PRINT ,PERIOD>)>
 		<RTRUE>)
 	       (<VERB? TAKE KICK SHAKE KNOCK MUNG>
 		<SPLASHES>
@@ -6318,7 +5994,7 @@ You're blown violently away from the " D ,XRAY>
 		<RFALSE>)
 	       (<AND <VERB? EXAMINE TOUCH KISS>
 		     <EQUAL? ,PRSI <> ,HANDS>>
-		<TELL "The walls of the " D ,CLIFF 
+		<TELL "The walls of the " D ,CLIFF
 		      " are damp and slippery." CR>
 		<RTRUE>)
 	       (<VERB? LOOK-UP>
@@ -6370,7 +6046,7 @@ You're blown violently away from the " D ,XRAY>
 <ROUTINE CLIFF-TOO-STEEP ()
 	 <TELL "The walls of the " D ,CLIFF " are too steep." CR>
 	 <RTRUE>>
-		       
+
 <OBJECT STATUES
 	(LOC BONEYARD)
 	(DESC "statues")
@@ -6448,7 +6124,7 @@ You're blown violently away from the " D ,XRAY>
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-ON READ>
-		<TELL CTHEO 
+		<TELL CTHEO
 " are covered with forgotten names and hopeless epitaphs">
 		<COND (<T? ,FLIP?>
 		       <TELL ", all engraved backwards">)>
@@ -6469,7 +6145,7 @@ You're blown violently away from the " D ,XRAY>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		     
+
 <OBJECT CRYPT
 	(LOC BONEYARD)
 	(DESC "crypt")
@@ -6499,10 +6175,10 @@ You're blown violently away from the " D ,XRAY>
 		<TELL "The granite " D ,PRSO
 " must be hundreds of years old. It">
 		<COND (<IS? ,PRSO ,OPENED>
-		       <TELL 
+		       <TELL
 "s lid is broken off, leaving a jagged " D ,CAVE-HOLE>)
 		      (T
-		       <TELL 
+		       <TELL
 "'s sealed shut with a heavy lid">
 		       <COND (<SEE-ANYTHING-IN? ,LID>
 			      <TELL ", on which you see ">
@@ -6593,14 +6269,14 @@ A name is engraved across the bottom of the " D ,PRSO ,PERIOD>
 		      (<PRSI? PARASOL AXE>
 		       <COND (<AND <PRSI? PARASOL>
 				   <IS? ,PRSI ,OPENED>>
-			      <TELL 
+			      <TELL
 "[closing the " D ,PRSI " first" ,BRACKET>)>
 		       <VANISH ,PRSI>
 		       <LEAN-ON-LID>
-		       <TELL CTHEI 
+		       <TELL CTHEI
 "'s handle snaps neatly in half.|
 |
-You curse and fume at the stupid, flimsy " D ,PRSI 
+You curse and fume at the stupid, flimsy " D ,PRSI
 ", and obtain great satisfaction by throwing the broken pieces over the edge of the cliff." CR>
 		       <RTRUE>)
 		      (<PRSI? SPADE>
@@ -6614,11 +6290,11 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 	 	       <MOVE ,BROKEN-LID ,BONEYARD>
 	 	       <SETG P-IT-OBJECT ,BROKEN-LID>
 	 	       <LEAN-ON-LID>
-		       <TELL 
+		       <TELL
 "You feel a puff of foul-smelling air as a section of the crypt's lid breaks away">
 	 	       <COND (<FIRST? ,LID>
 			      <MOVE-ALL ,LID ,BONEYARD>
-			      <TELL ". Everything that was on the " 
+			      <TELL ". Everything that was on the "
 				    D ,CRYPT " scatters to the ground">)>
 	 	       <PRINT ,PERIOD>
 	 	       <MOVE ,GOON ,CRYPT>
@@ -6653,13 +6329,13 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 ">
 	 <ITALICIZE "Crack!">
 	 <TELL " ">
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <ROUTINE DESCRIBE-LID ()
 	 <TELL CTHEO " is a formidable slab of granite">
 	 <COND (<FIRST? ,PRSO>
-	        <TELL ". " ,YOU-SEE>
-	        <PRINT-CONTENTS ,PRSO>
+		<TELL ". " ,YOU-SEE>
+		<PRINT-CONTENTS ,PRSO>
 		<TELL " on top">)>
 	 <PRINT ,PERIOD>
 	 <RTRUE>>
@@ -6671,7 +6347,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 	(SYNONYM LID COVER PIECE SECTION SLAB GRANITE STONE ROCK)
 	(ADJECTIVE CRACKED BROKEN FORMIDABLE ROCK STONE GRANITE)
 	(ACTION BROKEN-LID-F)>
-	
+
 <ROUTINE BROKEN-LID-F ()
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
@@ -6763,7 +6439,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 		<SMELLS-OF-DEATH>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>		       
+		<RFALSE>)>>
 
 <OBJECT BARROW-DOOR
 	(LOC LOCAL-GLOBALS)
@@ -6847,7 +6523,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 		<COND (<ITAKE>
 		       <MAKE ,PRSO ,SEEN>
 		       <TELL "You remove the " D ,PRSO
-			     " from the " D ,GOON 
+			     " from the " D ,GOON
 			     ", revealing its decomposed body." CR>
 		       <UPDATE-SCORE>)>
 		<RTRUE>)
@@ -6855,7 +6531,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	
+
 <ROUTINE HANDLE-CLOTH? ()
 	 <COND (<AND <VERB? CUT RIP>
 		     <OR <EQUAL? ,PRSI <> ,HANDS ,KNIFE>
@@ -6926,7 +6602,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 	(VALUE 0)
 	(SIZE 3)
 	(MASS 3)
-        (GENERIC GENERIC-BOOT-F)
+	(GENERIC GENERIC-BOOT-F)
 	(ACTION RBOOT-F)>
 
 <OBJECT GBOOT
@@ -6939,7 +6615,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 	(VALUE 0)
 	(SIZE 3)
 	(MASS 3)
-        (GENERIC GENERIC-BOOT-F)
+	(GENERIC GENERIC-BOOT-F)
 	(ACTION GBOOT-F)>
 
 <ROUTINE GENERIC-BOOT-F (TABLE "AUX" LEN)
@@ -6960,7 +6636,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 		<RETURN ,NOT-HERE-OBJECT>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <ROUTINE RBOOT-F ("AUX" X)
 	 <COND (<BAD-BOOT-PART? ,RBOOT>
 		<RFATAL>)>
@@ -7027,7 +6703,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 		<RETURN .X>)
 	       (T
 		<RFALSE>)>>
-		
+
 <ROUTINE HANDLE-BOOT? (STR)
 	 <COND (<NOUN-USED? ,W?RECESS>
 		<COND (<VERB? EXAMINE LOOK-INSIDE SEARCH>
@@ -7042,7 +6718,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 			      <REMOVE ,PRSO>
 			      <MAKE ,PRSI ,CHILLY>
 			      <TELL "You press the " D ,PRSO
-" into the toe of the " D ,PRSI ". As you watch, the " .STR 
+" into the toe of the " D ,PRSI ". As you watch, the " .STR
 " leather closes around the jewel and absorbs it like melting wax.|
 |
 A shudder of ecstasy ripples up and down the length of the boot. It begins to glow with raw energy, brighter and brighter, until you shield your eyes from the glare.|
@@ -7070,7 +6746,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-ON>
-		<TELL 
+		<TELL
 "The boot is exceedingly well-made, and colored bright "
 		      .STR ,PA>
 	 	<COND (<IS? ,PRSO ,CHILLY>
@@ -7086,7 +6762,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-			      
+
 <OBJECT BCOIN
 	(LOC GOON-MOUTH)
 	(DESC "silver coin")
@@ -7097,7 +6773,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 	(SYNONYM COIN MONEY CURRENCY SILVER)
 	(ADJECTIVE SILVER METAL)
 	(ACTION BCOIN-F)>
-	
+
 <ROUTINE BCOIN-F ()
 	 <COND (<VERB? EXAMINE READ LOOK-ON>
 		<TELL "The words ">
@@ -7110,7 +6786,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 	       (<HANDLE-COIN?>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
+		<RFALSE>)>>
 
 <OBJECT ICAVE
 	(LOC LOCAL-GLOBALS)
@@ -7141,7 +6817,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 			      <CRLF>
 			      <COND (<IS? ,ICE ,NODESC>
 				     <BREAK-OFF-ICE>
-				     <TELL 
+				     <TELL
 "An " D ,ICE " breaks off the " D ,CEILING " and falls to the ground." CR>
 				     <RTRUE>)>
 			      <TELL
@@ -7161,7 +6837,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		     <T? ,PRSI>>
 		<COND (<PRSI? PARASOL SHROUD>
 		       <COND (<IS? ,ICE ,NODESC>
-			      <BREAK-OFF-ICE>		       
+			      <BREAK-OFF-ICE>
 		       	      <TELL "A quick swipe with the " D ,PRSI
 " breaks one of the " D ,PRSO " off the " D ,CEILING>)
 			     (T
@@ -7170,7 +6846,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		       <PRINT ,PERIOD>
 		       <RTRUE>)>
 		<NICE-TRY>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		<CANT-REACH ,ICICLES>
 		<RTRUE>)
@@ -7179,7 +6855,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 
 <ROUTINE BREAK-OFF-ICE ()
 	 <UNMAKE ,ICE ,NODESC>
-         <MOVE ,ICE ,ICE-CAVE>
+	 <MOVE ,ICE ,ICE-CAVE>
 	 <SETG P-IT-OBJECT ,ICE>
 	 <QUEUE I-ICE -1>
 	 <RTRUE>>
@@ -7204,7 +6880,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<TELL "The ">
 		<COND (<L? ,ILIFE 4>
 		       <TELL "melting ">)>
-		<TELL D ,ICE 
+		<TELL D ,ICE
 " looks like a crystal needle, eighteen inches long." CR>
 		<RTRUE>)
 	       (<AND <VERB? TOUCH TASTE KISS SQUEEZE>
@@ -7222,7 +6898,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	        
+
 <ROUTINE SHATTER-ICE ()
 	 <REMOVE-ICE>
 	 <TELL CTHE ,ICE " shatters into useless fragments">
@@ -7243,7 +6919,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 	(CAPACITY 1)
 	(SYNONYM KEYHOLE HOLE LOCK OPENING)
 	(ADJECTIVE SMALL TINY)
-        (DESCFCN DESCRIBE-KEYHOLE)
+	(DESCFCN DESCRIBE-KEYHOLE)
 	(ACTION KEYHOLE-F)>
 
 <ROUTINE DESCRIBE-KEYHOLE ("OPTIONAL" (CONTEXT <>))
@@ -7296,7 +6972,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<COND (<IN? ,KEY ,PRSO>
 		       <TELL CTHE ,KEY " is blocking the hole." CR>
 		       <RTRUE>)>
-		<TELL 
+		<TELL
 "It occurs to you that there might be another " D ,WIGHT " beyond that wall, waiting to jab a hot spike into your eye. You decide not to risk it." CR>
 		<RTRUE>)
 	       (<VERB? REACH-IN>
@@ -7311,7 +6987,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <ROUTINE TOO-SMALL ("OPTIONAL" (OBJ <>))
 	 <COND (<ZERO? .OBJ>
 		<SET OBJ ,PRSO>)>
@@ -7336,7 +7012,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<COND (<INTBL? ,PRSA ,PUTVERBS ,NUMPUTS>
 		       <MOVE ,PRSO ,ICE-CAVE>
 		       <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
-		       <TELL CTHEO " slides down the " D ,SLOPE 
+		       <TELL CTHEO " slides down the " D ,SLOPE
 			     " into the darkness below." CR>
 		       <SAY-IF-HERE-LIT>
 		       <RTRUE>)>
@@ -7361,7 +7037,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		 
+
 <OBJECT CAVE
 	(LOC LOCAL-GLOBALS)
 	(DESC "cavern")
@@ -7396,7 +7072,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <OBJECT COTTAGE
 	(LOC LOCAL-GLOBALS)
 	(DESC "cottage")
@@ -7440,7 +7116,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <OBJECT STOOLS
 	(LOC LOCAL-GLOBALS)
 	(DESC "toadstools")
@@ -7531,7 +7207,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-			
+
 <ROUTINE DIG-IN-GARDEN ()
 	 <TELL "It would be a shame to disturb the " D ,HERBS
 	       ". They're so nice and symmetrical." CR>
@@ -7574,7 +7250,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <ROUTINE DO-COTTAGE-DOOR? (IN OUT)
 	 <COND (<ENTERING?>
 		<DO-WALK <COND (<HERE? IN-COTTAGE> .OUT)
@@ -7637,7 +7313,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-INSIDE SEARCH>
-		<TELL 
+		<TELL
 "The herbs are lovingly planted in neat, parallel rows." CR>
 		<RTRUE>)
 	       (<VERB? SMELL>
@@ -7669,7 +7345,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<LOOK-ON-PILE>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>		
+		<RFALSE>)>>
 
 <ROUTINE LOOK-ON-PILE ()
 	 <COND (<SEE-ANYTHING-IN? ,PILE>
@@ -7705,7 +7381,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		      
+
 <OBJECT GARLIC
 	(DESC "clove of garlic")
 	(FLAGS NODESC TAKEABLE)
@@ -7773,7 +7449,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<TELL "The scent is vaguely aromatic." CR>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>				
+		<RFALSE>)>>
 
 <ROUTINE PLAYING-IN? ()
 	 <COND (<VERB? STAND-ON CROSS SIT LIE-DOWN ENTER PLAY>
@@ -7785,7 +7461,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <OBJECT PLATFORM
 	(LOC LOCAL-GLOBALS)
 	(DESC "platform")
@@ -7866,7 +7542,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <OBJECT PLADDER
 	(LOC LOCAL-GLOBALS)
 	(DESC "ladder")
@@ -7952,7 +7628,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT RODENTS
 	(LOC LOCAL-GLOBALS)
 	(DESC "rodents")
@@ -7998,7 +7674,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 	(ADJECTIVE BROWN FURRY SMALL TINY)
 	(GENERIC GENERIC-LEMMINGS-F)
 	(ACTION LEMMINGS-F)>
-		
+
 "TOUCHED = player referred to rodents as LEMMINGS."
 
 <ROUTINE LEMMINGS-F ()
@@ -8013,7 +7689,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		       <TELL " to notice." CR>
 		       <RTRUE>)
 		      (<VERB? THROW THROW-OVER>
-		       <TELL "The running " D ,RATS 
+		       <TELL "The running " D ,RATS
 			     " would be hard to hit." CR>
 		       <RTRUE>)>
 		<RFALSE>)
@@ -8059,7 +7735,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE LONG-BROWN ()
 	 <TELL ", with long brown fur and beady eyes">
 	 <RTRUE>>
@@ -8070,7 +7746,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)>
 	 <TELL " running past">
 	 <RTRUE>>
-		
+
 <OBJECT LEM
 	(DESC "lemming")
 	(FLAGS TAKEABLE LIVING PERSON)
@@ -8097,7 +7773,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 	       (<THIS-PRSI?>
 		<COND (<VERB? GIVE FEED>
 		       <COND (<PRSO? BAG GARLIC>
-			      <TELL ,CTHELEM "sniffs at " THEO 
+			      <TELL ,CTHELEM "sniffs at " THEO
 				    ", but shows no interest." CR>
 			      <RTRUE>)>
 		       <NOT-LIKELY ,PRSO "would appeal to a lemming">
@@ -8128,7 +7804,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<TELL ,CTHELEM "chatters nervously." CR>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>	    
+		<RFALSE>)>>
 
 <OBJECT FISSURE
 	(LOC CLIFF-EDGE)
@@ -8213,7 +7889,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 
 <ROUTINE LOOK-DOWN-TCLIFF ()
 	 <MAKE ,TCLIFF ,TOUCHED>
-	 <TELL 
+	 <TELL
 "The waves dashing on the rocks below are choked with " D ,DLEM "s." CR>
 	 <RTRUE>>
 
@@ -8246,14 +7922,14 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <OBJECT TBOMB
 	(LOC ON-PLATFORM)
 	(DESC "enclosure")
 	(FLAGS NODESC VOWEL TRYTAKE NOALL)
 	(SYNONYM ENCLOSURE BOMB DEVICE)
 	(ADJECTIVE MASSIVE LARGE STEEL METAL)
-        (ACTION TBOMB-F)>
+	(ACTION TBOMB-F)>
 
 <ROUTINE TBOMB-F ()
 	 <COND (<HANDLE-BOMB?>
@@ -8289,7 +7965,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT GROUP
 	(LOC FTUN)
 	(DESC "group of buildings")
@@ -8303,7 +7979,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 	 <COND (<VERB? EXAMINE>
 		<MAKE ,PRSO ,TOUCHED>
 		<TELL "The distant " D ,SCHOOL
-		      "s look like military " D ,NBUNKERS 
+		      "s look like military " D ,NBUNKERS
 		      ". Armed guards are patrolling the area." CR>
 		<RTRUE>)
 	       (<RUSSIA?>
@@ -8321,14 +7997,14 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 
 <ROUTINE RUSSIANS-F ()
 	 <COND (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
-		<TELL "Luckily, the " D ,RUSSIANS 
+		<TELL "Luckily, the " D ,RUSSIANS
 " don't notice. You're still too far away." CR>
 		<RFATAL>)
 	       (<RUSSIA?>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <ROUTINE RUSSIA? ()
 	 <COND (<AND <VERB? WALK-TO FOLLOW>
 		     <HERE? FTUN>>
@@ -8351,7 +8027,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 	 <COND (<YES?>
 		<CRLF>
 		<VOICE-MUTTERS "It's your funeral">
-		<TELL "You draw closer to the " 
+		<TELL "You draw closer to the "
 		      D ,GROUP ,PCR>
 	 	<HLIGHT ,H-BOLD>
 	 	<TELL "Control Bunkers">
@@ -8364,8 +8040,8 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<RFALSE>)>
 	 <UNMAKE ,GROUP ,TOUCHED>
 	 <NO-DETECTION>
-	 <RFALSE>>  
-			       
+	 <RFALSE>>
+
 <OBJECT VALLEY
 	(LOC ON-BLUFF)
 	(DESC "valley")
@@ -8389,7 +8065,7 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <OBJECT BLUFF
 	(LOC ON-BLUFF)
 	(DESC "bluff")
@@ -8415,7 +8091,7 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<RTRUE>)
 	       (<OR <EXITING?>
 		    <VERB? CLIMB-DOWN LEAP DIVE>>
-	        <TELL "You're not in a tree." CR>
+		<TELL "You're not in a tree." CR>
 		<RTRUE>)
 	       (<ENTERING?>
 		<V-WALK-AROUND>
@@ -8529,9 +8205,9 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <ROUTINE SEE-TRELLIS (STR)
-	 <TELL 
+	 <TELL
 "The arched " D ,ATREL " is thickly woven with " D ,ARBS ". It opens " .STR
 ", into the " D ,HEDGE ,PERIOD>
 	 <RTRUE>>
@@ -8594,8 +8270,8 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 	       (<HANDLE-TRELS?>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>	
-	 
+		<RFALSE>)>>
+
 <OBJECT ARBS
 	(LOC LOCAL-GLOBALS)
 	(DESC "arborvitaes")
@@ -8635,7 +8311,7 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 			      <RTRUE>)>
 		       <MOVE ,PRSO <GETP ,HERE ,P?OVER-HEDGE>>
 		       <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
-		       <TELL CTHEO 
+		       <TELL CTHEO
 " sails over the top of the hedge and disappears." CR>
 		       <RTRUE>)
 		      (<VERB? PUT-ON>
@@ -8718,11 +8394,11 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<COND (<ZERO? .UNDER>
 		       <V-LOOK>
 		       <RTRUE>)>
-		<TELL CTHEO 
-" resembles a doughnut, fifty feet across and woven entirely of " D ,ARBS 
+		<TELL CTHEO
+" resembles a doughnut, fifty feet across and woven entirely of " D ,ARBS
 ". This \"doughnut\" is standing on end, and you're gawking up at it from underneath. ">
 		<DESCRIBE-PERGOLA>
-		<TELL 
+		<TELL
 "The whole affair is oddly skewed; some parts look as if they're turned inside out." CR>
 		<RTRUE>)
 	       (<OR <ENTERING?>
@@ -8759,7 +8435,7 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-				  		        
+
 <OBJECT MIASMA
 	(LOC LOCAL-GLOBALS)
 	(DESC "air")
@@ -8775,7 +8451,7 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 	       (<SKY-F>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>	
+		<RFALSE>)>>
 
 <ROUTINE SUFFOCATE ()
 	 <TELL CTHE ,MIASMA " is thick and suffocating." CR>
@@ -8793,10 +8469,10 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 
 <ROUTINE DESCRIBE-TRAP ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-OBJDESC>
-		<TELL "A big Venus " D ,TRAP 
+		<TELL "A big Venus " D ,TRAP
 " is growing nearby. Its crimson jaws are ">
 		<COND (<IS? ,TRAP ,OPENED>
-		       <TELL 
+		       <TELL
 "wide open, exposing a cavity that gleams with sweet-smelling " D ,ICHOR ".">
 		       <RTRUE>)>
 		<TELL "tightly closed.">
@@ -8903,7 +8579,7 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<ITS-CLOSED ,TRAP>
 		<RTRUE>)
 	       (<VERB? TOUCH PLAY SQUEEZE PICK CLEAN KICK HIT ADJUST SPIN
-		       SHAKE> 
+		       SHAKE>
 		<TOUCH-TRAP>
 		<RTRUE>)
 	       (<EXITING?>
@@ -8930,7 +8606,7 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 	 <SETG JAW-TIME 10>
 	 <QUEUE I-JAWS -1>
 	 <UNMAKE ,TRAP ,OPENED>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <ROUTINE LEAP-FROM-TRAP ()
 	 <TELL
@@ -8939,7 +8615,7 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 	 <RTRUE>>
 
 <ROUTINE LOOK-INTO-TRAP ()
-	 <TELL 
+	 <TELL
 " is coated with a glistening " D ,ICHOR " that resembles morning dew.">
 	 <RTRUE>>
 
@@ -8983,9 +8659,9 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <ROUTINE HEAR-DRIPPING ()
-	 <TELL 
+	 <TELL
 "You can hear dripping liquids and other moist " D ,SOUND "s close by." CR>
 	 <RTRUE>>
 
@@ -9005,7 +8681,7 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 			      <FEEL-HIVE>
 			      <RTRUE>)>
 		       <MUNG-HIVE ,PRSO>
-		       <RTRUE>)	     
+		       <RTRUE>)
 		      (<VERB? PUT>
 		       <COND (<PRSO? HANDS>
 			      <PUT-HAND-IN-HIVE>
@@ -9060,10 +8736,10 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>
 		<TELL "A crescendo of buzzing" ,CHANGES>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE MUNG-HIVE (OBJ)
 	 <COND (<EQUAL? .OBJ ,HANDS ,FEET>
 		<RUPTURES-HIVE .OBJ>
@@ -9077,18 +8753,18 @@ One of the guards patrolling the area greets your unexpected arrival by shooting
 		<RUPTURES-HIVE .OBJ>
 		<RTRUE>)>
 	 <MOVE .OBJ ,HERE>
-	 <TELL CTHE .OBJ 
+	 <TELL CTHE .OBJ
 " strikes the hive and lands harmlessly at your feet." CR>
 	 <BUZZ-RISES>
 	 <RTRUE>>
-	       
+
 <ROUTINE PUT-HAND-IN-HIVE ()
 	 <TELL "You reach ">
 	 <COND (<IN? ,HONEY ,HIVE>
 		<TELL "reckless">)
 	       (T
 		<TELL "greedi">)>
-	 <TELL 
+	 <TELL
 "ly into the hive, and feel something sticky at your fingertips. ">
 	 <COND (<IS? ,BEE ,BORING>
 		<UNMAKE ,BEE ,BORING>
@@ -9112,8 +8788,8 @@ Howling with agony">
 		<RTRUE>)>
 	 <TELL " covered with gigantic bees!" CR>
 	 <BEES-ATTACK>
-	 <RTRUE>>		
-		 
+	 <RTRUE>>
+
 <ROUTINE YANK-ARM ()
 	 <TELL ", you yank your arm out of the hive and ">
 	 <RTRUE>>
@@ -9121,13 +8797,13 @@ Howling with agony">
 <ROUTINE RUPTURES-HIVE (THING)
 	 <TELL "With a papery ">
 	 <ITALICIZE "crunch,">
-	 <TELL " " THE .THING 
+	 <TELL " " THE .THING
 " ruptures the " D ,CSURFACE " of the " D ,HIVE ,PERIOD>
 	 <BEES-ATTACK>
 	 <RTRUE>>
 
 <ROUTINE BEES-ATTACK ()
-	 <TELL CR 
+	 <TELL CR
 "Giant bees pour out of the hive in an angry cloud! They cover your face and neck with hundreds of stings, any few of which would have been enough to kill you.">
 	 <JIGS-UP>
 	 <RTRUE>>
@@ -9138,12 +8814,12 @@ Howling with agony">
 	 <RTRUE>>
 
 <ROUTINE BUZZ-RISES ()
-	 <TELL CR CTHE ,HIVE 
+	 <TELL CR CTHE ,HIVE
 "'s buzz grows louder, then slowly subsides." CR>
 	 <RTRUE>>
-	
+
 <OBJECT HONEY
-        (LOC HIVE)
+	(LOC HIVE)
 	(DESC "handful of honey")
 	(FLAGS FOODBIT NODESC TOUCHED TAKEABLE NOALL SURFACE)
 	(SYNONYM HONEY FOOD HANDFUL)
@@ -9241,7 +8917,7 @@ Howling with agony">
 	(ADJECTIVE BUMBLE HONEY GIANT GIGANTIC HUGE LARGE OVERGROWN BUZZING)
 	(GENERIC GENERIC-BEE-F)
 	(ACTION BEE-F)>
-       
+
 "TOUCHED = bee poised to strike, SEEN = 2 stings left, BORING = not seen."
 
 <ROUTINE BEE-F ()
@@ -9280,12 +8956,12 @@ Howling with agony">
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-				
+
 <OBJECT CAVERN
 	(LOC LOCAL-GLOBALS)
 	(DESC "tunnel")
 	(FLAGS NODESC)
-	(SYNONYM CAVERN CAVE TUNNEL TUNNELS CHAMBER UNDERGROUND 
+	(SYNONYM CAVERN CAVE TUNNEL TUNNELS CHAMBER UNDERGROUND
 	 	 PASSAGE PASSAGES DARKNESS)
 	(ADJECTIVE ROCK UNDERGROUND DARK)
 	(ACTION HERE-F)>
@@ -9304,7 +8980,7 @@ Howling with agony">
 	 <COND (<HANDLE-BOMB?>
 		<RTRUE>)
 	       (<VERB? EXAMINE>
-		<TELL CTHEO 
+		<TELL CTHEO
 " is about three feet in diameter and ten feet long. ">
 		<READ-UBOMB>
 		<RTRUE>)
@@ -9316,7 +8992,7 @@ Howling with agony">
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <ROUTINE HANDLE-BOMB? ()
 	 <COND (<THIS-PRSI?>
 		<COND (<VERB? PUT PUT-UNDER PUT-BEHIND>
@@ -9336,7 +9012,7 @@ Howling with agony">
 		<COND (<EQUAL? ,PRSI <> ,HANDS ,FEET>
 		       <BEST-KARATE>
 		       <RTRUE>)
-		      (<PRSI? AXE SPADE GNOMON LUMP> 
+		      (<PRSI? AXE SPADE GNOMON LUMP>
 		       <VOICE-MUTTERS "Brilliant">
 		       <TELL "Your " D ,PRSI " cuts deep into the " D ,PRSO
 		      	     ", lodging ">
@@ -9356,7 +9032,7 @@ Howling with agony">
 		<RFALSE>)>>
 
 <ROUTINE RESULTING-BLAST ()
-	 <TELL 
+	 <TELL
 "into a compartment lined with high explosives. The resulting blast fails to initiate the nuclear reaction it was designed to trigger. It is, nevertheless, sufficiently powerful to blow you to bits.">
 	 <JIGS-UP>
 	 <RTRUE>>
@@ -9368,8 +9044,8 @@ Howling with agony">
 <ROUTINE READ-UBOMB ()
 	 <TELL
 "Warnings indicate the presence of radioactivity." CR>
-	 <RTRUE>> 
-		       
+	 <RTRUE>>
+
 <OBJECT UCABLES
 	(LOC LOCAL-GLOBALS)
 	(DESC "cables and pipes")
@@ -9399,7 +9075,7 @@ Howling with agony">
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT LANDSLIDE
 	(LOC TUN3)
 	(DESC "landslide")
@@ -9407,9 +9083,6 @@ Howling with agony">
 	(SYNONYM LANDSLIDE ROCKS DIRT)
       ; (ACTION LANDSLIDE-F)>
 
-; <ROUTINE LANDSLIDE-F ()
-	 <RFALSE>>
-	
 <OBJECT CREVICE
 	(LOC TUN3)
 	(DESC "crevice")
@@ -9441,19 +9114,19 @@ Howling with agony">
 <ROUTINE TOO-DARK-IN-CREVICE ()
 	 <TELL "It's too dark to see anything in the "
 	       D ,CREVICE ,PERIOD>
-	 <RTRUE>>    
+	 <RTRUE>>
 
 <ROUTINE CREVICE-F ()
 	 <COND (<THIS-PRSI?>
 		<COND (<VERB? PUT>
 		       <COND (<PRSO? SHARD>
 			      <MOVE ,PRSO ,PRSI>
-			      <TELL 
+			      <TELL
 "It doesn't look as if the " D ,PRSO
-" is going to fit. But you twist it harder against the narrow " 
+" is going to fit. But you twist it harder against the narrow "
 D ,CAVE-HOLE ", harder.." ,PCR>
 		       	      <ITALICIZE "Thunk.">
-			      <TELL 
+			      <TELL
 " The soft wood falls to the bottom of the " D ,PRSI
 ", filling it with pale light." CR>
 		       	      <RTRUE>)>
@@ -9512,7 +9185,7 @@ D ,CAVE-HOLE ", harder.." ,PCR>
 <ROUTINE SKINK-F ()
 	 <COND (<VERB? EXAMINE WATCH>
 		<UNMAKE ,PRSO ,SEEN>
-		<TELL 
+		<TELL
 "It's a scaly lizard, four inches long, with big eyes and a little pink mouth." CR>
 		<RTRUE>)>
 	 <MAKE ,SKINK ,SEEN>
@@ -9556,7 +9229,7 @@ D ,CAVE-HOLE ", harder.." ,PCR>
 		      (<IN? ,PRSO ,PLAYER>
 		       <YOUD-HAVE-TO "put down" ,PRSO>
 		       <RTRUE>)>
-		<SKINK-SCAMP>		
+		<SKINK-SCAMP>
 		<RTRUE>)
 	       (<VERB? EAT TASTE>
 		<EAT-SKINK>
@@ -9612,7 +9285,7 @@ D ,CAVE-HOLE ", harder.." ,PCR>
 	 <TELL D ,PRSO
 " into your mouth, bite deep and swallow it with a satisfying gulp." CR>
 	 <RTRUE>>
-		     
+
 <OBJECT HOLLOW
 	(LOC OSSUARY)
 	(DESC "hollow")
@@ -9649,7 +9322,7 @@ D ,CAVE-HOLE ", harder.." ,PCR>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-	        <TELL CTHEO
+		<TELL CTHEO
 " are bleached white from years in the sun. They range from bits of rib and skull to complete skeletons." CR>
 		<RTRUE>)
 	       (<VERB? TAKE LOOK-INSIDE SEARCH LOOK-UNDER LOOK-BEHIND
@@ -9658,8 +9331,8 @@ D ,CAVE-HOLE ", harder.." ,PCR>
 		       <UNMAKE ,KEY ,NODESC>
 		       <MOVE ,KEY ,OSSUARY>
 	 	       <SETG P-IT-OBJECT ,KEY>
-	 	       <TELL 
-"As you sift dispiritedly through the " D ,PRSO ", a " 
+	 	       <TELL
+"As you sift dispiritedly through the " D ,PRSO ", a "
 D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		       <RTRUE>)>
 		<TELL "Further sifting through the " D ,PRSO
@@ -9712,7 +9385,7 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		<MAKE ,SLOPE ,SEEN>
 		<SETG P-IT-OBJECT ,SLOPE>
 		<TELL "You slowly twist the key in the hole" ,PCR
-		      CTHE ,GROUND 
+		      CTHE ,GROUND
 " under your feet is moving! You leap out of the way, and watch as a hidden slope opens up beneath the keyhole." CR>
 		<COND (<NOT <IS? ,PRSO ,CHILLY>>
 		       <MAKE ,PRSO ,CHILLY>
@@ -9757,7 +9430,7 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 			     (T
 			      <MOVE ,PRSO ,WIGHT>)>
 		       <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
-		       <TELL CTHEO " disappears into the dark " 
+		       <TELL CTHEO " disappears into the dark "
 			     D ,PRSI ,PERIOD>
 		       <RTRUE>)>
 		<RFALSE>)
@@ -9776,13 +9449,13 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 	       (<OR <ENTERING?>
 		    <VERB? STAND-UNDER>>
 		<DO-WALK ,P?SOUTH>
-	        <RTRUE>)
+		<RTRUE>)
 	       (<EXITING?>
 		<NOT-IN>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT SCAF-STAIR
 	(LOC LOCAL-GLOBALS)
 	(DESC "stairway")
@@ -9870,7 +9543,7 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	
+
 <OBJECT RWALLS
 	(LOC LOCAL-GLOBALS)
 	(DESC "rock walls")
@@ -9888,7 +9561,7 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		        
+
 <OBJECT CAGE
 	(LOC IN-COTTAGE)
 	(DESC "birdcage")
@@ -9928,7 +9601,7 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 			      <RTRUE>)
 			     (<PRSO? LEM>
 			      <MOVE ,PRSO ,PRSI>
-			      <TELL CTHEO 
+			      <TELL CTHEO
 " sinks its teeth into your thumb when it sees the cage. But you jam it inside anyway." CR>
 		       	      <COND (<NOT <IS? ,PRSI ,BORING>>
 				     <MAKE ,PRSI ,BORING>
@@ -9939,7 +9612,7 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 			     (T
 			      <MOVE ,PRSO ,PRSI>
 			      <TELL "You put " THEO " into " THEI ,PERIOD>)>
-		       
+
 		       <COND (<AND <PRSO? BAG>
 				   <T? ,CCNT>
 				   <IN? ,MEEP ,HERE>>
@@ -9968,7 +9641,7 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		<COND (<AND <IN? ,MAGPIE ,PRSO>
 			    <T? ,LIT?>>
 		       <TELL CR CTHE ,MAGPIE " flutters out of the cage and ">
-         	       <COND (<T? ,SUITED?>
+	 	       <COND (<T? ,SUITED?>
 			      <FREE-MAG ,FILM>
 			      <RTRUE>)
 			     (<AND <HERE? IN-CLOSET>
@@ -9993,10 +9666,10 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       		       
+
 <ROUTINE FREE-MAG (OBJ)
 	 <UNMAKE ,CAGE ,OPENED>
-	 <TELL "circles around the inside of the " D .OBJ 
+	 <TELL "circles around the inside of the " D .OBJ
 ". After considerable effort, you manage to stuff it back in the cage and slam the door shut." CR>
 	 <RTRUE>>
 
@@ -10020,7 +9693,7 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL 
+		<TELL
 "Its sharp little eyes stare back at you suspiciously." CR>
 		<RTRUE>)
 	       (<VERB? WATCH LISTEN>
@@ -10047,7 +9720,7 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <OBJECT CAULDRON
 	(LOC IN-COTTAGE)
 	(DESC "cauldron")
@@ -10102,11 +9775,11 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
 		<COND (<IS? ,EMERALD ,NODESC>
-		       <TELL 
+		       <TELL
 "White " D ,STEAM " writhe mysteriously from " THEO "'s depths." CR>
 		       <RTRUE>)>
-		<TELL 
-"Your amateur conjuring doesn't seem to have damaged " THEO " very much." CR> 
+		<TELL
+"Your amateur conjuring doesn't seem to have damaged " THEO " very much." CR>
 		<RTRUE>)
 	       (<VERB? LOOK-INSIDE SEARCH>
 		<COND (<IS? ,EMERALD ,NODESC>
@@ -10124,17 +9797,17 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 	       (<AND <VERB? TOUCH KNOCK SHAKE KISS SQUEEZE EMPTY>
 		     <EQUAL? ,PRSI <> ,HANDS>
 		     <IS? ,EMERALD ,NODESC>>
-		<TELL "The sides of the " D ,PRSO 
+		<TELL "The sides of the " D ,PRSO
 		      " are uncomfortably warm." CR>
 		<RTRUE>)
 	       (<OR <VERB? LOOK-UNDER PUT-UNDER>
 		    <INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>>
-		<TELL CTHEO  
+		<TELL CTHEO
 " probably weighs several hundred pounds." CR>
 		<RTRUE>)
 	       (<OR <ENTERING?>
 		    <VERB? SWIM DIVE>>
-	        <TELL "That'd be a tight squeeze." CR>
+		<TELL "That'd be a tight squeeze." CR>
 		<RTRUE>)
 	       (<EXITING?>
 		<NOT-IN>
@@ -10150,10 +9823,10 @@ D ,KEY ", still clutched in a long-dead hand, catches your eye." CR>
 		<RFALSE>)>>
 
 <ROUTINE HOLD-OCOCO-OVER-CAULDRON ()
-	 <KILL-MILK>		
+	 <KILL-MILK>
 	 <TELL "You hold the " D ,OCOCO " over the " D ,CAULDRON ".|
 |
-The last few drops of milk dribble into the " D ,CWATER>		
+The last few drops of milk dribble into the " D ,CWATER>
 	 <UPDATE-RECIPE>
 	 <RTRUE>>
 
@@ -10165,9 +9838,9 @@ The last few drops of milk dribble into the " D ,CWATER>
 	 <COND (<ZERO? ,INGREDIENTS>
 		<QUEUE I-EXPLODE -1>
 		<TELL CR CTHE ,CAULDRON
-" begins to bubble and fume more furiously than ever. Steam fills the " 
+" begins to bubble and fume more furiously than ever. Steam fills the "
 D ,COTTAGE " in a thick, oily cloud; and an ominous rumbling sound begins to rise from the " D ,CAULDRON "'s depths." CR>)>
-         <UPDATE-SCORE>
+	 <UPDATE-SCORE>
 	 <RTRUE>>
 
 <OBJECT STEAM
@@ -10232,7 +9905,7 @@ D ,COTTAGE " in a thick, oily cloud; and an ominous rumbling sound begins to ris
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       		
+
 <ROUTINE SMELL-CWATER ()
 	 <TELL "The hot, greasy odor makes your head spin." CR>
 	 <RTRUE>>
@@ -10243,7 +9916,7 @@ D ,COTTAGE " in a thick, oily cloud; and an ominous rumbling sound begins to ris
 		<EXIT-HONEY>
 		<UPDATE-RECIPE>)>
 	 <RTRUE>>
-	
+
 <ROUTINE EXIT-HONEY ()
 	 <VANISH ,HONEY>
 	 <TELL CR "At least you got that honey off your fingers">
@@ -10260,7 +9933,7 @@ D ,COTTAGE " in a thick, oily cloud; and an ominous rumbling sound begins to ris
 "NODESC = started, TOUCHED = beached."
 
 <GLOBAL IN-DORY?:FLAG <>>
-		
+
 <ROUTINE DORY-F ()
 	 <COND (<THIS-PRSI?>
 		<COND (<INTBL? ,PRSA ,PUTVERBS ,NUMPUTS>
@@ -10297,7 +9970,7 @@ D ,COTTAGE " in a thick, oily cloud; and an ominous rumbling sound begins to ris
 		       <RTRUE>)>
 		<EXIT-DORY>
 		<TELL "You clamber out of the dory." CR>
-		<RTRUE>) 
+		<RTRUE>)
 	       (<VERB? OPEN OPEN-WITH CLOSE>
 		<IMPOSSIBLE>
 		<RTRUE>)
@@ -10347,19 +10020,19 @@ The " D ,CHARON>
 		 <SETG IN-DORY? <>>
 		 <SETG OLD-HERE <>>
 		 <COND (<IS? ,CHARON ,NOALL>
-		        <TELL 
+			<TELL
 " recognizes your vacation shorts and kicks you off his dory again." CR>
 			<RTRUE>)>
 		 <MAKE ,CHARON ,NOALL>
-		 <TELL " stares at your " D ,LONDON 
+		 <TELL " stares at your " D ,LONDON
 " vacation shorts with barely concealed outrage. He makes a broad gesture with his oar, inviting you to debark at your earliest convenience; a well-placed kick sends you on your way." CR>
 		 <RTRUE>)>
 	   <SETG PATIENCE 3>
-	   <QUEUE I-CHARON -1>		
-	   <TELL " glances at the " D ,SHROUD 
+	   <QUEUE I-CHARON -1>
+	   <TELL " glances at the " D ,SHROUD
 " you're wearing with silent approval, and stretches out his skeletal hand expectantly." CR>
 	   <RTRUE>>
-	  
+
 <OBJECT SHADES
 	(DESC "shades")
 	(FLAGS NODESC PLURAL LIVING TRYTAKE NOALL)
@@ -10398,7 +10071,7 @@ The " D ,CHARON>
 		      (T
 		       <TELL "on the beach">)>
 		<TELL " are stooped and emaciated, their sunken eyes dark with inscrutable emotions." CR>
-		<RTRUE>)  
+		<RTRUE>)
 	       (<AND <VERB? TOUCH SQUEEZE SHAKE KNOCK HIT MUNG CUT RIP KICK
 			    TURN PUSH PULL MOVE PUSH-TO REACH-IN TAKE>
 		     <EQUAL? ,PRSI <> ,HANDS>>
@@ -10410,7 +10083,7 @@ The " D ,CHARON>
 			   <PRSI? FEET>>
 		       <TELL "Your foot">)
 		      (<EQUAL? ,PRSI <> ,HANDS>
-		       <TELL "Your hand">)		      
+		       <TELL "Your hand">)
 		      (T
 		       <TELL CTHEI>)>
 		<TELL " encounters nothing but vapor." CR>
@@ -10422,15 +10095,15 @@ The " D ,CHARON>
 		<TELL ,ONE-SHADE "looks at you wistfully." CR>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
-		<TELL ,ONE-SHADE "turns at the " D ,SOUND 
+		<TELL ,ONE-SHADE "turns at the " D ,SOUND
 " of your voice. It gives you a reproachful look and lifts a skeletal finger to its lips." CR>
 		<RFATAL>)
 	       (<VERB? WATCH>
 		<I-STYX <>>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>		        
-	       
+		<RFALSE>)>>
+
 <OBJECT STYX
 	(LOC LOCAL-GLOBALS)
 	(DESC "river")
@@ -10472,7 +10145,7 @@ The " D ,CHARON>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-				
+
 <OBJECT MBOX
 	(LOC AT-SDOORS)
 	(DESC "box")
@@ -10513,7 +10186,7 @@ The " D ,CHARON>
 		<RFALSE>)>>
 
 <ROUTINE LOOK-IN-MBOX ()
-	 <TELL "A " D ,TSWITCH " and a " D ,IBUTTON 
+	 <TELL "A " D ,TSWITCH " and a " D ,IBUTTON
 	       " are mounted inside." CR>
 	 <RTRUE>>
 
@@ -10543,7 +10216,7 @@ The " D ,CHARON>
 		       <TELL "off">)
 		      (T
 		       <TELL "on">)>
-		<TELL 
+		<TELL
 ,PTHE "letters \"P\" and \"A\" are scrawled underneath." CR>
 		<RTRUE>)
 	       (<AND <VERB? LAMP-OFF OPEN OPEN-WITH RAISE PULL>
@@ -10567,8 +10240,8 @@ The " D ,CHARON>
 	       (<HANDLE-SWITCH?>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>		       
-		
+		<RFALSE>)>>
+
 <ROUTINE FLIP-SWITCH ()
 	 <TELL "You turn ">
 	 <COND (<IS? ,TSWITCH ,OPENED>
@@ -10629,7 +10302,7 @@ The " D ,SPEAKER " emits a burst of static, then ">
 		<RTRUE>)
 	       (<AND <VERB? LAMP-OFF LAMP-ON OPEN OPEN-WITH CLOSE>
 		     <EQUAL? ,PRSI <> ,HANDS>>
-		<TELL CTHEO 
+		<TELL CTHEO
 " has no ON or OFF position. All you can do is push it." CR>
 		<RTRUE>)
 	       (<AND <VERB? PUSH TOUCH MOVE USE LOWER>
@@ -10648,7 +10321,7 @@ With an electric whirr, the heavy doors slide ">
 	       (<HANDLE-SWITCH?>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>		 
+		<RFALSE>)>>
 
 <ROUTINE HANDLE-SWITCH? ()
 	 <COND (<THIS-PRSI?>
@@ -10662,7 +10335,7 @@ With an electric whirr, the heavy doors slide ">
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT SDOORS
 	(LOC LOCAL-GLOBALS)
 	(DESC "sliding doors")
@@ -10681,7 +10354,7 @@ With an electric whirr, the heavy doors slide ">
 		<TELL " are tall and massive." CR>
 		<RTRUE>)
 	       (<VERB? LOOK-BEHIND LOOK-INSIDE LOOK-OUTSIDE>
-	        <COND (<IS? ,PRSO ,OPENED>
+		<COND (<IS? ,PRSO ,OPENED>
 		       <CANT-SEE-MUCH>
 		       <RTRUE>)>
 		<ITS-CLOSED>
@@ -10704,7 +10377,7 @@ With an electric whirr, the heavy doors slide ">
 	(FLAGS NODESC TRYTAKE NOALL FERRIC)
 	(SYNONYM SPEAKER LOUDSPEAKER SYSTEM ADDRESS VOICE VOICES STATIC HISS)
 	(ADJECTIVE LOUD PA P\.A\. PUBLIC ADDRESS)
-	(ACTION SPEAKER-F)> 
+	(ACTION SPEAKER-F)>
 
 <ROUTINE SPEAKER-F ()
 	 <COND (<AND <VERB? LISTEN>
@@ -10752,7 +10425,7 @@ With an electric whirr, the heavy doors slide ">
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <OBJECT ESHED
 	(LOC LOCAL-GLOBALS)
 	(DESC "equipment shed")
@@ -10797,7 +10470,7 @@ With an electric whirr, the heavy doors slide ">
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT LAGOON
 	(LOC LOCAL-GLOBALS)
 	(DESC "lagoon")
@@ -10828,7 +10501,7 @@ With an electric whirr, the heavy doors slide ">
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE WATCH>
-		<TELL "The tide is slowly rising." CR>  
+		<TELL "The tide is slowly rising." CR>
 		<RTRUE>)
 	       (<VERB? LOOK-INSIDE LOOK-ON SEARCH LOOK-BEHIND>
 		<TELL
@@ -10922,12 +10595,12 @@ With an electric whirr, the heavy doors slide ">
 
 <ROUTINE ISLET-F ()
 	 <COND (<VERB? EXAMINE LOOK-ON LOOK-INSIDE SEARCH WATCH>
-		<TELL CTHEO 
+		<TELL CTHEO
 " is just a barren crescent of sand, gradually shrinking away in the rising tide.|
 |
 A lone " D ,CTREE " stands near one end of the " D ,PRSO>
 		<COND (<IN? ,COCO ,PRSO>
-		       <TELL ". There's a " D ,COCO 
+		       <TELL ". There's a " D ,COCO
 			     " lying under the tree">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
@@ -10944,7 +10617,7 @@ A lone " D ,CTREE " stands near one end of the " D ,PRSO>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT CTREE
 	(LOC ISLET)
 	(DESC "coconut tree")
@@ -11166,9 +10839,9 @@ A lone " D ,CTREE " stands near one end of the " D ,PRSO>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <ROUTINE BEST-KARATE ()
-	 <TELL 
+	 <TELL
 "Your best karate technique has no effect on the " D ,PRSO ,PERIOD>
 	 <RTRUE>>
 
@@ -11222,7 +10895,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 		<IMPOSSIBLE>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
+		<RFALSE>)>>
 
 <OBJECT FIN
 	(DESC "fin")
@@ -11243,7 +10916,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE WATCH>
-		<I-FLIPPER <>> 
+		<I-FLIPPER <>>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,SEEVERBS ,NSVERBS>
 		<RFALSE>)
@@ -11251,7 +10924,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <OBJECT FLIPPER
 	(DESC "dolphin")
 	(FDESC "A bottle-nosed dolphin is playing just offshore.")
@@ -11370,7 +11043,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 		       <TELL D .OBJ
 " on the islet and tries to nudge it with its snout. But the tide hasn't risen high enough yet." CR>
 		       <RTRUE>)>
-	        <UNMAKE .OBJ ,CHILLY>
+		<UNMAKE .OBJ ,CHILLY>
 	 	<UNMAKE .OBJ ,TRYTAKE>
 	 	<UNMAKE .OBJ ,NOALL>
 	 	<MAKE .OBJ ,TAKEABLE>
@@ -11387,18 +11060,18 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	 <TELL CTHE .OBJ " glances in " D ,RIGHT ", then back at you." CR>
 	 <RTRUE>>
 
-<GLOBAL FLIP-SAYS:TABLE 
+<GLOBAL FLIP-SAYS:TABLE
 	<LTABLE 2
 	 " struggles to respond, but can only chatter"
 	 " responds with a stream of chatter"
 	 " longs to respond, but can't">>
-	
+
 <ROUTINE THROW-PRSO-AT-FLIPPER ()
 	 <MAKE ,FLIPPER ,SEEN>
 	 <TELL CR CTHE ,FLIPPER>
 	 <COND (<PRSO? LUMP AXE LEM SKINK CAGE>
 		<VANISH>
-	 	<TELL " avoids the flying " D ,PRSO 
+	 	<TELL " avoids the flying " D ,PRSO
 		      " and gives you a reproachful look" ,PCR
 		       CTHEO " splashes into the " D ,LAGOON>
 	 	<COND (<PRSO? LEM SKINK>
@@ -11432,22 +11105,22 @@ The " D ,PARASOL " lands on the " D ,LAGOON " and floats" ,OUTASITE>
 		<COND (<VERB? GIVE SHOW>
 		       <TELL CTHEI>
 		       <COND (<PROB 50>
-		       	      <TELL 
+		       	      <TELL
 " are more interested in snapping at you." CR>
 			      <RTRUE>)>
-		       <TELL " peer suspiciously at " THEO 
+		       <TELL " peer suspiciously at " THEO
 			     ", but show no interest." CR>
 		       <RTRUE>)
 		      (<VERB? THROW THROW-OVER PUT-ON>
 		       <MOVE ,PRSO ,HERE>
-		       <TELL CTHEI 
+		       <TELL CTHEI
 " skillfully dodge out of the way." CR>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE WATCH>
 		<UNMAKE ,PRSO ,SEEN>
 		<I-CRABS <>>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
 		<TELL CTHEO " respond with a chorus of vicious snaps." CR>
 		<RFATAL>)
@@ -11496,7 +11169,7 @@ The " D ,PARASOL " lands on the " D ,LAGOON " and floats" ,OUTASITE>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <OBJECT NAGASAKI
 	(LOC LOCAL-GLOBALS)
 	(DESC "Nagasaki")
@@ -11557,7 +11230,7 @@ The " D ,PARASOL " lands on the " D ,LAGOON " and floats" ,OUTASITE>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-			      
+
 <OBJECT SPILE
 	(LOC PLAYGROUND)
 	(DESC "sandpile")
@@ -11575,7 +11248,7 @@ The " D ,PARASOL " lands on the " D ,LAGOON " and floats" ,OUTASITE>
 <ROUTINE DESCRIBE-SPILE ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-OBJDESC>
 		<COND (<ZERO? ,IN-SAND?>
-		       <TELL "A child's " D ,SPILE 
+		       <TELL "A child's " D ,SPILE
 			     " covers the ground at your feet">)
 		      (T
 		       <TELL "You're standing in a child's " D ,SPILE>)>
@@ -11791,7 +11464,7 @@ The " D ,PARASOL " lands on the " D ,LAGOON " and floats" ,OUTASITE>
 		<RETURN ,P-THEM-OBJECT>)
 	       (T
 		<RFALSE>)>>
-		
+
 <ROUTINE WATCHING-SKY ()
 	 <TELL " are watching the sky apprehensively." CR>
 	 <RTRUE>>
@@ -11816,7 +11489,7 @@ The " D ,PARASOL " lands on the " D ,LAGOON " and floats" ,OUTASITE>
 		       <WATCHING-SKY>)
 		      (T
 		       <TELL
-" tumble over one another as they leap to catch the elusive " 
+" tumble over one another as they leap to catch the elusive "
 D ,DFLIES ,PERIOD>)>
 		<COND (<NOT <IS? ,PRSO ,TOUCHED>>
 		       <MAKE ,PRSO ,TOUCHED>
@@ -11837,12 +11510,12 @@ D ,DFLIES ,PERIOD>)>
 		<COND (<VERB? GIVE SHOW FEED>
 		       <CANT-FROM-HERE>
 		       <RTRUE>)>
-		<RFALSE>)		
+		<RFALSE>)
 	       (<VERB? WAVE-AT POINT-AT>
 		<TELL CTHEO " didn't notice your gesture." CR>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
-		<TELL CTHEO 
+		<TELL CTHEO
 " don't respond. They're a little too far away to hear you." CR>
 		<RFATAL>)
 	       (<VERB? WALK-TO FOLLOW>
@@ -11877,7 +11550,7 @@ D ,DFLIES ,PERIOD>)>
 		<RTRUE>)
 	       (<VERB? WALK-TO FOLLOW>
 		<DO-WALK ,P?NORTH>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (T
 		<RFALSE>)>>
 
@@ -11963,7 +11636,7 @@ D ,DFLIES ,PERIOD>)>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-      
+
 <ROUTINE LOOK-IN-SCHOOL ()
 	 <TELL "A " D ,CCLOCK
 	       " is visible in a classroom beyond the " D ,SCHOOL-WINDOWS
@@ -11992,7 +11665,7 @@ D ,DFLIES ,PERIOD>)>
 <ROUTINE GENERIC-CLOCK-F (TABLE)
 	 <COND (<EQUAL? ,W?CLOCK ,P-NAM ,P-XNAM>
 		<RETURN ,CCLOCK>)>
-	 <RETURN ,WRISTWATCH>>		
+	 <RETURN ,WRISTWATCH>>
 
 <OBJECT SWINGS
 	(LOC PLAYGROUND)
@@ -12010,14 +11683,14 @@ D ,DFLIES ,PERIOD>)>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE WATCH>
-		<TELL CTHEO 
+		<TELL CTHEO
 " are like little red pendulums as they arc ">
 		<BACK-AND-FORTH>
 		<CRLF>
 		<RTRUE>)
 	       (<VERB? TOUCH PUSH PULL MOVE KICK PUSH-TO KNOCK
 		       SHAKE HIT SWING RAISE LOWER>
-		<TELL 
+		<TELL
 "The seats swing a little faster for a while." CR>
 		<RTRUE>)
 	       (<VERB? ENTER SIT RIDE CLIMB-ON CLIMB-UP>
@@ -12034,7 +11707,7 @@ D ,DFLIES ,PERIOD>)>
 <ROUTINE BACK-AND-FORTH ()
 	 <TELL "slowly back and forth in the humid breeze.">
 	 <RTRUE>>
-		       
+
 <OBJECT PLANES
 	(LOC LOCAL-GLOBALS)
 	(DESC "aircraft")
@@ -12070,7 +11743,7 @@ D ,DFLIES ,PERIOD>)>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-				
+
 <OBJECT DSTRUCT
 	(LOC LOCAL-GLOBALS)
 	(DESC "giant triangle")
@@ -12100,7 +11773,7 @@ D ,DFLIES ,PERIOD>)>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		 
+
 <OBJECT SUMMIT
 	(LOC LOCAL-GLOBALS)
 	(DESC "hill")
@@ -12156,7 +11829,7 @@ D ,DFLIES ,PERIOD>)>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <OBJECT SPADE
 	(LOC IN-SHELTER)
 	(DESC "spade")
@@ -12204,7 +11877,7 @@ D ,DFLIES ,PERIOD>)>
 	       (T
 		<CRUDITY>
 		<RTRUE>)>>
-	       
+
 <OBJECT MCRANE
 	(DESC "giant bird")
 	(FDESC "A gigantic paper bird is perched nearby.")
@@ -12223,7 +11896,7 @@ D ,DFLIES ,PERIOD>)>
 		<I-MCRANE <>>
 		<RTRUE>)
 	       (<VERB? EXAMINE>
-		<TELL "It looks like a sixteen-foot version of the " 
+		<TELL "It looks like a sixteen-foot version of the "
 		      D ,CRANE " you found in the " D ,RPOND ,PERIOD>
 		<RTRUE>)
 	       (<VERB? RIDE CLIMB-ON ENTER CLIMB-UP STAND-ON SIT LIE-DOWN
@@ -12239,8 +11912,8 @@ D ,DFLIES ,PERIOD>)>
 		<QUEUE I-FLIGHT -1>
 		<MOVE ,PRSO ,ON-BIRD>
 		<MAKE ,PRSO ,NODESC>
-		<TELL 
-"Gulping with fear, you climb into the crackling folds of the " D ,PRSO 
+		<TELL
+"Gulping with fear, you climb into the crackling folds of the " D ,PRSO
 "'s back.|
 |
 With a powerful beat of its wings, the strange creature lifts away from the ground. Blowing sand obscures the view, but you can hear "
@@ -12249,7 +11922,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<GOTO ,ON-BIRD>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
-		<TELL CTHEO 
+		<TELL CTHEO
 " doesn't respond verbally. But you feel a wave of urgent emotion." CR>
 		<RFATAL>)
 	       (<OR <EXITING?>
@@ -12263,8 +11936,8 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<REPROACH>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
-		       
+		<RFALSE>)>>
+
 <ROUTINE REPROACH ()
 	 <TELL "A wave of reproachful emotion" ,CHANGES>
 	 <RTRUE>>
@@ -12279,7 +11952,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 
 <ROUTINE MOON-F ()
 	 <COND (<VERB? EXAMINE WATCH>
-	 	<TELL CTHEO 
+	 	<TELL CTHEO
 " is a delicate crescent, hovering just above the " D ,HORIZON ,PERIOD>
 		<RTRUE>)
 	       (<OR <ENTERING?>
@@ -12291,7 +11964,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		      
+
 <OBJECT GADGET
 	(LOC IN-SHACK)
 	(DESC "sphere")
@@ -12300,7 +11973,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 	(SYNONYM SPHERE BALL GADGET BOMB BEAST THING DEVICE UNIT BRACKET
 	 	 SURFACE)
 	(ADJECTIVE X ATOMIC NUCLEAR METAL BLACK DARK)
-      	(ACTION GADGET-F)>
+	(ACTION GADGET-F)>
 
 "SEEN = quote given."
 
@@ -12369,12 +12042,12 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		      (<VERB? PUT-ON>
 		       <TELL "The top of the " D ,PRSI
 			     " is covered with " D ,GCABLES ,PERIOD>
-		       <RTRUE>)		       
+		       <RTRUE>)
 		      (<AND <VERB? POINT-AT SHINE-AT>
 			    <IS? ,PRSI ,OPENED>
 			    <PRSO? LAMP>
 			    <IS? ,PRSO ,LIGHTED>>
-		       <TELL "You aim the " D ,PRSO 
+		       <TELL "You aim the " D ,PRSO
 			     " into the open " D ,PRSI ,PCR>
 		       <PERFORM ,V?LOOK-INSIDE ,PRSI>
 		       <RTRUE>)>
@@ -12395,7 +12068,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 	       (<HANDLE-X5?>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>		     
+		<RFALSE>)>>
 
 <ROUTINE HANDLE-X5? ()
 	 <COND (<THIS-PRSI?>
@@ -12420,8 +12093,8 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		       <RFALSE>)>
 		<TELL CTHEO "'s interior is ">
 		<COND (<SEE-IN-X5?>
-		       <TELL 
-"neatly packed with colored wires. Prominent among them are a " D ,RWIRE 
+		       <TELL
+"neatly packed with colored wires. Prominent among them are a " D ,RWIRE
 ", a " D ,BWIRE ", a " D ,SWIRE " and a " D ,WWIRE ,PERIOD>
 		       <RTRUE>)>
 		<TELL "dark." CR>
@@ -12484,18 +12157,18 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		       <PERFORM ,V?UNSCREW ,PRSO ,HANDS>
 		       <RTRUE>)>
 		<TELL CTHEO " isn't attached to " THEI ,PERIOD>
-		<RTRUE>)		
+		<RTRUE>)
 	       (<NOT <IS? ,APANEL ,NOALL>>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL CTHEO 
+		<TELL CTHEO
 " is attached to the " D ,X5 " with four screws." CR>
 		<RTRUE>)
 	       (<VERB? LOOK-UNDER LOOK-BEHIND>
 		<ITS-CLOSED>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>
-	        <FIRMLY-ATTACHED ,PRSO ,X5>
+		<FIRMLY-ATTACHED ,PRSO ,X5>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -12524,11 +12197,11 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL 
+		<TELL
 "It's an ordinary 60-watt bulb, with a chain to turn it on and off">
 		<COND (<IS? ,PRSO ,LIGHTED>
-		       <TELL 
-". Its sullen glow fills the " D ,DSHADOW 
+		       <TELL
+". Its sullen glow fills the " D ,DSHADOW
 "s cast by the harsh light outside">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
@@ -12558,7 +12231,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<TELL "Ouch! It's hot." CR>
 		<RTRUE>)
 	       (<VERB? TAKE UNSCREW TURN TAKE-WITH>
-		<TELL CTHEO 
+		<TELL CTHEO
 " would be of little use. You decide to leave it alone." CR>
 		<RTRUE>)
 	       (<VERB? OPEN OPEN-WITH CLOSE>
@@ -12566,7 +12239,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		        
+
 <ROUTINE SWITCH-WATT ()
 	 <TELL "You pull the chain, and the bulb ">
 	 <COND (<IS? ,WATT ,LIGHTED>
@@ -12580,7 +12253,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<TELL "begins to glow">)>
 	 <TELL ,PERIOD>
 	 <RTRUE>>
-		       
+
 <OBJECT RWIRE
 	(DESC "red wire")
 	(FLAGS NODESC TRYTAKE NOALL)
@@ -12666,13 +12339,13 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 |
 ">
 		       <ITALICIZE "Snap!">
-		       <TELL 
+		       <TELL
 " A shower of sparks erupts from the " D ,X5
 ". You lose your balance and fall backwards to the " D ,FLOOR ,PERIOD>
 		       <COND (<T? .WIN?>
 			      <ENDGAME>
 			      <RFATAL>)
-		             (<HEAR-BAKER?>
+			     (<HEAR-BAKER?>
 			      <KSCRUB>)>
 		       <POLICE-CONVERGE>
 		       <RTRUE>)
@@ -12685,7 +12358,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RFALSE>)>>
 
 <ROUTINE PULL-ON-WIRE ()
-	 <TELL "You tug on the " D ,PRSO 
+	 <TELL "You tug on the " D ,PRSO
 ", bending it this way and that. But it stubbornly refuses to break." CR>
 	 <RTRUE>>
 
@@ -12720,7 +12393,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		       <AXE-TOO-BIG>
 		       <RTRUE>)
 		      (<PRSI? KNIFE>
-		       <TELL CTHEI 
+		       <TELL CTHEI
 " couldn't cut more than one wire at a time." CR>
 		       <RTRUE>)>
 		<NOT-LIKELY ,PRSO "could break the wires">
@@ -12766,7 +12439,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RFALSE>)>>
 
 <ROUTINE SPARK ()
-	 <TELL "one of the " D ,PRSO 
+	 <TELL "one of the " D ,PRSO
 	       ", creating an electric spark that finds its way ">
 	 <RESULTING-BLAST>
 	 <RTRUE>>
@@ -12794,7 +12467,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 
 <ROUTINE GROPES-F ()
 	 <COND (<VERB? EXAMINE>
-		<TELL CTHEO 
+		<TELL CTHEO
 " lies in a hopeless tangle at your feet." CR>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>
@@ -12821,7 +12494,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 " is all tangled up in the " D ,GROPES ,PERIOD>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>
-	        <HOPELESS-TANGLE ,HARDWARE>
+		<HOPELESS-TANGLE ,HARDWARE>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -12880,7 +12553,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 	       (<TOUCH-SHACK?>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>		       
+		<RFALSE>)>>
 
 <ROUTINE TOUCH-SHACK? ()
 	 <COND (<AND <HERE? ON-TOWER AT-ZERO>
@@ -12902,7 +12575,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<SET IN T>)>
 	 <COND (<THIS-PRSI?>
 		<COND (<VERB? PUT>
-		       <MOVE ,PRSO 
+		       <MOVE ,PRSO
 			     <COND (<ZERO? .IN> ,IN-SHACK) (T ,TOWER-PLAT)>>
 		       <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
 		       <TELL CTHEO " disappears through the " D ,PRSI ,PERIOD>
@@ -12927,7 +12600,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<DO-WALK ,P?EAST>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>		
+		<RFALSE>)>>
 
 <OBJECT BROOM-DOOR
 	(LOC LOCAL-GLOBALS)
@@ -12986,7 +12659,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 	 <COND (<MULTIDOOR?>
 		<RTRUE>)
 	       (<THIS-PRSI?>
-	        <RFALSE>)
+		<RFALSE>)
 	       (<AND <VERB? OPEN OPEN-WITH>
 		     <EQUAL? ,PRSI <> ,HANDS>
 		     <NOT <IS? ,PRSO ,OPENED>>>
@@ -13022,7 +12695,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 	       (<THIS-PRSI?>
 	       	<RFALSE>)
 	       (<VERB? EXAMINE LOOK-ON READ>
-		<TELL 
+		<TELL
 "The words PLEASE WIPE FEET are scrawled across the top of the">
 	 	<OPEN-CLOSED ,PRSO>
 	 	<PRINT ,PERIOD>
@@ -13059,7 +12732,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<TELL CTHE ,RIGHT-DOOR ": ">
 		<SET X <PERFORM ,PRSA ,RIGHT-DOOR ,PRSI>>
 		<COND (<NOT <EQUAL? .X <> ,M-FATAL>>
-		       <TELL CR CTHE ,LEFT-DOOR ": "> 
+		       <TELL CR CTHE ,LEFT-DOOR ": ">
 		       <SET X <PERFORM ,PRSA ,LEFT-DOOR ,PRSI>>)>
 		<RTRUE>)
 	       (<T? ,PRSI>
@@ -13081,7 +12754,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RETURN ,RIGHT-DOOR>)
 	       (T
 		<RFALSE>)>>
-	
+
 <OBJECT NEROOM-DOOR
 	(LOC NEROOM)
 	(DESC "front door")
@@ -13091,7 +12764,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 	 	 EXIT PORTAL)
 	(ADJECTIVE FRONT OUTSIDE OUTER)
 	(ACTION NEROOM-DOOR-F)>
-	
+
 <ROUTINE NEROOM-DOOR-F ()
 	 <COND (<AND <VERB? OPEN OPEN-WITH>
 		     <EQUAL? ,PRSI <> ,HANDS>
@@ -13150,7 +12823,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<MAKE ,PRSO ,OPENED>
 		<MAKE ,IN-CLOSET ,LIGHTED>
 		<TELL "You open the " D ,PRSO ,PERIOD>
-		<COND (<HERE? IN-CLOSET>			    
+		<COND (<HERE? IN-CLOSET>
 		       <COND (<IS? ,SNAKE ,LIVING>
 			      <PUTP ,HERE ,P?ODOR ,SNAKE>
 		       	      <PUTP ,HERE ,P?HEAR ,SNAKE>)>
@@ -13412,7 +13085,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		      (<HERE? NEYARD>
 		       <TELL ". A">
 		       <OPEN-CLOSED ,BROOM-DOOR T>
-		       <TELL 
+		       <TELL
 " leads west, and a deck stands" ,TOS ,PERIOD>
 		       <RTRUE>)
 		      (<HERE? ON-PORCH>
@@ -13421,7 +13094,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		      (<HERE? NERANCH ERANCH SERANCH>
 		       <TELL ,PA "deck is attached to the front." CR>
 		       <RTRUE>)>
-		<PRINT ,PERIOD>		        
+		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (<VERB? LOOK-INSIDE SEARCH>
 		<COND (<ZERO? .IN>
@@ -13452,7 +13125,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <OBJECT RAMP
 	(LOC LOCAL-GLOBALS)
 	(DESC "ramp")
@@ -13665,7 +13338,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		       <RTRUE>)
 		      (<T? .WATER>
 		       <LOOK-IN-RWATER>
-		       <RTRUE>)>	       
+		       <RTRUE>)>
 		<TELL CTHEO>
 		<COND (<HERE? IN-CIST>
 		       <TELL " you're in">)>
@@ -13738,7 +13411,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<IMPOSSIBLE>
 		<RTRUE>)
 	       (<ZERO? .WATER>
-		<RFALSE>)	       
+		<RFALSE>)
 	       (<NOT-CLEAN?>
 		<RTRUE>)
 	       (<VERB? EAT BITE>
@@ -13746,7 +13419,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <ROUTINE NOT-CLEAN? ()
 	 <COND (<NOT <VERB? DRINK DRINK-FROM TASTE>>
 		<RFALSE>)>
@@ -13763,7 +13436,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 	       (T
 		<TELL "L">)>
 	 <TELL "ittle can be seen beneath the murky water." CR>
-	 <RTRUE>>		
+	 <RTRUE>>
 
 <OBJECT MILL
 	(LOC LOCAL-GLOBALS)
@@ -13869,7 +13542,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RTRUE>)
 	       (<VERB? EXAMINE LOOK-ON SEARCH LOOK-INSIDE LOOK-BEHIND>
 		<TELL CTHEO " overlooks the edge of the adjacent "
-		      D ,RESERVOIR 
+		      D ,RESERVOIR
 		      ". Its planks are gray and rotten with age." CR>
 		<RTRUE>)
 	       (<VERB? LOOK-UNDER>
@@ -14168,7 +13841,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		      
+
 <OBJECT TROPES
 	(LOC LOCAL-GLOBALS)
 	(DESC "ropes and cables")
@@ -14322,15 +13995,15 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 <ROUTINE SEROAD-F ()
 	 <COND (<EXAMINING-ROAD?>
 	       	<TELL "The road bends southeast, " ,INTO-DESERT ,PERIOD>
-	        <RTRUE>)
+		<RTRUE>)
 	       (<USING-ROAD?>
-	        <DO-WALK ,P?SE>
-	        <RTRUE>)
+		<DO-WALK ,P?SE>
+		<RTRUE>)
 	       (<EXITING?>
-	        <V-WALK-AROUND>
-	        <RTRUE>)
+		<V-WALK-AROUND>
+		<RTRUE>)
 	       (T
-	        <RFALSE>)>>
+		<RFALSE>)>>
 
 <OBJECT NROAD
 	(LOC S75)
@@ -14342,16 +14015,16 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 
 <ROUTINE NROAD-F ()
 	 <COND (<EXAMINING-ROAD?>
-	        <TELL "The road curves northwest, " ,INTO-DESERT ,PERIOD>
-	        <RTRUE>)
+		<TELL "The road curves northwest, " ,INTO-DESERT ,PERIOD>
+		<RTRUE>)
 	       (<USING-ROAD?>
-	        <DO-WALK ,P?NW>
-	        <RTRUE>)
+		<DO-WALK ,P?NW>
+		<RTRUE>)
 	       (<EXITING?>
-	        <V-WALK-AROUND>
-	        <RTRUE>)
+		<V-WALK-AROUND>
+		<RTRUE>)
 	       (T
-	        <RFALSE>)>>
+		<RFALSE>)>>
 
 <OBJECT PROAD
 	(LOC NEPASS)
@@ -14436,16 +14109,16 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (<USING-ROAD?>
-	        <COND (<HERE? ERANCH>
+		<COND (<HERE? ERANCH>
 		       <DO-WALK ,P?NORTH>
 		       <RTRUE>)>
-	        <V-WALK-AROUND>
+		<V-WALK-AROUND>
 		<RTRUE>)
 	       (<EXITING?>
-	        <V-WALK-AROUND>
-	        <RTRUE>)
+		<V-WALK-AROUND>
+		<RTRUE>)
 	       (T
-	        <RFALSE>)>>
+		<RFALSE>)>>
 
 <OBJECT FHILLS
 	(LOC LOCAL-GLOBALS)
@@ -14457,7 +14130,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 
 <ROUTINE FHILLS-F ()
 	 <COND (<VERB? EXAMINE LOOK-ON LOOK-UP SEARCH>
-		<TELL CTHEO 
+		<TELL CTHEO
 " are as rugged and formidable as the " D ,DMOUNTS " beyond them." CR>
 		<RTRUE>)
 	       (<OR <ENTERING?>
@@ -14474,7 +14147,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE FHILLS-TOO-STEEP ()
 	 <TELL CTHE ,FHILLS " are much too steep and rugged to climb." CR>
 	 <RFALSE>>
@@ -14505,7 +14178,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <OBJECT BOOK
 	(LOC IN-SHACK)
 	(DESC "book")
@@ -14563,7 +14236,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		      (<NOT <IS? ,PRSO ,OPENED>>
 		       <PERFORM ,V?OPEN ,PRSO>
 		       <CRLF>)>
-		<TELL 
+		<TELL
 "You flip through the book, but nothing catches your eye." CR>
 		<RTRUE>)
 	       (T
@@ -14599,10 +14272,10 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-ON READ SEARCH>
 		<COND (<T? .D>
-		       <TELL 
+		       <TELL
 "The diagram is a meaningless network of intersecting lines. The legend \"RD=" <GET ,WIRE-TYPES 0>
 			     " BL=" <GET ,WIRE-TYPES 1>
-			     " ST=" <GET ,WIRE-TYPES 2> 
+			     " ST=" <GET ,WIRE-TYPES 2>
 			     " WH=" <GET ,WIRE-TYPES 3>
 			     "\" is ">
 		       <SAY-SCRIBBLED>
@@ -14621,7 +14294,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 " seems to have been used as a bookmark. A stanza of poetry is typed on ">
 		<COND (<IN? ,PRSO ,PLAYER>
 		       <MAKE ,PRSO ,TOUCHED>
-		       <TELL 
+		       <TELL
 "one side. The other side is covered with some kind of diagram." CR>
 		       <RTRUE>)
 		      (T
@@ -14641,7 +14314,7 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 <ROUTINE SAY-SCRIBBLED ()
 	 <TELL "scribbled across the bottom." CR>
 	 <RTRUE>>
-	
+
 <OBJECT CSURFACE
 	(LOC UNDER-WATER)
 	(DESC "surface")
@@ -14719,22 +14392,22 @@ D ,VOICES " crying out in wonder. When the air clears, the " D ,PGROUND
 			      <RTRUE>)
 			     (<NOT <EQUAL? ,BSEEN ,PRSO>>
 			      <SETG BSEEN ,PRSO>
-			      <TELL "You focus the binoculars on " 
+			      <TELL "You focus the binoculars on "
 				    THEO ,PCR>)>
 		       <COND (<PRSO? SBUNK SBENTRY>
 			      <TELL "The inside of the " D ,PRSO
-" is only about twenty feet square. Every inch is crowded with technicians, tending racks filled with electrical " D ,MIKE ,PCR 
+" is only about twenty feet square. Every inch is crowded with technicians, tending racks filled with electrical " D ,MIKE ,PCR
 "One technician is hunched over a stool, clutching a microphone. The tension in his grasp is reflected on every face" ,PCR>
 			      <SETG P-IT-OBJECT ,BBOX>
 			      <COND (<NOT <IS? ,BBOX ,SEEN>>
 				     <MAKE ,BBOX ,SEEN>
-				     <MOVE ,BBOX ,S100>			      
+				     <MOVE ,BBOX ,S100>
 				     <TELL
 "As your eyes take in the maze of " D ,MIKE
-", you notice a long wooden box, similar to the one you saw under the " 
+", you notice a long wooden box, similar to the one you saw under the "
 D ,TOWER>)
 				    (T
-				     <TELL 
+				     <TELL
 "There's a long wooden box lying across the " D ,FLOOR>)>
 			      <MENTION-TKEY>
 			      <COND (<VISIBLE? ,MEEP>
@@ -14782,7 +14455,7 @@ D ,TOWER>)
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-ON>
-		<TELL 
+		<TELL
 "The binoculars are of standard Army issue, with a strap for wearing." CR>
 		<RTRUE>)
 	       (<VERB? LOOK-INSIDE>
@@ -14792,11 +14465,11 @@ D ,TOWER>)
 		     <NOT <IS? ,PRSO ,TOUCHED>>>
 		<TELL "A loud, plaintive ">
 		<ITALICIZE "creak">
-		<TELL " makes you draw " D ,HANDS 
-" back in alarm. You hold " D ,BREATH " as the " D ,LANDING 
+		<TELL " makes you draw " D ,HANDS
+" back in alarm. You hold " D ,BREATH " as the " D ,LANDING
 " sways uncertainly for a moment, back and forth">
 		<ALL-IS-STILL>
-		<TELL CR 
+		<TELL CR
 "Slowly, carefully, you stretch your arm towards the " D ,PRSO ".." ,PCR>
 		<SPILL-MILL>
 		<RFATAL>)
@@ -14843,7 +14516,7 @@ D ,TOWER>)
 		    <IN? .L ,PLAYER>>
 		<MOVE-ALL ,EBAG ,SOGGY>
 		<MOVE ,SOGGY .L>
-		<REMOVE ,EBAG>)>	 
+		<REMOVE ,EBAG>)>
 	 <SET L <LOC ,MEEP>>
 	 <COND (<EQUAL? .L ,PLAYER ,IN-MILL>
 		<EXIT-MEEP>
@@ -14877,7 +14550,7 @@ D ,TOWER>)
 		<MAKE ,DMAGPIE ,CHILLY>
 		<MOVE ,DMAGPIE ,CAGE>)>
 	 <COND (<IN? ,MEEP ,CAGE>
-	        <EXIT-MEEP>
+		<EXIT-MEEP>
 		<MAKE ,DMEEP ,CHILLY>
 		<MOVE ,DMEEP ,CAGE>)>
 	 <RTRUE>>
@@ -14892,7 +14565,7 @@ D ,TOWER>)
 	(ADJECTIVE DEAD DROWNED BROWN SMALL TINY FURRY INCINERAT
 	 	   BURNED CREMATED)
 	(ACTION DEAD-ANIMAL-F)>
- 
+
 "CHILLY = drowned, NOGRASS = dropped."
 
 <OBJECT DMAGPIE
@@ -14947,7 +14620,7 @@ D ,TOWER>)
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <OBJECT BOX
 	(LOC AT-ZERO)
 	(DESC "box")
@@ -14975,7 +14648,7 @@ D ,TOWER>)
 		<PRINT-CONTENTS ,BOX>
 		<TELL ".">)>
 	 <RTRUE>>
-		     
+
 <ROUTINE BOX-LOCKED? ()
 	 <COND (<AND <NOT <IS? ,BOX ,OPENED>>
 		     <IN? ,PADLOCK ,BOX>
@@ -15019,7 +14692,7 @@ D ,TOWER>)
 		       <TELL ", and secured with a steel " D ,PADLOCK>)>
 		<COND (<AND <NOT <IS? ,PRSO ,OPENED>>
 			    <SEE-ANYTHING-IN? ,PRSO>>
-		       <TELL ". On it you see ">		       
+		       <TELL ". On it you see ">
 		       <PRINT-CONTENTS ,PRSO>)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
@@ -15120,7 +14793,7 @@ D ,TOWER>)
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-			      
+
 <ROUTINE HURT-BOX ()
 	 <TELL "You'd probably damage the box's contents" ,IF-YOU-DID>
 	 <RTRUE>>
@@ -15141,7 +14814,7 @@ D ,TOWER>)
 			<SET 1ST .OBJ>
 			<INC CNT>)>
 		 <SET OBJ .NXT>>
-	 
+
 	 <COND (<ZERO? .CNT>
 		<TELL "You swing open the lid of the box">)
 	       (T
@@ -15150,20 +14823,20 @@ D ,TOWER>)
 	       	      (T
 		       <TELL "Everything">)>
 	 	<TELL " slides off the lid of the box as you swing it open">)>
-	 
+
 	 <MAKE ,BOX ,OPENED>
 	 <MAKE ,BOX ,CONTAINER>
-	 <UNMAKE ,BOX ,SURFACE>	 
+	 <UNMAKE ,BOX ,SURFACE>
 	 <MOVE-ALL ,IN-BOX ,BOX>
 	 <TELL ", revealing ">
 	 <PRINT-CONTENTS ,BOX>
 	 <TELL " inside." CR>
 	 <RTRUE>>
-		 
+
 "Holds contents of box when box is closed."
 
 <OBJECT IN-BOX
-	(FLAGS NODESC CONTAINER OPENED)>	 
+	(FLAGS NODESC CONTAINER OPENED)>
 
 <OBJECT PADLOCK
 	(LOC BOX)
@@ -15230,13 +14903,13 @@ D ,TOWER>)
 			    LOWER SHAKE KICK RELEASE TAKE-OFF>
 		     <BOX-LOCKED?>>
 		<TELL CTHEO " is firmly locked onto the box." CR>
-		<RTRUE>)		     
+		<RTRUE>)
 	       (<VERB? LOOK-INSIDE REACH-IN>
 		<IMPOSSIBLE>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		      
+
 <ROUTINE OPEN-PADLOCK ()
 	 <UNMAKE ,PADLOCK ,LOCKED>
 	 <MAKE ,PADLOCK ,TAKEABLE>
@@ -15249,7 +14922,7 @@ D ,TOWER>)
 		      D ,PADLOCK ". It">)>
 	 <TELL " unlocks with a smart little snap." CR>
 	 <COND (<NOT <IS? ,PADLOCK ,TOUCHED>>
-	        <MAKE ,PADLOCK ,TOUCHED>
+		<MAKE ,PADLOCK ,TOUCHED>
 		<UPDATE-SCORE>)>
 	 <RTRUE>>
 
@@ -15301,7 +14974,7 @@ D ,TOWER>)
 		<FIRMLY-ATTACHED ,PRSO ,PANEL>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
+		<RFALSE>)>>
 
 <OBJECT BREAKER
 	(LOC PANEL)
@@ -15318,7 +14991,7 @@ D ,TOWER>)
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL "The heavy-duty " D ,PRSO  
+		<TELL "The heavy-duty " D ,PRSO
 " looks like something out of a Frankenstein movie. Its broad handle is ">
 		<COND (<IS? ,PRSO ,OPENED>
 		       <TELL "open." CR>
@@ -15341,7 +15014,7 @@ D ,TOWER>)
 		       <TELL "You close the handle of the " D ,PRSO ,PERIOD>
 		       <COND (<NOT <HEAR-BAKER?>>
 			      <RTRUE>)>
-	 	       <TELL CR 
+	 	       <TELL CR
 "\"Hold on, " D ,ABLE ". X just woke up again.\"|
 |
 A sigh of relief. \"Sounds like a wet line somewhere.\"|
@@ -15355,7 +15028,7 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 		       <UPDATE-SCORE>
 		       <RTRUE>)>
 		<ITS-ALREADY "closed">
-		<RTRUE>)	    
+		<RTRUE>)
 	       (<VERB? TURN MOVE>
 		<COND (<IS? ,PRSO ,OPENED>
 		       <PERFORM ,V?LAMP-ON ,PRSO ,PRSI>
@@ -15367,7 +15040,7 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		          
+
 <ROUTINE HEAR-BAKER? ()
 	 <COND (<AND <EQUAL? ,TFREQ ,MAGICFREQ>
 		     <IS? ,RDIAL ,SEEN>
@@ -15420,7 +15093,7 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 		<RTRUE>)
 	       (<VERB? LISTEN>
 		<HEAR-SBUNK>
-		<RTRUE>) 
+		<RTRUE>)
 	       (<OR <ENTERING?>
 		    <VERB? CROSS>>
 		<DO-WALK ,P?NE>
@@ -15507,7 +15180,7 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE NO-SHED-HOLE ()
 	 <TELL ,CANT "see any " D ,CAVE-HOLE " here." CR>
 	 <RTRUE>>
@@ -15521,7 +15194,7 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 	(VALUE 1)
 	(SYNONYM KEY)
 	(ADJECTIVE STEEL METAL)
-        (ACTION TKEY-F)>
+	(ACTION TKEY-F)>
 
 <ROUTINE TKEY-F ()
 	 <COND (<NOT <IS? ,TKEY ,SEEN>>
@@ -15551,10 +15224,10 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 		       <PERFORM ,V?UNLOCK ,PADLOCK ,TKEY>
 		       <RTRUE>)>
 		<WASTE-OF-TIME>
-		<RTRUE>)	
+		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT BBOX
       ; (LOC S100)
 	(DESC "box")
@@ -15585,8 +15258,8 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 		<CANT-FROM-HERE>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>	  
-	
+		<RFALSE>)>>
+
 <ROUTINE LOOK-THRU-BINOS ()
 	 <SETG BSEEN ,PRSO>
 	 <TELL "[looking through the " D ,BINOS ,BRACKET>
@@ -15616,8 +15289,8 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 	       (<WINDOWS-F>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
-		
+		<RFALSE>)>>
+
 <OBJECT WINDOWS
 	(LOC LOCAL-GLOBALS)
 	(DESC "windows")
@@ -15638,7 +15311,7 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 		<CANT-SEE-MUCH>
 		<RTRUE>)
 	       (<VERB? OPEN OPEN-WITH RAISE PULL PUSH MOVE PUSH-TO>
-		<TELL CTHEO 
+		<TELL CTHEO
 " are stubborn and hard to move. You soon abandon the effort." CR>
 		<RTRUE>)
 	       (<VERB? UNLOCK>
@@ -15656,7 +15329,7 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		       
+
 <OBJECT WBENCH
 	(LOC NEROOM)
 	(DESC "workbench")
@@ -15669,7 +15342,7 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 <ROUTINE DESCRIBE-WBENCH ("OPTIONAL" (CONTEXT <>))
 	 <COND (<NOT <EQUAL? .CONTEXT ,M-OBJDESC>>
 		<RFALSE>)>
-	 <TELL "A " D ,WBENCH " covered with loose sheets of " D ,BPAPER 
+	 <TELL "A " D ,WBENCH " covered with loose sheets of " D ,BPAPER
 " runs along the north wall. ">
 	 <AND-OTHER-DEBRIS>
 	 <RTRUE>>
@@ -15677,7 +15350,7 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 <ROUTINE AND-OTHER-DEBRIS ()
 	 <TELL ,YOU-SEE>
 	 <PRINT-CONTENTS ,BPAPER>
-	 <TELL " and other " D ,DEBRIS 
+	 <TELL " and other " D ,DEBRIS
 	       " scattered across the paper.">
 	 <RTRUE>>
 
@@ -15737,14 +15410,14 @@ A sigh of relief. \"Sounds like a wet line somewhere.\"|
 		       <TELL "As you lift the edge of the paper a "
 D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		       <RTRUE>)>
-		<TELL "You lift the paper again, but find nothing " 
+		<TELL "You lift the paper again, but find nothing "
 		      <PICK-NEXT ,YAWNS> ,PERIOD>
 		<RTRUE>)
 	       (<HANDLE-BPAPER?>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE LOOK-ON-BPAPER ()
 	 <TELL ". On it you see ">
 	 <PRINT-CONTENTS ,BPAPER>
@@ -15764,7 +15437,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<WASTE-OF-TIME>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
+		<RFALSE>)>>
 
 <OBJECT SDRIVER
 	(DESC "screwdriver")
@@ -15784,7 +15457,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT WBITS
 	(LOC BPAPER)
 	(DESC "bits of wire")
@@ -15808,13 +15481,13 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		      ", but find nothing " <PICK-NEXT ,YAWNS> ,PERIOD>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
+		<RFALSE>)>>
 
 <OBJECT XSNAKE
 	(LOC NEROOM)
 	(DESC "snake")
 	(FDESC "A rattlesnake is coiled only a few feet away.")
-	(FLAGS NODESC)>	
+	(FLAGS NODESC)>
 
 <OBJECT SNAKE
 	(LOC LOCAL-GLOBALS)
@@ -15825,7 +15498,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 	(ACTION SNAKE-F)>
 
 "NODESC = undiscovered, CHILLY = seen by Meep, SEEN = delay, LIVING = here."
-	        
+
 <ROUTINE SNAKE-F ()
 	 <COND (<NOT <IS? ,SNAKE ,LIVING>>
 		<TELL CTHE ,SNAKE " isn't here anymore." CR>
@@ -15844,7 +15517,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL 
+		<TELL
 "All you can see are those tiny black eyes, glaring." CR>
 		<RTRUE>)
 	       (<VERB? KILL HIT MUNG CUT RIP KICK KNOCK BITE STAND-ON
@@ -15941,7 +15614,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<TELL CTHEO>
 		<COND (<IS? ,PRSO ,CHILLY>
 		       <TELL " is dripping wet. It">)>
-		<TELL " has a " D ,WSWITCH ", a " D ,INTNUM "ed " D ,SLIDER 
+		<TELL " has a " D ,WSWITCH ", a " D ,INTNUM "ed " D ,SLIDER
 ", a telescoping " D ,ANTENNA " (now ">
 		<COND (<IS? ,ANTENNA ,OPENED>
 		       <TELL "rais">)
@@ -15986,7 +15659,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<RTRUE>)
 	       (<VERB? OPEN OPEN-WITH RAISE PULL UNFOLD UNPLUG>
 		<COND (<IS? ,PRSO ,OPENED>
-		       <TELL CTHEO 
+		       <TELL CTHEO
 " is already pulled out as far as it can go." CR>
 		       <RTRUE>)>
 		<MAKE ,PRSO ,OPENED>
@@ -16041,7 +15714,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		       <SETG TFREQ ,P-NUMBER>
 		       <TILL-POINTS>
 		       <COND (<AND <IS? ,RDIAL ,SEEN>
-				   <EQUAL? ,TFREQ ,MAGICFREQ>   
+				   <EQUAL? ,TFREQ ,MAGICFREQ>
 				   <NOT <IS? ,PRSO ,SEEN>>>
 			      <MAKE ,PRSO ,SEEN>
 			      <UPDATE-SCORE 3>)>
@@ -16185,14 +15858,14 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<RFALSE>)>>
 
 <ROUTINE TILL-POINTS ()
-	 <TELL "You move the " D ,PRSO 
+	 <TELL "You move the " D ,PRSO
 " until it points to the " D ,INTNUM " " N ,P-NUMBER ,PERIOD>
 	 <RTRUE>>
 
 <ROUTINE PRSO-CALIBRATED ()
 	 <TELL CTHEO " is calibrated with " D ,INTNUM "s from 20 to 80">
-	 <RTRUE>> 
-	       
+	 <RTRUE>>
+
 <ROUTINE NOW-SET-TO ()
 	 <TELL ". Right now it's set to ">
 	 <RTRUE>>
@@ -16205,7 +15878,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 	       (<G? ,P-NUMBER 80>
 		<TELL "The highest " D ,INTNUM " on the " D ,PRSO
 		      " is 80." CR>
-	        <RTRUE>)
+		<RTRUE>)
 	       (<EQUAL? ,P-NUMBER .F>
 		<TELL CTHEO " is already set to " N ,P-NUMBER ,PERIOD>
 		<RTRUE>)
@@ -16226,9 +15899,9 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE HOW-TO-USE-TUNER ()
-	 <TELL "[To adjust " THEO 
+	 <TELL "[To adjust " THEO
 ", simply move it to the desired " D ,INTNUM "; for example, ">
 	 <COND (<PRSO? SLIDER>
 		<TELL "MOVE THE SLIDER">)
@@ -16246,7 +15919,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 	(ACTION WSWITCH-F)>
 
 "OPENED = switch off."
-		
+
 <ROUTINE WSWITCH-F ()
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
@@ -16285,7 +15958,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <ROUTINE FLIP-WSWITCH ()
 	 <SETG P-IT-OBJECT ,WTK>
 	 <TELL "You turn o">
@@ -16347,7 +16020,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 			      <PERFORM ,V?PUSH ,PRSO>
 			      <RTRUE>)>
 		       <MAKE ,WTK ,SEEN>
-		       <TELL CTHE ,WTK " buzzes and clicks. " CTHEO 
+		       <TELL CTHE ,WTK " buzzes and clicks. " CTHEO
 			     " is obviously useless." CR>
 		       <RTRUE>)>
 		<FIRMLY-ATTACHED ,PRSO ,WTK>
@@ -16357,13 +16030,13 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE TOUCH-WBUTTON ()
 	 <ITALICIZE "Zap!">
 	 <TELL " A painful electric shock shoots up your arm">
-         <COND (<IN? ,WTK ,PLAYER>
+	 <COND (<IN? ,WTK ,PLAYER>
 		<TELL ,PTHE D ,WTK " falls from your grasp and ">
-	        <LANDS-AT-YOUR-FEET ,WTK>
+		<LANDS-AT-YOUR-FEET ,WTK>
 		<RTRUE>)>
 	 <PRINT ,PERIOD>
 	 <RTRUE>>
@@ -16422,7 +16095,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<COND (<T? .IN>
 		       <CANT-FROM-HERE>
 		       <RTRUE>)>
-		<TELL 
+		<TELL
 "Better not. You might get your vacation clothes dirty." CR>
 		<RTRUE>)
 	       (<OR <ENTERING?>
@@ -16453,7 +16126,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		       <HOW?>
 		       <RTRUE>)
 		      (<PRSI? TKEY>
-		       <TELL 
+		       <TELL
 "You test the key in the jeep's ignition. No; it's much too small." CR>
 		       <RTRUE>)>
 		<NOT-LIKELY ,PRSI "would start the jeep">
@@ -16469,7 +16142,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<PERFORM ,PRSA ,JDOOR>
 		<RTRUE>)
 	       (<VERB? REPAIR>
-		<TELL 
+		<TELL
 "There's not much you could fix with just " A ,PRSI ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -16616,7 +16289,7 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		       <RTRUE>)
 		      (<OR <VERB? LOOK-BEHIND LOOK-UNDER LISTEN SMELL>
 			   <INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>>
-		       <TELL ,CANT "do that to an image in a " 
+		       <TELL ,CANT "do that to an image in a "
 			     D ,PRSO ,PERIOD>
 		       <RTRUE>)>)>
 	 <COND (<THIS-PRSI?>
@@ -16629,8 +16302,8 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		      " shows a boy staring at the camera." CR>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
-	        <TELL "The boy just stares back at you." CR>
-	        <RFATAL>)
+		<TELL "The boy just stares back at you." CR>
+		<RFATAL>)
 	       (<AND <VERB? TURN SPIN>
 		     <EQUAL? ,PRSI <> ,HANDS>>
 		<TELL "There's nothing on the other side." CR>
@@ -16659,8 +16332,8 @@ D ,SDRIVER " rolls out from underneath and lands on your foot. Ouch!" CR>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-ON>
 		<RADIO-BOLTED>
-		<TELL 
-" This is probably just as well, because it's big and awkward, probably too heavy to carry. Among its many controls are an oversized dial and a " 
+		<TELL
+" This is probably just as well, because it's big and awkward, probably too heavy to carry. Among its many controls are an oversized dial and a "
 D ,RSWITCH ,PERIOD>
 		<RTRUE>)
 	       (<VERB? TAKE PULL PUSH PUSH-TO MOVE LOOSEN UNSCREW
@@ -16693,7 +16366,7 @@ D ,RSWITCH ,PERIOD>
 	(ACTION RSWITCH-F)>
 
 "OPENED = switch off."
-	       
+
 <ROUTINE RSWITCH-F ()
 	 <COND (<THIS-PRSI?>
 		<RFALSE>)
@@ -16741,14 +16414,14 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	 <MAKE ,RSWITCH ,OPENED>
 	 <TELL "ff the " D ,RSWITCH ,PERIOD>
 	 <RTRUE>>
-		       
+
 <OBJECT NBUNKERS
 	(LOC LOCAL-GLOBALS)
 	(DESC "shelters")
 	(FLAGS NODESC PLURAL)
 	(SYNONYM SHELTERS SHELTER BUNKER BUNKERS BUILDING BUILDINGS
 	 	 CLUSTER GROUP BUNCH
-	         SEARCHLIG SPOTLIGHT LIGHT LIGHTS GLARE BEAM)
+		 SEARCHLIG SPOTLIGHT LIGHT LIGHTS GLARE BEAM)
 	(ACTION NBUNKERS-F)>
 
 "SEEN = examined."
@@ -16794,7 +16467,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	 <SEE-NO-ONE .ST>
 	 <COND (<T? .W>
 		<PRINT ,Z-MINUS>
-	        <COND (<L? ,SECONDS 30>
+		<COND (<L? ,SECONDS 30>
 		       <TELL "thirty">)
 		      (<L? ,SECONDS 45>
 		       <TELL "fifteen">)
@@ -16827,7 +16500,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 		<ST-QUOTE>)>
 	 <COND (<T? .W>
 		<TELL CR CR "A burst of static. \"">
-	        <COND (<L? ,SECONDS 30>
+		<COND (<L? ,SECONDS 30>
 		       <TELL "Minus fifteen">)
 		      (<L? ,SECONDS 45>
 		       <TELL "Minus ten">)
@@ -16869,7 +16542,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	 <CRLF> <CRLF>
 	 <COND (<T? .W>
 		<TELL CTHE ,WTK " is fading away. \"">
-	        <COND (<L? ,SECONDS 30>
+		<COND (<L? ,SECONDS 30>
 		       <TELL "Minus ten seconds. Nine, eight, seven">)
 		      (<L? ,SECONDS 45>
 		       <TELL "Five seconds. Four">)
@@ -16889,7 +16562,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 		<HLIGHT ,H-NORMAL>
 		<TELL "bang">
 		<HLIGHT ,H-ITALIC>)>
-	 <TELL 
+	 <TELL
 " every time they shoot off one of these gizmos. Just enough fireworks to keep the historians happy.">
 	 <HLIGHT ,H-NORMAL>
 	 <COND (<ZERO? .ST>
@@ -16897,25 +16570,25 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	       (T
 		<ST-QUOTE>)>
 	 <CARRIAGE-RETURNS>
-	 	 
+
 	 <DEQUEUE I-TRINITY>
 	 <DEQUEUE I-DOG>
 	 <DEQUEUE I-FLARE>
 	 <DEQUEUE I-TMEEP>
 	 <DEQUEUE I-OPPIE>
-	 
+
 	 <EXIT-MEEP>
 	 <UNMAKE ,MEEP ,TOLD>
 	 <MAKE ,MEEP ,NODESC>
-	 
+
 	 <REMOVE-ALL ,PLAYER>
 	 <MOVE ,POCKET ,PLAYER>
-	 
+
 	 <REMOVE-ALL ,POCKET>
 	 <MOVE ,CREDIT-CARD ,POCKET>
 	 <MOVE ,COIN ,POCKET>
 	 <MAKE ,COIN ,TAKEABLE>
-       
+
 	 <MOVE ,WRISTWATCH ,PLAYER>
 	 <MAKE ,WRISTWATCH ,WORN>
 
@@ -16930,11 +16603,11 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	 <UNMAKE ,FLOWER-WALK ,TOUCHED>
 	 <UNMAKE ,WABE ,TOUCHED>
 	 <UNMAKE ,ROUND-POND ,TOUCHED>
-	 
+
        ; "Reinitialize objects"
 
-         <MOVE ,BALL ,BEDS>
-         <UNMAKE ,BALL ,NODESC>
+	 <MOVE ,BALL ,BEDS>
+	 <UNMAKE ,BALL ,NODESC>
 	 <UNMAKE ,BALL ,TOUCHED>
 
 	 <MOVE ,PRAM ,LION-GATE>
@@ -16968,23 +16641,23 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	 <PUTP ,RUBY ,P?ACTION ,RUBY-F>
 	 <SETG RUBYROOM <>>
 	 <PUTP ,RUBY ,P?FDESC "A ruby is lying at your feet.">
-	 
+
 	 <REMOVE ,GROVES>
 
 	 <UNMAKE ,NOTICE ,TOUCHED>
-	 
+
 	 <UNMAKE ,GRASS ,TOUCHED>
 	 <UNMAKE ,GRASS ,SEEN>
 	 <UNMAKE ,GRASS ,CHILLY>
-	 
+
 	 <MOVE ,PARASOL ,JWOMAN>
 	 <UNMAKE ,PARASOL ,TOUCHED>
 	 <MAKE ,PARASOL ,NODESC>
 	 <MAKE ,PARASOL ,OPENED>
 	 <UNMAKE ,PARASOL ,SEEN>
-	 
+
 	 <MAKE ,TREE ,NODESC>
-	 
+
 	 <UNMAKE ,WWIND ,SEEN>
 	 <MAKE ,EWIND ,SEEN>
 	 <UNMAKE ,EWIND ,TOUCHED>
@@ -16994,13 +16667,13 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	 <UNMAKE ,JWOMAN ,TOUCHED>
 	 <MAKE ,JWOMAN ,NODESC>
 	 <UNMAKE ,JWOMAN ,SEEN>
-	 
+
 	 <SETG LAYAWAY 3>
 	 <UNMAKE ,BWOMAN ,SEEN>
 	 <MAKE ,BWOMAN ,NODESC>
 	 <PUTP ,BWOMAN ,P?FDESC "An aged woman is selling crumbs nearby.">
 	 <MOVE ,GBAG ,BWOMAN>
-	 
+
 	 <SET CNT 0> ; "Unflip everything."
 	 <REPEAT ()
 		 <SET TBL <GET ,FLIPPERS .CNT>>
@@ -17017,10 +16690,10 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 			<RETURN>)>>
 	 <UNMAKE ,SIRENS ,TOLD>
 	 <UNMAKE ,RUBY ,TOLD>
-	 
+
 	 <REMOVE ,SCOIN>
 	 <UNMAKE ,SCOIN ,TOUCHED>
-	 
+
 	 <MAKE ,HANDS ,TOOL>
 
 	 <MAKE ,AT-TERRACE ,NOALL>
@@ -17029,7 +16702,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	 <MOVE ,WAND ,BOY>
 	 <MOVE ,SDISH ,AT-TERRACE>
 	 <SETG BACTION 0>
-	 	 
+
 	 <SETG OSIGN 0>
 	 <SETG HOURS 15>
 	 <SETG MINUTES 30>
@@ -17037,7 +16710,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 	 <SETG FREEZE? <>>
 	 <BOOT-SCREEN <>>
 	 <RTRUE>>
-	 
+
 <ROUTINE BOOT-SCREEN ("OPTIONAL" (INTRO? T))
 	 <QUEUE I-CRANE-APPEARS -1>
 	 <QUEUE I-BWOMAN -1>
@@ -17053,7 +16726,7 @@ Nothing " <PICK-NEXT ,YAWNS> " happens." CR>
 "Sharp words between the superpowers. Tanks in East Berlin. And now, reports the BBC, rumors of a satellite blackout. It's enough to spoil your continental breakfast.|
 |
 But the world will have to wait. This is the last day of your $599 "
-D ,LONDON " Getaway Package, and you're determined to soak up as much of that authentic English ambience as you can. So you've left the tour bus behind, ditched the camera and escaped to Hyde Park for a contemplative stroll through the " 
+D ,LONDON " Getaway Package, and you're determined to soak up as much of that authentic English ambience as you can. So you've left the tour bus behind, ditched the camera and escaped to Hyde Park for a contemplative stroll through the "
 D ,GARDENS ,PCR>)>
 	 <V-LOOK>
 	 <COND (<T? ,TR?>
@@ -17071,8 +16744,8 @@ D ,GARDENS ,PCR>)>
 <ROUTINE BHOUSE-F ()
 	 <COND (<OR <VERB? EXAMINE LOOK-INSIDE SEARCH>
 		    <ENTERING?>>
-	        <TELL CTHEO
-" doesn't have any " D ,WINDOWS " or " D ,SBENTRY 
+		<TELL CTHEO
+" doesn't have any " D ,WINDOWS " or " D ,SBENTRY
 "s you can see from here." CR>
 		<RTRUE>)
 	       (<VERB? WALK-AROUND>
@@ -17090,7 +16763,7 @@ D ,GARDENS ,PCR>)>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT SLIGHT
 	(LOC W100)
 	(DESC "searchlight")
@@ -17136,8 +16809,8 @@ D ,HORIZON ,PERIOD>
 			      <TELL ". \"Damn!\" curses the " D ,WTK>)>
 		       <TELL ,PERIOD>
 		       <COND (<IN? ,DOG ,W100>
-			      <TELL CR 
-"As your eyes adjust to the gloom, you hear a deep, menacing growl. You turn and find " D ,ME 
+			      <TELL CR
+"As your eyes adjust to the gloom, you hear a deep, menacing growl. You turn and find " D ,ME
 " one inch away from the longest set of choppers you've ever seen." CR>
 			      <DOG-ALERT>
 			      <RTRUE>)>
@@ -17154,19 +16827,19 @@ D ,HORIZON ,PERIOD>
 		<RFALSE>)>>
 
 <ROUTINE AKC ()
-	 <TELL 
+	 <TELL
 " a commotion worthy of an American Kennel Club convention." CR>
 	 <RTRUE>>
 
 <ROUTINE HOLD-IT ()
-	 <TELL CR 
+	 <TELL CR
 "\"Hold it!\" The shout doesn't say anything about a gun. But you raise "
 D ,HANDS "s over your head, just to be safe." CR>
 	 <RTRUE>>
 
 <ROUTINE KINDA-SPY ()
-	 <TELL CR "The figure near the " D ,BHOUSE 
-" studies you in the " D ,SLIGHT 
+	 <TELL CR "The figure near the " D ,BHOUSE
+" studies you in the " D ,SLIGHT
 "'s glare. \"You... you some kinda spy or somethin'?\""
 CR>
 	 <RTRUE>>
@@ -17174,17 +16847,17 @@ CR>
 <ROUTINE POLICE-CONVERGE ()
 	 <TELL CR "A faint rumble begins to drift ">
 	 <COND (<HERE? IN-SHACK>
-		<TELL 
+		<TELL
 "in from outside. You crawl over to the exit, peek around the "
 D ,CORNER " and ">)
 	       (T
-		<TELL "across the " D ,GDESERT 
+		<TELL "across the " D ,GDESERT
 		      ". You peer between the girders to ">)>
 	 <TELL "scan the " D ,HORIZON ".|
 |
 Headlights. ">
 	 <ITALICIZE "Lots">
-	 <TELL " of them, converging on the " D ,TOWER 
+	 <TELL " of them, converging on the " D ,TOWER
 	       " from several " D ,INTDIR
 	       "s at once, and just minutes away!|
 |
@@ -17203,7 +16876,7 @@ White with panic, you ">
 		       <TELL D ,GBOOT " slips">)
 		      (T
 		       <TELL "vacation sneakers slip">)>
-		<TELL 
+		<TELL
 " out from under you about ten rungs from the bottom; and you regain consciousness ">)
 	       (T
 		<COND (<HERE? AT-ZERO>
@@ -17215,7 +16888,7 @@ White with panic, you ">
 		      (T
 		       <TELL "vacation shorts snag">)>
 		<TELL " on a prickly pear bush ">)>
-	 <TELL 
+	 <TELL
 "just as seventeen jeeps screech to a halt around the " D ,TOWER ,PERIOD>
 	 <SURROUNDED>
 	 <RTRUE>>
@@ -17224,10 +16897,10 @@ White with panic, you ">
 	 <TELL CR
 "Within moments you're surrounded by a dozen MPs, armed and trigger-happy. ">
 	 <EXCUSES>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <ROUTINE EXCUSES ()
-	 <TELL 
+	 <TELL
 "They answer your polite explanations with curt accusations, punctuated by a few well-placed kicks.|
 |
 Eventually you're dragged off to meet somebody they call the Lieutenant, who'll deal with you, you're promised, right after a very important test is concluded. But the Lieutenant never appears. Minutes later, he's obliterated by a multigigaton atomic blast, along with ">
@@ -17289,7 +16962,7 @@ Eventually you're dragged off to meet somebody they call the Lieutenant, who'll 
 
 <ROUTINE FRAME-F ()
 	 <COND (<VERB? EXAMINE LOOK-INSIDE SEARCH LOOK-ON>
-		<TELL CTHEO 
+		<TELL CTHEO
 " is a boxlike affair of steel girders, about fifty feet high. The enormous "
 D ,JUMBO " hanging inside fills much of its open interior." CR>
 		<RTRUE>)
@@ -17309,7 +16982,7 @@ D ,JUMBO " hanging inside fills much of its open interior." CR>
 	       (<OR <ENTERING?>
 		    <VERB? CLIMB-ON CLIMB-UP CLIMB-OVER STAND-ON SIT
 			   LIE-DOWN>>
-		<TELL 
+		<TELL
 "It doesn't look as if there's any way to climb onto " THEO ,PERIOD>
 		<RTRUE>)
 	       (<EXITING?>
@@ -17350,8 +17023,8 @@ D ,HOPENING "s, " D ,WINDOWS
 	       (<HANDLE-JUMBO?>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>		
-		
+		<RFALSE>)>>
+
 <ROUTINE JUMBO-CLOSED ()
 	 <TELL "If there's any way into this oversized " D ,JUMBO
 	       ", you sure can't find it." CR>
@@ -17375,12 +17048,12 @@ D ,HOPENING "s, " D ,WINDOWS
 		      (<VERB? PUT-BEHIND THROW-OVER>
 		       <MOVE ,PRSO <GETP ,HERE ,P?WALL-SIDE>>
 		       <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
-		       <TELL CTHEO " falls somewhere behind the " 
+		       <TELL CTHEO " falls somewhere behind the "
 			     D ,PRSI ,PERIOD>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL CTHEO 
+		<TELL CTHEO
 " is three or four feet high. It completely surrounds the " D ,RANCH ,PERIOD>
 		<RTRUE>)
 	       (<VERB? LOOK-INSIDE>
@@ -17440,8 +17113,8 @@ D ,HOPENING "s, " D ,WINDOWS
 		<V-WALK-AROUND>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
-			     
+		<RFALSE>)>>
+
 <OBJECT NWGATE
 	(LOC LOCAL-GLOBALS)
 	(DESC "iron gate")
@@ -17462,7 +17135,7 @@ D ,HOPENING "s, " D ,WINDOWS
 	(FLAGS NODESC DOORLIKE OPENABLE FERRIC VOWEL OPENED)
 	(SYNONYM GATE)
 	(ADJECTIVE IRON METAL)>
-	
+
 <OBJECT ILINES
 	(LOC LOCAL-GLOBALS)
 	(DESC "instrument lines")
@@ -17470,9 +17143,6 @@ D ,HOPENING "s, " D ,WINDOWS
 	(SYNONYM LINES LINE WIRES WIRE CABLES CABLE POLES)
 	(ADJECTIVE INSTRUMEN WIRE\-LADEN)
       ; (ACTION ILINES-F)>
-
-; <ROUTINE ILINES-F ()
-	 <RFALSE>>
 
 <ROUTINE RELEASE ("AUX" V)
 	 <SET V <BAND <GET 0 1> *3777*>>
@@ -17513,7 +17183,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		       <TELL " stare back at you haughtily." CR>
 		       <RTRUE>)>
 		<TELL " are scattering in every " D ,INTDIR ,PERIOD>
-		<RTRUE>) 
+		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
 		<TOO-HAUGHTY>
 		<RFATAL>)
@@ -17530,7 +17200,7 @@ D ,HOPENING "s, " D ,WINDOWS
 <ROUTINE TOUCH-T? ()
 	 <COND (<VERB? KISS TOUCH CLIMB-ON CLIMB-OVER SQUEEZE TASTE EAT
 		       BITE RAPE PLAY KNOCK KICK KILL HIT SUCK TAKE SMELL>
-	        <RTRUE>)
+		<RTRUE>)
 	       (T
 		<RFALSE>)>>
 
@@ -17549,13 +17219,13 @@ D ,HOPENING "s, " D ,WINDOWS
 	(FLAGS NODESC TRYTAKE NOALL PERSON LIVING PLURAL)
 	(SYNONYM CHILDREN KIDS CHILD KID)
 	(ACTION CHILDREN-F)>
-	       
+
 <ROUTINE CHILDREN-F ()
 	 <COND (<VERB? EXAMINE LOOK-INSIDE WATCH>
 		<COND (<ZERO? ,RAID?>
 		       <TELL "It makes you smile to watch them play." CR>
 		       <RTRUE>)>
-		<TELL CTHEO " are as frightened as their " 
+		<TELL CTHEO " are as frightened as their "
 		      D ,NANNIES ,PERIOD>
 		<RTRUE>)>
 	 <RETURN <HANDLE-CHARGES?>>>
@@ -17578,14 +17248,14 @@ D ,HOPENING "s, " D ,WINDOWS
 		<COND (<ZERO? ,RAID?>
 		       <TELL CTHEO " look a lot like you do." CR>
 		       <RTRUE>)>
-		<TELL "The terrified " D ,PRSO " are stumbling in every " 
+		<TELL "The terrified " D ,PRSO " are stumbling in every "
 		      D ,INTDIR ,PERIOD>
-		<RTRUE>) 
+		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
-		<T-SNOBS>  
+		<T-SNOBS>
 		<RFATAL>)
 	       (<TOUCH-T?>
-		<TELL 
+		<TELL
 "A tourist whacks you over the head with a Japanese camera">
 		<COND (<T? ,RAID?>
 		       <TELL " as she runs past">)>
@@ -17641,7 +17311,7 @@ D ,HOPENING "s, " D ,WINDOWS
 
 <ROUTINE EARSHOT ()
 	 <COND (<ZERO? ,RAID?>
-	        <TELL "The suspicious " D ,NANNIES 
+		<TELL "The suspicious " D ,NANNIES
 		      " quickly pull the " D ,CHILDREN
 		      " out of earshot." CR>
 		<RTRUE>)>
@@ -17731,15 +17401,15 @@ D ,HOPENING "s, " D ,WINDOWS
 		<NOT-IN>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
-	       
+		<RFALSE>)>>
+
 <OBJECT LAMP
 	(LOC TUN1)
 	(DESC "lantern")
 	(FDESC "A lantern is lying in the dirt at your feet.")
 	(FLAGS TAKEABLE CONTAINER)
 	(SYNONYM LANTERN LIGHT LAMP TORCH BULB GLOW
-	         BEAM SWITCH BATTERY BATTERIES)
+		 BEAM SWITCH BATTERY BATTERIES)
 	(ADJECTIVE LIGHT LIGHT\'S GLOWING HERMETICA SEALED TORCH\'S
 	 	   LAMP\'S DIM YELLOW BROKEN BUSTED WATERPROOF LANTERN\'S)
 	(GENERIC GENERIC-BULB-F)
@@ -17754,7 +17424,7 @@ D ,HOPENING "s, " D ,WINDOWS
 	 <COND (<EQUAL? ,P-IT-OBJECT ,WATT ,LAMP ,SHARD>
 		<RETURN ,P-IT-OBJECT>)
 	       (<EQUAL? ,W?BULB ,P-NAM ,P-XNAM>
-		<RETURN ,WATT>)	       
+		<RETURN ,WATT>)
 	       (<VISIBLE? ,LAMP>
 		<RETURN ,LAMP>)
 	       (<HERE? IN-SHACK>
@@ -17762,7 +17432,7 @@ D ,HOPENING "s, " D ,WINDOWS
 	       (<VISIBLE? ,SHARD>
 		<RETURN ,SHARD>)
 	       (T
-		<RFALSE>)>>	 
+		<RFALSE>)>>
 
 <GLOBAL BEAM:NUMBER 30> "Flashlight life."
 
@@ -17781,7 +17451,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		      "'s batteries. They're sealed inside." CR>
 		<RTRUE>)
 	       (<NOUN-USED? ,W?SWITCH>
-	        <COND (<THIS-PRSI?>
+		<COND (<THIS-PRSI?>
 		       T)
 		      (<VERB? EXAMINE LOOK-ON READ>
 		       <TELL CTHEO "'s switch ">
@@ -17842,7 +17512,7 @@ D ,HOPENING "s, " D ,WINDOWS
 	       (<VERB? CLOSE>
 		<ITS-ALREADY "closed">
 		<RTRUE>)
-	       (<VERB? LAMP-OFF>		
+	       (<VERB? LAMP-OFF>
 		<TURN-OFF-LAMP>
 		<RTRUE>)
 	       (<AND <VERB? MUNG HIT CUT>
@@ -17858,12 +17528,12 @@ D ,HOPENING "s, " D ,WINDOWS
 		<RTRUE>)
 	       (<VERB? POINT-AT SHINE-AT>
 		<COND (<IS? ,PRSO ,LIGHTED>
-		       <TELL "You aim the " D ,PRSO " towards " THEI 
-		             ", but its dim beam reveals nothing "
-		             <PICK-NEXT ,YAWNS> ,PERIOD>
+		       <TELL "You aim the " D ,PRSO " towards " THEI
+			     ", but its dim beam reveals nothing "
+			     <PICK-NEXT ,YAWNS> ,PERIOD>
 		       <RTRUE>)>
 		<TELL CTHEO " isn't on." CR>
-		<RTRUE>) 
+		<RTRUE>)
 	       (T
 		<RFALSE>)>>
 
@@ -17878,7 +17548,7 @@ D ,HOPENING "s, " D ,WINDOWS
 	       (T
 		<TELL "off">)>
 	 <RTRUE>>
-	
+
 <ROUTINE MUNG-LAMP ()
 	 <COND (<IS? ,LAMP ,CHILLY>
 		<TELL "This has little effect on the broken "
@@ -17889,7 +17559,7 @@ D ,HOPENING "s, " D ,WINDOWS
 	 <TELL CTHE ,LAMP " snaps with a loud ">
 	 <COND (<IS? ,LAMP ,LIGHTED>
 		<ITALICIZE "crack">
-		<TELL " and goes out." CR>		       
+		<TELL " and goes out." CR>
 		<KILL-LAMP>
 		<RTRUE>)>
 	 <ITALICIZE "crack.">
@@ -17898,7 +17568,7 @@ D ,HOPENING "s, " D ,WINDOWS
 
 <ROUTINE TURN-OFF-LAMP ()
 	 <COND (<IS? ,LAMP ,SHADOWY>
-	        <COND (<T? ,BEAM>
+		<COND (<T? ,BEAM>
 		       <DEQUEUE I-HARDHAT>)>
 		<UNMAKE ,LAMP ,SHADOWY>
 		<TELL "You turn off the " D ,LAMP "'s switch." CR>
@@ -17974,7 +17644,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		<COND (<HERE? IN-SHACK>
 		       <CANT-FROM-HERE>
 		       <RTRUE>)>
-		<TELL CTHEO 
+		<TELL CTHEO
 " seems to originate from a point on the southwest " D ,HORIZON ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -18014,7 +17684,7 @@ D ,HOPENING "s, " D ,WINDOWS
 <ROUTINE TCRATER-F ()
 	 <COND (<VERB? EXAMINE LOOK-ON LOOK-DOWN>
 		<TELL "The explosion that created this " D ,PRSO
-" seems to have obliterated all evidence of its cause." CR>  
+" seems to have obliterated all evidence of its cause." CR>
 		<RTRUE>)
 	       (<VERB? SEARCH LOOK-INSIDE ENTER THROUGH WALK-TO
 		       CLIMB-DOWN STAND-ON CLIMB-OVER>
@@ -18051,11 +17721,11 @@ D ,HOPENING "s, " D ,WINDOWS
 		<GONE-NOW ,GMAP>
 		<RFATAL>)
 	       (<VERB? EXAMINE LOOK-ON READ SEARCH>
-		<TELL 
+		<TELL
 "The map shows a network of boxes connected by lines and arrows, with many erasures and scrawled additions. Something about the pattern is maddeningly familiar; but you ">
 		<COND (<IS? ,PRSO ,SEEN>
 		       <TELL "still ">)>
-		<TELL 
+		<TELL
 "can't put your finger on where you've seen it before." CR>
 		<COND (<NOT <IS? ,PRSO ,SEEN>>
 		       <MAKE ,PRSO ,SEEN>)
@@ -18069,7 +17739,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
- 
+
 <OBJECT PEDESTAL
 	(LOC IN-COTTAGE)
 	(DESC "pedestal")
@@ -18111,7 +17781,7 @@ D ,HOPENING "s, " D ,WINDOWS
 	(SYNONYM TOME BOOK BINDING COVER COVERS VOLUME SPINE TITLE)
 	(ADJECTIVE BIG LARGE HUGE GIANT GIGANTIC FINE RICH LEATHER)
 	(ACTION TOME-F)>
-	 
+
 <ROUTINE TOME-F ()
 	 <COND (<AND <NOUN-USED? ,W?TITLE ,W?COVER ,W?COVERS>
 		     <VERB? EXAMINE LOOK-ON READ>>
@@ -18123,7 +17793,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL 
+		<TELL
 "The open book is so wide, it's impossible to touch both edges with your arms outstretched. Its thousands of " D ,PAGES
 " form a two-foot heap on either side of the spine; the rich binding probably required the cooperation of twenty calves." CR>
 		<RTRUE>)
@@ -18153,7 +17823,7 @@ D ,HOPENING "s, " D ,WINDOWS
 	 	 CALLIGRAPHY WORDS TEXT WRITING INCANTATIONS)
 	(ADJECTIVE VELLUM)
 	(ACTION PAGES-F)>
-		      
+
 <ROUTINE PAGES-F ()
 	 <COND (<THIS-PRSI?>
 		<COND (<INTBL? ,PRSA ,PUTVERBS ,NUMPUTS>
@@ -18167,7 +17837,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		<TELL "There are 69,105 leaves here." CR>
 		<RTRUE>)
 	       (<VERB? LOOK-UNDER LOOK-BEHIND SEARCH>
-		<TELL "You discover nothing " <PICK-NEXT ,YAWNS> 
+		<TELL "You discover nothing " <PICK-NEXT ,YAWNS>
 		      " among the " D ,PRSO ,PERIOD>
 		<RTRUE>)
 	       (<VERB? TURN RAISE MOVE PUSH>
@@ -18181,7 +17851,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	       
+
 <ROUTINE AND-RUIN ()
 	 <TELL "And ruin this magnificent volume? For shame." CR>
 	 <RTRUE>>
@@ -18205,7 +17875,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		<RFALSE>)>>
 
 <ROUTINE TELEPHONE ()
-	 <TELL 
+	 <TELL
 "You try to fold the " D ,PRSO " shut, but it's like trying to move a pallet of Cleveland telephone directories." CR>
 	 <RTRUE>>
 
@@ -18270,7 +17940,7 @@ The writing ends abruptly on the page you found open, under the heading \"">
 "How Wabewalker enters the first of Seven Portals"
 "In which Wabewalker chances upon a Hovel"
 "Wabewalker's encounter with a Magpie"
-"Wabewalker heeds the Magpie's words">>	     
+"Wabewalker heeds the Magpie's words">>
 
 <OBJECT CINDERS
 	(DESC "pile of cinders")
@@ -18281,7 +17951,7 @@ The writing ends abruptly on the page you found open, under the heading \"">
 	(ADJECTIVE BLACK)
 	(DESCFCN DESCRIBE-CINDERS)
 	(ACTION CINDERS-F)>
-	
+
 <ROUTINE DESCRIBE-CINDERS ("OPTIONAL" (CONTEXT <>))
 	 <COND (<NOT <EQUAL? .CONTEXT ,M-OBJDESC>>
 		<RFALSE>)>
@@ -18289,7 +17959,7 @@ The writing ends abruptly on the page you found open, under the heading \"">
 	 <RTRUE>>
 
 <ROUTINE ALL-THATS-LEFT ()
-	 <TELL 
+	 <TELL
 "All that's left of the book and " D ,PEDESTAL " is a " D ,CINDERS ".">
 	 <RTRUE>>
 
@@ -18322,7 +17992,7 @@ The writing ends abruptly on the page you found open, under the heading \"">
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT SINK
 	(LOC IN-BATH)
 	(DESC "sink")
@@ -18341,7 +18011,7 @@ The writing ends abruptly on the page you found open, under the heading \"">
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE LOOK-ON LOOK-INSIDE SEARCH>
-		<TELL 
+		<TELL
 "The porcelain is stained with big, disgusting patches of brown and green mildew">
 		<COND (<FIRST? ,PRSO>
 		       <TELL ". " ,YOU-SEE>
@@ -18357,7 +18027,7 @@ The writing ends abruptly on the page you found open, under the heading \"">
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		 	
+
 <OBJECT CUPBOARD
 	(LOC SWROOM)
 	(DESC "cupboard")
@@ -18384,7 +18054,7 @@ The writing ends abruptly on the page you found open, under the heading \"">
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		     
+
 <OBJECT KNIFE
 	(LOC CUPBOARD)
 	(DESC "steak knife")
@@ -18394,8 +18064,8 @@ The writing ends abruptly on the page you found open, under the heading \"">
 	(VALUE 1)
 	(SIZE 2)
 	(MASS 2)
-        (ACTION KNIFE-F)>
-	 
+	(ACTION KNIFE-F)>
+
 <ROUTINE KNIFE-F ()
 	 <COND (<VERB? EXAMINE LOOK-ON>
 		<TELL "The blade is still reasonably sharp." CR>
@@ -18408,7 +18078,7 @@ The writing ends abruptly on the page you found open, under the heading \"">
 	(DESC "loudspeaker")
 	(FLAGS NODESC)
 	(SYNONYM LOUDSPEAKER SPEAKER VOICE SOUND RUSSIAN)>
-		        
+
 <OBJECT GIBINOS
 	(LOC LOCAL-GLOBALS)
 	(DESC "GI's binoculars")
@@ -18421,12 +18091,12 @@ The writing ends abruptly on the page you found open, under the heading \"">
 	 <COND (<VERB? EXAMINE>
 		<TELL CTHEO " are trained on the road leading south." CR>
 		<RTRUE>)
-	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>		    
+	       (<INTBL? ,PRSA ,TOUCHVERBS ,NTOUCHES>
 		<CANT-FROM-HERE>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <OBJECT CEMETERY
 	(LOC BONEYARD)
 	(DESC "cemetery")
@@ -18520,8 +18190,8 @@ The writing ends abruptly on the page you found open, under the heading \"">
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL CTHEO 
-" looks like a drinking straw made of plywood, six feet square and miles long. Its purpose is obscure, but it probably connects the " 
+		<TELL CTHEO
+" looks like a drinking straw made of plywood, six feet square and miles long. Its purpose is obscure, but it probably connects the "
 D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 		<RTRUE>)
 	       (<VERB? OPEN CLOSE REACH-IN ENTER THROUGH LOOK-INSIDE
@@ -18537,8 +18207,8 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 		<NOT-IN ,PRSO T>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>	       
-	       
+		<RFALSE>)>>
+
 <ROUTINE TUBE-CLOSED ()
 	 <TELL CTHE ,TUBE " has no visible openings." CR>
 	 <RTRUE>>
@@ -18564,7 +18234,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE>
-		<TELL CTHEO " are near the " D ,SBUNK "'s " 
+		<TELL CTHEO " are near the " D ,SBUNK "'s "
 		      D ,SBENTRY ,PERIOD>
 		<RTRUE>)
 	       (<VERB? LOOK-INSIDE SEARCH LOOK-UNDER LOOK-BEHIND>
@@ -18670,7 +18340,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 		<RTRUE>)>
 	 <NONE-AT-MOMENT>
 	 <RFATAL>>
-	       
+
 <OBJECT PTREES
 	(LOC ESAND)
 	(DESC "palm trees")
@@ -18690,7 +18360,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 		<RTRUE>)>
 	 <YOU-DONT-NEED ,PTREES>
 	 <RFATAL>>
-		
+
 <OBJECT MOOR
 	(LOC ON-MOOR)
 	(DESC "moor")
@@ -18716,9 +18386,9 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 	 <COND (<NOT <IS? ,TKEY ,SEEN>>
 		<CANT-SEE-ANY>
 		<RFATAL>)>
-	 <USELESS>
-	 <RFATAL>>
-	 
+	 <COND (<USELESS>
+		<RFATAL>)>>
+
 <OBJECT VERTEX
 	(LOC LOCAL-GLOBALS)
 	(DESC "vertex")
@@ -18739,7 +18409,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <ROUTINE FARAWAY? ()
 	 <COND (<INTBL? ,PRSA ,SEEVERBS ,NSVERBS>
 		<CANT-SEE-MUCH>
@@ -18768,7 +18438,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 		       <PERFORM ,V?DROP ,PRSO>
 		       <RTRUE>)>
 		<RFALSE>)
-	       (<VERB? EXAMINE LOOK-ON> 
+	       (<VERB? EXAMINE LOOK-ON>
 		<V-LOOK>
 		<RTRUE>)
 	       (<OR <ENTERING?>
@@ -18782,7 +18452,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 	       (<VERB? SIT LIE-DOWN>
 		<VOICE-MUTTERS "This is no time for catching rays">
 		<RTRUE>)
-	       (<VERB? LOOK-INSIDE LOOK-UNDER DIG SEARCH REACH-IN 
+	       (<VERB? LOOK-INSIDE LOOK-UNDER DIG SEARCH REACH-IN
 		       MOVE PUSH PULL>
 		<TELL "Sifting through the sand reveals nothing "
 		      <PICK-NEXT ,YAWNS> ,PERIOD>
@@ -18807,7 +18477,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 
 <ROUTINE GENERIC-SHORE-F (TBL)
 	 <RETURN ,BEACH>>
-		       
+
 <ROUTINE OPSHORE-F ()
 	 <COND (<ENTERING?>
 		<V-WALK-AROUND>
@@ -18837,7 +18507,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 		<RTRUE>)>
 	 <YOU-DONT-NEED ,GGRASS>
 	 <RFATAL>>
-	
+
 <OBJECT FATMAN
 	(LOC ON-BIRD)
 	(DESC "falling object")
@@ -18845,7 +18515,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 	(SYNONYM OBJECT THING BOMB MAN)
 	(ADJECTIVE FALLING FAT)
 	(ACTION FATMAN-F)>
-     
+
 <ROUTINE FATMAN-F ()
 	 <COND (<NOT <IS? ,FATMAN ,SEEN>>
 		<REFERRING>
@@ -18855,7 +18525,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 		<RTRUE>)>
 	 <YOU-DONT-NEED ,FATMAN>
 	 <RFATAL>>
-		     
+
 <ROUTINE TOO-NARROW ()
 	 <TELL "[Screen too narrow.]" CR>
 	 <RTRUE>>
@@ -18868,40 +18538,40 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 	 <SPLIT 23>
 	 <SCREEN ,S-WINDOW>
 	 <BUFOUT <>>
-	 
+
 	 <CURSET 2 25>
 	 <BIG-TRINITY>
 	 <HLIGHT ,H-NORMAL>
 	 <CURSET 3 32>
 	 <TELL "by Brian Moriarty">
- 	 
+
 	 <CURSET 5 37>
 	 <TELL "Testing">
 	 <CURSET 6 4>
-	 <TELL 
+	 <TELL
 "Gary Brennan    Amy Briggs    Suzanne Frank    Max Buxton    Liz Cyr-Jones">
-	 
+
 	 <CURSET 8 13>
 	 <TELL "Packaging">
 	 <CURSET 8 33>
 	 <TELL "Project Manager">
 	 <CURSET 8 58>
 	 <TELL "Copywriter">
-	 
+
 	 <CURSET 9 10>
 	 <TELL "Carl Genatossio">
 	 <CURSET 9 35>
 	 <TELL "Jon Palace">
 	 <CURSET 9 55>
 	 <TELL "Elizabeth Langosy">
-	 
+
 	 <CURSET 11 12>
 	 <TELL "Illustrator">
 	 <CURSET 11 35>
 	 <TELL "Photography">
 	 <CURSET 11 58>
 	 <TELL "Inner Cover">
-	 
+
 	 <CURSET 12 11>
 	 <TELL "Richard Howell">
 	 <CURSET 12 35>
@@ -18915,7 +18585,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 	 <TELL "Map & Crane">
 	 <CURSET 14 53>
 	 <TELL "Production Coordinator">
-	 
+
 	 <CURSET 15 9>
 	 <TELL "Geoff Hodgkinson       Meredith Lightbown        Angela Raup">
 	 <CURSET 17 28>
@@ -18930,8 +18600,7 @@ D ,MIKE " in the " D ,SCHOOL " to some remote part of the " D ,LAGOON ,PERIOD>
 	 <TELL "Marc Blank    Dave Lebling    Stu Galley">
 	 <SCREEN ,S-TEXT>
 	 <SET X <INPUT 1>>
-	 <CLEAR -1>
-	 <INIT-STATUS-LINE>
+         <V-$REFRESH>
 	 <V-LOOK>
 	 <RTRUE>>
 

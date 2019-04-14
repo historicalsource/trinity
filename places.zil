@@ -1,5 +1,5 @@
 "PLACES for TRINITY: (C)1986 Infocom, Inc. All rights reserved."
- 			
+
 "*** GARDENS ***"
 
 <OBJECT PAL-GATE
@@ -30,23 +30,23 @@
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "A tide of " D ,GPRAM " surges ">
 		<COND (<ZERO? ,RAID?>
-		       <TELL "north along the crowded " 
+		       <TELL "north along the crowded "
 			     D ,BROAD-WALK ". Shad">)
 		      (T
 		       <TELL "through the mob around the Gate. " D ,D0>)>
-		<TELL "ed glades stretch away" ,TON 
+		<TELL "ed glades stretch away" ,TON
 "east, and a hint of color marks the western edge of the " D ,FLWALK ,PERIOD>
 		<RTRUE>)
 	       (<EQUAL? .CONTEXT ,M-EXIT>
 		<COND (<NOT <IS? ,EWIND ,TOUCHED>>
 		       <MAKE ,EWIND ,TOUCHED>
-		       <TELL CTHE ,EWIND 
+		       <TELL CTHE ,EWIND
 " makes it difficult to walk straight" ,PCR>)>
 		<COND (<MISSED-MEEP?>
 		       <CRLF>)>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
+		<RFALSE>)>>
 
 <ROUTINE EXIT-GARDEN ()
 	 <COND (<T? ,IN-PRAM?>
@@ -88,14 +88,14 @@
 	(SEE-E TOURISTS)
 	(SEE-W GTREES)
 	(SEE-NW GTREES)
-	(SEE-ALL BEDS)	
+	(SEE-ALL BEDS)
 	(GLOBAL EWIND WWIND GPRAM PIGEONS GARDENS LONDON LCITY
-	        NANNIES CHILDREN TOURISTS BABIES GTREES FLOWERS)
+		NANNIES CHILDREN TOURISTS BABIES GTREES FLOWERS)
 	(NORTH TO LAN-WALK)
 	(NE SORRY "There's no need to trample on the flowers.")
 	(EAST PER EXIT-GARDEN)
 	(SE SORRY "There's no need to trample on the flowers.")
-	(SOUTH SORRY 
+	(SOUTH SORRY
 "You're already as close as anyone wants to get to the Albert Memorial.")
 	(SW SORRY "There's no need to trample on the flowers.")
 	(WEST TO PAL-GATE)
@@ -105,20 +105,20 @@
 
 <ROUTINE FLOWER-WALK-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "Gaily colored " D ,BEDS 
+		<TELL "Gaily colored " D ,BEDS
 " line the walks bending north and west, filling the air with a gentle fragrance. A little path leads northwest, between the trees." CR>
 		<COND (<SEE-ANYTHING-IN? ,BEDS>
 		       <CRLF>
 		       <LOOK-IN-BEDS>)>
-		<TELL CR "The spires of the " D ,MEMORIAL 
+		<TELL CR "The spires of the " D ,MEMORIAL
 		      " are all too visible" ,TOS ". ">
 		<COND (<ZERO? ,RAID?>
-		       <TELL "Passing " D ,TOURISTS 
+		       <TELL "Passing " D ,TOURISTS
 			     " hoot with laughter at the dreadful sight; "
-			     D ,NANNIES 
+			     D ,NANNIES
 			     " hide their faces and roll quickly away." CR>
 		       <RTRUE>)>
-		<TELL "Frightened " D ,TOURISTS 
+		<TELL "Frightened " D ,TOURISTS
 		      " are scattering in every " D ,INTDIR ,PERIOD>
 		<RTRUE>)
 	       (<AND <EQUAL? .CONTEXT ,M-EXIT>
@@ -150,9 +150,9 @@
 	(SEE-SW IFENCE)
 	(SEE-ALL GTREES)
 	(GLOBAL GBAG WWIND EWIND GPRAM PIGEONS GARDENS LONDON LCITY
-	        NANNIES TOURISTS BABIES GTREES CHILDREN)
+		NANNIES TOURISTS BABIES GTREES CHILDREN)
 	(NORTH TO LION-GATE)
-        (NE TO AT-TERRACE)
+	(NE TO AT-TERRACE)
 	(EAST TO ROUND-POND)
 	(SE TO WABE)
 	(SOUTH TO PAL-GATE)
@@ -164,8 +164,8 @@
 
 <ROUTINE BROAD-WALK-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-	        <TELL
-"A brooding " D ,VICTORIA " faces east, where the waters of the " D ,RPOND 
+		<TELL
+"A brooding " D ,VICTORIA " faces east, where the waters of the " D ,RPOND
 " sparkle in the afternoon sun. Your eyes follow the crowded " D ,BROAD-WALK
 " north and south until its borders are lost amid the ">
 		<COND (<T? ,RAID?>
@@ -231,13 +231,13 @@ D ,CSURFACE " of the " D ,RPOND ". They share the water with a">
 		       <TELL "n impressive">)>
 		<TELL " fleet of " D ,BOAT>
 		<COND (<ZERO? ,RAID?>
-		       <TELL 
+		       <TELL
 ", directed by the excited shouts of " D ,CHILDREN>)>
 		<COND (<FIRST? ,RPOND>
 		       <TELL ". You also see ">
 		       <PRINT-CONTENTS ,RPOND>
 		       <TELL " floating within reach">)>
-		<TELL 
+		<TELL
 ".|
 |
 Crowded paths radiate from the Pond in many " D ,INTDIR "s." CR>
@@ -271,8 +271,8 @@ Crowded paths radiate from the Pond in many " D ,INTDIR "s." CR>
 	(SEE-E THICKET)
 	(SEE-W THICKET)
 	(SEE-ALL GTREES)
-	(GLOBAL EWIND WWIND PIGEONS GARDENS LONDON LCITY 
-	        ROSE SYMBOLS GTREES)>
+	(GLOBAL EWIND WWIND PIGEONS GARDENS LONDON LCITY
+		ROSE SYMBOLS GTREES)>
 
 <ROUTINE WABE-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
@@ -304,7 +304,7 @@ Crowded paths radiate from the Pond in many " D ,INTDIR "s." CR>
 		<RETURN ,LAN-WALK>)>
 	 <WOBBLE>
 	 <RFALSE>>
-		
+
 <ROUTINE WABE-SE ()
 	 <COND (<IS? ,GNOMON ,BORING>
 		<RETURN ,FLOWER-WALK>)>
@@ -330,7 +330,7 @@ Crowded paths radiate from the Pond in many " D ,INTDIR "s." CR>
 For a moment, nothing happens. Then the ">
 	 <SAY-WIND>
 	 <TELL " puffs through the " D ,CLEARING ", and the "
-	       D ,GNOMON " on the " D ,DIAL 
+	       D ,GNOMON " on the " D ,DIAL
 	       " wobbles with a faint scrape." CR>
 	 <RTRUE>>
 
@@ -346,7 +346,7 @@ For a moment, nothing happens. Then the ">
 	(SEE-E GTREES)
 	(SEE-SE GTREES)
 	(SEE-ALL IFENCE)
-	(GLOBAL EWIND WWIND GPRAM PIGEONS GARDENS IFENCE NANNIES 
+	(GLOBAL EWIND WWIND GPRAM PIGEONS GARDENS IFENCE NANNIES
 	 	TOURISTS BABIES GTREES CHILDREN LONDON LCITY)
 	(NORTH PER EXIT-GARDEN)
 	(NE PER IFENCE-BLOCKS)
@@ -365,7 +365,7 @@ For a moment, nothing happens. Then the ">
 		<TELL "Nannies and " D ,TOURISTS " hurry through the "
 		      D ,LGATE>
 		<COND (<ZERO? ,RAID?>
-		       <TELL 
+		       <TELL
 " to join the " D ,GPRAM " rolling south down the " D ,BWALK>)>
 		<TELL ". Less crowded paths wind east along an "
 D ,IFENCE ", and southeast">
@@ -389,13 +389,13 @@ D ,IFENCE ", and southeast">
 	(SEE-NW IFENCE)
 	(SEE-SW TOURISTS)
 	(SEE-ALL GTREES)
-	(GLOBAL EWIND WWIND GPRAM PIGEONS GARDENS IFENCE 
-	 	NANNIES CHILDREN TOURISTS BABIES GTREES 
+	(GLOBAL EWIND WWIND GPRAM PIGEONS GARDENS IFENCE
+	 	NANNIES CHILDREN TOURISTS BABIES GTREES
 		LONDON LCITY)
       ; (ODOR 0)
       ; (HEAR 0)
 	(OVERHEAD TREE)
-	(NORTH PER EXIT-GARDEN) 
+	(NORTH PER EXIT-GARDEN)
 	(NE PER IFENCE-BLOCKS)
 	(EAST PER EXIT-GARDEN)
 	(SE PER EXIT-GARDEN)
@@ -431,7 +431,7 @@ D ,IFENCE ", and southeast">
 		<QUEUE I-BLOW 2>
 		<SETG P-HER-OBJECT ,JWOMAN>
 		<SETG P-IT-OBJECT ,PARASOL>
-		<TELL CR "There's an " D ,JWOMAN 
+		<TELL CR "There's an " D ,JWOMAN
 " under the tree, struggling to open an " D ,PARASOL ,PTHE "stiff ">
 		<SAY-WIND>
 		<TELL " isn't making it easy for her." CR>
@@ -469,7 +469,7 @@ D ,IFENCE ", and southeast">
 		<RFALSE>)>
 	 <TELL "You begin to walk past the " D ,JWOMAN ", but ">
 	 <COND (<NOT <IS? ,JWOMAN ,TOUCHED>>
-	        <TELL "stop in your tracks" ,PCR>
+		<TELL "stop in your tracks" ,PCR>
 		<PERFORM ,V?EXAMINE ,JWOMAN>
 		<RTRUE>)>
 	 <TELL "pause for a moment." CR>
@@ -491,25 +491,25 @@ D ,IFENCE ", and southeast">
 	(WEST TO ROUND-POND)
 	(NW TO AT-TERRACE)
 	(OUT PER GARDEN-OUT)
-        (ACTION LAN-WALK-F)
+	(ACTION LAN-WALK-F)
 	(SEE-N LNWALK)
 	(SEE-S LNWALK)
 	(SEE-E LWATER)
 	(SEE-ALL GTREES)
-	(GLOBAL GRASS EWIND WWIND GPRAM PIGEONS GARDENS 
-	        NANNIES CHILDREN TOURISTS BABIES GTREES)>
+	(GLOBAL GRASS EWIND WWIND GPRAM PIGEONS GARDENS
+		NANNIES CHILDREN TOURISTS BABIES GTREES)>
 
 <ROUTINE LAN-WALK-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-	        <TELL "An impressive " D ,ENERGY 
+		<TELL "An impressive " D ,ENERGY
 " of a horse and rider dominates this ">
 		<COND (<ZERO? ,RAID?>
 		       <TELL "bustling ">)>
-		<TELL 
+		<TELL
 "intersection. The Walk continues north and south; lesser paths curve off in many " D ,INTDIR "s.|
 |
-A broad field of " D ,GRASS 
-", meticulously manicured, extends" ,TOE ". Beyond it you can see the " 
+A broad field of " D ,GRASS
+", meticulously manicured, extends" ,TOE ". Beyond it you can see the "
 D ,LWATER " glittering">
 		<TWEEN-TREES>
 		<RTRUE>)
@@ -563,7 +563,7 @@ D ,LWATER " glittering">
 <ROUTINE AT-TERRACE-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "Crowded walkways lead east and west along an "
-D ,IFENCE ". Narrow paths wander south into the Gardens." CR> 
+D ,IFENCE ". Narrow paths wander south into the Gardens." CR>
 		<RTRUE>)
 	       (<AND <EQUAL? .CONTEXT ,M-EXIT>
 		     <MISSED-MEEP?>>
@@ -577,7 +577,7 @@ D ,IFENCE ". Narrow paths wander south into the Gardens." CR>
 	(DESC "Long Water")
 	(FLAGS LIGHTED LOCATION)
       ; (ODOR 0)
-        (OVERHEAD 0)
+	(OVERHEAD 0)
       ; (HEAR 0)
 	(NORTH PER DONT-MISS-MISSILE)
 	(NE PER DONT-MISS-MISSILE)
@@ -595,20 +595,20 @@ D ,IFENCE ". Narrow paths wander south into the Gardens." CR>
 	(SEE-NE LWATER)
 	(SEE-SE LWATER)
 	(GLOBAL EWIND WWIND ; PIGEONS GARDENS LONDON LCITY BEACH OPSHORE
-	        MISSILE
+		MISSILE
 	 	LWDOOR MALLARDS GTREES)>
 
 <ROUTINE LONG-WATER-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
-"You're on a shady path that winds along the western shore of the " 
+		<TELL
+"You're on a shady path that winds along the western shore of the "
 D ,LWATER ". Looking south, you can see the graceful arch of a bridge, and beyond it the cool expanse of the river Serpentine." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
 
 <ROUTINE SWIM-IN-LWATER ()
-         <TELL "You ">
+	 <TELL "You ">
 	 <COND (<EQUAL? ,P-PRSA-WORD ,W?JUMP ,W?LEAP ,W?DIVE>
 		<PRINTB ,P-PRSA-WORD>)
 	       (T
@@ -618,7 +618,7 @@ D ,LWATER ". Looking south, you can see the graceful arch of a bridge, and beyon
 
 <ROUTINE DONT-MISS-MISSILE ()
 	 <COND (<L? ,HCNT 6>
-		<TELL "The spectacle on the " D ,LWATER 
+		<TELL "The spectacle on the " D ,LWATER
 		      " has you frozen ">)
 	       (T
 		<SETG HCNT 6>
@@ -641,7 +641,7 @@ D ,LWATER ". Looking south, you can see the graceful arch of a bridge, and beyon
 	(DESC "Wading")
 	(FLAGS LIGHTED LOCATION NOGRASS)
       ; (ODOR 0)
-        (OVERHEAD 0)
+	(OVERHEAD 0)
       ; (HEAR 0)
 	(NORTH PER BEACH-TOO-FAR)
 	(NE PER BEACH-TOO-FAR)
@@ -707,7 +707,7 @@ D ,LWATER ". Looking south, you can see the graceful arch of a bridge, and beyon
 	(WEST PER HOLLOW-TOO-STEEP)
 	(NW PER HOLLOW-TOO-STEEP)
 	(IN PER OSSUARY-IN)
-        (UP PER HOLLOW-TOO-STEEP)
+	(UP PER HOLLOW-TOO-STEEP)
 	(ACTION OSSUARY-F)
 	(SEE-S TUNNEL)
 	(SEE-ALL HOLLOW)
@@ -715,10 +715,10 @@ D ,LWATER ". Looking south, you can see the graceful arch of a bridge, and beyon
 
 <ROUTINE OSSUARY-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "Naked slopes veer upward on every side, forming a natural "
 D ,HOLLOW " that is filled to a depth of several inches with human " D ,BONES
-,PTHE "only exit is a dark " D ,HOPENING ,TOS ,PCR 
+,PTHE "only exit is a dark " D ,HOPENING ,TOS ,PCR
 "A giant " D ,TS2 " is flourishing in the rich fertilizer">
 		<MENTION-DOOR ,TS2-DOOR>
 		<RTRUE>)
@@ -736,7 +736,7 @@ D ,HOLLOW " that is filled to a depth of several inches with human " D ,BONES
 	 <RTRUE>>
 
 <ROUTINE OSSUARY-S ()
-         <SETG WIGHTER 1>
+	 <SETG WIGHTER 1>
        ; <TELL "You duck into the " D ,HOPENING ,PCR>
 	 <RETURN ,IN-BARROW>>
 
@@ -744,11 +744,11 @@ D ,HOLLOW " that is filled to a depth of several inches with human " D ,BONES
 	 <TELL "The slopes around you are too steep to climb">
 	 <COND (<NOT <IS? ,HOLLOW ,TOUCHED>>
 		<MAKE ,HOLLOW ,TOUCHED>
-		<TELL "; the " D ,BONES 
+		<TELL "; the " D ,BONES
 " suggest that you're not the first to discover this">)>
 	 <PRINT ,PERIOD>
 	 <RFALSE>>
-		
+
 <ROUTINE OSSUARY-IN ()
 	 <COND (<IS? ,TS2-DOOR ,NOALL>
 		<DOOR-NOT-HERE>
@@ -765,7 +765,7 @@ D ,HOLLOW " that is filled to a depth of several inches with human " D ,BONES
 		<RETURN ,TUN1>)
 	       (T
 		<ITS-CLOSED ,TS2-DOOR>
-		<RFALSE>)>>		
+		<RFALSE>)>>
 
 <OBJECT PROM
 	(LOC ROOMS)
@@ -793,7 +793,7 @@ D ,HOLLOW " that is filled to a depth of several inches with human " D ,BONES
 <ROUTINE PROM-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL
-"This crag of rock juts out over the surrounding " D ,CHASM 
+"This crag of rock juts out over the surrounding " D ,CHASM
 ", ending at an abrupt drop several hundred feet deep. Rugged trails wind south and south">
 		<SAY-EAST>
 		<PRINT ,PERIOD>
@@ -831,7 +831,7 @@ D ,HOLLOW " that is filled to a depth of several inches with human " D ,BONES
 	(WEST PER YOUD-FALL)
 	(NW PER YOUD-FALL)
 	(IN PER ON-MESA-IN)
-        (OUT PER WHICH-WAY-OUT)
+	(OUT PER WHICH-WAY-OUT)
 	(SEE-ALL CHASM)
 	(SEE-S OAK)
 	(ACTION ON-MESA-F)
@@ -839,9 +839,9 @@ D ,HOLLOW " that is filled to a depth of several inches with human " D ,BONES
 
 <ROUTINE ON-MESA-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL CTHE ,MESA "'s summit is a flat " D ,PLATFORM 
+		<TELL CTHE ,MESA "'s summit is a flat " D ,PLATFORM
 " of stone, surrounded on every side by a deep " D ,CHASM
-,PA "fallen oak bridges the gulf" ,TOS ,PCR 
+,PA "fallen oak bridges the gulf" ,TOS ,PCR
 "A giant " D ,TS3 " has somehow taken root in the solid rock">
 		<MENTION-DOOR ,TS3-DOOR>
 		<RTRUE>)
@@ -897,7 +897,7 @@ D ,HOLLOW " that is filled to a depth of several inches with human " D ,BONES
 	(SEE-ALL VALLEY)
 	(SEE-E COTTAGE)
 	(SEE-SE PATH)
-        (SEE-S CLIFF)
+	(SEE-S CLIFF)
 	(SEE-SW PATH)
 	(GLOBAL CLIFF STOOLS COTTAGE COTTAGE-DOOR DSTRUCT)>
 
@@ -908,8 +908,8 @@ D ,HOLLOW " that is filled to a depth of several inches with human " D ,BONES
 |
 To the ">
 		<SAY-EAST>
-		<TELL 
-" stands a little " D ,COTTAGE ", nestled in a shady " D ,COPSE 
+		<TELL
+" stands a little " D ,COTTAGE ", nestled in a shady " D ,COPSE
 ,PTHE D ,COTTAGE-DOOR " is ">
 		<COND (<IS? ,COTTAGE-DOOR ,OPENED>
 		       <TELL "open." CR>
@@ -920,7 +920,7 @@ To the ">
 		<RFALSE>)>>
 
 <ROUTINE LOOK-AT-VALLEY ()
-	 <TELL "A spectacular crop of " D ,STOOLS 
+	 <TELL "A spectacular crop of " D ,STOOLS
 " extends far and wide across the " D ,VALLEY " below.">
 	 <RTRUE>>
 
@@ -944,17 +944,17 @@ To the ">
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "An iron " D ,CAULDRON>
 		<COND (<IS? ,EMERALD ,NODESC>
-		       <TELL 
+		       <TELL
 ", brown with the crust of years, squats in the middle">)
 		      (T
 		       <TELL " stands amid the scorched remains">)>
 		<TELL " of this tiny chamber. ">
 		<COND (<IS? ,EMERALD ,NODESC>
-		       <TELL 
+		       <TELL
 "Coils of steam writhe from its depths, filling the air">)
 		      (T
 		       <TELL "The air is filled">)>
-		<TELL 
+		<TELL
 " with a greasy stench that makes your nose wrinkle. ">
 		<COND (<IS? ,COTTAGE-DOOR ,OPENED>
 		       <TELL "Luckily, the ">
@@ -968,12 +968,12 @@ To the ">
 		       <TELL "Luckily, the ">
 		       <DOOR-LEADING ,GARDEN-DOOR>
 		       <RTRUE>)>
-		<TELL 
+		<TELL
 "Unfortunately, the front and " D ,GARDEN-DOOR "s are both closed." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		        
+
 <ROUTINE DOOR-LEADING (OBJ)
 	 <TELL D .OBJ " is wide open. Another door leading ">
 	 <COND (<EQUAL? .OBJ ,COTTAGE-DOOR>
@@ -999,14 +999,14 @@ To the ">
 	(SOUTH PER GFENCE-BLOCKS)
 	(SW PER GFENCE-BLOCKS)
 	(NW PER GFENCE-BLOCKS)
-        (ACTION IN-GARDEN-F)
+	(ACTION IN-GARDEN-F)
 	(SEE-ALL GFENCE)
 	(SEE-W GARDEN-DOOR)
 	(GLOBAL GARDEN COTTAGE GARDEN-DOOR TS4-DOOR DSTRUCT)>
 
 <ROUTINE IN-GARDEN-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "A " D ,GFENCE 
+		<TELL "A " D ,GFENCE
 " protects the neat rows of herbs from predators. The only exit is the">
 		<OPEN-CLOSED ,GARDEN-DOOR>
 		<TELL " of the " D ,COTTAGE ", leading west.|
@@ -1043,7 +1043,7 @@ Another giant " D ,TS4 " has taken root in a " D ,PATCH>
 	(LOC ROOMS)
 	(DESC "Cemetery")
 	(FLAGS LIGHTED LOCATION SHADOWY)
-        (ODOR 0)
+	(ODOR 0)
       ; (OVERHEAD 0)
       ; (HEAR 0)
 	(DOWN PER DOWN-SSTEPS)
@@ -1064,11 +1064,11 @@ Another giant " D ,TS4 " has taken root in a " D ,PATCH>
 
 <ROUTINE BONEYARD-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "Gloomy " D ,STATUES 
-" lie toppled among the " D ,TOMBS ", their " D ,LIMBS 
+		<TELL "Gloomy " D ,STATUES
+" lie toppled among the " D ,TOMBS ", their " D ,LIMBS
 " and heads scattered like the carnage of a ghastly battle.|
 |
-A granite " D ,CRYPT 
+A granite " D ,CRYPT
 " lies" ,AGROUND ". Beyond it rises the mound of an ancient " D ,BARROW>
 		<COND (<IS? ,BARROW-DOOR ,OPENED>
 		       <TELL ,PA "black " D ,TUNNEL
@@ -1084,11 +1084,11 @@ D ,SSTEPS " descends the cliff." CR>
 		<RFALSE>)>>
 
 <ROUTINE UP-SSTEPS ()
-       	 <SCEND "a">
+	 <SCEND "a">
 	 <RETURN ,BONEYARD>>
 
 <ROUTINE DOWN-SSTEPS ()
-         <SCEND "de">
+	 <SCEND "de">
 	 <RETURN ,AT-FALLS>>
 
 <ROUTINE SCEND (STR)
@@ -1123,10 +1123,10 @@ D ,SSTEPS " descends the cliff." CR>
 		       <TELL D ,SHARD "'s ghostly flicker">)
 		      (T
 		       <TELL "dim light from outside">)>
-		<TELL 
+		<TELL
 " does little to dispel the gloom of this subterranean passage. Craggy walls bend away" ,TON " and south">
 		<COND (<IS? ,SLOPE ,OPENED>
-		       <TELL 
+		       <TELL
 "; chill vapors rise from a slope that descends into darkness">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
@@ -1139,7 +1139,7 @@ D ,SSTEPS " descends the cliff." CR>
 		       <SETG WIGHTER 4>
 		       <QUEUE I-WIGHT -1>
 		       <TELL CR
-"A clatter breaks the silence! You turn, and watch helplessly as a " 
+"A clatter breaks the silence! You turn, and watch helplessly as a "
 D ,BARROW-DOOR " crashes down across the south exit." CR>
 		       <SAY-IF-HERE-LIT>)>
 		<COND (<AND <T? ,LIT?>
@@ -1153,7 +1153,7 @@ You peer uneasily beyond the pool of light around the ">
 			      <TELL D ,LAMP>)
 	       		     (T
 			      <TELL D ,SHARD>)>
-	 	       <TELL 
+	 	       <TELL
 ". Nothing. Then, as your eyes adjust, you descry a vaguely human outline crouched against the " D ,TUNNEL " wall">
 		       <WIGHT-HAS>
 		       <PRINT ,PERIOD>
@@ -1198,14 +1198,14 @@ You peer uneasily beyond the pool of light around the ">
 	 <TELL "You stumble into the lightless " D ,TUNNEL ,PCR>
 	 <WIGHT-KILLS-YOU>
 	 <RFALSE>>
-	 
+
 <ROUTINE WIGHT-BLOCKS-DESPITE (OBJ)
 	 <MAKE ,WIGHT ,SEEN>
 	 <TELL CTHE ,WIGHT
 "'s eye grows wide and bold as your " D ,DSHADOW " blocks the " D .OBJ
 ". You hesitate, then slowly retreat until the "  D .OBJ
 " is well within reach." CR>
-	 <RTRUE>>	 
+	 <RTRUE>>
 
 <ROUTINE WIGHT-COVERS ()
 	 <TELL CTHE ,WIGHT " covers its eye with its claws and ">
@@ -1236,7 +1236,7 @@ You peer uneasily beyond the pool of light around the ">
 		<MAKE ,IN-BARROW ,LIGHTED>
 		<UNMAKE ,WIGHT ,SEEN>
 		<QUEUE I-SLOPE 1>
-		<TELL 
+		<TELL
 "You slide down into gloom that grows colder and colder...|
 |
 ">
@@ -1248,7 +1248,7 @@ You peer uneasily beyond the pool of light around the ">
 	(LOC ROOMS)
 	(DESC "North Bog")
 	(FLAGS LIGHTED LOCATION SHADOWY)
-        (ODOR MIASMA)
+	(ODOR MIASMA)
       ; (OVERHEAD 0)
       ; (HEAR 0)
 	(NORTH TO PROM)
@@ -1270,7 +1270,7 @@ You peer uneasily beyond the pool of light around the ">
 		<TELL
 "A thick, suffocating miasma lingers among the trees; the black earth is squishy with corruption. ">
 		<HEAR-DRIPPING>
-		<TELL CR "Paths wander off in many " D ,INTDIR 
+		<TELL CR "Paths wander off in many " D ,INTDIR
 "s. High " D ,RWALLS " curve away" ,TON " and south">
 		<SAY-WEST>
 		<PRINT ,PERIOD>
@@ -1294,7 +1294,7 @@ You peer uneasily beyond the pool of light around the ">
 	(SW TO SBOG)
 	(WEST TO NBOG)
 	(NW TO PROM)
-        (UP PER CLIMB-OAK)
+	(UP PER CLIMB-OAK)
 	(ACTION AT-CHASM-F)
 	(SEE-ALL FOREST)
 	(SEE-N MESA)
@@ -1307,7 +1307,7 @@ You peer uneasily beyond the pool of light around the ">
 |
 To the north, a rocky " D ,MESA " towers like a golf tee from the depths of the " D ,CHASM ". Only thirty feet separate you from its flattened summit." CR>
 		<COND (<IS? ,OAK ,NOALL>
-		       <TELL CR 
+		       <TELL CR
 "An oak tree stands at the chasm's brink." CR>
 		       <RTRUE>)
 		      (<IS? ,OAK ,TOUCHED>
@@ -1346,7 +1346,7 @@ To the north, a rocky " D ,MESA " towers like a golf tee from the depths of the 
 		<COND (<OR <T? ,SUITED?> <T? .P>>
 		       <TELL " and float down, buoyed by the ">
 		       <COND (<ZERO? ,SUITED?>
-			      <TELL "open " D ,PARASOL 
+			      <TELL "open " D ,PARASOL
 				    ". But its cloth panels get tangled">)
 			     (T
 			      <TELL D ,FILM ". But its flabby " D ,CSURFACE
@@ -1385,7 +1385,7 @@ To the north, a rocky " D ,MESA " towers like a golf tee from the depths of the 
 	(SOUTH TO AT-BEND)
 	(SW TO GBASE)
 	(WEST TO AT-CHASM)
-        (NW PER CLIFF-BLOCKS)
+	(NW PER CLIFF-BLOCKS)
 	(UP SORRY "The cliff is much too steep to climb.")
 	(ACTION UNDER-CLIFF-F)
 	(SEE-ALL FOREST)
@@ -1396,12 +1396,12 @@ To the north, a rocky " D ,MESA " towers like a golf tee from the depths of the 
 
 <ROUTINE UNDER-CLIFF-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "Smooth walls of rock vault straight up and then lean inward, forming a natural roof that partially hides the sky. Trails lead out from under the cliff in many " D ,INTDIR "s.|
 |
-A swarm of bees has staked out this formation for itself by " D ,SCHOOL 
+A swarm of bees has staked out this formation for itself by " D ,SCHOOL
 " an enormous hive under the arch. ">
-		<HEAR-HIVE> 
+		<HEAR-HIVE>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -1426,7 +1426,7 @@ A swarm of bees has staked out this formation for itself by " D ,SCHOOL
 	(SW TO AT-BEND)
 	(WEST TO UNDER-CLIFF)
 	(NW TO ON-BLUFF)
-        (DOWN PER ENTER-CRATER)
+	(DOWN PER ENTER-CRATER)
 	(IN PER ENTER-CRATER)
 	(OUT PER WHICH-WAY-OUT)
 	(ACTION AT-CRATER-F)
@@ -1438,13 +1438,13 @@ A swarm of bees has staked out this formation for itself by " D ,SCHOOL
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<SETG P-IT-OBJECT ,CRATER>
 		<TELL CTHE ,FOREST
-" around you is bent and splintered, as if a mighty fist had smashed through the branches. Sooty fumes hang in the air; the earth is dark with ashes and " 
+" around you is bent and splintered, as if a mighty fist had smashed through the branches. Sooty fumes hang in the air; the earth is dark with ashes and "
 D ,RUBBLE ".|
 |
 The ">
 		<SAY-EAST>
 		<TELL "ern path ends at the lip of a deep " D ,CRATER
-", forty or fifty feet across." CR> 
+", forty or fifty feet across." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -1483,9 +1483,9 @@ The ">
 <ROUTINE IN-CRATER-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "A dark cloud of " D ,SMOKE
-" fills the air with an acrid, smoldering stench. Blackened " D ,RUBBLE 
+" fills the air with an acrid, smoldering stench. Blackened " D ,RUBBLE
 " covers the sides and bottom of the " D ,CRATER ,PERIOD>
-	        <RTRUE>)
+		<RTRUE>)
 	       (<AND <EQUAL? .CONTEXT ,M-ENTERED>
 		     <NOT <IS? ,LUMP ,TOUCHED>>>
 		<I-LUMP T>
@@ -1514,7 +1514,7 @@ The ">
 	(WEST PER AT-FALLS-W)
 	(NW SORRY "Sheer cliff walls block your path.")
 	(IN PER AT-FALLS-IN)
-        (ACTION AT-FALLS-F)
+	(ACTION AT-FALLS-F)
 	(SEE-ALL CLIFF)
 	(SEE-NE FOREST)
 	(SEE-E FOREST)
@@ -1528,13 +1528,13 @@ The ">
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "A curtain of water tumbles off the ">
 		<SAY-WEST>
-		<TELL 
+		<TELL
 "ern cliffs into a deep, rocky pool. From there, a mountain stream wanders off into the "
 D ,FOREST ". Footpaths follow the stream ">
 		<SAY-EAST>
 		<TELL ", past a giant " D ,TS1>
 		<MENTION-DOOR ,TS1-DOOR>
-		<TELL CR "A flight of " D ,SSTEPS 
+		<TELL CR "A flight of " D ,SSTEPS
 " has been hewn into the face of the north cliff." CR>
 		<RTRUE>)
 	       (T
@@ -1571,7 +1571,7 @@ D ,FOREST ". Footpaths follow the stream ">
 	       (T
 		<ITS-CLOSED ,TS1-DOOR>)>
 	 <RFALSE>>
-		
+
 <ROUTINE BROLLY-OPEN? ()
 	 <COND (<AND <IN? ,PARASOL ,PLAYER>
 		     <IS? ,PARASOL ,OPENED>>
@@ -1599,13 +1599,13 @@ D ,FOREST ". Footpaths follow the stream ">
 
 <ROUTINE ICE-CAVE-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "You're in a vast underground " D ,CAVE ", cold enough to see " D ,BREATH
 ". Icicles on the " D ,CEILING
 " glitter in the light shining in through an " D ,CAVE-HOLE
 " in the ">
 		<SAY-EAST>
-		<TELL 
+		<TELL
 " wall. Beyond it, a curtain of water fills the "
 D ,CAVE " with its splashing roar." CR>
 		<RTRUE>)
@@ -1629,7 +1629,7 @@ D ,CAVE " with its splashing roar." CR>
 	(FLAGS LIGHTED LOCATION SHADOWY)
 	(ODOR TRAP)
       ; (OVERHEAD 0)
-        (HEAR STREAM)
+	(HEAR STREAM)
 	(NORTH TO NBOG)
 	(NE TO AT-CHASM)
 	(EAST TO GBASE)
@@ -1638,15 +1638,15 @@ D ,CAVE " with its splashing roar." CR>
 	(SW PER UP-HILL)
 	(UP PER UP-HILL)
 	(WEST TO AT-FALLS)
-        (NW SORRY "Black trees block your path.")
+	(NW SORRY "Black trees block your path.")
 	(ACTION SBOG-F)
-       	(SEE-ALL FOREST)
+	(SEE-ALL FOREST)
 	(GLOBAL BOG FOREST STREAM SUMMIT DSTRUCT MIASMA)>
 
 <ROUTINE SBOG-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL CTHE ,GROUND 
-" is damp and squishy underfoot, especially along the " D ,STREAM 
+		<TELL CTHE ,GROUND
+" is damp and squishy underfoot, especially along the " D ,STREAM
 " that wanders ">
 		<SAY-WEST>
 		<TELL " and south">
@@ -1672,7 +1672,7 @@ D ,CAVE " with its splashing roar." CR>
 	(WEST TO SBOG)
 	(NW TO NBOG)
 	(UP PER WALK-UP-STAIRS)
-        (DOWN SORRY "You're already at the bottom of the stairs.")
+	(DOWN SORRY "You're already at the bottom of the stairs.")
 	(ACTION GBASE-F)
 	(SEE-ALL FOREST)
 	(SEE-N STAIR)
@@ -1681,20 +1681,20 @@ D ,CAVE " with its splashing roar." CR>
 
 <ROUTINE GBASE-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "The triangular " D ,STRUCTURE 
+		<TELL "The triangular " D ,STRUCTURE
 " before you must be thousands of feet high. It" ,RAZOR
 ", casting a stern, precise " D ,DSHADOW " over the surrounding landscape.|
 |
 A narrow " D ,STAIR
-" climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every " D ,INTDIR ,PERIOD> 
+" climbs north, up the hypotenuse of the triangle. Footpaths converge on the stair from every " D ,INTDIR ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
 
 <ROUTINE WALK-UP-STAIRS ()
-       	 <SETG STAIR-DIR " Up">
-	 <TELL "With a fearful gulp, you ascend the narrow " D ,STAIR ,PCR>
-	 <RETURN ,HALFWAY>>
+	<SETG STAIR-DIR " Up">
+	<TELL "With a fearful gulp, you ascend the narrow " D ,STAIR ,PCR>
+	<RETURN ,HALFWAY>>
 
 <OBJECT HALFWAY
 	(LOC ROOMS)
@@ -1733,7 +1733,7 @@ A narrow " D ,STAIR
 		       <TELL D ,VERTEX>)
 		      (T
 		       <TELL D ,GROUND>)>
-		<TELL ,PTHE "landscape below is gray in the " D ,DSHADOW 
+		<TELL ,PTHE "landscape below is gray in the " D ,DSHADOW
 			    " of the triangle." CR>
 		<RTRUE>)
 	       (T
@@ -1752,7 +1752,7 @@ A narrow " D ,STAIR
 	 <RFALSE>>
 
 <ROUTINE MOVE-HALFWAY? ("OPTIONAL" (UP? <>))
-       	 <TELL "The air grows ">
+	 <TELL "The air grows ">
 	 <COND (<ZERO? .UP?>
 		<TELL "warm">)
 	       (T
@@ -1798,10 +1798,10 @@ Far below, the " D ,DSHADOW " of the " D ,STRUCTURE
 " stretches across the landscape. From this great altitude it looks like a dark finger, accusing a point on the " <GET ,SHDIRS 3> " " D ,HORIZON ,PERIOD>
 		<RTRUE>)
 	       (T
-	        <RFALSE>)>>
+		<RFALSE>)>>
 
 <ROUTINE WALK-DOWN-STAIRS ()
-       	 <SETG STAIR-DIR " Down">
+	 <SETG STAIR-DIR " Down">
 	 <TELL "Fighting back fear, you descend the " D ,STAIR ,PCR>
 	 <RETURN ,HALFWAY>>
 
@@ -1811,7 +1811,7 @@ Far below, the " D ,DSHADOW " of the " D ,STRUCTURE
 	(FLAGS LIGHTED LOCATION SHADOWY)
       ; (ODOR 0)
       ; (OVERHEAD 0)
-        (HEAR CATS)
+	(HEAR CATS)
 	(NORTH TO AT-CRATER)
 	(NE SORRY "Tall cattails block your path.")
 	(EAST SORRY "Tall cattails block your path.")
@@ -1821,7 +1821,7 @@ Far below, the " D ,DSHADOW " of the " D ,STRUCTURE
 	(WEST TO AT-BEND)
 	(NW TO UNDER-CLIFF)
 	(IN PER ON-MOOR-IN)
-        (ACTION ON-MOOR-F)
+	(ACTION ON-MOOR-F)
 	(SEE-ALL FOREST)
 	(SEE-NE CATS)
 	(SEE-E CATS)
@@ -1835,7 +1835,7 @@ Far below, the " D ,DSHADOW " of the " D ,STRUCTURE
 		<TELL "Tall, solemn " D ,CATS
 " line the banks of a great river that flows ">
 		<SAY-EAST>
-		<TELL 
+		<TELL
 "ward across the silent moor. A dense fog on the water obscures your view of the " D ,OPSHORE ".|
 |
 A pair of giant " D ,TS0 "s is growing among the " D ,CATS>
@@ -1886,7 +1886,7 @@ A pair of giant " D ,TS0 "s is growing among the " D ,CATS>
 	(SW SORRY "You'd tumble down the hill if you went that way.")
 	(WEST SORRY "You'd tumble down the hill if you went that way.")
 	(NW SORRY "You'd tumble down the hill if you went that way.")
-        (DOWN PER WHICH-WAY-DOWN)
+	(DOWN PER WHICH-WAY-DOWN)
 	(ACTION ON-HILL-F)
 	(SEE-ALL FOREST)
 	(SEE-E DSTRUCT)
@@ -1903,17 +1903,17 @@ A pair of giant " D ,TS0 "s is growing among the " D ,CATS>
 A " D ,DSTRUCT
 ", thousands of feet high, rises above the ">
 		<SAY-EAST>
-		<TELL "ern " D ,TREETOPS 
+		<TELL "ern " D ,TREETOPS
 ". Its vertex casts a long " D ,DSHADOW " across the wood.|
 |
-As your eyes sweep the landscape, you notice more of the giant " D ,STOOLS 
+As your eyes sweep the landscape, you notice more of the giant " D ,STOOLS
 ". ">
 		<HUNDREDS-OF-THEM>
-		<TELL 
+		<TELL
 " Some sprout in clusters, others grow in solitude among the trees. Their "
 D ,INTNUM "s increase dramatically as your gaze moves ">
 		<SAY-WEST>
-		<TELL "ward, until the " D ,FOREST 
+		<TELL "ward, until the " D ,FOREST
 		      " is choked with pale domes." CR>
 		<RTRUE>)
 	       (T
@@ -1940,7 +1940,7 @@ D ,INTNUM "s increase dramatically as your gaze moves ">
 	(WEST PER UP-HILL)
 	(UP PER UP-HILL)
 	(NW TO AT-FALLS)
-        (ACTION FCLEARING-F)
+	(ACTION FCLEARING-F)
 	(SEE-ALL FOREST)
 	(SEE-SE HEDGE)
 	(SEE-S HEDGE)
@@ -1950,7 +1950,7 @@ D ,INTNUM "s increase dramatically as your gaze moves ">
 <ROUTINE FCLEARING-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL
-"It must have taken centuries to cultivate the magnificent " D ,HEDGE 
+"It must have taken centuries to cultivate the magnificent " D ,HEDGE
 " rising before you. The tightly woven " D ,ARBS " stretch ">
 		<SAY-EAST>
 		<TELL "ward through the " D ,FOREST
@@ -1958,7 +1958,7 @@ D ,INTNUM "s increase dramatically as your gaze moves ">
 |
 A barren hilltop is visible to the ">
 		<SAY-WEST>
-		<TELL ". Many footpaths wander off"> 
+		<TELL ". Many footpaths wander off">
 		<TWEEN-TREES>
 		<RTRUE>)
 	       (T
@@ -1970,17 +1970,17 @@ A barren hilltop is visible to the ">
 	(FLAGS LIGHTED LOCATION SHADOWY)
 	(ODOR HEDGE)
       ; (OVERHEAD 0)
-        (HEAR STREAM)
+	(HEAR STREAM)
 	(OVER-HEDGE ARBORETUM)
 	(NORTH TO GBASE)
 	(NE TO AT-BEND)
 	(EAST TO DOCKSIDE)
 	(SE TO SEPATH)
-        (SOUTH PER HEDGE-BLOCKS)
+	(SOUTH PER HEDGE-BLOCKS)
 	(SW TO SWPATH)
 	(WEST TO FCLEARING)
 	(NW TO SBOG)
-        (IN PER WHICH-WAY-IN)
+	(IN PER WHICH-WAY-IN)
 	(OUT PER WHICH-WAY-OUT)
 	(ACTION AT-TRELS-F)
 	(SEE-ALL FOREST)
@@ -1991,12 +1991,12 @@ A barren hilltop is visible to the ">
 
 <ROUTINE AT-TRELS-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "A fortresslike wall of " D ,ARBS " stretches east and west through the "
-D ,FOREST ,PTHE "only breach is an identical pair of arched " 
+D ,FOREST ,PTHE "only breach is an identical pair of arched "
 D ,TRELS ,PCR "A mountain " D ,STREAM " trickles">
 		<TWEEN-TREES <>>
-		<TELL 
+		<TELL
 ". Paths wander from its banks in many " D ,INTDIR "s." CR>
 		<RTRUE>)
 	       (T
@@ -2018,10 +2018,10 @@ D ,TRELS ,PCR "A mountain " D ,STREAM " trickles">
 	(SW PER HEDGE-BLOCKS)
 	(WEST TO AT-TRELS)
 	(NW TO GBASE)
-        (IN PER DORY-IN)
+	(IN PER DORY-IN)
 	(OUT PER DOCKSIDE-OUT)
 	(ACTION DOCKSIDE-F)
-        (SEE-N BEACH)
+	(SEE-N BEACH)
 	(SEE-S HEDGE)
 	(SEE-SW HEDGE)
 	(SEE-W FOREST)
@@ -2031,8 +2031,8 @@ D ,TRELS ,PCR "A mountain " D ,STREAM " trickles">
 
 <ROUTINE DOCKSIDE-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<DESCRIBE-DOCKSIDE>  
-		<TELL CR 
+		<DESCRIBE-DOCKSIDE>
+		<TELL CR
 "Footpaths wander north, west and northwest. Turning south, you see a magnificent "
 D ,HEDGE " growing in an unbroken wall to the " D ,STYX "'s edge." CR>
 		<RTRUE>)
@@ -2090,7 +2090,7 @@ D ,CSURFACE " like ghostly fingers, obscuring what lies beyond." CR>
 		<SAY-EAST>
 		<TELL ,PTHE D ,OPSHORE " is veiled behind a thick mist.|
 |
-Paths meander off in many " D ,INTDIR "s from the river's edge." CR> 
+Paths meander off in many " D ,INTDIR "s from the river's edge." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -2111,9 +2111,9 @@ Paths meander off in many " D ,INTDIR "s from the river's edge." CR>
 	(SW PER MEADOW-EXIT)
 	(WEST PER MEADOW-EXIT)
 	(NW PER MEADOW-EXIT)
-        (IN PER DOOR-NOT-HERE)
+	(IN PER DOOR-NOT-HERE)
 	(ACTION IN-MEADOW-F)
-        (SEE-ALL FOREST)
+	(SEE-ALL FOREST)
 	(SEE-N SUMMIT)
 	(GLOBAL TS0-DOOR DSTRUCT SUMMIT FOREST DFLIES)>
 
@@ -2127,9 +2127,9 @@ Paths meander off in many " D ,INTDIR "s from the river's edge." CR>
 		       <TELL "A giant " D ,TS0 " is growing nearby." CR>
 		       <RTRUE>)>
 		<TELL
-"The door you just stepped from opens into a " D ,TS0 
-" of impossible size. Its broad crown towers over your head like a fleshy " 
-D ,PARASOL ,PERIOD>  
+"The door you just stepped from opens into a " D ,TS0
+" of impossible size. Its broad crown towers over your head like a fleshy "
+D ,PARASOL ,PERIOD>
 		<RTRUE>)
 	       (<EQUAL? .CONTEXT ,M-ENTERED>
 		<MAKE ,IN-MEADOW ,SHADOWY>
@@ -2146,7 +2146,7 @@ D ,PARASOL ,PERIOD>
 		<PRINT ,PERIOD>
 		<RFALSE>)>
 	 <MAKE ,IN-MEADOW ,SEEN>
-	 <TELL 
+	 <TELL
 ". But an obscure path winds north, to the summit of a gentle hill." CR>
 	 <RFALSE>>
 
@@ -2159,7 +2159,7 @@ D ,PARASOL ,PERIOD>
 	(DESC "Arborvitaes")
 	(FLAGS LIGHTED LOCATION SHADOWY)
 	(ODOR HEDGE)
-        (OVERHEAD HEDGE)
+	(OVERHEAD HEDGE)
       ; (HEAR 0)
 	(OVER-HEDGE FCLEARING)
 	(NORTH PER HEDGE-BLOCKS)
@@ -2170,7 +2170,7 @@ D ,PARASOL ,PERIOD>
 	(SW PER HEDGE-BLOCKS)
 	(WEST PER HEDGE-BLOCKS)
 	(NW PER HEDGE-BLOCKS)
-        (ACTION SWPATH-F)
+	(ACTION SWPATH-F)
 	(SEE-ALL HEDGE)
 	(SEE-NE PATH)
 	(SEE-E PATH)
@@ -2182,7 +2182,7 @@ D ,PARASOL ,PERIOD>
 		<SAY-EAST>
 		<TELL " and north">
 		<SAY-EAST>
-		<PRINT ,PERIOD> 
+		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -2203,7 +2203,7 @@ D ,PARASOL ,PERIOD>
 	(SW PER HEDGE-BLOCKS)
 	(WEST TO ARBORETUM)
 	(NW TO AT-TRELS)
-        (ACTION SEPATH-F)
+	(ACTION SEPATH-F)
 	(SEE-ALL HEDGE)
 	(SEE-NW PATH)
 	(SEE-W PATH)
@@ -2215,13 +2215,13 @@ D ,PARASOL ,PERIOD>
 		<SAY-WEST>
 		<TELL " and north">
 		<SAY-WEST>
-		<PRINT ,PERIOD> 
+		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
 
 <ROUTINE SAY-HEDGE-PATH ()
-	 <TELL 
+	 <TELL
 "Barely eighteen inches separate the thick walls of arborvitae that "
 D ,TOWER " on either side. They form an uncomfortably narrow corridor that bends sharply to the ">
 	 <RTRUE>>
@@ -2245,7 +2245,7 @@ D ,TOWER " on either side. They form an uncomfortably narrow corridor that bends
 	(SW PER HEDGE-BLOCKS)
 	(WEST TO SWPATH)
 	(NW PER HEDGE-BLOCKS)
-        (ACTION ARBORETUM-F)
+	(ACTION ARBORETUM-F)
 	(SEE-N ARBOR)
 	(SEE-S ARBOR)
 	(SEE-E PATH)
@@ -2263,21 +2263,21 @@ D ,TOWER " on either side. They form an uncomfortably narrow corridor that bends
 
 <ROUTINE ARBORETUM-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "A spectacular " D ,ARBOR " of " D ,ARBS 
-" arches over your head like a great green Ferris wheel. Its tangled " 
-D ,CSURFACE 
+		<TELL "A spectacular " D ,ARBOR " of " D ,ARBS
+" arches over your head like a great green Ferris wheel. Its tangled "
+D ,CSURFACE
 "s are peculiarly twisted, making it difficult to tell where the inside ends and the outside begins.|
 |
 ">
 		<DESCRIBE-PERGOLA>
-		<TELL 
+		<TELL
 "Other paths lead east and west, into the surrounding " D ,HEDGE ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
 
 <ROUTINE DESCRIBE-PERGOLA ()
-	 <TELL "Steep, leafy " D ,TUNNEL "s curve up into the " D ,ARBOR 
+	 <TELL "Steep, leafy " D ,TUNNEL "s curve up into the " D ,ARBOR
 	       ,TON " and south. ">
 	 <RTRUE>>
 
@@ -2320,7 +2320,7 @@ D ,CSURFACE
 	(DOWN PER EXIT-ARBOR-N)
 	(OUT PER EXIT-ARBOR-N)
 	(IN PER TO-ARBOR-TOP)
-        (ACTION ARBORSIDE-F)
+	(ACTION ARBORSIDE-F)
 	(SEE-ALL ARBS)
 	(GLOBAL ARBOR HEDGE ARBS)>
 
@@ -2352,13 +2352,13 @@ D ,CSURFACE
 	(DOWN PER EXIT-ARBOR-S)
 	(OUT PER EXIT-ARBOR-S)
 	(IN PER TO-ARBOR-TOP)
-        (ACTION ARBORSIDE-F)
+	(ACTION ARBORSIDE-F)
 	(SEE-ALL ARBS)
 	(GLOBAL ARBOR HEDGE ARBS)>
 
 <ROUTINE ARBORSIDE-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "The \"" D ,FLOOR "\" of the " D ,ARBOR 
+		<TELL "The \"" D ,FLOOR "\" of the " D ,ARBOR
 " curves up and around in an inexplicable way that makes your eyes cross. It seems as if you'd be standing on your head if you went much higher. Little daylight makes its way through the thick walls of arborvitae." CR>
 		<RTRUE>)
 	       (T
@@ -2376,23 +2376,23 @@ D ,CSURFACE
 	 <COND (<NOT <EQUAL? ,ENTERED-ARBOR .DIR>>
 	      	<COND (<ZERO? ,FLIP?>
 		       <SETG FLIP? T>)
-	              (T
+		      (T
 		       <SETG FLIP? <>>)>
-	        <RESET-SHDIRS>
+		<RESET-SHDIRS>
 		<REPEAT ()
-		        <SET OBJ <GET ,FLIPPERS .CNT>>
-		        <COND (<ZERO? .OBJ>
+			<SET OBJ <GET ,FLIPPERS .CNT>>
+			<COND (<ZERO? .OBJ>
 			       <RETURN>)>
-		        <SET X <GOT? .OBJ>>
+			<SET X <GOT? .OBJ>>
 			<COND (<ZERO? .X>
 			       <COND (<AND <EQUAL? .OBJ ,WTK>
 					   <NOT <IS? .OBJ ,TOUCHED>>>
 				      T)
 				     (<IS? .OBJ ,FLIPPED>
-			              <UNMAKE .OBJ ,FLIPPED>)
-			             (T
-			              <MAKE .OBJ ,FLIPPED>)>)>
-		        <INC CNT>>)>
+				      <UNMAKE .OBJ ,FLIPPED>)
+				     (T
+				      <MAKE .OBJ ,FLIPPED>)>)>
+			<INC CNT>>)>
 	 <FLOOR-TWISTS>
 	 <TELL "descend" ,PCR>
 	 <RTRUE>>
@@ -2419,13 +2419,13 @@ D ,CSURFACE
 	(SW PER SOMETHING-BUSHY)
 	(WEST PER SOMETHING-BUSHY)
 	(NW PER SOMETHING-BUSHY)
-        (ACTION ARBOR-TOP-F)
+	(ACTION ARBOR-TOP-F)
 	(SEE-ALL ARBS)
 	(GLOBAL ARBOR HEDGE ARBS)>
 
 <ROUTINE ARBOR-TOP-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "The tangled vines and tendrils seem to writhe malignantly in the ">
 		<COND (<AND <VISIBLE? ,LAMP>
 			    <IS? ,LAMP ,LIGHTED>>
@@ -2434,7 +2434,7 @@ D ,CSURFACE
 		       <TELL "flickering light of the " D ,SHARD>)>
 		<TELL ". ">
 		<SMELL-HEDGE>
-		<TELL CR "Dark, leafy " D ,TUNNEL 
+		<TELL CR "Dark, leafy " D ,TUNNEL
 "s curve down" ,TON " and south." CR>
 		<RTRUE>)
 	       (<EQUAL? .CONTEXT ,M-ENTERED>
@@ -2458,7 +2458,7 @@ D ,CSURFACE
 	(FLAGS LIGHTED LOCATION SHADOWY NOGRASS)
       ; (HEAR 0)
       ; (ODOR 0)
-        (OVERHEAD FOG)
+	(OVERHEAD FOG)
 	(NORTH SORRY "The misty waters block your path.")
 	(NE SORRY "The misty waters block your path.")
 	(EAST SORRY "The misty waters block your path.")
@@ -2475,7 +2475,7 @@ D ,CSURFACE
 
 <ROUTINE ON-BEACH-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "At first glance, this isolated spit seems hopelessly mired in the fog blowing in off the surrounding river. But the sand looks a bit firmer" ,TOS ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -2497,14 +2497,14 @@ D ,CSURFACE
 	(WEST SORRY "The misty waters block your path.")
 	(NW SORRY "The misty waters block your path.")
 	(IN PER ON-ISLE-IN)
-        (ACTION ON-ISLE-F)
+	(ACTION ON-ISLE-F)
 	(SEE-ALL STYX)
 	(SEE-N PATH)
 	(GLOBAL STYX FOG TS6-DOOR DSTRUCT BEACH OPSHORE)>
-	
+
 <ROUTINE ON-ISLE-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "It's impossible to see more than a dozen yards on this fogbound islet. The damp air makes your footsteps sound unnaturally loud as you trudge across the sand at the river's edge.|
 |
 A lone " D ,TS6 " has found a home at the water's edge">
@@ -2518,7 +2518,7 @@ A lone " D ,TS6 " has found a home at the water's edge">
 		<COND (<IN? ,MEEP ,TS6>
 		       <MAKE ,MEEP ,SEEN>
 		       <SETG P-IT-OBJECT ,MEEP>
-		       <TELL CR "A " D ,MEEP 
+		       <TELL CR "A " D ,MEEP
 			    " is perched on the " D ,TS6 "'s crown">
 		       <ENTICINGLY>
 		       <TELL ,PERIOD>)>
@@ -2584,7 +2584,7 @@ A lone " D ,TS6 " has found a home at the water's edge">
 	 <PUT .RTBL .RND <GET .RTBL 1>>
 	 <PUT .RTBL 1 .MSG>
 	 <INC CNT>
-	 <COND (<EQUAL? .CNT .L> 
+	 <COND (<EQUAL? .CNT .L>
 		<SET CNT 0>)>
 	 <PUT .TBL 0 .CNT>
 	 <RETURN .MSG>>
@@ -2610,14 +2610,14 @@ A lone " D ,TS6 " has found a home at the water's edge">
 	(OUT PER WHICH-WAY-OUT)
 	(UP PER NO-PROPULSION)
 	(DOWN PER NO-PROPULSION)
-        (ACTION IN-ORBIT-F)
+	(ACTION IN-ORBIT-F)
 	(SEE-ALL STARS)
 	(GLOBAL XRAY STARS MOON ICBM THRUSTERS TS1-DOOR PLANET)>
 
 <ROUTINE IN-ORBIT-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL
-"You're five hundred miles above a sea of ice, hurtling in profound silence over the Arctic atmosphere. Layers of crimson and violet describe the curve of the " D ,HORIZON 
+"You're five hundred miles above a sea of ice, hurtling in profound silence over the Arctic atmosphere. Layers of crimson and violet describe the curve of the " D ,HORIZON
 ", blending imperceptibly into a black sky crowded with stars." CR>
 		<RTRUE>)
 	       (<AND <EQUAL? .CONTEXT ,M-BEG>
@@ -2632,7 +2632,7 @@ A lone " D ,TS6 " has found a home at the water's edge">
 		<SETG DO-WINDOW <GET ,QUOTES, RONNIE>>
 		<RFALSE>)
 	       (T
-		<RFALSE>)>> 
+		<RFALSE>)>>
 
 <ROUTINE DONT-PROPAGATE ()
 	 <COND (<VERB? SMELL>
@@ -2644,7 +2644,7 @@ A lone " D ,TS6 " has found a home at the water's edge">
 
 <ROUTINE NO-PROPULSION ()
 	 <TELL "You have no means of propulsion." CR>
-	 <RFALSE>> 
+	 <RFALSE>>
 
 <OBJECT ON-SAT
 	(LOC ROOMS)
@@ -2665,7 +2665,7 @@ A lone " D ,TS6 " has found a home at the water's edge">
 	(OUT PER WHICH-WAY-OUT)
 	(UP PER NO-PROPULSION)
 	(DOWN PER NO-PROPULSION)
-        (ACTION ON-SAT-F)
+	(ACTION ON-SAT-F)
 	(SEE-ALL STARS)
 	(GLOBAL XRAY STARS MOON ICBM THRUSTERS TS1-DOOR PLANET)>
 
@@ -2679,7 +2679,7 @@ A lone " D ,TS6 " has found a home at the water's edge">
 <ROUTINE LOOK-AT-XRAY ()
 	 <TELL CTHE ,XRAY>
 	 <COND (<HERE? ON-SAT>
-	        <TELL " you're riding">)
+		<TELL " you're riding">)
 	       (T
 		<TELL " drifting ">
 		<COND (<EQUAL? ,ORBCNT 3>
@@ -2691,9 +2691,9 @@ A lone " D ,TS6 " has found a home at the water's edge">
 		<TELL "you">)>
 	 <TELL " is about twenty feet long, and shaped like a beer can">
 	 <COND (<HERE? ON-SAT>
-		<TELL ,PTHE D ,FILM 
+		<TELL ,PTHE D ,FILM
 " around you is anchored to the " D ,XRAY "'s hull by the " D ,LUMP>)>
-	 <PRINT ,PERIOD>		
+	 <PRINT ,PERIOD>
 	 <RTRUE>>
 
 "*** TUNDRA ***"
@@ -2721,18 +2721,18 @@ A lone " D ,TS6 " has found a home at the water's edge">
 
 <ROUTINE ON-PLATFORM-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "This narrow " D ,PLATFORM
 " is attached" ,TON " side of a huge steel " D ,TBOMB
-", fifty feet high. All around you, a frozen wasteland stretches off to a " 
+", fifty feet high. All around you, a frozen wasteland stretches off to a "
 D ,HORIZON " lined with gray " D ,TMOUNTS ,PCR>
 		<COND (<IS? ,TS4-DOOR ,NOALL>
 		       <TELL "A " D ,PLADDER " leads downward." CR>
 		       <RTRUE>)>
 		<TELL "A">
 		<OPEN-CLOSED ,TS4-DOOR T>
-		<TELL 
-" leads into the " D ,TBOMB 
+		<TELL
+" leads into the " D ,TBOMB
 "'s interior. The topmost rungs of a " D ,PLADDER " stand beside it." CR>
 		<RTRUE>)
 	       (T
@@ -2766,9 +2766,9 @@ D ,HORIZON " lined with gray " D ,TMOUNTS ,PCR>
 	 <MAKE .DOOR ,NOALL>
 	 <UNMAKE .DOOR ,OPENED>
 	 <CARRIAGE-RETURNS>
-	 <V-LOOK>	 
+	 <V-LOOK>
 	 <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
-	 <TELL CR CTHE .DOOR 
+	 <TELL CR CTHE .DOOR
 " fades away into the texture of the " D ,TS0 ,PERIOD>
 	 <RTRUE>>
 
@@ -2800,14 +2800,14 @@ D ,HORIZON " lined with gray " D ,TMOUNTS ,PCR>
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL
 "A network of " D ,TCABLES " snakes down the side of the " D ,TBOMB
-", then trails southwest across the " D ,TUNDRA 
+", then trails southwest across the " D ,TUNDRA
 ". Grim tracts of permafrost greet your eyes every way you turn.|
 |
 A " D ,PLADDER " leads up to a " D ,PLATFORM " overhead." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <ROUTINE UP-PLADDER ()
 	 <TELL "You ascend the " D ,PLADDER ,PCR>
 	 <RETURN ,ON-PLATFORM>>
@@ -2839,9 +2839,9 @@ A " D ,PLADDER " leads up to a " D ,PLATFORM " overhead." CR>
 
 <ROUTINE ATUN-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "The frozen earth slopes north to meet a gray wall of "
-D ,TMOUNTS ". " ,YOU-SEE THE ,TBOMB " on the southeast " 
+D ,TMOUNTS ". " ,YOU-SEE THE ,TBOMB " on the southeast "
 D ,HORIZON ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -2879,7 +2879,7 @@ D ,HORIZON ,PERIOD>
 <ROUTINE BTUN-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL CTHE ,TMOUNTS
-" range east and west, dark against the frozen ground. The " D ,TBOMB 
+" range east and west, dark against the frozen ground. The " D ,TBOMB
 " is visible far" ,TOS ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -2948,9 +2948,9 @@ D ,HORIZON ,PERIOD>
 
 <ROUTINE DTUN-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "Arctic winds whip across the permafrost in bone-chilling gusts. The distant "
-D ,TBOMB " is outlined against the eastern " D ,TMOUNTS ,PERIOD> 
+D ,TBOMB " is outlined against the eastern " D ,TMOUNTS ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -2982,9 +2982,9 @@ D ,TBOMB " is outlined against the eastern " D ,TMOUNTS ,PERIOD>
 
 <ROUTINE ETUN-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
-"The barren ground stretches west towards the distant " D ,TBOMB 
-" and beyond. Gray " D ,TMOUNTS " rise like a fortress" ,TOE ,PERIOD>  
+		<TELL
+"The barren ground stretches west towards the distant " D ,TBOMB
+" and beyond. Gray " D ,TMOUNTS " rise like a fortress" ,TOE ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -3014,7 +3014,7 @@ D ,TBOMB " is outlined against the eastern " D ,TMOUNTS ,PERIOD>
 <ROUTINE FTUN-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "The tall " D ,TBOMB
-" is still visible on the northeastern " D ,HORIZON ". Thick " 
+" is still visible on the northeastern " D ,HORIZON ". Thick "
 D ,TCABLES " run southwest across the permafrost, towards a distant "
 D ,GROUP ,PERIOD>
 		<RTRUE>)
@@ -3081,12 +3081,12 @@ D ,GROUP ,PERIOD>
 <ROUTINE HTUN-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "Steep " D ,TMOUNTS
-" tower" ,TOW " and south in a gray wall. The " 
+" tower" ,TOW " and south in a gray wall. The "
 D ,TBOMB " stands alone on the northwest " D ,HORIZON ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	
+
 <OBJECT CLIFF-EDGE
 	(LOC ROOMS)
 	(DESC "Cliff Edge")
@@ -3110,7 +3110,7 @@ D ,TBOMB " stands alone on the northwest " D ,HORIZON ,PERIOD>
 
 <ROUTINE CLIFF-EDGE-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL CTHE ,PASS 
+		<TELL CTHE ,PASS
 " ends here, on a cliff overlooking an Arctic sea. But where ancient waters once fell, there now pours a living stream of "
 D ,RATS
 ". Driven by mindless instinct, too stupid or frightened to turn away, they plunge by the hundreds into the crashing waves below">
@@ -3118,8 +3118,8 @@ D ,RATS
 		       <TELL ". You recognize the species now. Lemmings">)>
 		<TELL ".|
 |
-The " D GROUND " underfoot is split by a narrow " D ,FISSURE 
-", almost hidden by the scrambling " D ,LEMMINGS ,PERIOD>   
+The " D GROUND " underfoot is split by a narrow " D ,FISSURE
+", almost hidden by the scrambling " D ,LEMMINGS ,PERIOD>
 		<RTRUE>)
 	       (<AND <EQUAL? .CONTEXT ,M-ENTERED>
 		     <EQUAL? ,RATS ,RODENTS>>
@@ -3140,9 +3140,9 @@ The " D GROUND " underfoot is split by a narrow " D ,FISSURE
 	 <CRLF>
 	 <VOICE-MUTTERS "Whew" <>>
 	 <RFALSE>>
-	
+
 <ROUTINE CLIFF-DROWN ()
-	 <TELL 
+	 <TELL
 "over the edge of the cliff, where you founder for a while in the Arctic waters.">
 	 <JIGS-UP>
 	 <RTRUE>>
@@ -3150,7 +3150,7 @@ The " D GROUND " underfoot is split by a narrow " D ,FISSURE
 <ROUTINE TO-TUNDRA ()
 	 <TELL "You force a path through the " D ,RATS ,PCR>
 	 <RETURN ,CTUN>>
-	
+
 "*** UNDERGROUND ***"
 
 <OBJECT TUN1
@@ -3178,7 +3178,7 @@ The " D GROUND " underfoot is split by a narrow " D ,FISSURE
 
 <ROUTINE TUN1-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "You're in a narrow underground chamber, illuminated by ">
 		<COND (<AND <NOT <IS? ,TS2-DOOR ,NOALL>>
 			    <IS? ,TS2-DOOR ,OPENED>>
@@ -3192,11 +3192,11 @@ The " D GROUND " underfoot is split by a narrow " D ,FISSURE
 		<LOOK-AT-RWALLS>
 		<TELL CR "A large " D ,UBOMB
 " occupies most of the chamber. The maze of " D ,UCABLES
-" surrounding it trails west, into the depths of a " 
+" surrounding it trails west, into the depths of a "
 		      D ,CAVERN ,PERIOD>
 		<COND (<AND <NOT <IS? ,TS2-DOOR ,NOALL>>
 			    <NOT <IS? ,TS2-DOOR ,OPENED>>>
-		       <TELL CR CTHE ,TS2-DOOR 
+		       <TELL CR CTHE ,TS2-DOOR
 			     " in the east wall is closed." CR>)>
 		<RTRUE>)
 	       (T
@@ -3209,7 +3209,7 @@ The " D GROUND " underfoot is split by a narrow " D ,FISSURE
 	 <RETURN ,TUN2>>
 
 <ROUTINE LOOK-AT-RWALLS ()
-	 <TELL "The walls and " D ,CEILING 
+	 <TELL "The walls and " D ,CEILING
 " are gouged with deep spiral ruts; they look as if they've been routed out with heavy machinery." CR>
 	 <RTRUE>>
 
@@ -3227,7 +3227,7 @@ The " D GROUND " underfoot is split by a narrow " D ,FISSURE
 		<RFALSE>)>
 	 <ITS-CLOSED ,TS2-DOOR>
 	 <RFALSE>>
-		
+
 <OBJECT TUN2
 	(LOC ROOMS)
 	(DESC "Underground")
@@ -3253,7 +3253,7 @@ The " D GROUND " underfoot is split by a narrow " D ,FISSURE
 
 <ROUTINE TUN2-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL CTHE ,UCABLES " lining the " D ,CAVERN 
+		<TELL CTHE ,UCABLES " lining the " D ,CAVERN
 "'s walls look like bloated veins and arteries in the ">
 		<COND (<AND <VISIBLE? ,LAMP>
 			    <IS? ,LAMP ,LIGHTED>>
@@ -3262,7 +3262,7 @@ The " D GROUND " underfoot is split by a narrow " D ,FISSURE
 		       <TELL "beam of the " D ,LAMP>)
 		      (T
 		       <TELL D ,SHARD "'s flickering glow">)>
-		<TELL ". Deep " D ,CAVERN 
+		<TELL ". Deep " D ,CAVERN
 		      "s bend off" ,TOE " and west." CR>
 		<RTRUE>)
 	       (<AND <EQUAL? .CONTEXT ,M-ENTERED>
@@ -3303,7 +3303,7 @@ The " D GROUND " underfoot is split by a narrow " D ,FISSURE
 
 <ROUTINE TUN3-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "The west end of the " D ,CAVERN 
+		<TELL "The west end of the " D ,CAVERN
 " is sealed off with a " D ,LANDSLIDE " of rocks and dirt. Numerous "
 D ,UCABLES " emerge from the " D ,RUBBLE ", trailing away to the ">
 		<SAY-EAST>
@@ -3315,7 +3315,7 @@ D ,UCABLES " emerge from the " D ,RUBBLE ", trailing away to the ">
 		       <TELL CTHE ,LAMP "'s beam reveals a ">)
 		      (T
 		       <TELL CTHE ,SHARD "'s feeble glow reveals a ">)>
-		<TELL "narrow " D ,CREVICE 
+		<TELL "narrow " D ,CREVICE
 		      " in the wall of the " D ,TUNNEL ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -3342,10 +3342,10 @@ D ,UCABLES " emerge from the " D ,RUBBLE ", trailing away to the ">
 <ROUTINE ON-SCAFFOLD-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL
-"Whoever threw this place together wasn't too worried about permanence. Tin walls rise on flimsy studs to a " D ,CEILING 
+"Whoever threw this place together wasn't too worried about permanence. Tin walls rise on flimsy studs to a " D ,CEILING
 " that sags under its own weight. It reminds you of a prefab tool shed, several stories high.|
 |
-You're standing beside a monstrous conglomeration of pipes, compressors and pressure valves that fills most of the " D ,SCHOOL> 
+You're standing beside a monstrous conglomeration of pipes, compressors and pressure valves that fills most of the " D ,SCHOOL>
 		<COND (<NOT <IS? ,TS3-DOOR ,NOALL>>
 		       <TELL ,PTHE "only familiar " D ,MIKE " is the">
 		       <OPEN-CLOSED ,TS3-DOOR>
@@ -3355,7 +3355,7 @@ You're standing beside a monstrous conglomeration of pipes, compressors and pres
 		       <TELL "down">)
 	       	      (T
 			<TELL "up">)>
-		<TELL "ward." CR>  
+		<TELL "ward." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -3372,13 +3372,13 @@ You're standing beside a monstrous conglomeration of pipes, compressors and pres
 		<DEQUEUE I-FLIPPER>
 		<DEQUEUE I-TIDE>
 		<DEQUEUE I-CRABS>
-		<TELL "You hesitate for a moment, then step through the " 
+		<TELL "You hesitate for a moment, then step through the "
 		      D ,TS3-DOOR ,PERIOD>
 		<EXIT-HOLE ,TS3-DOOR ,ON-MESA>
 		<RFALSE>)>
 	 <ITS-CLOSED ,TS3-DOOR>
 	 <RFALSE>>
-	
+
 <OBJECT AT-SDOORS
 	(LOC ROOMS)
 	(DESC "Bottom of Scaffold")
@@ -3398,8 +3398,8 @@ You're standing beside a monstrous conglomeration of pipes, compressors and pres
 
 <ROUTINE AT-SDOORS-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
-"A maze of plumbing rises before you like the back of a giant refrigerator. Stairs lead up to a " D ,SCAFFOLD " overlooking the " D ,MIKE 
+		<TELL
+"A maze of plumbing rises before you like the back of a giant refrigerator. Stairs lead up to a " D ,SCAFFOLD " overlooking the " D ,MIKE
 ". Turning south, you see a">
 		<COND (<IS? ,SDOORS ,OPENED>
 		       <TELL "n open ">)
@@ -3414,7 +3414,7 @@ You're standing beside a monstrous conglomeration of pipes, compressors and pres
 <ROUTINE CLIMB-SCAFFOLD ()
 	 <TELL "You ascend the " D ,SCAF-STAIR ,PCR>
 	 <RETURN ,ON-SCAFFOLD>>
-	      
+
 <OBJECT SSAND
 	(LOC ROOMS)
 	(DESC "South Beach")
@@ -3446,7 +3446,7 @@ You're standing beside a monstrous conglomeration of pipes, compressors and pres
 		<TELL "The waters of a peaceful " D ,LAGOON
 " reflect the tropical dawn like a fiery mirror. A few stars are still visible in the rosy sky.|
 |
-The glorified tool shed dominates this little " D ,ISLAND 
+The glorified tool shed dominates this little " D ,ISLAND
 ", leaving room only for a narrow strip of sand that curves" ,TON
 "east and northwest. A " D ,OBUTTON
 " is mounted on the wall beside the">
@@ -3481,14 +3481,14 @@ The glorified tool shed dominates this little " D ,ISLAND
 
 <ROUTINE LAGOON-SWIMMING ()
 	 <COND (<IS? ,LAGOON ,SEEN>
-		<TELL 
+		<TELL
 "You recall the icky things lurking in the water, and change your mind." CR>
 		<RFALSE>)>
 	 <MAKE ,LAGOON ,SEEN>
 	 <TELL
 "Icky bits of slime wash past as you wade deeper into the " D ,LAGOON
 ". Invisible creatures nip at your toes, and something big and menacing brushes your shin. Enthusiasm dwindles; you hastily return to the shore." CR>
-	 <RFALSE>> 
+	 <RFALSE>>
 
 <OBJECT ESAND
 	(LOC ROOMS)
@@ -3506,7 +3506,7 @@ The glorified tool shed dominates this little " D ,ISLAND
 	(WEST PER ESHED-BLOCKS)
 	(NW PER TO-NSAND)
 	(ACTION ESAND-F)
-        (SEE-ALL LAGOON)
+	(SEE-ALL LAGOON)
 	(SEE-W ESHED)
 	(SEE-NW BEACH)
 	(SEE-SW BEACH)
@@ -3516,7 +3516,7 @@ The glorified tool shed dominates this little " D ,ISLAND
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "Palm trees far across the " D ,LAGOON
 " stand in dark relief against the eastern sky. The " D ,BEACH
-" continues northwest and southwest, around the " D ,ESHED ,PERIOD> 
+" continues northwest and southwest, around the " D ,ESHED ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -3537,7 +3537,7 @@ The glorified tool shed dominates this little " D ,ISLAND
 	(WEST PER TO-WSAND)
 	(NW PER LAGOON-SWIMMING)
 	(ACTION NSAND-F)
-        (SEE-ALL LAGOON)
+	(SEE-ALL LAGOON)
 	(SEE-S ESHED)
 	(SEE-SE BEACH)
 	(SEE-SW BEACH)
@@ -3545,7 +3545,7 @@ The glorified tool shed dominates this little " D ,ISLAND
 
 <ROUTINE NSAND-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "A square wooden " D ,TUBE " juts out of the side of the "
 D ,SCHOOL ", stretching away across the " D ,LAGOON
 " as far as you can see.|
@@ -3571,7 +3571,7 @@ The beach continues around the " D ,ESHED ,TOS "east and southwest." CR>
 	(WEST PER CRABS-ATTACK)
 	(NW PER CRABS-ATTACK)
 	(ACTION WSAND-F)
-        (SEE-ALL LAGOON)
+	(SEE-ALL LAGOON)
 	(SEE-NE BEACH)
 	(SEE-SE BEACH)
 	(SEE-E ESHED)
@@ -3580,10 +3580,10 @@ The beach continues around the " D ,ESHED ,TOS "east and southwest." CR>
 
 <ROUTINE WSAND-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
-"The sand curves northeast and southeast, skirting the dark outline of the " 
+		<TELL
+"The sand curves northeast and southeast, skirting the dark outline of the "
 D ,ESHED ,PCR "A tiny " D ,ISLET
-" is visible a short distance offshore." CR> 
+" is visible a short distance offshore." CR>
 		<RTRUE>)
 	       (<AND <EQUAL? .CONTEXT ,M-ENTERED>
 		     <NOT <IS? ,CRABS ,NODESC>>>
@@ -3596,10 +3596,10 @@ D ,ESHED ,PCR "A tiny " D ,ISLET
 	 <MAKE ,CRABS ,SEEN>
 	 <COND (<IS? ,CRABS ,NODESC>
 		<UNMAKE ,CRABS ,NODESC>
-		<QUEUE I-CRABS -1>		
+		<QUEUE I-CRABS -1>
 		<MOVE ,CRABS ,WSAND>
 		<SETG P-THEM-OBJECT ,CRABS>
-		<TELL 
+		<TELL
 "A bolt of pain engulfs your foot.|
 |
 A big, fat crab is pinching your toe! You shake off the wretched thing; it watches with evil satisfaction as you hop around the beach, yowling.|
@@ -3616,7 +3616,7 @@ Another crab joins the first, and another. Soon the water's edge is crowded with
 	(DESC "Thin Air")
 	(FLAGS LIGHTED LOCATION NOGRASS)
       ; (ODOR 0)
-        (OVERHEAD TS5-DOOR)
+	(OVERHEAD TS5-DOOR)
       ; (HEAR 0)
 	(NORTH SORRY "Unassisted flight is not one of your talents.")
 	(NE SORRY "Unassisted flight is not one of your talents.")
@@ -3658,7 +3658,7 @@ Another crab joins the first, and another. Soon the water's edge is crowded with
 			     (T
 			      <TELL "seven">)>
 		       <TELL "ty miles an hour">)>
-		<TELL ,PCR 
+		<TELL ,PCR
 "A " D ,TS5-DOOR " is dwindling away in the sky overhead." CR>
 		<RTRUE>)
 	       (<AND <EQUAL? .CONTEXT ,M-ENTERED>
@@ -3690,11 +3690,11 @@ Another crab joins the first, and another. Soon the water's edge is crowded with
 	(IN PER EXIT-NAGASAKI)
 	(SEE-ALL SKY)
 	(ACTION ON-BIRD-F)
-	(GLOBAL TS5-DOOR CITY NAGASAKI PLANES ; MCRANE)> 
-		
+	(GLOBAL TS5-DOOR CITY NAGASAKI PLANES ; MCRANE)>
+
 <ROUTINE ON-BIRD-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "You're soaring high over the city on a giant " D ,CRANE ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -3712,7 +3712,7 @@ Another crab joins the first, and another. Soon the water's edge is crowded with
 		<RFALSE>)>
 	 <ITS-CLOSED ,TS5-DOOR>
 	 <RFALSE>>
-	 
+
 <OBJECT PLAYGROUND
 	(LOC ROOMS)
 	(DESC "Playground")
@@ -3743,11 +3743,11 @@ Another crab joins the first, and another. Soon the water's edge is crowded with
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "A set of " D ,KIDS "'s " D ,SWINGS " moves ">
 		<BACK-AND-FORTH>
-		<TELL 
+		<TELL
 " Behind them stands a long " D ,SCHOOL ", its " D ,SCHOOL-WINDOWS
 " hung with " D ,FLOWERS " and birds folded from colored paper.|
 |
-Mounds of dirt are heaped around a dark " D ,SHELHOLE ,TOE 
+Mounds of dirt are heaped around a dark " D ,SHELHOLE ,TOE
 ". It appears to be a " D ,SHELTER " of some kind.|
 |
 Several small " D ,KIDS
@@ -3764,7 +3764,7 @@ D ,TEACHERS ", by the looks of them), wearily digging another " D ,SHELTER
 	       (<AND <EQUAL? .CONTEXT ,M-ENTERED>
 		     <IS? ,SPILE ,NODESC>>
 		<UNMAKE ,SPILE ,NODESC>
-		<TELL CR 
+		<TELL CR
 "Somewhat shaken, you rise to your feet in a child's " D ,SPILE>
 		<LOOK-IN-SPILE>
 		<PRINT ,PERIOD>
@@ -3797,7 +3797,7 @@ D ,TEACHERS ", by the looks of them), wearily digging another " D ,SHELTER
 <ROUTINE ENTER-SHELTER ()
 	 <COND (<T? ,IN-SAND?>
 		<EXIT-SPILE>)>
-         <TELL "You descend into the darkness" ,PCR>
+	 <TELL "You descend into the darkness" ,PCR>
 	 <RETURN ,IN-SHELTER>>
 
 <ROUTINE TEACHERS-CATCH ()
@@ -3810,7 +3810,7 @@ D ,TEACHERS ", by the looks of them), wearily digging another " D ,SHELTER
 	 <RFALSE>>
 
 <ROUTINE TEACHERS-NOTICE ("OPTIONAL" (COMING <>))
-	 <TELL CR 
+	 <TELL CR
 "One teacher, a young woman, sees you ">
 	 <COND (<ZERO? .COMING>
 		<TELL "standing ">
@@ -3821,7 +3821,7 @@ D ,TEACHERS ", by the looks of them), wearily digging another " D ,SHELTER
 		<TELL THE ,SPILE>)
 	       (T
 		<TELL "coming">)>
-	 <TELL 
+	 <TELL
 " and shrieks something in Japanese. Her companions quickly surround you, shouting accusations and sneering at your vacation shorts. You respond by pointing desperately at the sky, shouting \"Bomb! Big boom!\" and struggling to escape into the " D ,SHELTER ".|
 |
 This awkward scene is cut short by a searing flash.">
@@ -3833,7 +3833,7 @@ This awkward scene is cut short by a searing flash.">
 		<RFALSE>)
 	       (<T? ,IN-SAND?>
 		<EXIT-SPILE>)>
-	 <TELL CTHE ,KIDS 
+	 <TELL CTHE ,KIDS
 " cry out in surprise and fear at your approach." CR>
 	 <TEACHERS-NOTICE T>
 	 <RFALSE>>
@@ -3848,7 +3848,7 @@ This awkward scene is cut short by a searing flash.">
 		<RFALSE>)>
 	 <NO-DETECTION>
 	 <RTRUE>>
-	       
+
 <OBJECT IN-SHELTER
 	(LOC ROOMS)
 	(DESC "Shelter")
@@ -3870,15 +3870,15 @@ This awkward scene is cut short by a searing flash.">
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL
 "You wouldn't want to spend much time in this wretched hole. The bare "
-D ,FLOOR " is damp and filthy, and the " D ,CORNER "s reek of " 
-D ,PEE ". Luckily, there's an " D ,SHELHOLE ,TOW ,PERIOD> 
+D ,FLOOR " is damp and filthy, and the " D ,CORNER "s reek of "
+D ,PEE ". Luckily, there's an " D ,SHELHOLE ,TOW ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
 
 <ROUTINE EXIT-SHELTER ()
 	 <TELL "You ascend into daylight" ,PCR>
-	 <RETURN ,PLAYGROUND>> 
+	 <RETURN ,PLAYGROUND>>
 
 "*** TRINITY ***"
 
@@ -3887,7 +3887,7 @@ D ,PEE ". Luckily, there's an " D ,SHELHOLE ,TOW ,PERIOD>
 	(DESC "Shack")
 	(FLAGS LIGHTED LOCATION INDOORS)
       ; (OVERHEAD 0)
-        (HEAR VOICES)
+	(HEAR VOICES)
       ; (ODOR 0)
       ; (NORTH SORRY "The metal wall blocks your path.")
       ; (NE SORRY "The metal wall blocks your path.")
@@ -3897,7 +3897,7 @@ D ,PEE ". Luckily, there's an " D ,SHELHOLE ,TOW ,PERIOD>
       ; (SW SORRY "The metal wall blocks your path.")
 	(WEST TO TOWER-PLAT)
       ; (NW SORRY "The metal wall blocks your path.")
-	(OUT PER IN-SHACK-OUT)	
+	(OUT PER IN-SHACK-OUT)
 	(IN PER SLAM-TS6-DOOR)
 	(SEE-ALL WALLS)
 	(SEE-E TS6-DOOR)
@@ -3917,16 +3917,16 @@ D ,PEE ". Luckily, there's an " D ,SHELHOLE ,TOW ,PERIOD>
 		       <TELL "ark">)>
 		<TELL " light bulb hangs from the " D ,CEILING>
 		<COND (<IS? ,WATT ,LIGHTED>
-		       <TELL 
+		       <TELL
 ", filling the " D ,DSHADOW "s with a sullen glow">)>
-		
+
 		<COND (<IS? ,SPOT ,SEEN>
 		       <TELL "; harsh light streams in through an ">)
 		      (T
 		       <TELL ". You can see an ">)>
 		<TELL "exit in the west wall.|
 |
-A five-foot " D ,GADGET " rests on a bracket in the middle of the " 
+A five-foot " D ,GADGET " rests on a bracket in the middle of the "
 D ,FLOOR ". Its " D ,CSURFACE " is studded with " D ,GBOLTS
 " and crossed with electrical " D ,GCABLES
 ", all converging in a boxlike " D ,X5 " nearby.|
@@ -3960,7 +3960,7 @@ A">
 	 <ITALICIZE "Bang!">
 	 <TELL " The door slams shut at your approach." CR>
 	 <SETG DO-WINDOW <GET ,QUOTES ,BYRNE>>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <OBJECT TOWER-PLAT
 	(LOC ROOMS)
@@ -4001,8 +4001,8 @@ This narrow " D ,TPLAT " opens east into a metal " D ,SHACK>
 		       <TELL
 ,PA D ,SPOT " on the southwest " D ,HORIZON " floods the " D ,PLATFORM
 " in a raw white glare">)>
-		<TELL ,PA D ,TLADDER " is sticking up over the " 
-D ,TPLAT "'s edge." CR> 
+		<TELL ,PA D ,TLADDER " is sticking up over the "
+D ,TPLAT "'s edge." CR>
 		<RTRUE>)
 	       (<EQUAL? .CONTEXT ,M-ENTERED>
 		<SETG STAIR-DIR "down">
@@ -4020,7 +4020,7 @@ D ,TPLAT "'s edge." CR>
 		       <NO-DETECTION>
 		       <RFALSE>)>)>
 	 <COND (<NOT <IS? ,ON-TOWER ,TOUCHED>>
-		<TELL "You clutch the topmost rung of the " D ,TLADDER 
+		<TELL "You clutch the topmost rung of the " D ,TLADDER
 " with sweating palms. Fighting back vertigo, you begin to feel your way downward.|
 |
 At last your foot touches a flat " D ,CSURFACE ,PCR>)>
@@ -4056,10 +4056,10 @@ At last your foot touches a flat " D ,CSURFACE ,PCR>)>
 <ROUTINE ON-TOWER-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<SETG P-IT-OBJECT ,TLADDER>
-		<TELL 
-"A spiderweb of steel rises from the " D ,GDESERT 
+		<TELL
+"A spiderweb of steel rises from the " D ,GDESERT
 " floor below, tapering up to the " D ,PLATFORM
-" fifty feet overhead. Thick ropes and " D ,GCABLES 
+" fifty feet overhead. Thick ropes and " D ,GCABLES
 " dangle around the " D ,TLADDER " that continues " ,STAIR-DIR "ward." CR>
 		<RTRUE>)
 	       (T
@@ -4103,12 +4103,12 @@ At last your foot touches a flat " D ,CSURFACE ,PCR>)>
 
 <ROUTINE AT-ZERO-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "A steel " D ,TOWER 
-" rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the " D ,TLADDER ", past dangling " D ,TROPES 
+		<TELL "A steel " D ,TOWER
+" rises overhead, black against the cloudy sky. Your eyes follow the tapered frame up the " D ,TLADDER ", past dangling " D ,TROPES
 ", to the " D ,PLATFORM " at its summit.|
 |
-Paved roads and " D ,ILINES " lead off into the surrounding " 
-D ,GDESERT ,PERIOD> 
+Paved roads and " D ,ILINES " lead off into the surrounding "
+D ,GDESERT ,PERIOD>
 		<RTRUE>)
 	       (<EQUAL? .CONTEXT ,M-ENTERED>
 		<SETG STAIR-DIR "up">
@@ -4119,7 +4119,7 @@ D ,GDESERT ,PERIOD>
 		<SETG P-IT-OBJECT ,RUBY>
 		<MAKE ,MEEP ,SEEN>
 		<MOVE ,RUBY ,BOX>
-		<TELL CR "A familiar " D ,MEEP 
+		<TELL CR "A familiar " D ,MEEP
 " is eyeing you from its perch on the box's lid. The ruby in its beak gleams in the early dawn.|
 |
 With a skillful toss, the " D ,MEEP
@@ -4161,8 +4161,8 @@ With a skillful toss, the " D ,MEEP
 
 <ROUTINE N75-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "Your eyes follow the " D ,ILINES 
-" northwest, where a cluster of " D ,NBUNKERS " and " D ,SLIGHT 
+		<TELL "Your eyes follow the " D ,ILINES
+" northwest, where a cluster of " D ,NBUNKERS " and " D ,SLIGHT
 "s is visible on the " D ,HORIZON ,PTHE D ,PROAD " continues in that "
 D ,INTDIR ", and also leads southwest.|
 |
@@ -4177,7 +4177,7 @@ An abandoned jeep is parked nearby." CR>
 		<TELL " towards the " D ,NBUNKERS ".|
 |
 Excited shouts ring out as you approach the nearest "
-D ,SHELTER ". One of the giant lights sweeps" ,AGROUND 
+D ,SHELTER ". One of the giant lights sweeps" ,AGROUND
 " until its beam aims directly into your eyes." CR>
 		<HOLD-IT>
 		<SURROUNDED>
@@ -4220,7 +4220,7 @@ D ,SHELTER ". One of the giant lights sweeps" ,AGROUND
 
 <ROUTINE IN-JEEP-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "Comfort was clearly not a consideration in the design of this jeep. The seat is narrow and hard, and your shin is scrunched up against a radio bolted to the " D ,FLOOR ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -4289,13 +4289,13 @@ D ,GDESERT ", and southeast towards the " D ,DTOWER ,PERIOD>
 <ROUTINE N25-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "Stubby poles draped with " D ,ILINES
-" follow a " D ,PROAD " northwest " ,INTO-DESERT 
+" follow a " D ,PROAD " northwest " ,INTO-DESERT
 ", while a " D ,DTRAIL " curves away" ,TOS ,PCR CTHE ,DTOWER
 " is a dim outline against the southeast " D ,TMOUNTS ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <OBJECT NZERO
 	(LOC ROOMS)
 	(DESC "North of Tower")
@@ -4319,7 +4319,7 @@ D ,GDESERT ", and southeast towards the " D ,DTOWER ,PERIOD>
 
 <ROUTINE NZERO-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL CTHE ,TOWER 
+		<TELL CTHE ,TOWER
 " is visible not far" ,TOS ". It's the only landmark in this empty "
 D ,GDESERT ,PERIOD>
 		<RTRUE>)
@@ -4379,7 +4379,7 @@ D ,GDESERT ,PERIOD>
 <ROUTINE EZERO-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "This bleak stretch of " D GDESERT
-		      " lies between the " D ,TOWER ,TOW 
+		      " lies between the " D ,TOWER ,TOW
 		      ", and a range of " D ,TMOUNTS ,TOE ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -4409,11 +4409,11 @@ D ,GDESERT ,PERIOD>
 
 <ROUTINE AT-TNT-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
-"You're standing at the edge of a shallow " D ,TCRATER " in the " 
+		<TELL
+"You're standing at the edge of a shallow " D ,TCRATER " in the "
 D ,GDESERT " floor, a few hundred feet across. The ground within is gray and pulverized, as if by a powerful explosion.|
 |
-A " D ,PROAD " leads southeast " ,INTO-DESERT ", and northwest towards the " 
+A " D ,PROAD " leads southeast " ,INTO-DESERT ", and northwest towards the "
 D ,DTOWER ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -4444,10 +4444,10 @@ D ,DTOWER ,PERIOD>
 
 <ROUTINE WZERO-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "A tall " D ,FRAME " of steel has been erected here, cousin to the larger "
-D ,TOWER " visible not far" ,TOE 
-". Suspended within the frame is an enormous metal " D ,JUMBO 
+D ,TOWER " visible not far" ,TOE
+". Suspended within the frame is an enormous metal " D ,JUMBO
 ", at least twenty feet long and ten wide, with rounded end caps. It looks like a king-sized cold capsule.|
 |
 A " D ,DTRAIL " curves north and south." CR>
@@ -4480,7 +4480,7 @@ A " D ,DTRAIL " curves north and south." CR>
 
 <ROUTINE W25-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "A " D ,PROAD " leads northeast towards the " D ,DTOWER
 ", and southwest " ,INTO-DESERT ". There's also a "
 D ,DTRAIL " bearing north." CR>
@@ -4544,7 +4544,7 @@ D ,DTRAIL " bearing north." CR>
 
 <ROUTINE W75-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "A " D ,PROAD " bears off in a straight northeast/southwest line. Another road bends southeast, and a " D ,DTRAIL " peters off" ,TON "west." CR>
 		<RTRUE>)
 	       (T
@@ -4599,8 +4599,8 @@ D ,DTRAIL " bearing north." CR>
 			    <NOT <IS? ,FEATHERS ,SEEN>>>
 		       <MAKE ,FEATHERS ,SEEN>
 	 	       <TELL CR "A little pile of gray " D ,FEATHERS
-" lies scattered" ,AGROUND 
-". You watch in silence as the last few blow away across the " 
+" lies scattered" ,AGROUND
+". You watch in silence as the last few blow away across the "
 D ,GDESERT ,PERIOD>
 		       <RTRUE>)>
 		<RFALSE>)
@@ -4615,7 +4615,7 @@ D ,GDESERT ,PERIOD>
 	 <COND (<G? ,MINUTES 27>
 		<AIMLESS ,D9>
 		<RETURN ,D9>)>
-	 <TELL 
+	 <TELL
 "Another look at the shepherd encourages you not to go that way." CR>
 	 <RFALSE>>
 
@@ -4643,7 +4643,7 @@ D ,GDESERT ,PERIOD>
 
 <ROUTINE S25-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "A paved road bears north towards the tower, and south " ,INTO-DESERT ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -4732,7 +4732,7 @@ D ,GDESERT ". Another road bends northwest, and a " D ,DTRAIL
 	(TDIR P?NORTH)
 	(GLOBAL DTOWER GDESERT SROAD DMOUNTS ILINES GIBINOS VOICES)
 	(SEE-NE SBUNK)
-       	(SEE-N SROAD)
+	(SEE-N SROAD)
 	(SEE-S SROAD)
 	(SEE-ALL GDESERT)
 	(ACTION S100-F)>
@@ -4746,7 +4746,7 @@ Peeking around the " D ,CORNER ", you see a large earth-covered " D ,SBUNK
 " immediately" ,TON "east. Several " D ,JEEPS>
 		<COND (<L? ,MINUTES 28>
 		       <TELL ", manned by nervous " D ,GIS ",">)>
-		<TELL 
+		<TELL
 " are parked around the " D ,SBUNK "'s open " D ,SBENTRY ,PCR>
 		<HEAR-SBUNK>
 		<RTRUE>)
@@ -4784,9 +4784,9 @@ Ill-disguised relief passes over the GI's face as the pear man clambers into the
 
 <ROUTINE S100-S ()
 	 <TELL "You start to move south">
-	 <BUT-HESITATE "pair of binoculars">	 
+	 <BUT-HESITATE "pair of binoculars">
 	 <RFALSE>>
-		
+
 <ROUTINE BUT-HESITATE (STR)
 	 <TELL ", but hesistate when you notice one of the " D ,GIS>
 	 <COND (<G? ,MINUTES 27>
@@ -4823,15 +4823,15 @@ The GI ">
 		<PRINTB ,P-PRSA-WORD>)
 	       (T
 		<TELL "march confidently">)>
-	 <RTRUE>>	 
+	 <RTRUE>>
 
 <ROUTINE S100-E ()
 	 <TELL "You slip quietly around the back of the shed" ,PCR>
 	 <RETURN ,D11>>
 
 <ROUTINE HEAR-SBUNK ()
-	 <TELL 
-"Muted " D ,VOICES " and crackling radios can be heard inside the " 
+	 <TELL
+"Muted " D ,VOICES " and crackling radios can be heard inside the "
 D ,SBUNK ,PERIOD>
 	 <RTRUE>>
 
@@ -4859,7 +4859,7 @@ D ,SBUNK ,PERIOD>
 
 <ROUTINE NEPASS-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "A " D ,PROAD " leads southeast and northwest across the " D ,GDESERT ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -4887,7 +4887,7 @@ D ,SBUNK ,PERIOD>
 
 <ROUTINE D0-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "Bleak, featureless " 
+		<TELL "Bleak, featureless "
 D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -4903,7 +4903,7 @@ D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 	 <SET DEST <COND (<EQUAL? ,DROOM ,N75> ,DROOM)
 			 (T ,D1)>>
 	 <AIMLESS .DEST>
-	 <RETURN .DEST>>		
+	 <RETURN .DEST>>
 
 <GLOBAL DROOM:OBJECT <>>
 
@@ -4911,7 +4911,7 @@ D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 	 <TELL <PICK-NEXT ,DESERT-BORES> ,PERIOD>
 	 <RFALSE>>
 
-<GLOBAL DESERT-BORES:TABLE 
+<GLOBAL DESERT-BORES:TABLE
 	<LTABLE 2
 	 "There's nothing but trackless desert in that direction"
 	 "Nothing but trackless desert lies that way"
@@ -5096,8 +5096,8 @@ D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 
 <ROUTINE D5-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "Gray, empty " D ,GDESERT 
-" stretches away on either side of a road that leads southeast." CR>  
+		<TELL "Gray, empty " D ,GDESERT
+" stretches away on either side of a road that leads southeast." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -5148,7 +5148,7 @@ D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 
 <ROUTINE D6-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "Rugged foothills slope eastward, away from the " D ,GDESERT
 " wasteland." CR>
 		<RTRUE>)
@@ -5221,7 +5221,7 @@ D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 
 <ROUTINE D6A-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "A range of foothills slopes up to meet the " D ,TMOUNTS " in the east." CR>
 		<RTRUE>)
 	       (T
@@ -5278,7 +5278,7 @@ D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 
 <ROUTINE D7-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-	        <TELL "The distant " D ,DTOWER
+		<TELL "The distant " D ,DTOWER
 " is the only point of reference in this bleak " D ,GDESERT " expanse." CR>
 		<RTRUE>)
 	       (T
@@ -5425,12 +5425,6 @@ D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 	 <AIMLESS .DEST>
 	 <RETURN .DEST>>
 
-; <ROUTINE D9-NE ("AUX" DEST)
-	 <SET DEST <COND (<OR <EQUAL? ,DROOM ,W100> <PROB 50>> ,W100)
-			 (T ,D10)>>
-	 <AIMLESS .DEST>
-	 <RETURN .DEST>>
-
 <ROUTINE D9-E ("AUX" DEST)
 	 <SET DEST <COND (<EQUAL? ,DROOM ,W100> ,W100)
 			 (T ,D10)>>
@@ -5460,7 +5454,7 @@ D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 <ROUTINE D10-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL
-"Empty tracts of " D ,GDESERT " surround you on every side." CR> 
+"Empty tracts of " D ,GDESERT " surround you on every side." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -5478,7 +5472,7 @@ D ,GDESERT " stretches away in every " D ,INTDIR ,PERIOD>
 		<AIMLESS ,S100>
 		<RETURN ,S100>)>
 	 <BORING-DESERT>
-	 <RFALSE>>	       
+	 <RFALSE>>
 
 <ROUTINE D10-NEE ("AUX" DEST)
 	 <SET DEST <COND (<EQUAL? ,DROOM ,NEPASS ,S75 ,S100> ,DROOM)
@@ -5608,7 +5602,7 @@ An open " D ,SHALL " leads south, into the house. There's also a">
 		<OPEN-CLOSED ,NROOM-DOOR T>
 		<TELL ,TOE ", and a">
 		<OPEN-CLOSED ,NWGATE T>
-		<TELL " in the northwest " D ,CORNER 
+		<TELL " in the northwest " D ,CORNER
 		      " of the " D ,SWALL ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -5643,8 +5637,8 @@ An open " D ,SHALL " leads south, into the house. There's also a">
 <ROUTINE NERANCH-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "A dilapidated " D ,RANCH
-" stands nearby, bounded by dusty patches of ground and a low " D ,SWALL 
-". Paths lead south and east, on either side of a cement " 
+" stands nearby, bounded by dusty patches of ground and a low " D ,SWALL
+". Paths lead south and east, on either side of a cement "
 D ,RESERVOIR ,PA D ,RANCH-ROAD " bends off" ,TOW ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -5667,14 +5661,14 @@ D ,RESERVOIR ,PA D ,RANCH-ROAD " bends off" ,TOW ,PERIOD>
 
 <ROUTINE BROOM-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "This room is stripped bare of all furnishings. Only a rectangular area in the " D ,CORNER ", lighter than the " D ,FLOOR
 " around it, belies the former presence of a mattress.|
 |
 A">
 		<OPEN-CLOSED ,BROOM-DOOR T>
-		<TELL 
-" in the east wall leads outside. Another exit opens west, into the " 
+		<TELL
+" in the east wall leads outside. Another exit opens west, into the "
 D ,RANCH ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -5695,7 +5689,7 @@ D ,RANCH ,PERIOD>
 
 <ROUTINE IN-BATH-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "An old porcelain " D ,SINK 
+		<TELL "An old porcelain " D ,SINK
 ", broken and faucetless, is the only fixture left in this tiny chamber. The south exit doesn't even have a door." CR>
 		<RTRUE>)
 	       (T
@@ -5728,7 +5722,7 @@ D ,RANCH ,PERIOD>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	
+
 <OBJECT NWROOM
 	(LOC ROOMS)
 	(DESC "Northwest Room")
@@ -5745,7 +5739,7 @@ D ,RANCH ,PERIOD>
 
 <ROUTINE NWROOM-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "The original purpose of this stark room is uncertain; it might have been used for dining. Exits lead north, south and east." CR>
 		<RTRUE>)
 	       (T
@@ -5780,14 +5774,14 @@ D ,RANCH ,PERIOD>
 		       <TELL "n open " D ,CLOSET>)
 		      (T
 		       <TELL " closed">)>
-		<TELL 
+		<TELL
 " door in the north wall. Other exits lead south and west." CR>
 		<RTRUE>)
 	       (<AND <EQUAL? .CONTEXT ,M-ENTERED>
 		     <IS? ,XSNAKE ,NODESC>>
-		<UNMAKE ,XSNAKE ,NODESC>		
+		<UNMAKE ,XSNAKE ,NODESC>
 		<QUEUE I-SNAKE -1>
-		<TELL CR 
+		<TELL CR
 "You turn to face an urgent noise behind you. Your heart skips a beat. Two tiny eyes, bright with hunger, black with menace, are glaring at you from only a few feet away" ,PCR>
 	 	<HEAR-SNAKE>
 		<RTRUE>)
@@ -5802,7 +5796,7 @@ D ,RANCH ,PERIOD>
 
 <ROUTINE HEAR-SNAKE ()
 	 <SETG P-IT-OBJECT ,SNAKE>
-	 <TELL 
+	 <TELL
 "You hear the noise again. It's like a pebble in an empty can." CR>
 	 <RTRUE>>
 
@@ -5821,8 +5815,8 @@ D ,RANCH ,PERIOD>
 
 <ROUTINE IN-CLOSET-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
-"There's barely enough room to turn around in this puny " D ,CLOSET 
+		<TELL
+"There's barely enough room to turn around in this puny " D ,CLOSET
 ". Its single ">
 		<COND (<IS? ,CLOSET-DOOR ,OPENED>
 		       <TELL "open">)
@@ -5858,7 +5852,7 @@ D ,RANCH ,PERIOD>
 		<TELL
 " are the only evidence of this room's identity. A">
 		<OPEN-CLOSED ,SWROOM-DOOR T>
-		<TELL " in the west wall leads out to a " D ,SHALL 
+		<TELL " in the west wall leads out to a " D ,SHALL
 		      ". Other exits lead north and east." CR>
 		<RTRUE>)
 	       (T
@@ -5915,7 +5909,7 @@ D ,RANCH ,PERIOD>
 		<TELL "This short " D ,SHALL
 " opens outdoors" ,TON " and south. A">
 		<OPEN-CLOSED ,SWROOM-DOOR T>
-		<TELL " leads east into a " D ,KITCHEN 
+		<TELL " leads east into a " D ,KITCHEN
 ". Turning west, you see a " D ,ISTAIR " descending into darkness." CR>
 		<RTRUE>)
 	       (T
@@ -5929,7 +5923,7 @@ D ,RANCH ,PERIOD>
 	(LOC ROOMS)
 	(DESC "Icehouse")
 	(FLAGS LIGHTED LOCATION INDOORS)
-        (OVERHEAD ISTAIR)
+	(OVERHEAD ISTAIR)
       ; (HEAR 0)
       ; (ODOR 0)
 	(UP PER EXIT-IHOUSE)
@@ -5942,7 +5936,7 @@ D ,RANCH ,PERIOD>
 <ROUTINE IHOUSE-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<FEEL-IHOUSE>
-		<TELL 
+		<TELL
 " It feels as if nobody's been down here for a long time.|
 |
 Gray light seeps in from a " D ,ISTAIR " climbing east." CR>
@@ -5986,15 +5980,15 @@ Gray light seeps in from a " D ,ISTAIR " climbing east." CR>
 <ROUTINE SWRANCH-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<TELL "The low " D ,SWALL
-" before you is almost as run-down as the " D ,RANCH 
+" before you is almost as run-down as the " D ,RANCH
 " inside it. Paths follow the wall's perimeter" ,TON " and east, and a">
 		<OPEN-CLOSED ,SWGATE T>
-		<TELL 
+		<TELL
 " leads northeast into a dusty yard." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <ROUTINE ENTER-SHALL ()
 	 <TELL "You step into the " D ,SHALL ,PCR>
 	 <RETURN ,IN-HALL>>
@@ -6029,8 +6023,8 @@ Gray light seeps in from a " D ,ISTAIR " climbing east." CR>
 
 <ROUTINE SEYARD-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "You're just inside the " D ,SWALL 
-", near the " D ,RANCH "'s southeast " D ,CORNER 
+		<TELL "You're just inside the " D ,SWALL
+", near the " D ,RANCH "'s southeast " D ,CORNER
 ,PA "raised deck stands immediately" ,TON ", and a">
 		<OPEN-CLOSED ,SEGATE T>
 		<TELL " in the wall leads southeast." CR>
@@ -6068,10 +6062,10 @@ Gray light seeps in from a " D ,ISTAIR " climbing east." CR>
 
 <ROUTINE SERANCH-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "The low " D ,SWALL  
+		<TELL "The low " D ,SWALL
 " enclosing this dilapidated " D ,RANCH " has a">
 		<OPEN-CLOSED ,SEGATE T>
-		<TELL 
+		<TELL
 " leading inside. Paths follow the wall's perimeter" ,TON
 " and west, and another curves east along a cement " D ,RESERVOIR ,PERIOD>
 		<RTRUE>)
@@ -6107,7 +6101,7 @@ Gray light seeps in from a " D ,ISTAIR " climbing east." CR>
 
 <ROUTINE NEYARD-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "There aren't any " D ,CAVE-HOLE "s in this " D ,CORNER " of the " D SWALL
 ,PA "raised deck stands immediately" ,TOS ", and a">
 		<OPEN-CLOSED ,BROOM-DOOR T>
@@ -6152,7 +6146,7 @@ Gray light seeps in from a " D ,ISTAIR " climbing east." CR>
 		<TELL " in the wall leads southwest." CR>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>	
+		<RFALSE>)>>
 
 <OBJECT ON-PORCH
 	(LOC ROOMS)
@@ -6182,14 +6176,14 @@ Gray light seeps in from a " D ,ISTAIR " climbing east." CR>
       ; (TDIR 0)
 	(ACTION ON-PORCH-F)>
 
-<ROUTINE ON-PORCH-F ("OPTIONAL" (CONTEXT <>) 
+<ROUTINE ON-PORCH-F ("OPTIONAL" (CONTEXT <>)
 		     "AUX" (L <>) (R <>) (B <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<COND (<IS? ,LEFT-DOOR ,OPENED>
 		       <SET L T>)>
 		<COND (<IS? ,RIGHT-DOOR ,OPENED>
 		       <SET R T>)>
-		<TELL 
+		<TELL
 "You're on a raised deck attached" ,TOE " side of the "
 D ,RANCH ". Two ">
 		<COND (<AND <T? .L> <T? .R>>
@@ -6204,16 +6198,16 @@ D ,RANCH ". Two ">
 		<TELL "one at the deck's left " D ,CORNER " and ">
 		<COND (<ZERO? .B>
 		       <SAY-A-DOOR ,RIGHT-DOOR>)>
-		<TELL 
+		<TELL
 "one at the right, lead inside. A gentle ramp slopes down to the front yard." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	
+
 <ROUTINE SAY-A-DOOR (DOOR)
 	 <TELL "a">
 	 <COND (<IS? .DOOR ,OPENED>
-	        <TELL "n open ">)
+		<TELL "n open ">)
 	       (T
 		<TELL " closed ">)>
 	 <RTRUE>>
@@ -6267,8 +6261,8 @@ D ,RANCH ". Two ">
 	(UP PER ASCEND-RAMP)
 	(NW PER SWALL-BLOCKS)
 	(IN PER ASCEND-RAMP)
-	(GLOBAL SWALL RANCH RAMP PORCH RESERVOIR RANCH-ROAD DTOWER 
-	        GDESERT DMOUNTS)
+	(GLOBAL SWALL RANCH RAMP PORCH RESERVOIR RANCH-ROAD DTOWER
+		GDESERT DMOUNTS)
 	(SEE-E RESERVOIR)
 	(SEE-W RANCH)
 	(SEE-NW SWALL)
@@ -6281,14 +6275,14 @@ D ,RANCH ". Two ">
 
 <ROUTINE ERANCH-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
-"This patch of ground lies between the " D ,RANCH ,TOW ", and a huge cement " 
-D ,RESERVOIR ,TOE 
+		<TELL
+"This patch of ground lies between the " D ,RANCH ,TOW ", and a huge cement "
+D ,RESERVOIR ,TOE
 ". Well-worn paths curve north and south, around the "
 D ,SWALL " enclosing the house. Other trails skirt the "
 D ,RESERVOIR " on either side.|
 |
-A ramp slopes up through a gap in the " D ,SWALL 
+A ramp slopes up through a gap in the " D ,SWALL
 ", ending on a raised deck." CR>
 		<RTRUE>)
 	       (T
@@ -6323,7 +6317,7 @@ A ramp slopes up through a gap in the " D ,SWALL
 
 <ROUTINE NCIST-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "You're resting at the north side of a big cement " D ,RESERVOIR
 ". Dusty paths curve west and southwest around a " D ,RANCH
 ", and a trail leads southeast to the base of a " D ,MILL ,PERIOD>
@@ -6335,7 +6329,7 @@ A ramp slopes up through a gap in the " D ,SWALL
 	(LOC ROOMS)
 	(DESC "Under the Windmill")
 	(FLAGS LIGHTED LOCATION DESERT)
-        (OVERHEAD MLADDER)
+	(OVERHEAD MLADDER)
       ; (HEAR 0)
       ; (ODOR 0)
 	(NORTH TO D6)
@@ -6390,7 +6384,7 @@ The bottom rungs of a " D ,MLADDER " are just within reach." CR>
 	(DESC "Windmill")
 	(FLAGS LIGHTED LOCATION NOGRASS)
       ; (OVERHEAD 0)
-        (HEAR LANDING)
+	(HEAR LANDING)
       ; (ODOR 0)
 	(DOWN PER DOWN-MLADDER)
 	(OUT PER DOWN-MLADDER)
@@ -6403,7 +6397,7 @@ The bottom rungs of a " D ,MLADDER " are just within reach." CR>
 
 <ROUTINE IN-MILL-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "You're on a square " D ,LANDING 
+		<TELL "You're on a square " D ,LANDING
 " near the top of the " D ,MILL ,PTHE
 "rotting planks underfoot creak ominously as you stand on them.|
 |
@@ -6425,7 +6419,7 @@ A rickety " D ,MLADDER " leads downward." CR>
 	(LOC ROOMS)
 	(DESC "South of Reservoir")
 	(FLAGS LIGHTED LOCATION DESERT)
-        (OVERHEAD CISTAIR)
+	(OVERHEAD CISTAIR)
       ; (HEAR 0)
       ; (ODOR 0)
 	(NORTH PER ENTER-RESERVOIR)
@@ -6447,7 +6441,7 @@ A rickety " D ,MLADDER " leads downward." CR>
 
 <ROUTINE SCIST-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "You're near the south side of a big cement " D ,RESERVOIR
 ". Dusty paths lead west and northwest around a " D ,RANCH
 ". Another curves northeast, to the base of a " D ,MILL ".|
@@ -6488,7 +6482,7 @@ A " D ,CISTAIR " climbs up to the " D ,RESERVOIR "'s edge." CR>
 
 <ROUTINE ON-CIST-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL "You're on the edge of a big concrete " D ,RESERVOIR 
+		<TELL "You're on the edge of a big concrete " D ,RESERVOIR
 ", filled with dark water. A short flight of steps leads down to the ground." CR>
 		<RTRUE>)
 	       (T
@@ -6560,7 +6554,7 @@ A " D ,CISTAIR " climbs up to the " D ,RESERVOIR "'s edge." CR>
 
 <ROUTINE IN-CIST-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "You're treading water in a big cement " D ,RESERVOIR
 ", too deep for your feet to touch bottom." CR>
 		<RTRUE>)
@@ -6606,7 +6600,7 @@ A " D ,CISTAIR " climbs up to the " D ,RESERVOIR "'s edge." CR>
 
 <ROUTINE UNDER-WATER-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
-		<TELL 
+		<TELL
 "Suspended particles of muck swirl in the beam of the " D ,LAMP
 ". It's impossible to see more than a few feet." CR>
 		<RTRUE>)
@@ -6619,11 +6613,11 @@ A " D ,CISTAIR " climbs up to the " D ,RESERVOIR "'s edge." CR>
 
 <ROUTINE RISE-TO-SURFACE ()
 	 <COND (<T? ,BREATH-HELD?>
-	        <SETG BREATH-HELD? 0>
+		<SETG BREATH-HELD? 0>
 		<DEQUEUE I-HOLD-BREATH>)>
 	 <TELL "You rise to the " D ,CSURFACE ", gasping for air" ,PCR>
 	 <RETURN ,IN-CIST>>
-		
+
 <ROUTINE JIGS-UP ()
 	 <CARRIAGE-RETURNS>
 	 <SETG IN-DORY? <>>
@@ -6644,17 +6638,17 @@ A " D ,CISTAIR " climbs up to the " D ,RESERVOIR "'s edge." CR>
 <ROUTINE DEATH-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<EQUAL? .CONTEXT ,M-LOOK>
 		<DESCRIBE-DOCKSIDE>
-	        <DORY-APPEARS>
+		<DORY-APPEARS>
 		<MAKE-OUT-CHARON>
 		<CRLF>
 		<SOUNDLESS-LANDING>
-		<TELL 
+		<TELL
 ". Something in the way he crooks his skeletal finger compels you to board. You surrender ">
 		<COND (<GOT? ,BCOIN>
 		       <TELL "your " D ,BCOIN>)
 		      (T
 		       <TELL "a " D ,BCOIN " you didn't know you had">)>
-		<TELL 
+		<TELL
 ", take a seat and wait patiently for your first glimpse of the "
 D ,OPSHORE ,PERIOD>
 		<RTRUE>)>
@@ -6670,7 +6664,7 @@ D ,OPSHORE ,PERIOD>
 	 	 <READ ,P-INBUF ,P-LEXV>
 	 	 <SET X <GET ,P-LEXV 1>>
 	 	 <COND (<EQUAL? .X ,W?RESTART>
-	        	<SET X <RESTART>>
+			<SET X <RESTART>>
 			<FAILED "RESTART">)
 	       	       (<EQUAL? .X ,W?RESTORE>
 			<SET X <RESTORE>>
@@ -6707,7 +6701,7 @@ D ,OPSHORE ,PERIOD>
 	 	  "who would toll the world's knell so soon. "
 	 	  0
 	 	  "                    -- Henry David Thoreau">
-	 <PLTABLE 42 
+	 <PLTABLE 42
 	 	  "Atoms or systems into ruin hurled,      "
 	 	  "And now a bubble burst, and now a world."
 	 	  0
@@ -6715,7 +6709,7 @@ D ,OPSHORE ,PERIOD>
 	 <PLTABLE 42
 	 	  "\"And 'the wabe' is the grass-plot round "
 	 	  " a sun-dial, I suppose?\" said Alice,    "
-	          " surprised at her own ingenuity.         "
+		  " surprised at her own ingenuity.         "
 	 	  0
 	 	  "\"Of course it is. It's called 'wabe,'   "
 	 	  " you know, because it goes a long way   "
@@ -6730,20 +6724,20 @@ D ,OPSHORE ,PERIOD>
 	 	  0
 	 	  " -- Arthur C. Clarke">
 	 <PLTABLE 22
-	          " Any sufficiently   "
-	          " arcane magic is    "
-	          " indistinguishable  "
-	          " from technology.    "
-	          0
-	          " -- P. David Lebling">
+		  " Any sufficiently   "
+		  " arcane magic is    "
+		  " indistinguishable  "
+		  " from technology.    "
+		  0
+		  " -- P. David Lebling">
 	 <PLTABLE 40
-	          "The love of posterity is a consequence"
+		  "The love of posterity is a consequence"
 	 	  "of the necessity of death. If a man   "
 	 	  "were sure of living forever, he would "
 	 	  "not care about his offspring.          "
 	 	  0
 	 	  "                -- Nathaniel Hawthorne">
-	 <PLTABLE 37 
+	 <PLTABLE 37
 	 	  "Could annihilation occur in matter,"
 	 	  "this were the thing to do it.       "
 	 	  0
@@ -6760,7 +6754,7 @@ D ,OPSHORE ,PERIOD>
 		  " signs of the times?    "
 		  0
 		  "        -- Matthew 16:3 ">
-	 <PLTABLE 20 
+	 <PLTABLE 20
 	  	  "Il y a une horloge"
 		  "qui ne sonne pas. "
 		  0
@@ -6778,9 +6772,3 @@ D ,OPSHORE ,PERIOD>
 		  "I am the clock myself.                               "
 		  0
 		  "                                     -- Walt Whitman">>>
-
-
-
-
-		      
-		      

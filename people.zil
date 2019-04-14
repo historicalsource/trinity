@@ -39,7 +39,7 @@ You look a little closer and shudder to " D ,ME ,PTHE
 	 <DEQUEUE I-BLOW>
 	 <I-BLOW>
 	 <RFATAL>>
-	        
+
 "*** BIRD WOMAN ***"
 
 <OBJECT BWOMAN
@@ -52,7 +52,7 @@ You look a little closer and shudder to " D ,ME ,PTHE
 	(ACTION BWOMAN-F)>
 
 "NODESC = unseen, SEEN = just referenced."
-	      
+
 <ROUTINE DIN-DROWNS ()
 	 <TELL "The din of ">
 	 <COND (<ZERO? ,RAID?>
@@ -77,13 +77,13 @@ You look a little closer and shudder to " D ,ME ,PTHE
 		       <COND (<PRSO? ME>
 		       	      <TELL "\"Why not tell me about "
 			     	    THEI " " D ,ME "?\" scoffs the "
-		                    D ,BWOMAN ,PERIOD>
-		              <RTRUE>)>
+				    D ,BWOMAN ,PERIOD>
+			      <RTRUE>)>
 		       <BWOMAN-SNORTS>
 		       <RTRUE>)
 		      (<VERB? ASK-FOR>
 		       <COND (<PRSO? ME>
-			      <TELL 
+			      <TELL
 "\"I won't beg from the likes o' you,\" sniffs the " D ,BWOMAN ,PERIOD>
 			      <RTRUE>)>
 		       <BWOMAN-SNORTS>
@@ -124,7 +124,7 @@ You look a little closer and shudder to " D ,ME ,PTHE
 			      <SETG P-IT-OBJECT ,SCOIN>
 			      <MOVE ,BAG ,BWOMAN>
 			      <TELL "\"Bless yer,\" coos the " D ,BWOMAN
-", taking your money with a practiced snatch. \"Twenty p's the change.\" She holds out a " 
+", taking your money with a practiced snatch. \"Twenty p's the change.\" She holds out a "
 D ,BAG " and a " D ,SCOIN " for you." CR>
 			      <COND (<ZERO? ,TR?>
 				     <UPDATE-SCORE>)>
@@ -138,7 +138,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 			      <RTRUE>)
 			     (<VERB? SHOW>
 			      <RFALSE>)>
-		       <TELL CTHEI 
+		       <TELL CTHEI
 " shakes her head. \"Keep it, dearie.\"" CR>
 		      <RTRUE>)>
 		<RFALSE>)
@@ -147,10 +147,10 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		       <DIN-DROWNS>
 		       <RTRUE>)>
 		<ASK-BWOMAN-ABOUT ,PRSI>
-		<RTRUE>)			     
+		<RTRUE>)
 	       (<VERB? EXAMINE>
 		<COND (<ZERO? ,RAID?>
-		       <TELL 
+		       <TELL
 "You get the feeling that she's been selling crumbs on this same bench, year after year, since well before you were born. Her face is lined with care for her feathered charges, who perch on her round shoulders without fear." CR>
 		       <RTRUE>)>
 		<TELL
@@ -177,7 +177,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		<RFALSE>)>>
 
 <ROUTINE BAD-COO ()
-	 <TELL 
+	 <TELL
 "A threatening coo from the " D ,PIGEONS ,CHANGES>
 	 <RTRUE>>
 
@@ -210,7 +210,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		<TELL CTHE ,BWOMAN
 " scowls. \"Pay attention, ducky! I told ye once already.\"" CR>
 		<RTRUE>)>
-	 
+
        ; "Check list of interesting subjects."
 
 	 <SET V <VISIBLE? .OBJ>>
@@ -229,10 +229,10 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 			       	      <TELL ".\"" CR>
 			       	      <RTRUE>)>
 			       <TELL ",\" replies the " D ,BWOMAN ,PERIOD>
-		               <RTRUE>)>)>
+			       <RTRUE>)>)>
 		 <COND (<DLESS? CNT 1>
 			<RETURN>)>>
-	 
+
        ; "Default for other items she might know about."
 
 	 <COND (<EQUAL? .OBJ ,WRISTWATCH>
@@ -246,10 +246,10 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		<MAKE .OBJ ,TOLD>
 		<TELL CTHE ,BWOMAN>
 		<COND (<EQUAL? ,RUBYROOM ,BROAD-WALK>
-		       <TELL 
+		       <TELL
 " gives you a sad smile. \"Not to worry, dear,\" she sighs. \"Ye'll get it back by and by.\"" CR>
 		       <RTRUE>)>
-		<TELL 
+		<TELL
 " peers at you closely. \"'Ave ye seen one?\" she whispers. \"Wouldn't let it out o' my sight if I was you.\"" CR>
 		<RTRUE>)
 	       (<EQUAL? .OBJ ,MEEP>
@@ -258,7 +258,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		<COND (<EQUAL? ,RUBYROOM ,BROAD-WALK>
 		       <TELL " giggles. \"Fast, ain't he?\"" CR>
 		       <RTRUE>)>
-		<TELL 
+		<TELL
 " gives you a sharp look, but doesn't reply." CR>
 		<RTRUE>)
 	       (<OR <T? .V>
@@ -281,9 +281,9 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		       <RTRUE>)>
 	 	<TELL ",\" shrugs the " D ,BWOMAN ,PERIOD>
 		<RTRUE>)>
-	 
+
        ; "Default for all other cases."
-	 
+
 	 <COND (<PROB 50>
 		<SET Q T>
 		<TELL CTHE ,BWOMAN " scowls. ">)>
@@ -293,7 +293,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		<TELL ".\"" CR>
 		<RTRUE>)>
 	 <TELL ",\" scowls the " D ,BWOMAN ,PERIOD>
-	 <RTRUE>>	 
+	 <RTRUE>>
 
 <GLOBAL BWOMAN-SUBJECTS:TABLE
 	<PLTABLE
@@ -340,7 +340,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 	 <PTABLE BWOMAN
 "Me?\" The woman laughs and gestures at the pigeons. \"Here's all there is to know about me">
 	 <PTABLE GOON
-"Shh!\" The old woman shudders. \"Ye musn't speak o' such things">>> 
+"Shh!\" The old woman shudders. \"Ye musn't speak o' such things">>>
 
 "*** GOON ***"
 
@@ -350,7 +350,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 	(CAPACITY 20)
 	(SYNONYM CORPSE CADAVER STIFF BODY SORCERER DEITY WABEWALKER
 	 	 REMAINS)
-        (ADJECTIVE ANCIENT SHRUNKEN DECOMPOSED)
+	(ADJECTIVE ANCIENT SHRUNKEN DECOMPOSED)
 	(ACTION GOON-F)>
 
 <ROUTINE GOON-F ("OPTIONAL" (CONTEXT <>) "AUX" R G)
@@ -397,7 +397,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		<COND (<AND <T? .R>
 			    <T? .G>>
 		     ; <SETG P-IT-OBJECT ,RBOOT>
-		       <TELL 
+		       <TELL
 ,PA "pair of boots, one red and one green, completes the ghastly wardrobe">)
 		      (<T? .R>
 		       <ONE-CLAD ,RBOOT>)
@@ -482,7 +482,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-   
+
 <ROUTINE BANDAGE-STOPS-YOU ()
 	 <SETG P-IT-OBJECT ,BANDAGE>
 	 <TELL CTHE ,P-IT-OBJECT " is holding it tightly shut." CR>
@@ -538,7 +538,7 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 		       <TELL CTHEI>
 		       <COND (<VERB? SHOW>
 			      <COND (<IS? ,PRSO ,WORN>
-				     <TELL " glances at " THEO 
+				     <TELL " glances at " THEO
 " you're wearing, but shows no interest." CR>
 				     <RTRUE>)>
 			      <TELL " confiscates ">)
@@ -550,23 +550,23 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 			      <RTRUE>)
 			     (<PRSO? CREDIT-CARD>
 			      <VANISH>
-			      <TELL 
+			      <TELL
 " and checks it against a list of delinquent accounts">
 			      <SOLEMNLY>
-			      <TELL 
+			      <TELL
 ", rips the card in half and throws the pieces in the river." CR>
 			      <RTRUE>)
 			     (<PRSO? SCOIN>
 			      <VANISH>
-			      <TELL 
-", peers at it carefully and compares it to a " D ,BCOIN 
+			      <TELL
+", peers at it carefully and compares it to a " D ,BCOIN
 " given to him by one of the " D ,SHADES ,PTHE "difference is obvious">
 			      <SOLEMNLY>
-			      <TELL 
+			      <TELL
 " and tosses your coin into the river." CR>
 			      <RTRUE>)>
 		       <MOVE ,PRSO ,HERE>
-		       <TELL 
+		       <TELL
 ", glances at it briefly and tosses it onto the " D ,BEACH ,PERIOD>
 		       <RTRUE>)
 		      (<VERB? PUT PUT-ON EMPTY-INTO>
@@ -629,19 +629,19 @@ D ,BAG " and a " D ,SCOIN " for you." CR>
 <ROUTINE STYX-TRIP ()
 	 <TELL " and nods at you solemnly." CR>
 	 <VANISH>
-	 <EXIT-DORY>	       
+	 <EXIT-DORY>
 	 <COND (<EQUAL? ,STICKS 3 4>
 		<I-STYX>)>
 	 <SETG STICKS 10>
 	 <MOVE ,DORY ,ON-BEACH>
 	 <MAKE ,DORY ,TOUCHED>
 	 <REMOVE ,SHADES>
-	 <TELL CR CTHEI 
+	 <TELL CR CTHEI
 " pushes away from the beach.|
 |
 Planes of mist close in around the dory, drawing it deeper into the gloom. The only sound is the rhythmic slurp of the oar as it plies the dark, oily water.">
 	 <CARRIAGE-RETURNS>
-	 <TELL 
+	 <TELL
 "A vague outline emerges beyond the helm. It slowly resolves into a spit of sand, damp and cheerless in the surrounding murk" ,PCR CTHEI
 " swings the dory around and lands it with barely a jolt. ">
 	 <ONE-BY-ONE>
@@ -703,7 +703,7 @@ Planes of mist close in around the dory, drawing it deeper into the gloom. The o
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		      
+
 <ROUTINE GIRL-F ("OPTIONAL" (CONTEXT <>) "AUX" X)
 	 <UNMAKE ,GIRL ,SEEN>
 	 <COND (<THIS-PRSI?>
@@ -713,7 +713,7 @@ Planes of mist close in around the dory, drawing it deeper into the gloom. The o
 		       <COND (<PRSO? PARASOL>
 			      <MOVE ,PRSO ,PRSI>
 			      <MAKE ,PRSI ,CHILLY>
-			      <TELL	       
+			      <TELL
 "'s mouth opens into a little \"o\" at the magnificence of your gift. She humbly ">
 			      <COND (<T? .X>
 				     <MOVE .X ,PLAYER>
@@ -741,14 +741,14 @@ Planes of mist close in around the dory, drawing it deeper into the gloom. The o
 					    <TELL "accepting ">)
 					   (T
 					    <MOVE .X ,PLAYER>
-					    <TELL "exchanging " THE .X 
-						  " for ">)>)    
+					    <TELL "exchanging " THE .X
+						  " for ">)>)
 				    (<EQUAL? .X <> ,PARASOL>
 				     <TELL " accepts ">)
 				    (T
 				     <MOVE .X ,PLAYER>
 				     <TELL " exchanges " THE .X " for ">)>
-			      <TELL THEO 
+			      <TELL THEO
 " with a gracious bow. Her fingers explore the creases in the paper, bending them this way and that. Then, with a few deft maneuvers, she refolds the sheet to its original shape and ">
 			      <COND (<IN? ,PARASOL ,PRSI>
 				     <MOVE ,CRANE ,PLAYER>
@@ -784,7 +784,7 @@ D .X " for herself." CR>
 			      <TELL "it">)>
 		       <TELL " and hands it back to you">
 		       <SEE-TWINKLE?>
-		       <RTRUE>)			       
+		       <RTRUE>)
 		      (<VERB? SHOW>
 		       <TELL CTHEI>
 		       <COND (<PRSO? PARASOL>
@@ -796,7 +796,7 @@ D .X " for herself." CR>
 			      <PRINT ,PERIOD>
 			      <RTRUE>)
 			     (<NOT <IN? ,PARASOL ,PRSI>>
-			      <BROLLY-BETTER>			      
+			      <BROLLY-BETTER>
 			      <RTRUE>)>
 		       <TELL " glances at " THEO
 			     ", but exhibits only polite interest">
@@ -826,7 +826,7 @@ D .X " for herself." CR>
 			      <RTRUE>)>
 		       <TELL " and tosses it back">
 		       <COND (<VISIBLE? ,PARASOL>
-			      <TELL 
+			      <TELL
 ", her eyes hardly leaving the " D ,PARASOL>)>
 		       <PRINT ,PERIOD>
 		       <RTRUE>)>
@@ -893,7 +893,7 @@ D .X " for herself." CR>
 
 <ROUTINE EYES-BRIGHTEN ()
 	 <MAKE ,GIRL ,TOUCHED>
-	 <TELL 
+	 <TELL
 "'s eyes brighten with surprise when she sees the " D ,PRSO ". \"">
 	 <HLIGHT ,H-ITALIC>
 	 <TELL "Origami">
@@ -910,14 +910,14 @@ D .X " for herself." CR>
 
 <ROUTINE BROLLY-BETTER ()
 	 <COND (<VISIBLE? ,PARASOL>
-	        <SETG P-IT-OBJECT ,PARASOL>
+		<SETG P-IT-OBJECT ,PARASOL>
 		<BROLLY-INTEREST>)
 	       (<VERB? GIVE>
 		<TELL " is too timid to take " THEO>)
 	       (T
 		<TELL " gives " THEO " a timid glance">)>
 	 <PRINT ,PERIOD>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <ROUTINE BROLLY-INTEREST ()
 	 <TELL " isn't as interested in " THEO
@@ -942,7 +942,7 @@ D .X " for herself." CR>
 	(DESCFCN DESCRIBE-BOY)
 	(GENERIC GENERIC-KID-F)
 	(ACTION BOY-F)>
-	 
+
 <ROUTINE GENERIC-KID-F (TBL)
 	 <COND (<IS? ,HERE ,WINDY>
 		<RETURN ,BOY>)
@@ -961,7 +961,7 @@ D .X " for herself." CR>
 		      (T
 		       <TELL "young ">)>
 		<TELL "boy sits nearby, listening to a pair of " D ,PHONES
-" and idly blowing " D ,SBUBBLE "s. There's a dish full of " 
+" and idly blowing " D ,SBUBBLE "s. There's a dish full of "
 D ,SOAPY-WATER " by his side">
 		<COND (<T? ,IN-DISH?>
 		       <TELL ", in which you're now standing">)>
@@ -973,7 +973,7 @@ D ,SOAPY-WATER " by his side">
 <ROUTINE BOY-F ("OPTIONAL" (CONTEXT <>))
 	 <COND (<THIS-PRSI?>
 		<COND (<VERB? GIVE SHOW FEED>
-		       <TELL			
+		       <TELL
 "The boy is too preoccupied with his music to notice your offer." CR>
 		       <RTRUE>)>
 		<RFALSE>)
@@ -991,7 +991,7 @@ D ,SOAPY-WATER " by his side">
 		<ANNOY-BOY>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
-		<TELL CTHE ,BOY " doesn't respond" ,AS-IF 
+		<TELL CTHE ,BOY " doesn't respond" ,AS-IF
 		      "he can't hear you." CR>
 		<RFATAL>)
 	       (T
@@ -1046,7 +1046,7 @@ D ,SOAPY-WATER " by his side">
 	       (<HANDLE-BOY?>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
-		<BOY-NO-HEED>		
+		<BOY-NO-HEED>
 		<RFATAL>)
 	       (<INTBL? ,PRSA ,MOVEVERBS ,NMVERBS>
 		<TELL "Forget it. This kid is ">
@@ -1061,7 +1061,7 @@ D ,SOAPY-WATER " by his side">
 		<COND (<T? ,IN-DISH?>
 		       <EXIT-DISH-FIRST>
 		       <RTRUE>)>
-		<TELL CTHEO 
+		<TELL CTHEO
 " picks you off his clothes like an insect, and tosses you absently over his shoulder">
 		<THROW-TO-CHASM>
 		<RFATAL>)
@@ -1072,7 +1072,7 @@ D ,SOAPY-WATER " by his side">
 	 <SAY-BOY-BOPS>
 	 <TELL ", but pays no attention." CR>
 	 <RTRUE>>
-								        
+
 <ROUTINE HURT-GIANT ()
 	 <TELL CTHE ,GIANT
 " brushes at you absently, like a mosquito">
@@ -1095,14 +1095,14 @@ D ,SOAPY-WATER " by his side">
 	 <SETG P-HIM-OBJECT ,NOT-HERE-OBJECT>
 	 <TELL CR "You painfully regain your footing." CR>
 	 <RTRUE>>
-		       
+
 <ROUTINE HEAR-GIANT-MUSIC ()
-	 <TELL 
+	 <TELL
 "You hear faint, rhythmic music coming from the " D ,PHONES ,PERIOD>
 	 <RTRUE>>
 
 <ROUTINE RAPE-SCOUT ()
-	 <TELL 
+	 <TELL
 "There's a name for people who do things like that to boys." CR>
 	 <RTRUE>>
 
@@ -1121,7 +1121,7 @@ D ,SOAPY-WATER " by his side">
 			<RETURN>)
 		       (<DLESS? PTR 0>
 			<RFALSE>)>>
-	 <RETURN .OBJ>> 
+	 <RETURN .OBJ>>
 
 <GLOBAL ALLBIRDS:TABLE
 	<PTABLE MCRANE BAD-CRANE OCRANE CRANE DMEEP MAGPIE MEEP>>
@@ -1145,21 +1145,21 @@ D ,SOAPY-WATER " by his side">
 		<MAKE ,MEEP ,SEEN>
 		<TELL ,CTHEMEEP>
 		<COND (<T? ,APPETITE>
-		       <SAY-PECKS <>>   		       
+		       <SAY-PECKS <>>
 		       <RTRUE>)>
 		<TELL <PICK-NEXT <GET ,MEEP-TABLE 3>>>
 		<PRINTC 46>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-		
+
 <ROUTINE OPEN-FOR-MEEP (X)
 	 <TELL "You'd have to open " THE .X
 	       " for the " D ,MEEP " first." CR>
 	 <RTRUE>>
 
 <ROUTINE AFTER-YOU ()
-	 <TELL ,CTHEMEEP 
+	 <TELL ,CTHEMEEP
 "cocks its head as if to say, \"After you.\"" CR>
 	 <RTRUE>>
 
@@ -1235,7 +1235,7 @@ D ,SOAPY-WATER " by his side">
 		      (<AND <VERB? SGIVE SFEED>
 			    <PRSO? ME>>
 		       <PERFORM ,V?DROP ,PRSI>
-		       <RFATAL>)	       
+		       <RFATAL>)
 		      (<VERB? EXAMINE WATCH LOOK-ON LOOK-UNDER LOOK-BEHIND
 			      LOOK-DOWN LOOK-UP LOOK-OUTSIDE LOOK SEARCH
 			      COUNT READ>
@@ -1320,7 +1320,7 @@ D ,SOAPY-WATER " by his side">
 			      <CANT-FROM-HERE>
 			      <RTRUE>)
 			     (<NOT <PRSO? BAG>>
-			      <NOT-LIKELY ,PRSI 
+			      <NOT-LIKELY ,PRSI
 				   "would find that very appetizing">
 			      <RTRUE>)>
 		       <GIVE-PRSO-TO-MEEP>
@@ -1350,9 +1350,9 @@ D ,SOAPY-WATER " by his side">
 			     (<T? .X>
 			      <MOVE .X <LOC ,PRSI>>
 			      <TELL "drops " THE .X ", ">)>
-		       <TELL "retrieves " THEO 
+		       <TELL "retrieves " THEO
 			     " and drops it at your feet." CR>
-		       <RTRUE>)>				    
+		       <RTRUE>)>
 		<RFALSE>)
 	       (<AND <VERB? TELL>
 		     <T? ,P-CONT>>
@@ -1363,7 +1363,7 @@ D ,SOAPY-WATER " by his side">
 		       <TELL ,CTHEMEEP>
 		       <BUSY-EATING>
 		       <RFATAL>)>
-		<RFALSE>)	       
+		<RFALSE>)
 	       (<VERB? TELL-ABOUT ASK-ABOUT ASK-FOR>
 		<COND (<PRSI? PRSO ME>
 		       <PERPLEXED ,PRSO>
@@ -1377,12 +1377,12 @@ D ,SOAPY-WATER " by his side">
 		<I-TMEEP <>>
 		<RTRUE>)
 	       (<VERB? EXAMINE>
-		<TELL ,CTHEMEEP 
+		<TELL ,CTHEMEEP
 "resembles a gray pheasant, lean and streamlined, with bright eyes and a long tail splashed with color">
 		<COND (<T? .X>
 		       <TELL ". It's holding " A .X " in its beak">)
 		      (<T? ,APPETITE>
-		       <TELL 
+		       <TELL
 ". Right now it's pecking crumbs out of the bag with great contentment">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
@@ -1457,10 +1457,10 @@ D ,SOAPY-WATER " by his side">
 		       <TELL "drops " THE .X " and ">)>
 		<TELL "nods brightly.|
 |
-You hold " D ,BREATH 
+You hold " D ,BREATH
 " as a gray torpedo scoots under the jeeps and disappears into the " D ,SBUNK
 ,PTHE "busy technicians fail to notice the fearless creature plucking the key from its "
-D ,PADLOCK ,PCR "Triumphantly, the " D ,MEEP 
+D ,PADLOCK ,PCR "Triumphantly, the " D ,MEEP
 " prances back to your side and deposits the key at your feet." CR>
 		<UPDATE-SCORE 3>
 		<RTRUE>)
@@ -1513,7 +1513,7 @@ D ,PADLOCK ,PCR "Triumphantly, the " D ,MEEP
 		       <TELL "drops " THE .X ", ">)>
 		<TELL "picks up " THE .OBJ " and drops it at your feet." CR>
 		<RTRUE>)>
-	 <TELL "glances at " THE .OBJ 
+	 <TELL "glances at " THE .OBJ
 ", turns back to you and cocks its head as if to say, \"So?\"" CR>
 	 <RTRUE>>
 
@@ -1522,7 +1522,7 @@ D ,PADLOCK ,PCR "Triumphantly, the " D ,MEEP
 <OBJECT DOG
 	(LOC W100)
 	(DESC "German shepherd")
-	(FDESC 
+	(FDESC
 "A great, big German shepherd is curled up against the blockhouse.")
 	(FLAGS LIVING PERSON TRYTAKE NOALL)
 	(SYNONYM DOG WATCHDOG SHEPHERD MUTT POOCH CANINE ANIMAL
@@ -1546,7 +1546,7 @@ D ,PADLOCK ,PCR "Triumphantly, the " D ,MEEP
 		      (<VERB? GIVE FEED>
 		       <MOVE ,PRSO ,W100>
 		       <UNMAKE ,PRSI ,SEEN>
-		       <TELL "You deposit " THEO 
+		       <TELL "You deposit " THEO
 			     " under the sleeping dog's nose." CR>
 		       <RTRUE>)
 		      (<VERB? THROW THROW-OVER>
@@ -1556,14 +1556,14 @@ D ,PADLOCK ,PCR "Triumphantly, the " D ,MEEP
 			      <TELL " over ">)
 			     (T
 			      <TELL " at ">)>
-		       <TELL 
+		       <TELL
 "the sleeping dog. Luckily, your pitching arm is no better than your sense of diplomacy, and " THE ,PRSO
 " falls short of its target by several feet." CR>
 		       <RTRUE>)>
 		<RFALSE>)
 	       (<VERB? EXAMINE WATCH>
-		<TELL 
-"You're looking at a hundred and ten pounds of hard, flea-bitten muscle, leashed to the " D ,BHOUSE 
+		<TELL
+"You're looking at a hundred and ten pounds of hard, flea-bitten muscle, leashed to the " D ,BHOUSE
 " with a chain of the type used to moor ocean liners. Good thing it's sleeping." CR>
 		<RTRUE>)
 	       (<INTBL? ,PRSA ,TALKVERBS ,NTVERBS>
@@ -1580,7 +1580,7 @@ D ,PADLOCK ,PCR "Triumphantly, the " D ,MEEP
 		<WAKE-DOG T>
 		<RTRUE>)
 	       (<VERB? HIT CUT RIP KILL KICK>
-		<TELL 
+		<TELL
 "Boldly, fearlessly, you march up to the dozing shepherd and draw back ">
 		<COND (<VERB? KICK>
 		       <TELL D ,FEET>)
@@ -1633,12 +1633,12 @@ D ,PADLOCK ,PCR "Triumphantly, the " D ,MEEP
 		<AT-YOUR-TOUCH>)
 	       (T
 		<AT-YOUR-VOICE>)>
-	 <TELL 
+	 <TELL
 "It peers at you for a moment, yawns and drifts back to sleep.|
 |
 You wipe the sweat from your brow" ,PCR>
 	 <ITALICIZE "Click.">
-	 <TELL 
+	 <TELL
 " A set of long, white fangs snaps together, an inch shy of your left leg. Looks as if sleepytime is over." CR>
 	 <DOG-ALERT>
 	 <RTRUE>>
@@ -1651,8 +1651,8 @@ The 110-pound \"puppy\" strains against its chain, opens its toothy maw and star
 	 <AKC>
 	 <COND (<HEAR-BAKER?>
 		<HEAR-BARKING>)>
-	 <TELL CR 
-"You stumble backwards to hide as the " D ,SLIGHT 
+	 <TELL CR
+"You stumble backwards to hide as the " D ,SLIGHT
 " sweeps across the road." CR>
 	 <HOLD-IT>
 	 <KINDA-SPY>
@@ -1680,7 +1680,7 @@ The 110-pound \"puppy\" strains against its chain, opens its toothy maw and star
 		<VERY-CLOSE>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>>	 
+		<RFALSE>)>>
 
 <ROUTINE VERY-CLOSE ()
 	 <TELL
@@ -1722,26 +1722,26 @@ The 110-pound \"puppy\" strains against its chain, opens its toothy maw and star
 			      <RFALSE>)>
 		       <TELL CTHEI>
 		       <COND (<IS? ,PRSO ,LIGHTED>
-			      <TELL			       
+			      <TELL
 " winces with pain, and covers its eye with an open claw." CR>
 			      <RTRUE>)>
-		       <TELL " scowls at " THEO 
+		       <TELL " scowls at " THEO
 			     " with profound disinterest." CR>
 		       <RTRUE>)
 		      (<VERB? GIVE FEED>
 		       <TELL CTHEI>
 		       <COND (<IS? ,PRSO ,LIGHTED>
-			      <TELL		       
+			      <TELL
 " growls and backs away as you approach it with " THEO ,PERIOD>
 		       	      <RTRUE>)
 			     (<PRSO? GARLIC ICE SKINK>
 			      <VANISH>
-			      <TELL " crams " THEO 
+			      <TELL " crams " THEO
 				    " into its mouth and belches." CR>
 			      <RTRUE>)>
 		       <MOVE ,PRSO ,OSSUARY>
 		       <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
-		       <TELL " clutches " THEO			     
+		       <TELL " clutches " THEO
 " in its claws, glares at it briefly and flings it off into the darkness with a snarl." CR>
 		       <RTRUE>)
 		      (<VERB? THROW THROW-OVER PUSH-TO>
@@ -1761,7 +1761,7 @@ The 110-pound \"puppy\" strains against its chain, opens its toothy maw and star
 				     <TELL CR "You hear a faint ">
 				     <ITALICIZE "pop">
 				     <TELL " as the " D ,PRSO
-				           " strikes the ground." CR>
+					   " strikes the ground." CR>
 				     <SAY-IF-HERE-LIT>)>
 			      <RTRUE>)>
 		       <TELL ", snatches it up ">
@@ -1775,19 +1775,19 @@ The 110-pound \"puppy\" strains against its chain, opens its toothy maw and star
 		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (<VERB? WAVE-AT BOW>
-		<TELL CTHEO 
+		<TELL CTHEO
 " responds to your gesture with a contemptuous snarl." CR>
 		<RTRUE>)
 	       (<VERB? TOUCH KNOCK KICK SQUEEZE MOVE PUSH SHAKE
 		       ADJUST SWING>
 		<VERY-CLOSE>
-	        <RTRUE>)
+		<RTRUE>)
 	       (<VERB? HIT KILL>
 		<COND (<EQUAL? ,PRSI <> ,HANDS ,FEET>
 		       <VERY-CLOSE>
 		       <RTRUE>)
 		      (<IS? ,PRSI ,LIGHTED>
-		       <TELL CTHEO 
+		       <TELL CTHEO
 " backs out of your reach, snarling with fear." CR>
 		       <RTRUE>)>
 		<TELL CTHEO " grapples " THEI " away from you ">
@@ -1813,7 +1813,7 @@ The 110-pound \"puppy\" strains against its chain, opens its toothy maw and star
 
 <ROUTINE THROWS-BACK (OBJ)
 	 <MOVE .OBJ ,HERE>
-	 <TELL 
+	 <TELL
 "and flings it back at you with a roar. You leap back as it skitters"
 ,AGROUND ,PERIOD>
 	 <RTRUE>>
@@ -1871,20 +1871,20 @@ The 110-pound \"puppy\" strains against its chain, opens its toothy maw and star
 		<I-OPPIE <>>
 		<RTRUE>)
 	       (<VERB? EXAMINE>
-		<TELL CTHEO " near the " D ,SHELTER 
+		<TELL CTHEO " near the " D ,SHELTER
 " is drawn and haggard; it looks as if he hasn't slept in days." CR>
 		<COND (<NOT <IS? ,OPPIE ,BORING>>
 		       <MAKE ,OPPIE ,BORING>
 		       <SETG DO-WINDOW <GET ,QUOTES ,WHITMAN>>
 		       <RFATAL>)>
 		<RTRUE>)>
-	 <RETURN <HANDLE-GIS?>>> 
-	       
+	 <RETURN <HANDLE-GIS?>>>
+
 <OBJECT GIS
 	(LOC S100)
 	(DESC "GIs")
 	(FLAGS NODESC LIVING PERSON PLURAL)
-	(SYNONYM GIS GI DRIVERS DRIVER SOLDIER SOLDIERS TROOP TROOPS 
+	(SYNONYM GIS GI DRIVERS DRIVER SOLDIER SOLDIERS TROOP TROOPS
 	 	 MAN MISTER MEN)
 	(ADJECTIVE MILITARY NERVOUS YOUNG NERVOUS\-LOOKING)
 	(GENERIC GENERIC-GI-F)
@@ -1902,14 +1902,14 @@ The 110-pound \"puppy\" strains against its chain, opens its toothy maw and star
 		<TELL
 " are obviously under a lot of strain. Their ">
 		<COND (<L? ,MINUTES 28>
-		       <TELL 
+		       <TELL
 "fingers drum impatiently on their steering wheels, and their ">)>
-		<TELL "eyes dart back and forth between the " 
+		<TELL "eyes dart back and forth between the "
 D ,SBUNK " and the " D ,HORIZON ". One of them is training a " D ,BINOS
 " on the road leading south." CR>
 		<RTRUE>)>
 	 <RETURN <HANDLE-GIS?>>>
-		
+
 <ROUTINE HANDLE-GIS? ()
 	 <COND (<THIS-PRSI?>
 		<COND (<VERB? GIVE SHOW FEED>
@@ -1932,7 +1932,7 @@ D ,SBUNK " and the " D ,HORIZON ". One of them is training a " D ,BINOS
 	 <COND (<NOT <IS? ,GIS ,SEEN>>
 		<MAKE ,GIS ,SEEN>
 		<TELL " starts">
-	        <AT-YOUR-VOICE>
+		<AT-YOUR-VOICE>
 	 	<TELL "\"Who said that?\" he cries.|
 |
 The ">
@@ -1941,7 +1941,7 @@ The ">
 		      (T
 		       <TELL "surrounding ">)>
 		<TELL D ,GIS
-" snap to alert attention, peering into the gloom. Nobody moves for a long moment. Then, one by one, they begin to relax... all but the closest GI, who stares in the " D ,INTDIR 
+" snap to alert attention, peering into the gloom. Nobody moves for a long moment. Then, one by one, they begin to relax... all but the closest GI, who stares in the " D ,INTDIR
 " of the shed nervously." CR>
 		<RFATAL>)>
 	  <TELL " points in your " D ,INTDIR>

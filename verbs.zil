@@ -46,9 +46,9 @@
 ; <ROUTINE GET-THING (OBJ)
 	 <COND (<NOT <GOT? .OBJ>>
 		<MOVE .OBJ ,PLAYER>
-	        <MAKE .OBJ ,TOUCHED>
-	        <UNMAKE .OBJ ,NODESC>
-	        <UNMAKE .OBJ ,NOALL>
+		<MAKE .OBJ ,TOUCHED>
+		<UNMAKE .OBJ ,NODESC>
+		<UNMAKE .OBJ ,NOALL>
 		<COND (<GETP .OBJ ,P?VALUE>
 		       <PUTP .OBJ ,P?VALUE 0>
 		       <INC SCORE>)>)>
@@ -79,7 +79,7 @@
 		<TELL D .OBJ>)
 	       (T
 		<TELL "<>">)>>
-	 
+
 ; <GLOBAL IT-DIRS:TABLE
 	<PTABLE P?NORTH P?NE P?EAST P?SE P?SOUTH P?SW P?WEST P?NW
 		P?UP P?DOWN P?IN P?OUT>>
@@ -89,11 +89,6 @@
 		<TELL "<>">)
 	       (T
 		<PRINTB .WORD>)>
-	 <RTRUE>>
-
-<ROUTINE V-$REFRESH ()
-	 <CLEAR -1>
-	 <INIT-STATUS-LINE>
 	 <RTRUE>>
 
 <GLOBAL VERBOSITY:NUMBER 1> "0 = super, 1 = brief, 2 = verbose."
@@ -135,7 +130,7 @@
 			<RETURN>)
 		       (<T? <BAND .DIRS .BIT>>
 			<INC NUM>)>
-		 <SET BIT <* .BIT 2>>> 
+		 <SET BIT <* .BIT 2>>>
 	 <TELL "[Visible exit">
 	 <COND (<G? .NUM 1>
 		<TELL "s">)>
@@ -150,12 +145,12 @@
 			<COND (<T? .1ST?>
 			       <SET 1ST? <>>
 			       <TELL .STR>)
-		              (T
+			      (T
 			       <COND (<EQUAL? .X .NUM>
-			              <TELL " and " .STR>
+				      <TELL " and " .STR>
 				      <RETURN>)
-			             (T
-			              <TELL ", " .STR>)>)>)>
+				     (T
+				      <TELL ", " .STR>)>)>)>
 		 <INC INDEX>
 		 <SET BIT <* .BIT 2>>>
 	 <TELL ".]" CR>
@@ -164,7 +159,7 @@
 <ROUTINE V-DIAGNOSE ()
 	 <COND (<WRONG-WINNER?>
 		<RFATAL>)>
-	 <TELL 
+	 <TELL
 "You feel much as you'd expect, considering what you've been through." CR>
 	 <RTRUE>>
 
@@ -173,11 +168,11 @@
 <ROUTINE V-INVENTORY ("AUX" (P? <>) (WORN? <>) OBJ NXT OLDIT)
 	 <COND (<WRONG-WINNER?>
 		<RFATAL>)>
-	 
+
 	 <SET OLDIT ,P-IT-OBJECT>
 	 <SET P? <FIRST? ,POCKET>>
 	 <REMOVE ,POCKET>
-	 
+
        ; "Move all worn objects to WEARING for separate sentence."
 
 	 <SET OBJ <FIRST? ,PLAYER>>
@@ -189,7 +184,7 @@
 			<SET WORN? T>
 			<MOVE .OBJ ,WEARING>)>
 		 <SET OBJ .NXT>>
-	 	 
+
 	 <SET OBJ <FIRST? ,PLAYER>>
 	 <TELL "You're ">
 	 <COND (<T? .OBJ>
@@ -241,7 +236,7 @@
 		<TELL "pocket is empty">)>
 	 <TELL ,PERIOD>
 	 <MOVE-ALL ,WEARING ,PLAYER>
-	 <MOVE ,POCKET ,PLAYER>	 
+	 <MOVE ,POCKET ,PLAYER>
 	 <SETG P-IT-OBJECT .OLDIT>
 	 <RTRUE>>
 
@@ -266,7 +261,7 @@
 	 <CRLF>
 	 <QUIT>
 	 <RTRUE>>
-		      
+
 <ROUTINE V-RESTART ()
 	 <COND (<WRONG-WINNER?>
 		<RFATAL>)>
@@ -291,21 +286,21 @@
 	 <CRLF>
 	 <REPEAT ()
 		 <TELL CR "[Please type YES or NO.] >">
-	         <PUTB ,YES-LEXV 0 4>
+		 <PUTB ,YES-LEXV 0 4>
 		 <READ ,YES-INBUF ,YES-LEXV>
-	         <SET WORD <GET ,YES-LEXV ,P-LEXSTART>>
-	         <COND (<ZERO? <GETB ,YES-LEXV ,P-LEXWORDS>>
-		        T)
-	               (<T? .WORD>
+		 <SET WORD <GET ,YES-LEXV ,P-LEXSTART>>
+		 <COND (<ZERO? <GETB ,YES-LEXV ,P-LEXWORDS>>
+			T)
+		       (<T? .WORD>
 			<COND (<OR <EQUAL? .WORD ,W?Y ,W?YES ,W?YUP>
 				   <EQUAL? .WORD ,W?OKAY ,W?OK ,W?AYE>
 				   <EQUAL? .WORD ,W?SURE ,W?AFFIRMATIVE
 					    ,W?POSITIVE>
 				   <EQUAL? .WORD ,W?POSITIVELY>>
-		               <RTRUE>)
-	                      (<OR <EQUAL? .WORD ,W?N ,W?NO ,W?NOPE>
+			       <RTRUE>)
+			      (<OR <EQUAL? .WORD ,W?N ,W?NO ,W?NOPE>
 				   <EQUAL? .WORD ,W?NAY ,W?NAW ,W?NEGATIVE>>
-		               <RFALSE>)>)>>>
+			       <RFALSE>)>)>>>
 
 <ROUTINE V-RESTORE ("AUX" X)
 	 <COND (<WRONG-WINNER?>
@@ -326,7 +321,7 @@
 	 <PUTB ,OOPS-INBUF 1 0> ; "Retrofix #50"
 	 <SET X <SAVE>>
 	 <COND (<ZERO? .X>
-	        <FAILED "SAVE">
+		<FAILED "SAVE">
 		<RFATAL>)
 	       (<EQUAL? .X 1>
 		<COMPLETED "SAVE">
@@ -338,29 +333,27 @@
 
 <ROUTINE COMPLETED (STR)
 	 <TELL CR "[" .STR " completed.]" CR>
-	 <INIT-STATUS-LINE>	 	 
+	 <V-$REFRESH <>>
 	 <COND (<ZERO? ,VERBOSITY>
 		<CRLF>)>
 	 <RTRUE>>
 
 <ROUTINE FAILED (STR)
 	 <TELL CR "[" .STR " failed.]" CR>
-	 <INIT-STATUS-LINE>
+	 <V-$REFRESH <>>
 	 <COND (<ZERO? ,VERBOSITY>
 		<CRLF>)>
 	 <RTRUE>>
-
-
 
 <ROUTINE V-SCORE ()
 	 <COND (<WRONG-WINNER?>
 		<RFATAL>)>
 	 <TELL "[Your score is " N ,SCORE " point">
 	 <COND (<NOT <1? ,SCORE>>
-	        <TELL "s">)>
+		<TELL "s">)>
 	 <TELL " out of 100, in " N ,MOVES " move">
 	 <COND (<NOT <EQUAL? ,MOVES 1>>
-	        <TELL "s">)>
+		<TELL "s">)>
 	 <TELL ". This gives you the rank of ">
 	 <ITALICIZE <COND (<L? ,SCORE 15> "Tourist.")
 	       		  (<L? ,SCORE 50> "Explorer.")
@@ -389,7 +382,7 @@
 <ROUTINE UPDATE-SCORE ("OPTIONAL" (PTS 1) (CR T))
 	 <SETG SCORE <+ ,SCORE .PTS>>
 	 <COND (<EQUAL? ,DO-SCORE? 2>
-	        <RTRUE>)
+		<RTRUE>)
 	       (<T? .CR>
 		<CRLF>)>
 	 <HLIGHT ,H-BOLD>
@@ -406,7 +399,7 @@
 		<TELL CR
 "[NOTE: You can turn score notification on or off at any time with the NOTIFY command.]" CR>)>
 	 <RTRUE>>
-	 
+
 <ROUTINE V-TIME ()
 	 <COND (<WRONG-WINNER?>
 		<RFATAL>)>
@@ -421,16 +414,16 @@
 	 <RTRUE>>
 
 <ROUTINE V-SCRIPT ()
-         <COND (<WRONG-WINNER?>
+	 <COND (<WRONG-WINNER?>
 	       	<RFATAL>)>
 	 <TELL "[Scripting on.]" CR>
 	 <DIROUT ,D-PRINTER-ON>
-	 <TRANSCRIPT "begin">	 
+	 <TRANSCRIPT "begin">
 	 <RTRUE>>
 
 <ROUTINE V-UNSCRIPT ()
 	 <COND (<WRONG-WINNER?>
-	        <RFATAL>)>
+		<RFATAL>)>
 	 <TRANSCRIPT "end">
 	 <DIROUT ,D-PRINTER-OFF>
 	 <TELL "[Scripting off.]" CR>
@@ -464,12 +457,12 @@
 			<PRINTC <GETB 0 .CNT>>)>>
 	 <CRLF>
 	 <RTRUE>>
- 
+
 <ROUTINE FANTASY ()
 	 <HLIGHT ,H-NORMAL>
 	 <TELL "An Interactive Fantasy">
 	 <RTRUE>>
-		
+
 <ROUTINE COPYRIGHT ()
 	 <TELL "Copyright (C)1986 Infocom, Inc. All rights reserved.">
 	 <RTRUE>>
@@ -488,53 +481,30 @@
 	 <RTRUE>>
 
 <ROUTINE V-$VERIFY ()
-         <COND (<WRONG-WINNER?>
+	 <COND (<WRONG-WINNER?>
 		<RFATAL>)
 	     ; (<T? ,PRSO>
-	        <COND (<AND <PRSO? INTNUM>
-		            <EQUAL? ,P-NUMBER 80>>
-	               <TELL N ,SERIAL CR>
+		<COND (<AND <PRSO? INTNUM>
+			    <EQUAL? ,P-NUMBER 80>>
+		       <TELL N ,SERIAL CR>
 		       <RTRUE>)
-	              (T 
+		      (T
 		       <DONT-UNDERSTAND>)>
 		<RTRUE>)>
 	 <V-$ID>
 	 <TELL CR "[Verifying.]" CR>
-	 <COND (<VERIFY> 
+	 <COND (<VERIFY>
 		<TELL CR "[Disk correct.]" CR>
 		<RTRUE>)>
 	 <FAILED "$VERIFY">
 	 <RTRUE>>
-
-; <ROUTINE V-$RECORD ()
-	 <COND (<WRONG-WINNER?>
-		<RFATAL>)
-	       (T
-		<DIROUT 4>
-	        <RTRUE>)>>
-
-; <ROUTINE V-$UNRECORD ()
-	 <COND (<WRONG-WINNER?>
-		<RFATAL>)
-	       (T
-		<DIROUT -4>
-	        <RTRUE>)>>
 
 <ROUTINE V-$COMMAND ()
 	 <COND (<WRONG-WINNER?>
 		<RFATAL>)
 	       (T
 		<DIRIN 1>
-	        <RTRUE>)>>
-
-; <ROUTINE V-$RANDOM ()
-	 <COND (<WRONG-WINNER?>
-		<RFATAL>)
-	       (<NOT <PRSO? INTNUM>>
-		<TELL "[Illegal #RANDOM.]" CR>)
-	       (T
-		<RANDOM <- 0 ,P-NUMBER>>)>
-	 <RTRUE>>
+		<RTRUE>)>>
 
 ; <GLOBAL DEBUG?:FLAG <>>
 
@@ -571,7 +541,7 @@
 	       (T
 		<HACK-HACK "Blowing">)>
 	 <RTRUE>>
-		
+
 <ROUTINE V-LIGHT-WITH ()
 	 <COND (<PRSI? SHARD LAMP>
 		<COND (<PRSI? PRSO>
@@ -583,7 +553,7 @@
 	 <RTRUE>>
 
 <ROUTINE V-BURN-WITH ()
-         <COND (<PRSI? SHARD>
+	 <COND (<PRSI? SHARD>
 		<TELL CTHEI " is phosphorescent. It couldn't possibly ">
 		<PRINTB ,P-PRSA-WORD>
 		<TELL " anything." CR>
@@ -600,7 +570,7 @@
 		<RTRUE>)
 	       (<NOT <IS? ,PRSO ,BUYABLE>>
 		<TELL ,CANT "possibly buy " THEO ,PERIOD>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<AND <EQUAL? ,WINNER ,PLAYER>
 		     <IN? ,PRSO ,POCKET>>
 		<TELL "It's in " D ,POCKET ,PERIOD>
@@ -617,7 +587,7 @@
 		<CANT-SEE-ANY ,PRSO>
 		<RFATAL>)
 	       (<NOT <PRSI? BWOMAN>>
-	        <TELL "It" <PICK-NEXT ,LIKELIES>
+		<TELL "It" <PICK-NEXT ,LIKELIES>
 		      " that " THEI " could sell you anything." CR>
 		<RTRUE>)
 	       (<NOT <IS? ,PRSO ,BUYABLE>>
@@ -675,12 +645,12 @@
 		<COND (<PRSI? CREDIT-CARD>
 		       <NOT-ACCEPTED>)
 		      (T
-		       <TELL "You couldn't charge " THEO 
-		             " with " A ,PRSI ,PERIOD>)>)>
+		       <TELL "You couldn't charge " THEO
+			     " with " A ,PRSI ,PERIOD>)>)>
 	 <RTRUE>>
-		
+
 <ROUTINE NOT-ACCEPTED ()
-         <TELL "Your " D ,CREDIT-CARD " wouldn't be accepted here." CR>
+	 <TELL "Your " D ,CREDIT-CARD " wouldn't be accepted here." CR>
 	 <RTRUE>>
 
 <ROUTINE V-CLEAN ()
@@ -750,13 +720,13 @@
 	 <TELL ,CANT>
 	 <PRINTB ,P-PRSA-WORD>
 	 <TELL " " THEO " with " THEI ,PERIOD>
-	 <RTRUE>>	       
+	 <RTRUE>>
 
 <ROUTINE CANT-OPEN-PRSO ()
 	 <TELL "You couldn't possibly open " A ,PRSO ,PERIOD>
 	 <RTRUE>>
 
-<ROUTINE V-OPEN () 
+<ROUTINE V-OPEN ()
 	 <COND (<NOT <IS? ,PRSO ,OPENABLE>>
 		<CANT-OPEN-PRSO>
 		<RTRUE>)
@@ -766,21 +736,21 @@
 	       (<IS? ,PRSO ,LOCKED>
 		<OBJECT-IS-LOCKED>
 		<RTRUE>)
-               (T
+	       (T
 		<YOU-OPEN>
 		<COND (<IS? ,PRSO ,CONTAINER>
 		       <COND (<OR <NOT <FIRST? ,PRSO>>
-			          <IS? ,PRSO ,TRANSPARENT>>
-		              <RTRUE>)
-		           ; (<AND <SET F <FIRST? ,PRSO>>
-			           <NOT <NEXT? .F>>
-			           <SET STR <GETP .F ,P?FDESC>>>
-		              <TELL CR .STR CR>)
-		             (T
-		              <CRLF>
+				  <IS? ,PRSO ,TRANSPARENT>>
+			      <RTRUE>)
+			   ; (<AND <SET F <FIRST? ,PRSO>>
+				   <NOT <NEXT? .F>>
+				   <SET STR <GETP .F ,P?FDESC>>>
+			      <TELL CR .STR CR>)
+			     (T
+			      <CRLF>
 			      <TELL ,YOU-SEE>
 			      <PRINT-CONTENTS ,PRSO>
-		              <TELL " inside." CR>)>)>)>
+			      <TELL " inside." CR>)>)>)>
 	 <RTRUE>>
 
 <ROUTINE YOU-OPEN ("OPTIONAL" (THING <>))
@@ -850,9 +820,9 @@
 
 <ROUTINE V-CUT ()
 	 <COND (<PRSI? AXE>
-	        <AXE-HURT>
+		<AXE-HURT>
 		<RTRUE>)>
-	 <TELL "You couldn't possibly cut " THEO 
+	 <TELL "You couldn't possibly cut " THEO
 	       " with " THEI ,PERIOD>
 	 <RTRUE>>
 
@@ -867,7 +837,7 @@
 
 <ROUTINE V-RIP ()
 	 <COND (<PRSI? AXE>
-	        <AXE-HURT>
+		<AXE-HURT>
 		<RTRUE>)>
 	 <TELL "You couldn't possibly rip " THEO>
 	 <COND (<NOT <PRSI? HANDS>>
@@ -895,7 +865,7 @@
 	 <TELL ,CANT "drink ">
 	 <COND (<T? .FROM?>
 		<TELL "from ">)>
-	 <TELL D ,NOT-HERE-OBJECT ,PERIOD>	
+	 <TELL D ,NOT-HERE-OBJECT ,PERIOD>
 	 <RTRUE>>
 
 <ROUTINE V-DRINK-FROM ()
@@ -958,7 +928,7 @@
 	 <COND (<OR <T? ,SUITED?>
 		    <HERE? IN-WATER IN-CIST UNDER-WATER IN-SKY ON-BIRD>
 		    <AND <HERE? PROM>
-		         <T? ,IN-DISH?>>
+			 <T? ,IN-DISH?>>
 		    <AND <HERE? IN-ORBIT ON-SAT IN-SKY>
 			 <ZERO? ,SUITED?>>>
 		<TELL CTHEO>
@@ -1040,7 +1010,7 @@
 		<TELL "drift">
 		<COND (<NOT <IS? .OBJ ,PLURAL>>
 		       <TELL "s">)>
-	        <TELL " slowly" ,OUTASITE>
+		<TELL " slowly" ,OUTASITE>
 		<RTRUE>)
 	       (<HERE? IN-SKY ON-BIRD>
 		<COND (<HERE? IN-SKY>
@@ -1115,7 +1085,7 @@
 <ROUTINE LOOK-INTDIR? ("AUX" (PTR 7) TBL X)
 	 <COND (<PRSO? RIGHT LEFT>
 		T)
-	       (<NOT <PRSO? INTDIR>>		   
+	       (<NOT <PRSO? INTDIR>>
 		<RFALSE>)
 	       (T
 		<SET X <GET ,DIRTABLES 0>>
@@ -1140,7 +1110,7 @@
 	 <NOTHING-INTERESTING>
 	 <TELL " in " D ,RIGHT ,PERIOD>
 	 <RTRUE>>
-		 	       
+
 <ROUTINE SEE-DIR (X)
 	 <THIS-IS-IT .X>
 	 <TELL ,YOU-SEE>
@@ -1153,11 +1123,11 @@
 <GLOBAL DIRTABLES:TABLE
 	<PTABLE
 	 <PTABLE P?SW P?SE P?NW P?NE P?WEST P?SOUTH P?EAST P?NORTH>
-	 <PTABLE P?SEE-SW P?SEE-SE P?SEE-NW P?SEE-NE 
+	 <PTABLE P?SEE-SW P?SEE-SE P?SEE-NW P?SEE-NE
 		 P?SEE-W P?SEE-S P?SEE-E P?SEE-N>
-	 <PTABLE P?SEE-SE P?SEE-SW P?SEE-NE P?SEE-NW 
+	 <PTABLE P?SEE-SE P?SEE-SW P?SEE-NE P?SEE-NW
 		 P?SEE-E P?SEE-S P?SEE-W P?SEE-N>>>
-	 
+
 <ROUTINE PRE-EXAMINE ()
 	 <COND (<ZERO? ,LIT?>
 		<TOO-DARK>
@@ -1167,19 +1137,19 @@
 
 <ROUTINE V-EXAMINE ()
 	 <COND (<IS? ,PRSO ,OPENABLE>
-	        <TELL "It looks as if " THEO>
+		<TELL "It looks as if " THEO>
 		<IS-ARE>
 		<COND (<IS? ,PRSO ,OPENED>
 		       <TELL "open">)
 		      (T
 		       <TELL "closed">)>
-	        <PRINT ,PERIOD>
+		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (<IS? ,PRSO ,SURFACE>
 	      	<TELL ,YOU-SEE>
 		<PRINT-CONTENTS ,PRSO>
 		<TELL " on " THEO>
-	        <PRINT ,PERIOD>
+		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (<IS? ,PRSO ,CONTAINER>
 		<COND (<OR <IS? ,PRSO ,OPENED>
@@ -1192,7 +1162,7 @@
 		<RTRUE>)
 	       (<AND <IS? ,PRSO ,PERSON>
 		     <SEE-ANYTHING-IN? ,PRSO>>
-	        <TELL CTHEO " has ">
+		<TELL CTHEO " has ">
 		<PRINT-CONTENTS ,PRSO>
 		<PRINT ,PERIOD>
 		<RTRUE>)
@@ -1219,14 +1189,14 @@
 		<RFALSE>)>>
 
 <ROUTINE V-WATCH ()
-         <COND (<IS? ,PRSO ,PERSON>
+	 <COND (<IS? ,PRSO ,PERSON>
 		<TELL CTHEO>
 		<ISNT-ARENT>
 		<TELL "doing anything " <PICK-NEXT ,YAWNS>>)
 	       (T
 		<TELL "Nothing " <PICK-NEXT ,YAWNS> " is happening">)>
-         <PRINT ,PERIOD>
-	 <RTRUE>>		
+	 <PRINT ,PERIOD>
+	 <RTRUE>>
 
 <ROUTINE V-EXIT ("AUX" L)
 	 <COND (<PRSO? ROOMS>
@@ -1248,9 +1218,9 @@
 <ROUTINE V-FILL ()
 	 <HOW?>
        ; <COND (<ZERO? ,PRSI>
-	        <TELL "There's nothing to fill it with." CR>
+		<TELL "There's nothing to fill it with." CR>
 		<RTRUE>)
-	       (T 
+	       (T
 		<HOW?>)>
 	 <RTRUE>>
 
@@ -1260,7 +1230,7 @@
 		<DO-IT-YOURSELF>
 		<RTRUE>)
 	       (<PRSO? ME HANDS>
-	        <TELL "You're right here." CR>
+		<TELL "You're right here." CR>
 		<RTRUE>)
 	       (<IN? ,PRSO ,PLAYER>
 		<TELL "You're holding it." CR>
@@ -1273,11 +1243,11 @@
 	       (<AND <OR <IS? .L ,PERSON>
 			 <IS? .L ,LIVING>>
 		     <VISIBLE? .L>>
-	        <TELL CTHE .L " has it." CR>
+		<TELL CTHE .L " has it." CR>
 		<RTRUE>)
 	       (<AND <SEE-INSIDE? .L>
 		     <VISIBLE? .L>>
-	        <SAY-ITS>
+		<SAY-ITS>
 		<COND (<IS? .L ,SURFACE>
 		       <TELL "on ">)
 		      (T
@@ -1286,10 +1256,10 @@
 		<RTRUE>)
 	       (T
 		<DO-IT-YOURSELF>)>
-         <RTRUE>>
+	 <RTRUE>>
 
 <ROUTINE DO-IT-YOURSELF ()
-         <TELL "You'll have to do that " D ,ME ,PERIOD>
+	 <TELL "You'll have to do that " D ,ME ,PERIOD>
 	 <RTRUE>>
 
 <ROUTINE ITS-RIGHT-HERE ()
@@ -1298,7 +1268,7 @@
 	 <RTRUE>>
 
 <ROUTINE SAY-ITS ()
-         <COND (<IS? ,PRSO ,PLURAL>
+	 <COND (<IS? ,PRSO ,PLURAL>
 		<TELL "They're ">
 		<RTRUE>)
 	       (<IS? ,PRSO ,FEMALE>
@@ -1313,7 +1283,7 @@
 <ROUTINE V-FLUSH ()
 	 <IMPOSSIBLE>
 	 <RTRUE>>
-	 
+
 <ROUTINE V-FLY ()
 	 <TELL ,CANT "possibly do that." CR>
 	 <RTRUE>>
@@ -1327,14 +1297,14 @@
 	 <RTRUE>>
 
 <ROUTINE V-UNTANGLE ()
-       	 <TELL CTHEO " isn't tangled." CR>
+	 <TELL CTHEO " isn't tangled." CR>
 	 <RTRUE>>
 
 <ROUTINE V-FOLLOW ()
 	 <COND (<ZERO? ,PRSO>
 		<CANT-SEE-ANY>
 		<RFATAL>)>
-         <TELL "But ">
+	 <TELL "But ">
 	 <COND (<PRSO? ME>
 		<TELL "you're right here." CR>
 		<RTRUE>)
@@ -1349,7 +1319,7 @@
 		       <TELL " right here">)
 	       	      (T
 		       <TELL "n't visible at the moment">)>)>
-         <PRINT ,PERIOD>
+	 <PRINT ,PERIOD>
 	 <RTRUE>>
 
 <ROUTINE PRE-FEED ()
@@ -1359,7 +1329,7 @@
 		<RFALSE>)>>
 
 <ROUTINE V-FEED ()
-         <COND (<PRSI? ME>
+	 <COND (<PRSI? ME>
 		<TELL "You ">)
 	       (T
 		<TELL CTHEI " ">)>
@@ -1386,7 +1356,7 @@
 		      (T
 		       <TELL "give ">)>
 		<TELL "anything to " A ,PRSI ,PERIOD>
-	        <RTRUE>)
+		<RTRUE>)
 	       (<AND <PRSI? ME>
 		     <IN? ,PRSO ,PLAYER>>
 	      	<ALREADY-HAVE-PRSO>
@@ -1453,7 +1423,7 @@
 <ROUTINE V-SSELL ()
 	 <PERFORM ,V?SELL ,PRSI ,PRSO>
 	 <RTRUE>>
-		       		       
+
 <ROUTINE PRE-SHOW ()
 	 <COND (<OR <ZERO? ,PRSO>
 		    <ZERO? ,PRSI>>
@@ -1468,7 +1438,7 @@
 		<RTRUE>)
 	       (<AND <PRSI? ME>
 		     <IN? ,PRSO ,PLAYER>>
-	        <ALREADY-HAVE-PRSO>
+		<ALREADY-HAVE-PRSO>
 		<RTRUE>)
 	       (<AND <NOT <PRSI? ME>>
 		     <DONT-HAVE? ,PRSO>>
@@ -1488,7 +1458,7 @@
 	 <COND (<NOT <IS? ,PRSO ,TAKEABLE>>
 		<WASTE-OF-TIME>
 		<RTRUE>)>
-         <TELL "How could you turn down such a tempting " D ,PRSO "?" CR>
+	 <TELL "How could you turn down such a tempting " D ,PRSO "?" CR>
 	 <RTRUE>>
 
 <ROUTINE V-HIDE ()
@@ -1512,13 +1482,13 @@
 		<COND (<AND <T? ,PRSI>
 			    <NOT <PRSI? HANDS>>>
 		       <TELL ", even with " A ,PRSI>)>
-	        <PRINT ,PERIOD>
+		<PRINT ,PERIOD>
 		<RTRUE>)>
 	 <V-HIT>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <ROUTINE V-HIT ()
-         <TELL "Attacking " THEO>
+	 <TELL "Attacking " THEO>
 	 <COND (<AND <T? ,PRSI>
 		     <NOT <PRSI? HANDS>>>
 		<TELL " with " A ,PRSI>)>
@@ -1530,7 +1500,7 @@
 		<COND (<IS? ,PRSO ,OPENED>
 		       <ITS-ALREADY "open">
 		       <RTRUE>)>
-	        <TELL "There's no answer." CR>
+		<TELL "There's no answer." CR>
 		<RTRUE>)
 	       (<IS? ,PRSO ,PERSON>
 		<PERFORM ,V?USE ,PRSO>
@@ -1559,7 +1529,7 @@
 
 <ROUTINE V-LEAP ()
 	 <COND (<NOT <PRSO? ROOMS>>
-	        <TELL "That'd be a cute trick." CR>
+		<TELL "That'd be a cute trick." CR>
 		<RTRUE>)
 	       (T
 		<WASTE-OF-TIME>)>
@@ -1575,11 +1545,11 @@
 	 <RTRUE>>
 
 <ROUTINE V-SLEEP ()
-         <V-LIE-DOWN>
+	 <V-LIE-DOWN>
 	 <RTRUE>>
 
 <ROUTINE V-LIE-DOWN ()
-       	 <TELL "This is no time for resting." CR>
+	 <TELL "This is no time for resting." CR>
 	 <RTRUE>>
 
 <ROUTINE V-LISTEN ("AUX" (OBJ <>))
@@ -1637,7 +1607,7 @@
 	 <COND (<OR <IS? ,PRSO ,OPENABLE>
 		    <IS? ,PRSO ,CONTAINER>>
 		<COND (<OR <IS? ,PRSO ,OPENED>
-		           <NOT <IS? ,PRSO ,LOCKED>>>
+			   <NOT <IS? ,PRSO ,LOCKED>>>
 		       <TELL CTHEO>
 		       <ISNT-ARENT>
 		       <TELL "locked." CR>
@@ -1734,7 +1704,7 @@
 		<RTRUE>)>
 	 <NOTHING-INTERESTING>
 	 <TELL " on " THEO ,PERIOD>
-	 <RTRUE>>	       
+	 <RTRUE>>
 
 <ROUTINE V-LOOK-BEHIND ()
 	 <COND (<ZERO? ,LIT?>
@@ -1821,8 +1791,8 @@
 		<RTRUE>)
 	       (<IS? ,PRSO ,CONTAINER>
 		<COND ; (<EQUAL? ,PRSO <LOC ,WINNER>>
-		         <V-LOOK>
-		         <RTRUE>)
+			 <V-LOOK>
+			 <RTRUE>)
 		      (<AND <NOT <IS? ,PRSO ,OPENED>>
 			    <NOT <IS? ,PRSO ,TRANSPARENT>>>
 		       <ITS-CLOSED ,PRSO>
@@ -1930,7 +1900,7 @@
 		<V-WALK-AROUND>
 		<RTRUE>)
 	       (<IS? ,PRSO ,TAKEABLE>
-		<TELL "Moving " THEO " would" <PICK-NEXT ,HO-HUM> 
+		<TELL "Moving " THEO " would" <PICK-NEXT ,HO-HUM>
 		      ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -1944,7 +1914,7 @@
 <ROUTINE V-PAY ()
 	 <PERFORM ,V?GIVE ,PRSI ,PRSO>
 	 <RTRUE>>
-	       
+
 <ROUTINE V-PLAY ()
 	 <COND (<PRSO? ROOMS>
 		<WASTE-OF-TIME>)
@@ -1974,7 +1944,7 @@
 	       (<OR <PRSI? MEEP>
 		    <AND <ZERO? ,PRSI>
 			 <T? .M>>>
-	        <SHOW-TO-MEEP ,PRSO>
+		<SHOW-TO-MEEP ,PRSO>
 		<RTRUE>)>
 	 <COND (<T? ,PRSI>
 		<COND (<IS? ,PRSI ,PERSON>
@@ -1996,7 +1966,7 @@
 
 <ROUTINE V-SHINE-AT ()
 	 <TELL ,CANT "illuminate anything with " A ,PRSO ,PERIOD>
-	 <RTRUE>>		
+	 <RTRUE>>
 
 <ROUTINE V-SPOINT-AT ()
 	 <PERFORM ,V?POINT-AT ,PRSI ,PRSO>
@@ -2038,7 +2008,7 @@
 		<ITS-CLOSED>
 		<RTRUE>)
 	       (T
-		<TELL ,CANT "empty that." CR>)>	
+		<TELL ,CANT "empty that." CR>)>
 	 <RTRUE>>
 
 <ROUTINE V-POUR-FROM ()
@@ -2062,7 +2032,7 @@
 		<COND (<IS? ,PRSO ,TAKEABLE>
 		       <TELL CTHEO>
 		       <SPACE>
-		       <LANDS-AT-YOUR-FEET>		
+		       <LANDS-AT-YOUR-FEET>
 		       <RTRUE>)>
 		<IMPOSSIBLE>
 		<RTRUE>)
@@ -2106,7 +2076,7 @@
 	       (T
 		<TELL ,CANT "possibly empty " THEO ,PERIOD>)>
 	 <RTRUE>>
-		
+
 <ROUTINE EMPTY-PRSO (DEST "AUX" OBJ NXT X)
 	 <SET OBJ <FIRST? ,PRSO>>
 	 <COND (<ZERO? .OBJ>
@@ -2117,7 +2087,7 @@
 		       <TELL "in ">)>
 		<TELL THEO ,PERIOD>
 		<RTRUE>)>
-	 <SETG P-MULT? T>	
+	 <SETG P-MULT? T>
 	 <REPEAT ()
 		 <COND (<NOT <IS? .OBJ ,NOARTICLE>>
 			<TELL "The ">)>
@@ -2179,7 +2149,7 @@
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	 
+
 <ROUTINE V-POCKET ()
 	 <PERFORM ,V?PUT ,PRSO ,POCKET>
 	 <RTRUE>>
@@ -2265,7 +2235,7 @@
 
 <ROUTINE TAKE-OFF-PRSO-FIRST ()
 	 <UNMAKE ,PRSO ,WORN>
-	 <TELL "[taking off " THEO " first" ,BRACKET>         
+	 <TELL "[taking off " THEO " first" ,BRACKET>
 	 <RTRUE>>
 
 <ROUTINE PRE-PUT-ON ()
@@ -2281,7 +2251,7 @@
 	 <TELL "There's no good " D ,CSURFACE " on " THEI ,PERIOD>
 	 <RTRUE>>
 
-<ROUTINE V-PUT-ON () 
+<ROUTINE V-PUT-ON ()
 	 <COND (<PRSI? ME>
 		<PERFORM ,V?WEAR ,PRSO>
 		<RTRUE>)>
@@ -2293,7 +2263,7 @@
 	 <COND (<OR <ZERO? .L>
 		    <AND <T? ,PRSI>
 		     	 <NOT <IS? ,PRSI ,SURFACE>>
-		     	 <NOT <IS? ,PRSI ,CONTAINER>>			 
+		     	 <NOT <IS? ,PRSI ,CONTAINER>>
 			 <NOT <IS? ,PRSI ,OPENED>>
 		     	 <NOT <IS? ,PRSI ,OPENABLE>>>>
 		<IMPOSSIBLE>
@@ -2351,7 +2321,7 @@
 		<TELL "anything">)>
 	 <PRINT ,PERIOD>
 	 <RTRUE>>
-	
+
 <ROUTINE V-UNPLUG ()
 	 <TELL CTHEO>
 	 <ISNT-ARENT>
@@ -2368,9 +2338,9 @@
 	 <RTRUE>>
 
 <ROUTINE V-PUT-UNDER ()
-         <TELL ,CANT "put anything under that." CR>
+	 <TELL ,CANT "put anything under that." CR>
 	 <RTRUE>>
-	       
+
 <ROUTINE V-RAPE ()
 	 <TELL "What a wholesome idea." CR>
 	 <RTRUE>>
@@ -2460,12 +2430,12 @@
 	       (T
 		<COND (<PRSO? ME>
 		       <TELL "You aren't ">)
-	              (T
+		      (T
 		       <TELL CTHEO>
 		       <ISNT-ARENT>)>
-	        <TELL "confined by anything." CR>)>
+		<TELL "confined by anything." CR>)>
 	 <RTRUE>>
-		
+
 <ROUTINE V-REPLACE ()
 	 <COND (<PRSO? ME>
 		<TELL "Easily done." CR>
@@ -2484,7 +2454,7 @@
 	 <RTRUE>>
 
 <ROUTINE V-HELP ()
-	 <TELL 
+	 <TELL
 "[If you're really stuck, maps and InvisiClues(TM) Hint Booklets are available at most Infocom dealers, or use the order form included in your ">
 	 <ITALICIZE "Trinity">
 	 <TELL " package.]" CR>
@@ -2529,7 +2499,7 @@
 	 <PRINTB ,P-PRSA-WORD>
 	 <TELL " " THEO " next to " THEI
 	       ", but nothing " <PICK-NEXT ,YAWNS> " happens." CR>
-	 <RTRUE>>	 
+	 <RTRUE>>
 
 <ROUTINE V-TUNE-TO ()
 	 <IMPOSSIBLE>
@@ -2557,7 +2527,7 @@
 		<RTRUE>)
 	       (<IS? ,PRSO ,PERSON>
 		<PERFORM ,V?USE ,PRSO>
-		<RTRUE>) 
+		<RTRUE>)
 	       (T
 		<NOTHING-INTERESTING>
 		<PRINT ,PERIOD>)>
@@ -2665,7 +2635,7 @@
 <ROUTINE V-SWIM ()
 	 <COND (<PRSO? ROOMS>
 		<COND (<AND <T? ,IN-DISH?>
-			    <HERE? PROM>>    
+			    <HERE? PROM>>
 		       <PERFORM ,V?SWIM ,DISH>
 		       <RTRUE>)
 		      (<GLOBAL-IN? ,STREAM ,HERE>
@@ -2689,7 +2659,7 @@
 		     <T? ,P-DIRECTION>
 		     <EQUAL? ,WINNER ,PLAYER>>
 		<COND (<OR <HERE? IN-WATER UNDER-WATER>
-		           <AND <HERE? ON-CIST>
+			   <AND <HERE? ON-CIST>
 				<EQUAL? ,P-DIRECTION ,P?NORTH ,P?IN>>
 			   <AND <HERE? IN-CIST>
 				<EQUAL? ,P-DIRECTION ,P?SOUTH ,P?OUT>>
@@ -2704,13 +2674,13 @@
 			   <AND <HERE? NSAND>
 				<EQUAL? ,P-DIRECTION ,P?NORTH ,P?NE ,P?NW>>>
 		       <DO-WALK ,P-DIRECTION>
-		       <RTRUE>)>	      
+		       <RTRUE>)>
 		<PRINT ,CANT>
 		<PRINTB ,P-PRSA-WORD>
 		<TELL " that way from here." CR>
 		<RTRUE>)
 	       (T
-		<IMPOSSIBLE>)> 
+		<IMPOSSIBLE>)>
 	 <RTRUE>>
 
 <ROUTINE NO-SWIM ()
@@ -2739,10 +2709,10 @@
 		     <T? ,P-DIRECTION>
 		     <EQUAL? ,WINNER ,PLAYER>>
 		<COND (<OR <HERE? IN-WATER UNDER-WATER>
-		           <AND <HERE? ON-CIST>
+			   <AND <HERE? ON-CIST>
 				<EQUAL? ,P-DIRECTION ,P?NORTH ,P?IN>>
 			   <AND <HERE? LONG-WATER>
-			        <EQUAL? ,P-DIRECTION ,P?EAST ,P?IN>>>
+				<EQUAL? ,P-DIRECTION ,P?EAST ,P?IN>>>
 		      <DO-WALK ,P-DIRECTION>
 		      <RTRUE>)>
 		<PRINT ,CANT>
@@ -2750,7 +2720,7 @@
 		<TELL " that way from here." CR>
 		<RTRUE>)
 	       (T
-		<IMPOSSIBLE>)> 
+		<IMPOSSIBLE>)>
 	 <RTRUE>>
 
 <ROUTINE V-SGET-FOR ()
@@ -2771,7 +2741,7 @@
 		<RTRUE>)
 	       (<IS? ,PRSO ,TAKEABLE>
 		<COND (<AND <IN? ,PRSO ,WINNER>
-		            <IS? ,PRSO ,WORN>>
+			    <IS? ,PRSO ,WORN>>
 		       <UNMAKE ,PRSO ,WORN>
 		       <TELL "You take off " THEO ,PERIOD>
 		       <RTRUE>)
@@ -2793,7 +2763,7 @@
 	 <COND (<EQUAL? ,P-PRSA-WORD ,W?ADJUST>
 		<TELL CTHEO " doesn't need adjustment." CR>
 		<RTRUE>)
-	       (T 
+	       (T
 		<TELL ,CANT " focus " A ,PRSO ,PERIOD>)>
 	 <RTRUE>>
 
@@ -2814,9 +2784,9 @@
 		       <PERFORM ,V?LOOK-THRU ,PRSI ,PRSO>
 		       <RTRUE>)
 		      (T
-		       <TELL ,CANT "focus " THEO 
+		       <TELL ,CANT "focus " THEO
 			     " on " THEI ,PERIOD>)>)>
-	 <RTRUE>>       
+	 <RTRUE>>
 
 "*** CHARACTER INTERACTION DEFAULTS ***"
 
@@ -2857,14 +2827,14 @@
 		<RFATAL>)>
 	 <NO-RESPONSE>
 	 <RTRUE>>
-		       
+
 <ROUTINE V-QUESTION ()
 	 <COND (<EQUAL? ,WINNER ,PLAYER>
 		<TO-DO-THING-USE "ask about" "ASK CHARACTER ABOUT">
 		<RFATAL>)>
 	 <NO-RESPONSE>
 	 <RTRUE>>
-		        
+
 <ROUTINE V-ALARM ()
 	 <COND (<SILLY-SPEAK?>
 		<RFATAL>)>
@@ -2897,7 +2867,7 @@
 
 <ROUTINE V-SAY ()
 	 <COND (<EQUAL? ,WINNER ,PLAYER>
-	        <COND (<ANYONE-HERE?>
+		<COND (<ANYONE-HERE?>
 		       <WAY-TO-TALK>
 		       <RTRUE>)>
 		<TALK-TO-SELF>
@@ -2910,14 +2880,14 @@
 	 <RTRUE>>
 
 <ROUTINE V-HELLO ()
-         <COND (<SILLY-SPEAK?>
-	        <RFATAL>)
+	 <COND (<SILLY-SPEAK?>
+		<RFATAL>)
 	       (<PRSO? ROOMS>
 		<TALK-TO-SELF>
 		<RTRUE>)>
 	 <NO-RESPONSE>
 	 <RTRUE>>
-	 
+
 <ROUTINE V-WAVE-AT ()
 	 <V-WHAT>
 	 <RTRUE>>
@@ -2944,7 +2914,7 @@
 	       (T
 		<SETG QCONTEXT ,PRSO>
 		<SETG QCONTEXT-ROOM <LOC ,PRSO>>
-	        <COND (<T? ,P-CONT>
+		<COND (<T? ,P-CONT>
 		       <SETG WINNER ,PRSO>
 		       <THIS-IS-IT ,PRSO>
 		       <RTRUE>)>
@@ -2986,19 +2956,19 @@
 		<DO-WALK ,P?IN>
 		<RTRUE>)
 	     ; (<IS? ,PRSO ,OPENABLE>
-	        <DO-WALK <OTHER-SIDE ,PRSO>>
+		<DO-WALK <OTHER-SIDE ,PRSO>>
 		<RTRUE>)
 	     ; (<IS? ,PRSO ,VEHBIT>
-	        <PERFORM ,V?ENTER ; ,V?BOARD ,PRSO>
-	        <RTRUE>)
+		<PERFORM ,V?ENTER ; ,V?BOARD ,PRSO>
+		<RTRUE>)
 	     ; (<IN? ,PRSO ,WINNER>
-	        <TELL "That would involve quite a contortion." CR>
+		<TELL "That would involve quite a contortion." CR>
 		<RTRUE>)
 	       (<IS? ,PRSO ,LIVING>
 		<V-RAPE>
 		<RTRUE>)
 	     ; (<NOT <IS? ,PRSO ,TAKEABLE>>
-	        <TELL "You hit your head against " THEO
+		<TELL "You hit your head against " THEO
 		      " as you attempt this feat." CR>
 		<RTRUE>)>
 	 <IMPOSSIBLE>
@@ -3007,7 +2977,7 @@
 <ROUTINE V-STHROW ()
 	 <PERFORM ,V?THROW ,PRSI ,PRSO>
 	 <RTRUE>>
-		
+
 <ROUTINE PRE-THROW-OVER ()
 	 <COND (<PRE-THROW>
 		<RTRUE>)>
@@ -3042,7 +3012,7 @@
 		       <TELL D ,GROUND>)>
 		<TELL " nearby." CR>)>
 	 <RTRUE>>
-	 
+
 <ROUTINE V-TIE ()
 	 <TELL ,CANT "possibly tie " THEO>
 	 <COND (<T? ,PRSI>
@@ -3080,7 +3050,7 @@
 		<SETG P-WALK-DIR .DIR2>
 		<SET X <PERFORM ,V?WALK .DIR2>>
 		<COND (<AND <T? .DIR3>
-		            <NOT <EQUAL? .X <> ,M-FATAL>>>
+			    <NOT <EQUAL? .X <> ,M-FATAL>>>
 		       <CRLF>
 		       <SETG P-WALK-DIR .DIR3>
 		       <SET X <PERFORM ,V?WALK .DIR3>>)>)>
@@ -3101,7 +3071,7 @@
 				 (T ,PRSO)>>)>
 	 <COND (<ZERO? ,P-WALK-DIR>
 		<COND (<T? ,PRSO>
-		       <TELL "[Presumably, you mean WALK TO " THEO 
+		       <TELL "[Presumably, you mean WALK TO " THEO
 			     "." ,BRACKET>
 		       <PERFORM ,V?WALK-TO ,PRSO>)
 		      (T
@@ -3166,7 +3136,7 @@
 <ROUTINE FLY-TO? (DEST "AUX" (N 0))
 	 <COND (<OR <ZERO? ,TR?>
 		    <ZERO? .DEST>
-		    <NOT <IS? ,HERE ,DESERT>>		    
+		    <NOT <IS? ,HERE ,DESERT>>
 		    <NOT <IN? .DEST ,ROOMS>>
 		    <NOT <IS? .DEST ,DESERT>>>
 		<SETG MDELAY 0>
@@ -3174,9 +3144,9 @@
 	       (<AND <IS? ,RBOOT ,WORN>
 		     <IS? ,RBOOT ,CHILLY>
 		     <IS? ,GBOOT ,WORN>
-	             <IS? ,GBOOT ,CHILLY>>
-	        <SETG MDELAY 2>
-	        <COND (<NOT <IS? ,FEET ,TOUCHED>>
+		     <IS? ,GBOOT ,CHILLY>>
+		<SETG MDELAY 2>
+		<COND (<NOT <IS? ,FEET ,TOUCHED>>
 		       <MAKE ,FEET ,TOUCHED>
 		       <QUEUE I-WHOOSH 1>
 		       <TELL "You put one boot forward" ,PCR>
@@ -3200,11 +3170,11 @@
 		<PRINTB ,P-PRSA-WORD>
 		<TELL " for a few ">)
 	       (T
-	        <COND (<IS? ,HERE ,BORING>
+		<COND (<IS? ,HERE ,BORING>
 		       <SET N 29>)
 		      (T
 		       <SET N 19>)>
-	        <TELL <PICK-NEXT ,WALK-TYPES>>
+		<TELL <PICK-NEXT ,WALK-TYPES>>
 		<COND (<PROB 50>
 		       <TELL "along ">)>
 		<TELL "for several ">)>
@@ -3300,7 +3270,7 @@
 		<THIS-IS-IT .OBJ>
 		<TELL CTHE .OBJ>)>
 	 <TELL " blocks your path." CR>
-	 <RTRUE>>	 
+	 <RTRUE>>
 
 <ROUTINE V-WALK-AROUND ()
 	 <PCLEAR>
@@ -3356,7 +3326,7 @@
 
 <ROUTINE V-WEAR ()
 	 <COND (<OR <AND <IN? ,PRSO ,WINNER>
-		         <IS? ,PRSO ,WORN>>
+			 <IS? ,PRSO ,WORN>>
 		    <PRSO? CLOTHES POCKET>>
 		<TELL ,YOURE-ALREADY "wearing " THEO ,PERIOD>
 		<RTRUE>)
@@ -3417,7 +3387,7 @@
 		       <COND (<OR <EQUAL? <GET ,P-NAMW 0> <GET ,P-NAMW 1>>
 				  <EQUAL? <GET ,P-ADJW 0> <GET ,P-ADJW 1>>>
 			      <IMPOSSIBLE>
-			      <RTRUE>)>)			    
+			      <RTRUE>)>)
 		      (<PRSI? ME>
 		       <COND (<EQUAL? ,WINNER ,PLAYER>
 			      <NOBODY-TO-ASK>
@@ -3470,7 +3440,7 @@
 		       <COND (<IS? .L ,CONTAINER>
 			      <TELL " out of ">)
 			     (<IS? .L ,SURFACE>
-			      <TELL " off ">)   
+			      <TELL " off ">)
 			     (T
 			      <TELL " from ">)>
 			<TELL THE .L ,PERIOD>)
@@ -3515,7 +3485,7 @@
 		<RFALSE>)
 	       (<AND <NOT <IN? .L ,WINNER>>
 		     <G? <+ <WEIGHT ,PRSO> <WEIGHT ,WINNER>> ,LOAD-ALLOWED>>
-	        <COND (<T? .VB>
+		<COND (<T? .VB>
 		       <COND (<FIRST? ,WINNER>
 			      <TELL "Your load is">)
 			     (T
@@ -3530,7 +3500,7 @@
 	      	<MAKE ,PRSO ,TOUCHED>
 		<UNMAKE ,PRSO ,NODESC>
 		<UNMAKE ,PRSO ,NOALL>
-		<MOVE ,PRSO ,WINNER>		
+		<MOVE ,PRSO ,WINNER>
 		<RETURN .L>)>>  "So that .L an be analyzed."
 
 "Count # objects being carried by THING."
@@ -3566,7 +3536,7 @@
 	 <RETURN .WT>>
 
 <ROUTINE DESCRIBE-ROOM ("OPTIONAL" (LOOK? <>) "AUX" (V? <>) ACT ; STR)
-         <COND (<OR <T? .LOOK?>
+	 <COND (<OR <T? .LOOK?>
 		    <EQUAL? ,VERBOSITY 2>>
 		<SET V? T>)>
 	 <COND (<ZERO? ,LIT?>
@@ -3574,17 +3544,17 @@
 		<RFALSE>)
 	       (<NOT <IS? ,HERE ,TOUCHED>>
 		<MAKE ,HERE ,TOUCHED>
-	        <INC MAPCNT>
+		<INC MAPCNT>
 		<SET V? T>)>
-         <COND (<IN? ,HERE ,ROOMS>
-	        <HLIGHT ,H-BOLD>
-	        <SAY-HERE>
+	 <COND (<IN? ,HERE ,ROOMS>
+		<HLIGHT ,H-BOLD>
+		<SAY-HERE>
 		<HLIGHT ,H-NORMAL>
 		<CRLF>
 		<HLIGHT ,H-NORMAL>)>
 	 <COND (<OR <T? .LOOK?>
 		    <T? ,VERBOSITY>>
-	        <SET ACT <GETP ,HERE ,P?ACTION>>
+		<SET ACT <GETP ,HERE ,P?ACTION>>
 	      ; <SET STR <GETP ,HERE ,P?LDESC>>
 		<COND (<AND <T? .V?>
 			    <T? .ACT>>
@@ -3646,15 +3616,6 @@
 		<SETG P-HER-OBJECT ,NOT-HERE-OBJECT>)>
 	 <RTRUE>>
 
-; <ROUTINE OTHER-SIDE (DOBJ "AUX" (P 0) T) 
-	 <REPEAT ()
-		 <COND (<L? <SET P <NEXTP ,HERE .P>> ,LOW-DIRECTION>
-			<RFALSE>)>
-		 <SET T <GETPT ,HERE .P>>
-		 <COND (<AND <EQUAL? <PTSIZE .T> ,DEXIT>
-			     <EQUAL? <GET-DOOR-OBJ .T> .DOBJ>>
-			<RETURN .P>)>>>
-
 <ROUTINE HACK-HACK (STR)
 	 <TELL .STR>
 	 <SPACE>
@@ -3662,7 +3623,7 @@
 	 <RTRUE>>
 
 <GLOBAL HO-HUM:TABLE
-	<LTABLE 2 
+	<LTABLE 2
 	 "n't do anything useful"
 	 " accomplish nothing"
 	 " have no desirable effect"
@@ -3672,8 +3633,8 @@
 
 <ROUTINE IMPOSSIBLE ()
 	 <TELL <PICK-NEXT ,YUKS> ,PERIOD>
-	 <RTRUE>> 
-	 
+	 <RTRUE>>
+
 <GLOBAL YUKS:TABLE
 	<LTABLE 2
 	 "That's impossible"
@@ -3747,7 +3708,7 @@
 	 <RTRUE>>
 
 <ROUTINE CLUTCH-THROAT ()
-	 <TELL 
+	 <TELL
 "You gasp and clutch your throat in the surrounding vacuum." CR>
 	 <RTRUE>>
 
@@ -3818,7 +3779,7 @@
 		<SPACE>
 		<TELL A ,PRSO ,PERIOD>)>
 	 <RTRUE>>
-		 
+
 <ROUTINE V-WISH ()
 	 <COND (<OR <T? ,TR?>
 		    <NOT <IS? ,HERE ,WINDY>>>
@@ -3853,6 +3814,3 @@
 		<RTRUE>)>
 	 <HOW?>
 	 <RTRUE>>
-
-
-	 

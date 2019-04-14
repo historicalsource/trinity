@@ -78,13 +78,13 @@
 
 <ROUTINE CLOCKER ("AUX" E TICK RTN (FLG <>) (Q? <>))
 	 <COND (<T? ,CLOCK-WAIT?>
-	        <SETG CLOCK-WAIT? <>>
-	        <RFALSE>)>
+		<SETG CLOCK-WAIT? <>>
+		<RFALSE>)>
 	 <SETG CLOCK-HAND <REST ,C-TABLE ,C-INTS>>
 	 <SET E <REST ,C-TABLE ,C-TABLELEN>>
 	 <REPEAT ()
 		 <COND (<EQUAL? ,CLOCK-HAND .E>
-		        <INC MOVES>
+			<INC MOVES>
 			<COND (<T? ,FREEZE?>
 			       <RETURN>)>
 			<SETG SECONDS <+ ,SECONDS 15>>
@@ -95,8 +95,8 @@
 		       	       	      <SETG MINUTES <- ,MINUTES 60>>
 		       	       	      <INC HOURS>
 		       	       	      <COND (<G? ,HOURS 23>
-		              	      	     <SETG HOURS 0>)>)>)>
-		        <RETURN>)
+			      	      	     <SETG HOURS 0>)>)>)>
+			<RETURN>)
 		       (<T? <GET ,CLOCK-HAND ,C-RTN>>
 			<SET TICK <GET ,CLOCK-HAND ,C-TICK>>
 			<COND (<L? .TICK -1>
@@ -143,7 +143,7 @@
 "'s hands and sweeps it into the branches of the tree.|
 |
 The woman circles the tree a few times, gazing helplessly upward. That "
-D ,PARASOL 
+D ,PARASOL
 " obviously means a lot to her, for a wistful tear is running down her cheek. But nobody except you seems to notice her loss.|
 |
 After a few moments, the " D ,JWOMAN
@@ -157,9 +157,9 @@ After a few moments, the " D ,JWOMAN
 "Passersby begin to gather, craning to see what everyone else is looking at. You hardly notice them. Even when the sirens begin ">)
 	       (T
 		<TELL " for a few moments. Even as the sirens continue ">)>
-	 <TELL 
-"to howl, and the crowd scatters like leaves in the " D ,EWIND 
-", you can't take your eyes off the " 
+	 <TELL
+"to howl, and the crowd scatters like leaves in the " D ,EWIND
+", you can't take your eyes off the "
 D ,PARASOL " swaying in the branches, back and forth.|
 |
 A gentle voice whispers in your ear. ">
@@ -175,7 +175,7 @@ A gentle voice whispers in your ear. ">
 		<TELL "\"">)
 	       (T
 		<ST-QUOTE>)>
-	 <TELL CR CR 
+	 <TELL CR CR
 "You bend to pet the " D ,MEEP " waiting impatiently at your feet">
 	 <COND (<VISIBLE? ,BALL>
 		<TELL ". Then you ">
@@ -191,7 +191,7 @@ A gentle voice whispers in your ear. ">
 		       <TELL " to find a " D ,PRAM>)>)
 	       (T
 		<TELL ", then hurry off to find a " D ,BALL>)>
-	 <TELL 
+	 <TELL
 ". But that slogan keeps echoing over and over in your mind...">
 	 <CARRIAGE-RETURNS>
 	 <SETG HERE ,THE-END>
@@ -215,8 +215,7 @@ A gentle voice whispers in your ear. ">
 	 <HLIGHT ,H-NORMAL>
 	 <SCREEN ,S-TEXT>
 	 <SET X <INPUT 1>>
-	 <CLEAR -1>
-	 <INIT-STATUS-LINE>
+         <V-$REFRESH>
 	 <V-LOOK>
 	 <RTRUE>>
 
@@ -230,20 +229,20 @@ A gentle voice whispers in your ear. ">
 		<DEQUEUE I-CRANE-APPEARS>
 		<MOVE ,CRANE ,RPOND>
 		<SETG P-IT-OBJECT ,CRANE>
-		<TELL CR "One of the " D ,BOAT " on the " D ,RPOND 
+		<TELL CR "One of the " D ,BOAT " on the " D ,RPOND
 		      " catches your eye. The ">
 		<SAY-WIND>
-		<TELL 
+		<TELL
 " blows it closer, and you realize that the white sails are actually wings. It's a folded " D ,CRANE ", floating just within reach." CR>
 		<RTRUE>)>>
 
 <GLOBAL LAYAWAY:NUMBER 3>
 
 <ROUTINE I-BWOMAN ("AUX" (COIN? <>) (BAG? <>) (BOTH? <>))
-	 
+
 	 <COND (<NOT <HERE? BROAD-WALK>>
 		<RFALSE>)>
-	 
+
 	 <SETG P-HER-OBJECT ,BWOMAN>
 	 <COND (<T? ,RAID?>
 		<COND (<IS? ,BWOMAN ,SEEN>
@@ -269,7 +268,7 @@ A gentle voice whispers in your ear. ">
 		       <RFALSE>)>
 		<CRLF>
 		<BWOMAN-CRY>
-	        <RTRUE>)
+		<RTRUE>)
 	       (<AND <T? .BAG?>
 		     <T? .COIN?>>
 		<SET BOTH? T>)>
@@ -321,13 +320,13 @@ A gentle voice whispers in your ear. ">
 		<TELL <PICK-NEXT <GET ,BWOMAN-CRIES 2>> "s the " D ,BWOMAN>
 		<PRINTC 46>)>
 	 <CRLF>
-	 <RTRUE>> 
-		
+	 <RTRUE>>
+
 <GLOBAL BWOMAN-CRIES
 	<PTABLE
 	 <LTABLE 2
 	 	 "Thirty p! Thirty p a bag"
-	         "Feed the hungry birds"
+		 "Feed the hungry birds"
 	 	 "Thirty p for the starving birds"
 	 	 "Thirty p"
 	 	 "Feed the birds">
@@ -337,7 +336,7 @@ A gentle voice whispers in your ear. ">
 	 	 "What to do, what to do">
 	 <LTABLE 2
 		 " crie" " holler" " call" " yell">>>
-		
+
 <ROUTINE I-RUBY ("OPTIONAL" (CR T))
 	 <COND (<IS? ,RUBY ,CHILLY>	 ; "1-move delay."
 		<UNMAKE ,RUBY ,CHILLY>
@@ -351,7 +350,7 @@ A gentle voice whispers in your ear. ">
 		       <TELL CR ,ALLATONCE>)>
 		<MEEP-GETS-RUBY>
 		<RTRUE>)>>
-		
+
 <GLOBAL RUBYROOM:OBJECT <>>
 
 <ROUTINE MEEP-GETS-RUBY ()
@@ -385,7 +384,7 @@ A gentle voice whispers in your ear. ">
 	 <COND (<IS? ,EWIND ,SEEN>
 		<UNMAKE ,EWIND ,SEEN>
 		<MAKE ,WWIND ,SEEN>
-		<TELL CR CTHE ,EWIND 
+		<TELL CR CTHE ,EWIND
 " softens to a whisper and dies away.|
 |
 Blowing leaves settle to the ground, and the trees are still. Then a fresh gust blows in from the west." CR>)>
@@ -394,8 +393,8 @@ Blowing leaves settle to the ground, and the trees are still. Then a fresh gust 
 <ROUTINE I-MEEP ()
 	 <COND (<NOT <IN? ,MEEP ,HERE>>
 		<RFALSE>)>
-	 <TELL CR 
-"The large bird you saw before is here! You catch a glimpse of the " 
+	 <TELL CR
+"The large bird you saw before is here! You catch a glimpse of the "
 D ,RUBY " in its beak as it " <PICK-NEXT <GET ,MEEP-TABLE 0>>>
 	 <MOVE-MEEP>
 	 <RTRUE>>
@@ -403,11 +402,11 @@ D ,RUBY " in its beak as it " <PICK-NEXT <GET ,MEEP-TABLE 0>>>
 <GLOBAL MEEP-TABLE:TABLE
 	<PTABLE
 	 <LTABLE 2
-	 	 "zigzags through a group of tourists" 
+	 	 "zigzags through a group of tourists"
 	 	 "races between the wheels of a perambulator"
 	 	 "dodges a startled nanny">
 	 <PTABLE
-	         <PTABLE BROAD-WALK "east" ROUND-POND>
+		 <PTABLE BROAD-WALK "east" ROUND-POND>
 		 <PTABLE ROUND-POND "east" LAN-WALK>
 		 <PTABLE LION-GATE "southeast" ROUND-POND>
 		 <PTABLE LAN-GATE "south" LAN-WALK>
@@ -428,7 +427,7 @@ D ,RUBY " in its beak as it " <PICK-NEXT <GET ,MEEP-TABLE 0>>>
 	 	 "scratches impatiently on the ground"
 	 	 "looks up at you inquisitively"
 	 	 "emits a brief squawk"
-		 "watches every move you make"	 	 
+		 "watches every move you make"
 	 	 "scoots between your legs"
 		 "is eyeing you with interest">
 	 <LTABLE 2
@@ -455,20 +454,20 @@ D ,RUBY " in its beak as it " <PICK-NEXT <GET ,MEEP-TABLE 0>>>
 		<REPEAT ()
 		 	<SET TBL <GET .X .CNT>>
 		 	<COND ; (<ZERO? .TBL> ; "Delete when debugged."
-			         <TELL "[BUG!]" CR>
-			         <RTRUE>)
+				 <TELL "[BUG!]" CR>
+				 <RTRUE>)
 		       	      (<EQUAL? ,HERE <GET .TBL 0>>
-		               <MOVE ,MEEP <GET .TBL 2>>
+			       <MOVE ,MEEP <GET .TBL 2>>
 			       <TELL <GET .TBL 1>>
 			       <RETURN>)>
 		 	<INC CNT>>)>
 	 <COND (<NOT <IS? ,TREE ,BORING>>
 		<MAKE ,TREE ,BORING>
-		<TELL 
+		<TELL
 ". If you didn't know better, you'd swear that bird was a " D ,MEEP>)>
 	 <PRINT ,PERIOD>
 	 <RTRUE>>
-	 
+
 <ROUTINE I-FMEEP ()
 	 <COND (<NOT <HERE? ON-ISLE>>
 		<RFALSE>)
@@ -487,14 +486,14 @@ D ,RUBY " in its beak as it " <PICK-NEXT <GET ,MEEP-TABLE 0>>>
 	 <MAKE ,MEEP ,SEEN>
 	 <TELL CR ,CTHEMEEP <PICK-NEXT <GET ,MEEP-TABLE 2>> ,PERIOD>
 	 <RTRUE>>
-	       
+
 <GLOBAL RAID?:NUMBER 0>
 
 <ROUTINE I-AIR-RAID ("AUX" (Q <>))
 	 <COND (<ZERO? ,RAID?>
 		<COND (<AND <EQUAL? ,MINUTES 57>
 			    <EQUAL? ,SECONDS 45>>
-		       <PUTP ,BWOMAN ,P?FDESC 
+		       <PUTP ,BWOMAN ,P?FDESC
 "A forgotten woman, too aged to run, is sitting nearby.">
 		       <SETG RAID? 10>)
 		      (T
@@ -507,61 +506,61 @@ D ,RUBY " in its beak as it " <PICK-NEXT <GET ,MEEP-TABLE 0>>>
 		<MAKE ,TREE ,TOUCHED>
 		<TELL "A steady drone begins to rise above the ">
 		<SAY-WIND>
-		<TELL 
-". As it grows louder and more insistent, you recognize a " D ,SOUND 
+		<TELL
+". As it grows louder and more insistent, you recognize a " D ,SOUND
 " you've heard only in old war movies. Air-raid sirens." CR>
 		<SETG DO-WINDOW <GET ,QUOTES ,THOREAU>>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,RAID? 8>
 		<TELL "Another siren joins the first">
 		<COND (<ZERO? .Q>
-		       <TELL 
+		       <TELL
 ". Tourists search the sky, eyes wide with apprehension">)>
 		<PRINT ,PERIOD>
 		<COND (<AND <HERE? AT-TERRACE>
 			    <IN? ,BOY ,HERE>>
-		       <TELL CR "The boy slowly pulls his " D ,SPHONES 
+		       <TELL CR "The boy slowly pulls his " D ,SPHONES
 " off and glances furtively around. Then he picks up the dish and races off between the prams." CR>
 		       <LAST-BUBBLE>)>
 		<BOY-SCRAMS>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,RAID? 7>
 		<TELL "Sirens are howling all around you">
 		<COND (<ZERO? .Q>
-		       <TELL 
-". Children, sensing fear in the air, begin to whimper for their " 
+		       <TELL
+". Children, sensing fear in the air, begin to whimper for their "
 D ,NANNIES>)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,RAID? 6>
 		<TELL "Confused shouts can be heard in the distance">
 		<COND (<ZERO? .Q>
 		       <TELL ". Worried " D ,NANNIES " turn their " D ,GPRAM
-                             " toward the gates">)>
+			     " toward the gates">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,RAID? 5>
-		<TELL 
+		<TELL
 "Police and fire alarms join in the rising din">
 		<COND (<ZERO? .Q>
 		       <TELL
 " as the crowd rushes to escape the open sky of the Gardens">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,RAID? 4>
-		<TELL 
+		<TELL
 "Distant megaphones can be heard barking orders">
 		<COND (<ZERO? .Q>
-		       <TELL ". Frightened " D ,TOURISTS 
+		       <TELL ". Frightened " D ,TOURISTS
 " and screaming " D ,GPRAM " flee in every " D ,INTDIR>)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,RAID? 3>
 		<TELL
 "A round of gunfire drowns out the wailing " D ,SIRENS>
@@ -570,7 +569,7 @@ D ,NANNIES>)>
 ". Tourists cover their heads and trample one another in blind panic">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,RAID? 2>
 		<TELL CTHE ,GROUND
 " trembles with the roar of jet interceptors">
@@ -579,15 +578,15 @@ D ,NANNIES>)>
 ". Terror-stricken " D ,TOURISTS " dive for cover">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,RAID? 1>
 		<VAPORIZE-GARDENS>)>
-	 <RTRUE>> 
-		
+	 <RTRUE>>
+
 <ROUTINE VAPORIZE-GARDENS ()
 	 <TELL "The ">
 	 <SAY-WIND>
-	 <TELL 
+	 <TELL
 " falls silent, and a new star flashes to life over the doomed city.">
 	 <JIGS-UP>
 	 <RTRUE>>
@@ -603,61 +602,61 @@ D ,NANNIES>)>
 	 <COND (<EQUAL? ,HCNT 6>
 		<TELL CTHE ,WWIND " is still. Everything is very quiet." CR>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,HCNT 5>
 		<PUTP ,LONG-WATER ,P?OVERHEAD ,MISSILE>
 		<PUTP ,IN-WATER ,P?OVERHEAD ,MISSILE>
 		<MAKE ,MISSILE ,TOUCHED>
 		<SETG P-IT-OBJECT ,MISSILE>
-		<TELL 
+		<TELL
 "A gleam overhead catches your eye.|
 |
 Oh, dear. A " D ,MISSILE " is hanging motionless in the sky." CR>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,HCNT 4>
 		<MAKE ,LWDOOR ,TOUCHED>
 		<PUTP ,LONG-WATER ,P?SEE-E ,LWDOOR>
 		<PUTP ,IN-WATER ,P?SEE-E ,LWDOOR>
 		<SETG P-IT-OBJECT ,LWDOOR>
 		<TELL CTHE ,MISSILE
-" isn't completely motionless. It's falling very, very slowly towards the " 
-D ,LWATER ,PCR "Your eyes follow the " D ,MISSILE 
-"'s trajectory downward, where you notice another peculiar phenomenon. It looks like a " 
+" isn't completely motionless. It's falling very, very slowly towards the "
+D ,LWATER ,PCR "Your eyes follow the " D ,MISSILE
+"'s trajectory downward, where you notice another peculiar phenomenon. It looks like a "
 D ,LWDOOR ", suspended just above the " D ,CSURFACE " of the water." CR>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,HCNT 3>
-		<TELL 
+		<TELL
 "A flock of ravens glides into view! They circle over the "
-D ,LWATER " and disappear through the open " D ,LWDOOR ,PCR CTHE ,MISSILE 
+D ,LWATER " and disappear through the open " D ,LWDOOR ,PCR CTHE ,MISSILE
 " continues its slow descent." CR>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,HCNT 2>
-		<TELL "Swans and ducks paddle through the open " 
-D ,LWDOOR ", vanishing without a trace" ,PCR CTHE ,MISSILE 
+		<TELL "Swans and ducks paddle through the open "
+D ,LWDOOR ", vanishing without a trace" ,PCR CTHE ,MISSILE
 " is only a few dozen yards above the door." CR>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,HCNT 1>
-		<TELL 
-"A log is being pushed across the " D ,LWATER 
-" by a pair of mallards. Its " D ,CSURFACE 
-" is crowded with squirrels, chipmunks and other inhabitants of the " 
+		<TELL
+"A log is being pushed across the " D ,LWATER
+" by a pair of mallards. Its " D ,CSURFACE
+" is crowded with squirrels, chipmunks and other inhabitants of the "
 D ,GARDENS ", including the " D ,MEEP " you met before">
 		<ENTICINGLY>
 		<TELL " as the log sails through the " D ,LWDOOR ,PCR
 		      CTHE ,MISSILE " is closing in fast." CR>
 		<RTRUE>)>
-	 
+
 	 <TELL
-CTHE ,MISSILE "'s nose nudges into the " D ,LWDOOR 
+CTHE ,MISSILE "'s nose nudges into the " D ,LWDOOR
 ". Then a searing glare envelops the "
 D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow motion.">
 	 <JIGS-UP>
-	 <RTRUE>>   
-			       			       
+	 <RTRUE>>
+
 <GLOBAL BREATH-HELD?:NUMBER 0>
 
 <ROUTINE I-HOLD-BREATH ("OPTIONAL" (CR? T))
@@ -677,7 +676,7 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 "You claw your way to the " D ,CSURFACE " as " D ,BREATH " gives out" ,PCR>
 		       <GOTO ,IN-CIST>)
 		      (T
-		       <TELL 
+		       <TELL
 "With an involuntary gasp, you begin to breathe normally." CR>)>)>
 	 <RTRUE>>
 
@@ -694,7 +693,7 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 <GLOBAL IROOMS:TABLE
 	<PTABLE FCLEARING SBOG NBOG AT-CHASM UNDER-CLIFF
 		AT-BEND DOCKSIDE DOCKSIDE>>
-	       
+
 <GLOBAL OSIGN-DOORS:TABLE
 	<PTABLE TS0-DOOR <> TS1-DOOR <> TS2-DOOR <> TS3-DOOR <>
 		TS4-DOOR <> TS5-DOOR <> TS6-DOOR <>>>
@@ -718,10 +717,10 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 		     <NOT <IS? .DOOR ,NOALL>>>
 		<MAKE .DOOR ,OPENED>
 		<COND (<EQUAL? .DOOR ,TS2-DOOR>
-		       <MAKE ,TUN1 ,LIGHTED>)>)>	 
+		       <MAKE ,TUN1 ,LIGHTED>)>)>
 	 <RESET-SHDIRS>
 	 <COND (<T? .V>
-		<TELL "clicks into place at the dial's " 
+		<TELL "clicks into place at the dial's "
 		      <GET ,SYMBOL-NAMES ,OSIGN> " symbol." CR>)>
 	 <COND (<PRSI? LEFT RIGHT>
 		<COND (<AND <G? .OLD 11>
@@ -743,7 +742,7 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 		<RTRUE>)>
 	 <RTRUE>>
 
-"0 = shadow movement string, 1 = P? of shadow movement, 
+"0 = shadow movement string, 1 = P? of shadow movement,
  2 = sun direction, 3 = shadow direction."
 
 <GLOBAL SHDIRS <TABLE "north" P?NORTH "east" "west">>
@@ -759,7 +758,7 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 		       <SET Z "west">
 		       <SET Q "east">)>)
 	       (<L? ,OSIGN 5>
-	        <COND (<ZERO? ,FLIP?>
+		<COND (<ZERO? ,FLIP?>
 		       <SET X "northeast">
 		       <SET Y ,P?NE>
 		       <SET Z "southeast">
@@ -800,14 +799,14 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 		       <SET Q "west">)>)>
 	 <PUT ,SHDIRS 0 .X>
 	 <PUT ,SHDIRS 1 .Y>
-	 <PUT ,SHDIRS 2 .Z>	 
+	 <PUT ,SHDIRS 2 .Z>
 	 <PUT ,SHDIRS 3 .Q>
 	 <RTRUE>>
 
 <ROUTINE I-SHADOW ("AUX" (V <>) (DOOR <>) (OHERE <>))
 	 <COND (<ZERO? ,SUN-MOVING?>
 		<RFALSE>)>
-	 
+
        ; "Handle outer shadow."
 
 	 <INC ODEG>
@@ -837,7 +836,7 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 		<COND (<IN? ,OUTER-SHADOW ,HERE>
 		       <INC V>
 		       <SHADOW-COMES>)>)>
-	 
+
 	 <SET DOOR <GET ,OSIGN-DOORS ,OSIGN>>
 	 <COND (<AND <EQUAL? ,ODEG 5>
 		     <T? .DOOR>
@@ -848,8 +847,8 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 		      " rotates with a sudden ">
 		<ITALICIZE "click.">
 		<CRLF>
-	      ; <PRINT ,PERIOD>)>		
-	 
+	      ; <PRINT ,PERIOD>)>
+
        ; "Handle inner shadow."
 
 	 <INC IDEG>
@@ -865,29 +864,29 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 		       <SHADOW-COMES>)>)>
 
        ; "Handle doors."
-	 
+
 	 <COND (<IN? ,OUTER-SHADOW ,HERE>
 		<SET OHERE T>)>
-	 
+
 	 <COND (<AND <EQUAL? ,ODEG 5>
 		     <T? .DOOR>>
 		<COND (<T? .OHERE>
 		       <INC V>
-		       <TELL CR 
+		       <TELL CR
 "The tip of the " D ,OUTER-SHADOW " touches the " D ,TS0 ,PERIOD>)>
 		<COND (<NOT <IS? .DOOR ,NOALL>>
 		       <MAKE .DOOR ,OPENED>
 		       <COND (<EQUAL? .DOOR ,TS2-DOOR>
 			      <MAKE ,TUN1 ,LIGHTED>)>
 		       <COND (<T? .OHERE>
-			      <TELL CR 
+			      <TELL CR
 "With a faint creak, the " D .DOOR " in the " D ,TS0 " swings open." CR>
 			      <COND (<AND <HERE? ON-ISLE>
 					  <IN? ,MEEP ,TS6>>
 				     <I-FMEEP>)>
 			      <RTRUE>)>)>
 		<RETURN .V>)
-	       
+
 	       (<AND <EQUAL? ,ODEG 6>
 		     <T? .DOOR>
 		     <T? .OHERE>>
@@ -899,8 +898,8 @@ D ,LWATER ", and you discover what it feels like to be vaporized in extreme slow
 		       <TELL "'s open door">)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
-	       (<EQUAL? ,ODEG 7> 
+
+	       (<EQUAL? ,ODEG 7>
 		<COND (<T? .DOOR>
 		       <UNMAKE .DOOR ,OPENED>
 		       <COND (<EQUAL? .DOOR ,TS2-DOOR>
@@ -918,7 +917,7 @@ CTHE ,OUTER-SHADOW <PICK-NEXT ,CREEPERS> "away from the " D ,TS0>)>
 			     (<T? .OHERE>
 			      <TELL ", and the ">)
 			     (<GLOBAL-IN? .DOOR ,HERE>
-			      <TELL CR "The ">)			     
+			      <TELL CR "The ">)
 			     (T
 			      <RETURN .V>)>
 		       <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
@@ -942,14 +941,14 @@ CTHE ,OUTER-SHADOW <PICK-NEXT ,CREEPERS> "away from the " D ,TS0>)>
 		       <RTRUE>)
 		      (T
 		       <RETURN .V>)>)
-	       
+
 	       (<AND <IN? ,INNER-SHADOW ,HERE>
 		     <ZERO? <MOD ,IDEG 5>>>
 		<SETG P-IT-OBJECT ,INNER-SHADOW>
 		<SHADOW-CREEPS>
 		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<OR <AND <T? .OHERE>
 			 <EQUAL? ,ODEG 11>>
 		    <AND <IN? ,INNER-SHADOW ,HERE>
@@ -961,7 +960,7 @@ CTHE ,OUTER-SHADOW <PICK-NEXT ,CREEPERS> "away from the " D ,TS0>)>
 		<SHADOW-CREEPS>
 		<TELL ". It's almost" ,OUTASITE>
 		<RTRUE>)
-	       
+
 	       (T
 		<RETURN .V>)>>
 
@@ -998,10 +997,10 @@ CTHE ,OUTER-SHADOW <PICK-NEXT ,CREEPERS> "away from the " D ,TS0>)>
 	 <SHDIRWARD>
 	 <PRINT ,PERIOD>
 	 <RTRUE>>
-       		
-<GLOBAL CREEPERS:TABLE 
+
+<GLOBAL CREEPERS:TABLE
 	<LTABLE 2 " inches " " creeps " " moves slowly ">>
-		
+
 <ROUTINE REPORT-SUNSET ("OPTIONAL" (BW <>))
 	 <CRLF>
 	 <COND (<NOT <IS? ,SUN ,TOUCHED>>
@@ -1013,7 +1012,7 @@ CTHE ,OUTER-SHADOW <PICK-NEXT ,CREEPERS> "away from the " D ,TS0>)>
 		<SAY-EAST>)>
 	 <TELL "ern " D ,HORIZON>
 	 <COND (<IS? ,SUN ,TOUCHED>
-		<TELL 
+		<TELL
 " and sinks from view, while its mirror image rises in the ">
 		<COND (<ZERO? .BW>
 		       <SAY-EAST>)
@@ -1028,12 +1027,12 @@ CTHE ,OUTER-SHADOW <PICK-NEXT ,CREEPERS> "away from the " D ,TS0>)>
 Wait a minute.|
 |
 The sky is getting ">
-         <ITALICIZE "brighter.">
+	 <ITALICIZE "brighter.">
 	 <TELL
-" You rub your eyes and blink as the " D ,DMOUNTS " and " D ,TREETOPS 
+" You rub your eyes and blink as the " D ,DMOUNTS " and " D ,TREETOPS
 " magically emerge from darkness, suffused in a golden light swelling somewhere behind you...|
 |
-Another sun is rising! You turn east and west, gaping with astonishment as the twin orbs rise and set in perfect synchronization. For a moment, both are bisected by the " D ,HORIZON 
+Another sun is rising! You turn east and west, gaping with astonishment as the twin orbs rise and set in perfect synchronization. For a moment, both are bisected by the " D ,HORIZON
 ", casting double " D ,DSHADOW "s that cross the ground in fantastic patterns. Then the ">
 	 <COND (<ZERO? .BW>
 		<SAY-WEST>)
@@ -1050,7 +1049,7 @@ Another sun is rising! You turn east and west, gaping with astonishment as the t
 <ROUTINE I-DROP-OAK ()
 	 <MAKE ,OAK ,TOUCHED>
 	 <COND (<HERE? AT-CHASM>
-		<TELL CR "With a leafy whoosh, the " D ,OAK 
+		<TELL CR "With a leafy whoosh, the " D ,OAK
 " topples away from the chasm and crashes to the ground." CR>
 		<RTRUE>)
 	       (T
@@ -1064,7 +1063,7 @@ Another sun is rising! You turn east and west, gaping with astonishment as the t
 		<SET ON? T>
 		<COND (<AND <IS? ,TS1-DOOR ,OPENED>
 			    <NOT <IS? ,TS1-DOOR ,NOALL>>>
-		       <SET DOOR T>)>)>	 
+		       <SET DOOR T>)>)>
 	 <COND (<GOT? ,LUMP>
 		<SET MAG? T>)>
 	 <INC ORBCNT>
@@ -1075,26 +1074,26 @@ Another sun is rising! You turn east and west, gaping with astonishment as the t
 " around you freezes instantly, but remains intact" ,PCR>)>
 		<TELL CTHE ,TS1-DOOR " drops away behind you." CR>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,ORBCNT 2>
 		<SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
 		<TELL "You watch helplessly as the " D ,TS1-DOOR
 " dwindles to a distant speck, vanishing at last between the horns of the rising moon." CR>
 		<RTRUE>)
-	       		
+
 	       (<EQUAL? ,ORBCNT 3>
 		<MAKE ,XRAY ,TOUCHED>
 		<SETG P-IT-OBJECT ,XRAY>
 		<TELL "Far ahead, a " D ,XRAY " drifts into view." CR>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,ORBCNT 4>
 		<TELL CTHE ,XRAY " drifts closer." CR>
 		<COND (<T? .MAG?>
-		       <TELL CR "You feel the " D ,LUMP 
+		       <TELL CR "You feel the " D ,LUMP
 " tug in your arms. It's pulling you towards the " D ,XRAY "!" CR>)>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,ORBCNT 5>
 		<COND (<T? .MAG?>
 		       <MOVE ,LUMP ,ON-SAT>
@@ -1115,7 +1114,7 @@ Another sun is rising! You turn east and west, gaping with astonishment as the t
 		       	      <TELL "You find " D ,ME
 " being yanked out of your old trajectory, into what is obviously a collision course" ,PCR>
 		       	      <ITALICIZE "Ploop!">
-		       	      <TELL " The " D ,FILM 
+		       	      <TELL " The " D ,FILM
 " bounces against the " D ,XRAY ,PTHE D ,LUMP>
 			      <CLANGS>
 			      <TELL "anchoring the film securely">)>
@@ -1127,10 +1126,10 @@ Another sun is rising! You turn east and west, gaping with astonishment as the t
 		       <TELL " begins to drift away." CR>
 		       <RTRUE>)>
 		<SETG P-THEM-OBJECT ,THRUSTERS>
-	        <TELL "'s " D ,THRUSTERS
+		<TELL "'s " D ,THRUSTERS
 " fire briefly to compensate for your added momentum." CR>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,ORBCNT 6>
 		<TELL CTHE ,XRAY " drifts ">
 		<COND (<ZERO? .ON?>
@@ -1141,45 +1140,45 @@ Another sun is rising! You turn east and west, gaping with astonishment as the t
 		       <TELL CR CTHE ,TS1-DOOR
 			    " reappears far ahead of you." CR>)>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,ORBCNT 7>
 		<SETG P-IT-OBJECT ,ICBM>
 		<MAKE ,ICBM ,TOUCHED>
-		<TELL 
-"A red flash draws your eyes to the ground below, where the contrail of a " 
+		<TELL
+"A red flash draws your eyes to the ground below, where the contrail of a "
 D ,ICBM " is climbing into the stratosphere." CR>
 		<COND (<T? .DOOR>
 		       <TELL CR CTHE ,XRAY
 			     " is heading straight for the "
 			     D ,TS1-DOOR ,PERIOD>)>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,ORBCNT 8>
 		<TELL CTHE ,THRUSTERS " on the ">
 		<COND (<ZERO? .ON?>
 		       <TELL "distant ">)>
-		<TELL D ,XRAY 
+		<TELL D ,XRAY
 " fire, turning the nose until it faces the ascending " D ,ICBM ,PERIOD>
 		<COND (<T? .DOOR>
 		       <SETG P-IT-OBJECT ,TS1-DOOR>
-		       <TELL CR CTHE ,TS1-DOOR 
+		       <TELL CR CTHE ,TS1-DOOR
 			    " is very close now." CR>)>
 		<RTRUE>)>
 	 <TELL CTHE ,XRAY
 " erupts in a savage glare that lights up the ground below">
 	 <STAR-WARS>
-	 <RTRUE>> 
-		
+	 <RTRUE>>
+
 <ROUTINE STAR-WARS ()
-	 <TELL 
-,PA "beam of violet radiation flashes downward, obliterating the distant " 
+	 <TELL
+,PA "beam of violet radiation flashes downward, obliterating the distant "
 D ,ICBM
 ". Unfortunately, you have little time to admire this triumph of engineering before the " D ,XRAY "'s blast incinerates you.">
 	 <JIGS-UP>
 	 <RTRUE>>
 
 <ROUTINE CLANGS ()
-	 <TELL 
+	 <TELL
 " leaps from your grasp and fastens itself to the metal hull, ">
 	 <RTRUE>>
 
@@ -1206,15 +1205,15 @@ D ,ICBM
 		       <SETG OLD-HERE <>>
 		       <SETG SUITED? ,SUIT-LIFE>
 		       <SETG BACTION 1> ; "So BOY-BLOWS can set to 2."
-		       <QUEUE I-BUBBLE-SUIT -1>		       
-		       <TELL 
+		       <QUEUE I-BUBBLE-SUIT -1>
+		       <TELL
 ". Trapped in a whirlpool of suds, you cling helplessly to the boy's wand"
 ,PCR>
 		       <BOY-BLOWS-BUBBLE>
-		       <TELL ". You find " D ,ME 
+		       <TELL ". You find " D ,ME
 " slowly drifting to the ground, enveloped in a " D ,FILM
 			     " of iridescent color">)>
-	        <PRINT ,PERIOD>
+		<PRINT ,PERIOD>
 		<RTRUE>)
 	       (<EQUAL? ,BACTION 1>
 		<CRLF>
@@ -1225,7 +1224,7 @@ D ,ICBM
 		<CRLF>
 		<BOY-WAITS>)>
 	 <RTRUE>>
-		
+
 <ROUTINE I-BOY ("OPTIONAL" (CR T))
 	 <COND (<NOT <HERE? AT-TERRACE>>
 		<SETG BACTION 0>
@@ -1246,14 +1245,14 @@ D ,ICBM
 
 <ROUTINE BOY-DIPS ()
 	 <INC BACTION>
-	 <TELL CTHE ,GIANT " dips the " D ,WAND 
+	 <TELL CTHE ,GIANT " dips the " D ,WAND
 	       " in the dish and swishes it around">
 	 <RTRUE>>
 
 <ROUTINE BOY-BLOWS-BUBBLE ()
 	 <INC BACTION>
 	 <UNMAKE ,HERE ,NOALL>
-	 <TELL CTHE ,GIANT " pulls the " D ,WAND 
+	 <TELL CTHE ,GIANT " pulls the " D ,WAND
 " out of the dish, puts it to his lips and blows a big " D ,SBUBBLE>
 	 <RTRUE>>
 
@@ -1292,12 +1291,12 @@ D ,ICBM
 	 <RTRUE>>
 
 <GLOBAL BOY-BOPS:TABLE
-	<LTABLE 2 
+	<LTABLE 2
 	" snaps his fingers"
 	" bobs his head"
-        " kicks his feet"
+	" kicks his feet"
 	" hums softly">>
-	       
+
 <GLOBAL VACUUM:NUMBER 3>
 
 <ROUTINE I-VACUUM ("AUX" (X <>))
@@ -1311,7 +1310,7 @@ D ,ICBM
 		       <SET X ,MAGPIE>)>)>
 	 <COND (<EQUAL? ,VACUUM 2>
 		<ICE-VAC>
-		<TELL CR 
+		<TELL CR
 "The total lack of air pressure is making you uncomfortable">
 		<COND (<T? .X>
 		       <TELL ,PTHE D .X
@@ -1324,9 +1323,9 @@ D ,ICBM
 		<COND (<T? .X>
 		       <TELL ". So is the " D .X
 			     "'s, from the look of it">)>
-		<PRINT ,PERIOD> 
+		<PRINT ,PERIOD>
 		<RTRUE>)>
-	 <TELL 
+	 <TELL
 "You lose consciousness just as your internal organs begin to rupture.">
 	 <JIGS-UP>
 	 <RTRUE>>
@@ -1351,11 +1350,11 @@ D ,ICBM
 		<TELL " won't hold up much longer." CR>
 		<RTRUE>)
 	       (T
-	        <POP-BUBBLE-SUIT>
+		<POP-BUBBLE-SUIT>
 		<SAY-POP>
 		<PRINT ,PERIOD>)>
-	 <RTRUE>> 
-	  
+	 <RTRUE>>
+
 <GLOBAL ILIFE:NUMBER 6>
 
 <ROUTINE I-ICE ("AUX" (SEE 0) (GOT 0))
@@ -1385,7 +1384,7 @@ D ,ICBM
 			      <TELL "melting ">)>
 		       <TELL D ,ICE>
 		       <COND (<ZERO? .GOT>
-			      <TELL  
+			      <TELL
 " slowly melts away. Soon there's nothing left of it." CR>
 			      <RTRUE>)>
 		       <TELL " slips from your grasp and ">
@@ -1415,7 +1414,7 @@ D ,ICBM
 		       <TELL "It looks as if the " D ,ICE
 			     " is starting to melt." CR>
 		       <RTRUE>)>
-		<TELL 
+		<TELL
 "It's getting hard to hold the slippery " D ,ICE ,PERIOD>
 		<RTRUE>)
 	       (<EQUAL? ,ILIFE 1>
@@ -1432,7 +1431,7 @@ D ,ICBM
 		<RFALSE>)>
 	 <SETG ILIFE 6>
 	 <ICE-HARDENS-IN>
-         <TELL "sudden vacuum." CR>
+	 <TELL "sudden vacuum." CR>
 	 <RTRUE>>
 
 <ROUTINE ICE-HARDENS-IN ()
@@ -1450,8 +1449,8 @@ D ,ICBM
 		    <CHILLY? .L>>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
-		        
+		<RFALSE>)>>
+
 <ROUTINE I-LEM ("OPTIONAL" (CR T) "AUX" L)
 	 <COND (<T? ,QUIET?>
 		<RFALSE>)>
@@ -1512,9 +1511,9 @@ D ,ICBM
 		       <TELL <PICK-NEXT <GET ,SKINK-TABLE 1>> ,PERIOD>
 		       <RTRUE>)>
 		<TELL ,CTHELEM <PICK-NEXT <GET ,RAT-TABLE 3>> ,PERIOD>
-		<RTRUE>)		       
+		<RTRUE>)
 	       (<EQUAL? .L ,CAGE>
-	        <MAKE ,LEM ,CHILLY>
+		<MAKE ,LEM ,CHILLY>
 		<COND (<IS? .L ,OPENED>
 		       <COND (<T? .CR>
 		       	      <CRLF>)>
@@ -1570,7 +1569,7 @@ D ,ICBM
 			      <HEAR-LEM-IN ,CAGE>
 			      <RTRUE>)>
 		       <MAKE ,LEM ,SEEN>
-		       <TELL ,CTHELEM "in the cage " 
+		       <TELL ,CTHELEM "in the cage "
 			     <PICK-NEXT <GET ,RAT-TABLE 2>> ,PERIOD>
 		       <RTRUE>)
 		      (T
@@ -1587,13 +1586,13 @@ D ,ICBM
 		       <TELL "leaps off " THE .L " and ">)>
 		<FREE-LEM>
 		<RTRUE>)
-	       (T
+	     ; (T
 		<MAKE ,LEM ,CHILLY>
 		<RFALSE>)>>
 
 <ROUTINE SNAKE-LUNCH ()
 	 <TELL "scrambles through the open " D ,CLOSET-DOOR
-", straight into the fangs of the " D ,SNAKE ,PCR CTHE ,LEM 
+", straight into the fangs of the " D ,SNAKE ,PCR CTHE ,LEM
 " twitches for a while as the venom takes effect. Then the snake drags its prize across the floor, shakes its tail once for effect">
 	 <SNAKE-LEAVES>
 	 <EXIT-LEM>
@@ -1623,7 +1622,7 @@ D ,ICBM
 	 <LTABLE 2
 	 	 "covers its face with its paws and trembles"
 	 	 "emits a squeak of terror"
-		 "shivers with fear">>> 
+		 "shivers with fear">>>
 
 <ROUTINE HEAR-LEM-IN (THING)
 	 <MAKE ,LEM ,SEEN>
@@ -1639,7 +1638,7 @@ D ,ICBM
 		       <MOVE ,LEM ,PLAYER>)>
 		<SETG P-IT-OBJECT ,LEM>
 		<BOUNCES-IN-FILM ,LEM>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<HERE? CLIFF-EDGE TOWER-PLAT ON-TOWER>
 		<EXIT-LEM>
 		<TELL "flings itself joyfully off the ">
@@ -1650,12 +1649,12 @@ D ,ICBM
 		       <MAKE ,DLEM ,NOGRASS>
 		       <TELL D ,TOWER>)>
 		<PRINT ,PERIOD>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<AND <HERE? IN-ORBIT ON-SAT>
 		     <ZERO? ,SUITED?>>
 		<EXIT-LEM>
 		<TELL "tumbles slowly" ,OUTASITE>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<HERE? IN-CLOSET>
 	      ; <MAKE ,LEM ,NODESC>
 		<MOVE ,LEM ,HERE>
@@ -1684,10 +1683,10 @@ D ,ICBM
 			     D ,COTTAGE ,PERIOD>)>
 		<RTRUE>)
 	       (<HERE? SEROOM>
-		<TELL 
+		<TELL
 "races" ,TON " exit. It skids to a stop at the threshold, flips over and ">
 		<OUT-THE-DOOR ,SEROOM-DOOR>
-		<RTRUE>)	       
+		<RTRUE>)
 	       (<HERE? SWROOM>
 		<OUT-THE-DOOR ,SWROOM-DOOR>
 		<RTRUE>)
@@ -1705,7 +1704,7 @@ D ,ICBM
 		<RTRUE>)
 	       (<HERE? IN-COTTAGE>
 		<OUT-THE-DOOR ,COTTAGE-DOOR>
-		<RTRUE>)      
+		<RTRUE>)
 	       (<HERE? IN-MILL>
 		<EXIT-LEM>
 		<MOVE ,DLEM ,UNDER-WATER>
@@ -1736,7 +1735,7 @@ A moment later, you hear a faint splash." CR>
 		<TELL "scurries out the open " D .DOOR ,PERIOD>
 		<RTRUE>)>
 	 <MAKE .DOOR ,OPENED>
-	 <TELL "nudges open the " D .DOOR ". Then it scurries" ,OUTASITE>	
+	 <TELL "nudges open the " D .DOOR ". Then it scurries" ,OUTASITE>
 	 <RTRUE>>
 
 <ROUTINE EXIT-LEM ()
@@ -1773,7 +1772,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 		       <TELL "north">
 		       <COND (<NOT <HERE? ETUN HTUN>>
 			      <TELL "east">)>)>
-		<TELL 
+		<TELL
 ", oblivious to you or anything else in their path." CR>
 		<RTRUE>)
 	       (<ZERO? .CR>
@@ -1804,7 +1803,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 		<SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
 		<DEQUEUE I-METEOR>
 		<TELL CTHE ,METEOR
-" disappears below the " D ,HORIZON ,PCR 
+" disappears below the " D ,HORIZON ,PCR
 "You feel the ground shudder, and hear a roar like thunder">
 		<ALL-IS-STILL>
 		<RTRUE>)>>
@@ -1835,7 +1834,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 		       <RTRUE>)>
 		<COND (<PROB 30>
 		       <SET X T>
-		       <TELL CTHE ,MAGPIE <PICK-NEXT <GET ,PIE-TABLE 0>> 
+		       <TELL CTHE ,MAGPIE <PICK-NEXT <GET ,PIE-TABLE 0>>
 			     "s, ">)>
 		<PRINTC 34>
 		<COND (<PROB 50>
@@ -1857,7 +1856,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 		       <TELL ". Awk!">)
 		      (T
 		       <TELL ",">)>
-		<TELL "\"" <PICK-NEXT <GET ,PIE-TABLE 0>> 
+		<TELL "\"" <PICK-NEXT <GET ,PIE-TABLE 0>>
 		      "s the " D ,MAGPIE ,PERIOD>
 		<RTRUE>)
 	       (T
@@ -1868,7 +1867,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 	 <DEQUEUE I-MAGPIE>
 	 <VANISH ,MAGPIE>
 	 <RTRUE>>
-	       
+
 <GLOBAL PIE-TABLE:TABLE
 	<PTABLE
 	 <LTABLE 2 " croak" " squawk" " screeche" " say" " mutter">
@@ -1883,7 +1882,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 	 	 "It go BOOM">
 	 <LTABLE 2
 		 " blinks at you"
-		 " makes a croaking sound" 
+		 " makes a croaking sound"
 		 " wiggles its head"
 		 " whistles"
 		 " ruffles its feathers"
@@ -1892,7 +1891,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 		 " cranes its neck"
 		 " beats its wings"
 		 " sharpens its beak">>>
-	 
+
 <ROUTINE I-JAWS ("AUX" (X <>))
 	 <DEC JAW-TIME>
 	 <COND (<ZERO? ,JAW-TIME>
@@ -1921,7 +1920,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 		       <RFALSE>)>)
 	       (T
 		<RFALSE>)>>
-       
+
 <ROUTINE I-BEE ()
 	 <COND (<NOT <IN? ,BEE ,HERE>>
 		<MAKE ,BEE ,TOUCHED>
@@ -1957,7 +1956,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 	       (<IS? ,BEE ,SEEN>
 		<UNMAKE ,BEE ,SEEN>
 		<MAKE ,BEE ,TOUCHED>
-		<TELL CR CTHE ,BEE 
+		<TELL CR CTHE ,BEE
 " evades your flying hands, and plants a second sting right in the middle of your forehead. You scream with blinding agony" ,PCR>
 		<VOICE-MUTTERS "One more like that, and you've had it" <>>
 		<RTRUE>)
@@ -1967,8 +1966,8 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 |
 Your muscles convulse for a while as the accumulated venom eats away at your central nervous system.">
 		<JIGS-UP>
-		<RTRUE>)>> 
-		       
+		<RTRUE>)>>
+
 <ROUTINE BEE-ENTERS-TRAP ()
 	 <CLOSE-TRAP>
 	 <DEQUEUE I-BEE>
@@ -1978,7 +1977,7 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 |
 ">
 	 <ITALICIZE "Click!">
-	 <TELL " The " D ,TRAP 
+	 <TELL " The " D ,TRAP
 " snaps shut. After a few minutes, the faint buzzing dies away." CR>
 	 <RTRUE>>
 
@@ -1999,12 +1998,12 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 	 	 " avoids your touch with ease"
 	 	 " buzzes safely out of reach"
 	 	 " defies your hopeless attempt">>>
-		
+
 <ROUTINE I-SKINK ("AUX" L)
 	 <SET L <LOC ,SKINK>>
 	 <COND (<NOT <EQUAL? .L ,PLAYER>>
 		<MAKE ,SKINK ,CHILLY>)>
-	 
+
 	 <COND (<AND <ZERO? ,LIT?>
 		     <EQUAL? .L ,HERE>>
 		<COND (<IS? ,SKINK ,SEEN>
@@ -2013,7 +2012,7 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 		<MAKE ,SKINK ,SEEN>
 		<TELL CR <PICK-NEXT <GET ,SKINK-TABLE 1>> ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<AND <EQUAL? .L ,TUN3>
 		     <HERE? TUN3>>
 		<CRLF>
@@ -2033,7 +2032,7 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 			      <RTRUE>)
 			     (<NOT <IS? ,SKINK ,SEEN>>
 			      <PUT <GET ,SKINK-TABLE 2> 1 2>
-			      <TELL 
+			      <TELL
 " squints forlornly down the east " D ,TUNNEL ", blinks and">)>
 		       <MAKE ,SKINK ,SEEN>
 		       <SETG P-IT-OBJECT ,SKINK>
@@ -2045,14 +2044,14 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 			    <IS? ,LAMP ,LIGHTED>>
 		       <TELL " winces in the stab of the " D ,LAMP ", and">)>
 		<SKINK-TO-TUN2>
-		<PRINT ,PERIOD> 
+		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<AND <EQUAL? .L ,CREVICE>
 		     <HERE? TUN3>>
 		<COND (<IN? ,SHARD ,CREVICE>
-		       <TELL CR CTHE ,SKINK 
-" scrambles out of the lighted " D ,CREVICE 
+		       <TELL CR CTHE ,SKINK
+" scrambles out of the lighted " D ,CREVICE
 ", slips between your legs and">
 		       <SKINK-TO-TUN2>
 		       <COND (<AND <IN? ,LAMP ,TUN2>
@@ -2067,10 +2066,10 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 		      (<PROB 50>
 		       <RFALSE>)>
 		<MAKE ,SKINK ,SEEN>
-		<SETG P-IT-OBJECT ,CREVICE>		
+		<SETG P-IT-OBJECT ,CREVICE>
 		<TELL CR <PICK-NEXT <GET ,SKINK-TABLE 3>> ,PERIOD>
-		<RTRUE>)       
-		
+		<RTRUE>)
+
 	       (<AND <EQUAL? .L ,TUN2>
 		     <HERE? TUN2>>
 		<SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
@@ -2078,7 +2077,7 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 		<MOVE ,SKINK <COND (<OR <IN? ,SHARD ,TUN3>
 			   		<AND <IN? ,LAMP ,TUN3>
 			    		     <IS? ,LAMP ,LIGHTED>>>
-		       		    ,CREVICE)		      
+		       		    ,CREVICE)
 		      		   (T
 		       		    ,TUN3)>>
 		<TELL CR CTHE ,SKINK " blinks helplessly in the ">
@@ -2090,23 +2089,23 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 		<TELL ", and scrambles away down the west "
 		      D ,CAVERN ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? .L ,POCKET>
 		<MAKE ,SKINK ,CHILLY>
 		<COND (<IS? ,SKINK ,SEEN>
 		       <UNMAKE ,SKINK ,SEEN>
-		       <RFALSE>)		      
+		       <RFALSE>)
 		      (<PROB 50>
 		       <RFALSE>)>
 		<MAKE ,SKINK ,SEEN>
 		<TELL CR <PICK-NEXT <GET ,SKINK-TABLE 0>> ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<NOT <VISIBLE? ,SKINK>>
 		<UNMAKE ,SKINK ,SEEN>
 		<MAKE ,SKINK ,CHILLY>
 		<RFALSE>)
-	       
+
 	       (<EQUAL? .L ,PLAYER>
 		<UNMAKE ,SKINK ,SEEN>
 		<CRLF>
@@ -2116,11 +2115,11 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 		       <TELL CTHE ,SKINK
 " squirms violently in " D ,HANDS ,PERIOD>
 		       <RTRUE>)>
-		<TELL 
+		<TELL
 "With a sudden lurch, the " D ,SKINK " wiggles out of your grasp and ">
 		<FREE-SKINK>
 		<RTRUE>)>
-	 
+
 	 <TELL CR CTHE ,SKINK>
 	 <PRINTC 32>
 	 <COND (<EQUAL? .L ,CAGE>
@@ -2143,9 +2142,9 @@ Your muscles convulse for a while as the accumulated venom eats away at your cen
 	 <SETG P-IT-OBJECT ,SKINK>
 	 <MAKE ,SKINK ,SEEN>
 	 <MOVE ,SKINK ,TUN3>
-	 <TELL 
-,PA "moment later it reappears, blinking helplessly from the glow of the " 
-D ,LAMP ,PCR "With no place to hide, the flummoxed " D ,SKINK 
+	 <TELL
+,PA "moment later it reappears, blinking helplessly from the glow of the "
+D ,LAMP ,PCR "With no place to hide, the flummoxed " D ,SKINK
 " runs in circles at your feet." CR>
 	 <RTRUE>>
 
@@ -2226,11 +2225,11 @@ D ,LAMP ,PCR "With no place to hide, the flummoxed " D ,SKINK
 		<DORY-APPEARS>
 		<PRINT ,PERIOD>
 		<RTRUE>)>
-	 
-	 <INC STICKS> ; "Update counter."		       
+
+	 <INC STICKS> ; "Update counter."
 	 <COND (<G? ,STICKS 12>
 		<SETG STICKS 1>)>
-	 
+
        ; "Handle mandatory movements."
 
 	 <COND (<EQUAL? ,STICKS 1>
@@ -2251,7 +2250,7 @@ D ,LAMP ,PCR "With no place to hide, the flummoxed " D ,SKINK
 		<REMOVE ,SHADES>)
 	       (<EQUAL? ,STICKS 12>
 		<REMOVE ,DORY>)>
-	 	 
+
        ; "Handle move-specific text."
 
 	 <COND (<HERE? DOCKSIDE>
@@ -2260,7 +2259,7 @@ D ,LAMP ,PCR "With no place to hide, the flummoxed " D ,SKINK
 		<SET B T>)
 	       (T
 		<RFALSE>)>
-	 
+
 	 <COND (<OR <AND <EQUAL? ,STICKS 1>
 			 <T? .DOCK>>
 		    <AND <EQUAL? ,STICKS 8>
@@ -2270,7 +2269,7 @@ D ,LAMP ,PCR "With no place to hide, the flummoxed " D ,SKINK
 	  	<SETG P-HIM-OBJECT ,CHARON>
 		<TELL CTHE ,DORY " reappears out of the mist." CR>
 		<RTRUE>)
-	       
+
 	       (<OR <AND <EQUAL? ,STICKS 2>
 		     	 <T? .DOCK>>
 		    <AND <EQUAL? ,STICKS 9>
@@ -2285,7 +2284,7 @@ D ,LAMP ,PCR "With no place to hide, the flummoxed " D ,SKINK
 		       <RTRUE>)>
 	 	<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<OR <AND <EQUAL? ,STICKS 3>
 		     	 <T? .DOCK>>
 		    <AND <EQUAL? ,STICKS 10>
@@ -2298,18 +2297,18 @@ D ,LAMP ,PCR "With no place to hide, the flummoxed " D ,SKINK
 		<TELL ,PCR>
 		<COND (<T? .DOCK>
 		       <SETG P-THEM-OBJECT ,SHADES>
-		       <TELL 
+		       <TELL
 "A puff of wind ripples the water.|
 |
-Eddies of sand swirl across the " D ,BEACH 
+Eddies of sand swirl across the " D ,BEACH
 " and coalesce into ghostly figures of dust and vapor. Before you can think or move, you find "
 D ,ME " amid a gathering of human " D ,SHADES
 ", pale and gaunt, silent as death." CR>
 		       <RTRUE>)>
 		<ONE-BY-ONE>
-		<PRINT ,PERIOD>		
+		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<AND <EQUAL? ,STICKS 4>
 		     <T? .DOCK>>
 		<COND (<T? .CR?>
@@ -2330,7 +2329,7 @@ D ,ME " amid a gathering of human " D ,SHADES
 		<TELL
 "The last of the " D ,SHADES " seats itself in the crowded dory." CR>
 		<RTRUE>)
-	       
+
 	       (<OR <AND <EQUAL? ,STICKS 6>
 			 <T? .DOCK>>
 		    <AND <EQUAL? ,STICKS 11>
@@ -2361,18 +2360,18 @@ D ,ME " amid a gathering of human " D ,SHADES
 		       <TELL "navigator ">)
 		      (T
 		       <TELL "passengers ">)>
-		<TELL 
+		<TELL
 "glide across the river, vanishing at last into obscurity." CR>
 		<RTRUE>)
-	       
+
 	       (T
 		<RFALSE>)>>
 
 <ROUTINE DORY-APPEARS ()
-	 <TELL CR 
+	 <TELL CR
 "As you peer across the river you notice a lone vessel gliding out of the fog">
 	 <RTRUE>>
-		
+
 <ROUTINE MAKE-OUT-CHARON ()
 	 <TELL ". You can make out a dark " D ,CHARON " at the stern." CR>
 	 <RTRUE>>
@@ -2383,7 +2382,7 @@ D ,ME " amid a gathering of human " D ,SHADES
 	 <RTRUE>>
 
 <ROUTINE ONE-BY-ONE ()
-	 <TELL "One by one, the " D ,SHADES 
+	 <TELL "One by one, the " D ,SHADES
 " slink out of the vessel and drift across the sand like leaves on a breath of wind">
 	 <RTRUE>>
 
@@ -2404,7 +2403,7 @@ D ,ME " amid a gathering of human " D ,SHADES
 ,PA "swift kick encourages you to visit it quickly." CR>
 		<EXIT-DORY>
 		<RTRUE>)>>
-		 
+
 <ROUTINE I-CRABS ("OPTIONAL" (CR T))
 	 <COND (<OR <NOT <HERE? WSAND>>
 		    <IS? ,CRABS ,SEEN>>
@@ -2425,7 +2424,7 @@ D ,ME " amid a gathering of human " D ,SHADES
 	 <TELL D ,CRABS <PICK-NEXT <GET ,LAGOON-TABLE 0>> ,PERIOD>
 	 <SETG P-THEM-OBJECT ,CRABS>
 	 <RTRUE>>
-	 
+
 <GLOBAL LAGOON-TABLE:TABLE
 	<PTABLE
 	 <LTABLE 2
@@ -2479,12 +2478,12 @@ D ,ME " amid a gathering of human " D ,SHADES
 		       <MAKE ,FLIPPER ,SEEN>
 		       <COND (<T? .CR>
 			      <CRLF>)>
-		       <TELL 
-"With a sudden splash, the gray fin shoots upward! You shriek and cover your face with " D ,HANDS 
-"s as a mouthful of sharp teeth leaps from the " 
+		       <TELL
+"With a sudden splash, the gray fin shoots upward! You shriek and cover your face with " D ,HANDS
+"s as a mouthful of sharp teeth leaps from the "
 D ,LAGOON "...|
 |
-A friendly chatter encourages you to open your eyes. It's a bottle-nosed " 
+A friendly chatter encourages you to open your eyes. It's a bottle-nosed "
 D ,FLIPPER ", standing on its tail just offshore." CR>
 		       <RTRUE>)>)
 	       (<NOT <IN? ,FLIPPER ,HERE>>
@@ -2517,9 +2516,9 @@ D ,FLIPPER ", standing on its tail just offshore." CR>
 		<RTRUE>)
 	       (<HERE? WSAND>
 		<SET W T>)>
-	 
+
        ; "Handle tide and coconut."
-	
+
 	 <COND (<OR <HERE? ON-SCAFFOLD AT-SDOORS>
 		    <L? ,MINUTES 54>
 		    <NOT <EQUAL? ,SECONDS 45 15>>> ; "Always at 45 or 15."
@@ -2527,15 +2526,15 @@ D ,FLIPPER ", standing on its tail just offshore." CR>
 	       (<EQUAL? ,MINUTES 54>
 		<CRLF>
 		<COND (<EQUAL? ,SECONDS 15>
-       	               <TELL 
+		       <TELL
 "A wave washes up underfoot. It looks as if the tide is rising." CR>)
 		      (T
-	               <TELL "The ">
+		       <TELL "The ">
 		       <COND (<T? .W>
 		       	      <TELL "distant " D ,ISLET>)
 		      	     (T
 		       	      <TELL D ,BEACH>)>
-		       <TELL 
+		       <TELL
 " is shrinking in the rising tide." CR>)>
 		<BURNS-QUOTED?>
 		<RTRUE>)
@@ -2580,11 +2579,11 @@ D ,FLIPPER ", standing on its tail just offshore." CR>
 		<RFALSE>)
 	       (<EQUAL? ,MINUTES 57>
 		<COND (<EQUAL? ,SECONDS 45>
-		       <TELL CR 
+		       <TELL CR
 "The tide is making the sand squishy." CR>
 		       <COND (<AND <T? .W>
 			    	   <IS? ,COCO ,CHILLY>>
-		       	      <TELL CR CTHE ,COCO 
+		       	      <TELL CR CTHE ,COCO
 " floats further away. It's almost" ,OUTASITE>)>
 		       <BURNS-QUOTED?>
 		       <RTRUE>)
@@ -2606,7 +2605,7 @@ D ,FLIPPER ", standing on its tail just offshore." CR>
 		<RFALSE>)>
 
        ; "Handle PA system."
-	 
+
 	 <COND (<IS? ,TSWITCH ,OPENED> ; "Nothing if PA is off."
 		<RFALSE>)
 	       (<ZERO? ,SECONDS>
@@ -2628,7 +2627,7 @@ D ,FLIPPER ", standing on its tail just offshore." CR>
 		      (<EQUAL? ,SECONDS 30>
 		       <TELL "thirty seconds.\"" CR>
 		       <RTRUE>)>
-		<TELL 
+		<TELL
 "fifteen seconds. Personnel not issued protective goggles should face away from Zero at this time.\"" CR>
 		<RTRUE>)
 	       (<EQUAL? ,SECONDS 30>
@@ -2638,7 +2637,7 @@ D ,FLIPPER ", standing on its tail just offshore." CR>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
-	      
+
 <ROUTINE BURNS-QUOTED? ()
 	 <COND (<IS? ,LAGOON ,SEEN>
 		<RFALSE>)>
@@ -2652,7 +2651,7 @@ D ,FLIPPER ", standing on its tail just offshore." CR>
 	 <LTABLE 2
 	 	 "Switch to one zero three"
 	 	 "Detonator check, go"
-	 	 "Geo, sync at three, two, one, mark"	 
+	 	 "Geo, sync at three, two, one, mark"
 	 	 "Patch to Alpha Echo Three Five"
 	 	 "Seismographic, confirm"
 	 	 "H-E nominal"
@@ -2668,8 +2667,8 @@ D ,FLIPPER ", standing on its tail just offshore." CR>
 		    <AND <IN? ,PARASOL ,PLAYER>
 			 <IS? ,PARASOL ,OPENED>>>
 		<QUEUE I-NAGASAKI -1>
-		<TELL CTHE ,CITY 
-" below draws closer. You glimpse a river, railroad tracks, streets busy with horses and bicycles, a " 
+		<TELL CTHE ,CITY
+" below draws closer. You glimpse a river, railroad tracks, streets busy with horses and bicycles, a "
 D ,PGROUND ".." ,PCR>
 		<COND (<T? ,SUITED?>
 		       <POP-BUBBLE-SUIT>
@@ -2680,13 +2679,13 @@ D ,PGROUND ".." ,PCR>
 " holding you aloft disappears in a spray of color">
 		       <COND (<BROLLY-FILLS?>
 			      <CRLF>)
-			     (T			      
+			     (T
 		       	      <I-FALLING>
 		       	      <RTRUE>)>)>
-		
+
 		<ITALICIZE "Crunch.">
 		<CRLF> <CRLF>
-		
+
 		<SET OBJ <FIRST? ,PLAYER>>
 		<REPEAT ()
 			<COND (<ZERO? .OBJ>
@@ -2705,7 +2704,7 @@ D ,PGROUND ".." ,PCR>
 	 <RTRUE>>
 
 <ROUTINE I-NAGASAKI ("OPTIONAL" (CR T) "AUX" (S <>))
-         <COND (<HERE? IN-SHELTER>
+	 <COND (<HERE? IN-SHELTER>
 		<SET S T>)>
 	 <COND (<AND <EQUAL? ,MINUTES 56>
 		     <ZERO? ,SECONDS>>
@@ -2728,7 +2727,7 @@ D ,PGROUND ".." ,PCR>
 		       <TELL D ,SHELTER>)
 		      (T
 		       <TELL D ,SKY>)>
-		<TELL 
+		<TELL
 " is lit by a terrifying flash of light. You dive ">
 		<COND (<IN? ,GIRL ,HERE>
 		       <TELL "to cover the screaming " D ,GIRL
@@ -2737,7 +2736,7 @@ D ,PGROUND ".." ,PCR>
 Your body absorbs much of the deadly radiation that might otherwise have reached the child. Years later, she recalls to her grand" D ,CHILDREN
 " the tale of a mysterious stranger who shielded her life at " D ,NAGASAKI>)
 		      (T
-		       <TELL 
+		       <TELL
 "for cover, but never make it to the ground">)>
 		<TELL ".">
 		<JIGS-UP>
@@ -2753,7 +2752,7 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 		<PUTP ,ON-BIRD ,P?HEAR ,PLANES>
 		<PUTP ,ON-BIRD ,P?OVERHEAD ,PLANES>
 		<PUTP ,IN-SHELTER ,P?HEAR ,PLANES>
-		<TELL CR 
+		<TELL CR
 "You've noticed a faint " D ,SOUND " coming from somewhere">
 		<OVER-OR-OUT>
 		<COND (<IN? ,GIRL ,HERE>
@@ -2771,27 +2770,27 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 		       <RTRUE>)>
 		<PRINT ,PERIOD>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,SECONDS 30>
 		<COND (<T? .CR>
 		       <CRLF>)>
 		<TELL CTHE ,SOUND>
 		<OVER-OR-OUT>
-		<TELL 
+		<TELL
 " grows louder. There's no mistaking the drone of " D ,PLANES ,PERIOD>
 		<COND (<IN? ,GIRL ,HERE>
 		       <MAKE ,GIRL ,SEEN>
 		       <TELL CR CTHE ,GIRL
-		         " looks at you expectantly and ">
+			 " looks at you expectantly and ">
 		       <COND (<T? .S>
 			      <TELL "crouches down in a " D ,CORNER " of ">)
 			     (T
 			      <TELL "tries to pull you towards ">)>
 		       <TELL THE ,SHELTER ,PERIOD>)>
 		<COND (<ZERO? .S>
-		       <TEACHERS-COME>)>      
+		       <TEACHERS-COME>)>
 		<RTRUE>)
-	       
+
 	       (<EQUAL? ,SECONDS 45>
 		<COND (<T? .CR>
 		       <CRLF>)>
@@ -2801,11 +2800,11 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 		      "s as if they're in a power dive." CR>
 		<COND (<IN? ,GIRL ,HERE>
 		       <MAKE ,GIRL ,SEEN>
-		       <TELL CR CTHE ,GIRL 
+		       <TELL CR CTHE ,GIRL
 " covers her ears with her hands and whimpers." CR>
 		       <RTRUE>)
 		      (<ZERO? .S>
-		       <TEACHERS-COME>)>		       
+		       <TEACHERS-COME>)>
 		<RTRUE>)
 	       (T
 		<RFALSE>)>>
@@ -2816,7 +2815,7 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 ", hot on the trail of a dragonfly. She trips and sprawls across the sand, laughing with hysterical glee. Then she sees you." CR>
 	 <GIRL-SEES-YOU>
 	 <RTRUE>>
-		
+
 <ROUTINE GIRL-SEES-YOU ()
 	 <UNMAKE ,GIRL ,NODESC>
 	 <SETG P-HER-OBJECT ,GIRL>
@@ -2831,7 +2830,7 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 " in her hands. Her expression changes from fear to embarrassment. With a red face, she lays the thing at your feet." CR>
 		<RTRUE>)
 	       (<VISIBLE? ,PARASOL>
-	        <SETG P-IT-OBJECT ,PARASOL>
+		<SETG P-IT-OBJECT ,PARASOL>
 		<TELL CR "Suddenly, the " D ,PARASOL>
 		<COND (<IN? ,PARASOL ,PLAYER>
 		       <TELL " in " D ,HANDS>)
@@ -2849,7 +2848,7 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 
 <ROUTINE TEACHERS-COME ()
 	 <TELL CR
-"Muttering with exasperation, the " D ,TEACHERS " drop their " D ,SPADE 
+"Muttering with exasperation, the " D ,TEACHERS " drop their " D ,SPADE
 "s and begin to trudge in the " D ,INTDIR " of the " D ,SHELTER ,PERIOD>
 	 <TEACHERS-NOTICE>
 	 <RTRUE>>
@@ -2873,7 +2872,7 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 			      <TELL " silently follows you out ">)>
 		       <TELL "of the " D ,SHELTER ,PERIOD>
 		       <RTRUE>)>)>
-	 
+
 	 <SETG P-HER-OBJECT ,GIRL>
 	 <COND (<IS? ,GIRL ,NODESC> ; "1st time seen?"
 		<TELL CR "A little girl is crouched in the " D ,SPILE>
@@ -2916,7 +2915,7 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 		<TELL " away towards the " D ,TEACHERS ,PERIOD>
 		<TEACHERS-NOTICE>
 		<RTRUE>)>>
-	 
+
 <GLOBAL GIRL-TABLE:TABLE
 	<PTABLE
 	 <LTABLE 2
@@ -2924,16 +2923,16 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 	 	 " twirls the umbrella and giggles"
 	 	 " admires the umbrella from all sides"
 	 	 " turns the umbrella over and over in her hands">
-	 <LTABLE 2 
+	 <LTABLE 2
 	 	 " can't keep her eyes off the umbrella"
-	 	 " gazes at the umbrella, then at you" 
-	 	 " looks at you, then at the umbrella" 
+	 	 " gazes at the umbrella, then at you"
+	 	 " looks at you, then at the umbrella"
 	 	 " eyes the umbrella longingly">
 	 <LTABLE 2
 		 "The paper bird glows with an eerie violet radiance"
 		 "Ghostly light flickers around the paper bird"
 		 "A twinkling aurora engulfs the paper bird">>>
-	 
+
 <ROUTINE I-NEWCRANE ("OPTIONAL" (CR T))
 	 <COND (<NOT <VISIBLE? ,CRANE>>
 		<UNMAKE ,CRANE ,SEEN>
@@ -2963,7 +2962,7 @@ Your body absorbs much of the deadly radiation that might otherwise have reached
 		<TELL CR "Something twitches in " D ,HANDS ,PCR
 		      CTHE ,CRANE " is ">
 		<ITALICIZE "growing!">
-		<TELL 
+		<TELL
 " The wings and tail are unfolding like the petals of a flower, the long neck craning further and further out of the expanding body...|
 |
 You drop the demonic thing with a yelp of dismay. In moments, it opens up into a monstrous construction of folded paper the size of a foreign car." CR>
@@ -2977,7 +2976,7 @@ You drop the demonic thing with a yelp of dismay. In moments, it opens up into a
 		<DEQUEUE I-MCRANE>
 		<REMOVE ,MCRANE>
 		<COND (<HERE? IN-SHELTER>
-		       <TELL CR 
+		       <TELL CR
 "A gust of wind outside blows dust into the " D ,SHELTER ,PERIOD>)
 		      (T
 		       <SETG P-IT-OBJECT ,NOT-HERE-OBJECT>
@@ -3006,7 +3005,7 @@ When the dust clears, the " D ,CRANE " is nowhere to be seen." CR>)>
 		<TELL
 " turns to look at you. Though the paper face is utterly featureless, you somehow get the feeling that it likes you." CR>
 		<RTRUE>)>>
-		
+
 <ROUTINE I-FLIGHT ("OPTIONAL" (CR T))
 	 <DEC MCOUNT>
 	 <SETG MINUTES 1>
@@ -3023,7 +3022,7 @@ When the dust clears, the " D ,CRANE " is nowhere to be seen." CR>)>
 		<COND (<AND <IS? ,TS5-DOOR ,OPENED>
 			    <NOT <IS? ,TS5-DOOR ,NOALL>>>
 		       <TELL
-"A speck in the sky grows into the familiar outline of the " 
+"A speck in the sky grows into the familiar outline of the "
 D ,TS5-DOOR ,PTHE "bird circles once, slows to a stall and hovers only a few feet from the threshold." CR>
 		       <RTRUE>)
 		      (T
@@ -3041,7 +3040,7 @@ D ,TS5-DOOR ,PTHE "bird circles once, slows to a stall and hovers only a few fee
 ", then promptly envelops the bird, the city and you in a flash of nuclear fire.">
 		<JIGS-UP>
 		<RTRUE>)>>
-	   
+
 <ROUTINE SAY-DRONE-LOUDER ()
 	 <MAKE ,FATMAN ,SEEN>
 	 <TELL "The drone of the " D ,PLANES
@@ -3125,7 +3124,7 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 		       <COND (<T? .CR>
 			      <CRLF>)>
 		       <ITALICIZE "Boom!">
-		       <TELL 
+		       <TELL
 " A powerful concussion sends you sprawling. Your ears ring as you regain your feet." CR>
 		       <RTRUE>)
 		      (T
@@ -3137,7 +3136,7 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 		<TELL "The rumble in the ">
 		<PRINTD <COND (<HERE? IN-COTTAGE> ,CAULDRON)
 			      (T ,COTTAGE)>>
-		<TELL 
+		<TELL
 " grows to a shuddering roar that shakes the ">
 		<PRINTD <COND (<HERE? IN-COTTAGE> ,COTTAGE)
 			      (T ,GROUND)>>
@@ -3173,12 +3172,12 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 		<TELL " emits a wooden moan of discomfort." CR>
 		<RTRUE>)
 	       (T
-		<TELL 
+		<TELL
 " creaks under your weight. It isn't in very good shape." CR>)>
-	 <RTRUE>>  
-	 
+	 <RTRUE>>
+
 <ROUTINE I-TMEEP ("OPTIONAL" (CR T) "AUX" L (FOOD <>))
-         <COND (<T? ,QUIET?>
+	 <COND (<T? ,QUIET?>
 		<RFALSE>)>
 	 <UNMAKE ,MEEP ,NODESC>
 	 <SET L <LOC ,MEEP>>
@@ -3187,10 +3186,10 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 		     <T? ,CCNT>
 		     <IN? ,BAG .L>>
 		<UNMAKE ,MEEP ,SEEN>
-	        <SET FOOD T>)
+		<SET FOOD T>)
 	       (T
 		<SETG APPETITE 0>)>
-	  
+
        ; "Handle case where MEEP is visible."
 
 	<COND (<AND <IN? ,MEEP ,HERE> ; "Doesn't like these places."
@@ -3232,13 +3231,13 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 		       <TELL ,CTHEMEEP>
 		       <COND (<IS? ,MEEP ,TOUCHED> ; "Only waits 1 move."
 			      <UNMAKE ,MEEP ,TOUCHED>
-			      <TELL 
+			      <TELL
 "pecks angrily at your fingers with its sharp beak. Ouch!" CR>
 			      <RTRUE>)>
 		       <TELL "struggles out of your grasp and ">
 		       <MEEP-ESCAPES>
 		       <RTRUE>)>
-	        <COND (<IS? .L ,SURFACE> ; "Won't stay on a SURFACE."
+		<COND (<IS? .L ,SURFACE> ; "Won't stay on a SURFACE."
 		       <COND (<T? .CR>
 			      <CRLF>)>
 		       <TELL ,CTHEMEEP>
@@ -3263,7 +3262,7 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 				    (<AND <EQUAL? .L ,CAGE>
 					  <IS? ,MEEP ,TOUCHED>>
 				     <UNMAKE ,MEEP ,TOUCHED>
-				     <TELL 
+				     <TELL
 "flutters anxiously around the cage." CR>
 				     <RTRUE>)>
 			      <TELL "hops out of " THE .L " and ">
@@ -3326,7 +3325,7 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 		       <TELL ,CTHEMEEP <PICK-NEXT <GET ,MEEP-TABLE 3>>
 			     ,PERIOD>
 		       <RTRUE>)>)>
-	 
+
        ; "MEEP can't follow you under these conditions."
 
 	 <COND (<T? .FOOD> ; "Next bite if eating."
@@ -3334,7 +3333,7 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 		<COND (<AND <ZERO? ,CCNT>      ; "Bag empty?"
 			    <ZERO? ,APPETITE>> ; "Yes, done eating."
 		       <SET FOOD <>>)>)>
-	 
+
 	 <COND (<T? .FOOD>     		       ; "Continue if still eating."
 		T)
 	       (<NOT <IN? ,DOG ,W100>>
@@ -3354,14 +3353,14 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 		       <SETG TOLERANCE 2>
 		       <UNMAKE ,W100 ,TOUCHED>)>
 		<RFALSE>)>
-	 
+
 	 <COND (<OR <T? .FOOD>
 		    <T? ,MDELAY>
 		    <AND <IS? .L ,CONTAINER>
 			 <NOT <IS? .L ,OPENED>>>
 		    <AND <IS? ,HERE ,INDOORS>
 			 <NOT <IS? .L ,INDOORS>>
-			 <NOT <RANCH-OPEN?>>> 
+			 <NOT <RANCH-OPEN?>>>
 		    <HERE? IN-SHACK TOWER-PLAT ON-TOWER ON-CIST
 		       	   IN-CIST UNDER-WATER IN-MILL IN-JEEP IN-CLOSET>>
 		<UNMAKE ,MEEP ,SEEN>
@@ -3377,25 +3376,25 @@ D ,CAULDRON " vomits up a volcano of energy that cremates you instantly.">
 		       <TELL ", sees the " D ,SNAKE " again">)
 		      (T
 		       <MAKE ,SNAKE ,BORING>
-		       <TELL 
+		       <TELL
 " and freezes. Tension mounts as snake and bird study one another, their eyes bright with familiar hatred.|
 |
 Suddenly the " D ,MEEP
-" explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn't big enough to support this style of attack; and after a few very close calls, the " 
+" explodes into action! It dances around the snake, fluttering off the walls as it tries to grab the hissing reptile in its beak. But the room isn't big enough to support this style of attack; and after a few very close calls, the "
 D ,MEEP " abandons the fray">)>
 		<TELL " and retreats with a squall of frustration." CR>
 		<RTRUE>)
-		 
+
 	       (T
 		<MOVE ,MEEP ,HERE>
-		<MEEP-ARRIVES> 
+		<MEEP-ARRIVES>
 		<RTRUE>)>>
 
 <ROUTINE EXIT-MEEP ()
 	 <DEQUEUE I-TMEEP>
 	 <VANISH ,MEEP>
 	 <RTRUE>>
-		 
+
 <ROUTINE MEEP-SEES-DOG ("AUX" X)
 	 <MAKE ,DOG ,SEEN>
 	 <TELL ,CTHEMEEP>
@@ -3416,11 +3415,11 @@ D ,MEEP " abandons the fray">)>
 	 <RTRUE>>
 
 <ROUTINE LAST-PECK ()
-	 <TELL 
+	 <TELL
 "The shepherd lifts an eyelid and peeks up at the bird">
 	 <COND (<IS? ,DOG ,WINDY>
 		<TELL " perched on its head">)>
-	 <TELL 
+	 <TELL
 ". Its expression hardens from sleepy distraction to annoyance... and then to outrage!|
 |
 In a single motion, the monster bounds to its feet and snaps at the "
@@ -3496,7 +3495,7 @@ Then the dog sees you." CR>
 		<CRLF>
 		<MEEP-SEES-DOG>)>
 	 <RTRUE>>
-	 
+
 <ROUTINE RANCH-OPEN? ()
 	 <COND (<OR <IS? ,NEROOM-DOOR ,OPENED>
 		    <IS? ,SEROOM-DOOR ,OPENED>
@@ -3505,7 +3504,7 @@ Then the dog sees you." CR>
 		    <IS? ,BROOM-DOOR ,OPENED>>
 		<RTRUE>)
 	       (T
-		<RFALSE>)>> 
+		<RFALSE>)>>
 
 <ROUTINE MEEP-ESCAPES ("AUX" (DOOR <>))
 	 <UNMAKE ,MEEP ,TOUCHED>
@@ -3565,7 +3564,7 @@ Then the dog sees you." CR>
 		<COND (<T? .DOOR>
 		       <MAKE .DOOR ,OPENED>
 		       <TELL "nudges open " THE .DOOR
-			     ". It gives you a sly glance before it ">)> 
+			     ". It gives you a sly glance before it ">)>
 		<MOVE ,MEEP <COND (<RANCH-OPEN?> ,ERANCH)
 				  (<HERE? IN-BATH> ,BROOM)
 				  (T ,IN-BATH)>>
@@ -3578,10 +3577,10 @@ Then the dog sees you." CR>
 		       <TELL "to the west">)
 		      (T
 		       <TELL "over the side of the " D ,PLATFORM>)>
-		<TELL ,PCR 
+		<TELL ,PCR
 "You hear a flurry of wings that quickly fades." CR>
 		<RTRUE>)
-	       
+
 	       (T
 		<UNMAKE ,DOG ,WINDY>
 		<MOVE ,MEEP ,HERE>
@@ -3597,9 +3596,9 @@ Then the dog sees you." CR>
 		       <CRLF>
 		       <MEEP-SEES-DOG>)>
 		<RTRUE>)>>
-	 
+
 <ROUTINE MEEP-SEES-BAG ("AUX" L)
-         <UNMAKE ,MEEP ,TOUCHED>
+	 <UNMAKE ,MEEP ,TOUCHED>
 	 <UNMAKE ,DOG ,WINDY>
 	 <SET L <LOC ,BAG>>
 	 <COND (<AND <EQUAL? .L ,CAGE>
@@ -3618,14 +3617,14 @@ Then the dog sees you." CR>
 		<TELL " inside " THE .L ", and blinks at it hungrily." CR>
 		<RTRUE>)
 	       (T
-	        <MOVE ,MEEP .L>
+		<MOVE ,MEEP .L>
 		<TELL ". It leaps into " THE .L>)>
 	 <TELL " and ">
 	 <SAY-PECKS>
 	 <RTRUE>>
 
 <ROUTINE I-SNAKE ("OPTIONAL" (CR T))
-	 <COND (<NOT <SEE-SNAKE?>>		
+	 <COND (<NOT <SEE-SNAKE?>>
 		<MAKE ,SNAKE ,SEEN>
 		<RFALSE>)
 	       (<T? .CR>
@@ -3642,20 +3641,20 @@ Then the dog sees you." CR>
 		<RTRUE>)>
 	 <MAKE ,ANKLE ,SURFACE>
 	 <QUEUE I-BITTEN 1>
-	 <TELL CTHE ,SNAKE 
+	 <TELL CTHE ,SNAKE
 " strikes " D ,ANKLE " like lightning, recoils in an instant">
-	 <SNAKE-LEAVES> 
-	 <TELL CR 
+	 <SNAKE-LEAVES>
+	 <TELL CR
 "Sobbing with pain and shock, you peer at the tender wound. ">
 	 <ITS-ALREADY "beginning to swell">
-	 <RTRUE>>  
+	 <RTRUE>>
 
 <ROUTINE SEE-SNAKE? ()
 	 <COND (<NOT <IS? ,SNAKE ,LIVING>>
 		<RFALSE>)
 	       (<HERE? NEROOM>
 		<RTRUE>)
-	       (<AND <HERE? IN-CLOSET>		
+	       (<AND <HERE? IN-CLOSET>
 		     <IS? ,CLOSET-DOOR ,OPENED>>
 		<RTRUE>)
 	       (T
@@ -3666,7 +3665,7 @@ Then the dog sees you." CR>
 	 " rears its wedge-shaped head"
 	 " flicks its tongue in and out"
 	 " hisses a threat">>
-	 
+
 <ROUTINE SNAKE-LEAVES ()
 	 <UNMAKE ,SNAKE ,LIVING>
 	 <REMOVE ,XSNAKE>
@@ -3748,10 +3747,10 @@ Then the dog sees you." CR>
 	<PTABLE
 	 <PTABLE "BUG!" "One" "Two" "Three" "Four" "Five" "Six"
 		 "Seven" "Eight" "Nine" "Ten">
-	 <LTABLE 2 " hisses" " says" " crackles" " chatters" " rasps" 
+	 <LTABLE 2 " hisses" " says" " crackles" " chatters" " rasps"
 		   " says" " buzzes" " chirps">>>
 
-<GLOBAL HISSES:TABLE 
+<GLOBAL HISSES:TABLE
 	<LTABLE 2 " hisses quietly" " emits a burst of static"
 		  " crackles for a moment" " clicks and hisses">>
 
@@ -3767,8 +3766,8 @@ Then the dog sees you." CR>
 		<RTRUE>)>
 	 <UNMAKE ,WTK ,SEEN>
 	 <RFALSE>>
-	  
-<ROUTINE I-FLARE ()	 
+
+<ROUTINE I-FLARE ()
 	 <COND (<AND <EQUAL? ,MINUTES 29>
 		     <EQUAL? ,SECONDS 45>>
 		<KABOOM>
@@ -3792,7 +3791,7 @@ Then the dog sees you." CR>
 				     <RTRUE>)>
 			      <TELL CR
 "The GIs hurry out of their jeeps and take cover in some " D ,TRENCHES
-" nearby." CR>)>  
+" nearby." CR>)>
 		       <PUTP ,W100 ,P?ODOR 0>
 		       <PUTP ,W100 ,P?HEAR 0>
 		     ; <SETG DISTRACTION 0>
@@ -3802,7 +3801,7 @@ Then the dog sees you." CR>
 			      <FIRST-SEE-FLARE>)
 			     (T
 			      <MAKE ,FLARE ,CHILLY>
-			      <TELL CR 
+			      <TELL CR
 "Another " D ,FLARE " arcs across the sky,">)>
 		       <TELL " sputters prematurely and blinks out." CR>
 		       <RTRUE>)
@@ -3835,19 +3834,19 @@ Then the dog sees you." CR>
 
 <ROUTINE FIRST-SEE-FLARE ()
 	 <UNMAKE ,FLARE ,NODESC>
-	 <TELL CR "A distant glare lights the " D ,GDESERT 
+	 <TELL CR "A distant glare lights the " D ,GDESERT
 "! You watch as a rocket " D ,FLARE " streaks upward,">
 	 <RTRUE>>
 
 <ROUTINE CRACKLES (STR)
-	 <TELL CR 
+	 <TELL CR
 "A " D ,SPEAKER " crackles to life. \"Minus " .STR " minutes">
 	 <RTRUE>>
 
 <ROUTINE KABOOM ()
 	 <TELL CR ,ALLATONCE>
 	 <DO-KABOOM>
-	 <RTRUE>> 
+	 <RTRUE>>
 
 <ROUTINE DO-KABOOM ()
 	 <TELL "the ">
@@ -3875,7 +3874,7 @@ Then the dog sees you." CR>
 	       (T
 		<TELL "desert around you">
 		<DAZZLE>)>
-	 <TELL "! You jam " D ,HANDS 
+	 <TELL "! You jam " D ,HANDS
 "s over your eyes in the awful glare; never see the fireball closing in at many times the speed of sound; and never feel the stellar heat that annihilates ">
 	 <MUCH-OF>
 	 <RTRUE>>
@@ -3888,20 +3887,20 @@ Then the dog sees you." CR>
 	 <TELL " disappears in a flash of startling brilliance">
 	 <RTRUE>>
 
-<GLOBAL DISTRACTION:NUMBER 0> "Countdown timer for pooch distraction." 
+<GLOBAL DISTRACTION:NUMBER 0> "Countdown timer for pooch distraction."
 <GLOBAL TOLERANCE:NUMBER 4> "Stay in tower no more than 45 seconds."
 <GLOBAL MLIVES:NUMBER 2> "Don't bother dog more than twice."
 
 <ROUTINE I-TRINITY ("AUX" (W <>) (V <>) (Z <>) X )
-	 
+
        ; "Determine status of walkie-talkie."
-	 
+
 	 <COND (<IS? ,WTK ,CHILLY> ; "No talkie if wet."
 		T)
-	       (<AND <NOT <IS? ,WSWITCH ,OPENED>>        ; "Turned on?"
-		     <VISIBLE? ,WTK>>		         ; "Hearable?"
-		<COND (<AND <IS? ,ANTENNA ,OPENED>       ; "Antenna up?"
-			    <IS? ,RDIAL ,SEEN>           ; "Right freq?"
+	       (<AND <NOT <IS? ,WSWITCH ,OPENED>>	; "Turned on?"
+		     <VISIBLE? ,WTK>>			; "Hearable?"
+		<COND (<AND <IS? ,ANTENNA ,OPENED>      ; "Antenna up?"
+			    <IS? ,RDIAL ,SEEN>		; "Right freq?"
 		     	    <EQUAL? ,TFREQ ,MAGICFREQ>>
 		       <SET W T>
 		       <UNMAKE ,WTK ,SEEN>)
@@ -3914,9 +3913,9 @@ Then the dog sees you." CR>
 		       <MAKE ,WTK ,SEEN>
 		       <TELL CR CTHE ,WTK <PICK-NEXT ,HISSES>
 			     ,PERIOD>)>)>
-	 	
+
 	; "Monitor BREAKER."
-	 
+
 	 <COND (<IS? ,BREAKER ,OPENED>
 		<COND (<IS? ,BREAKER ,BORING> ; "Opened more than once."
 		       <COND (<T? .W>
@@ -3932,8 +3931,8 @@ Then the dog sees you." CR>
 		<MAKE ,BREAKER ,SHADOWY>
 		<COND (<T? .W>
 		       <SET V T>
-		       <REVEAL-WIRE>)>)> ; "Second move."	 
-	 
+		       <REVEAL-WIRE>)>)> ; "Second move."
+
 	 <COND (<AND <HERE? ON-TOWER TOWER-PLAT>
 		     <L? ,MINUTES 30>
 		     <ZERO? ,DISTRACTION>>
@@ -3947,9 +3946,9 @@ Then the dog sees you." CR>
 			    <EQUAL? ,TOLERANCE 1>>
 		       <SET V T>
 		       <EYES-SEE-MOVEMENT>)>)>
-    
+
        ; "Handle distraction."
-		     
+
 	 <COND (<T? ,DISTRACTION>
 		<DEC DISTRACTION>
 		<COND (<ZERO? ,DISTRACTION>
@@ -3978,7 +3977,7 @@ Then the dog sees you." CR>
 		       	      <SET V T>
 			      <TELL CR CTHE ,SLIGHT
 				    " sweeps back onto the tower." CR>)>)
-			      
+
 		      (<EQUAL? ,DISTRACTION 2>
 		       <UNMAKE ,SPOT ,SEEN>
 		       <UNMAKE ,TOWER-PLAT ,TOUCHED>
@@ -3992,10 +3991,10 @@ Then the dog sees you." CR>
 			      <SPOT-SWEEPS "southwest">)
 			     (<HERE? AT-ZERO ON-TOWER TOWER-PLAT IN-SHACK>
 		       	      <SET V T>
-			      <TELL CR "The harsh light illuminating the " 
+			      <TELL CR "The harsh light illuminating the "
 D ,TOWER " sweeps away suddenly." CR>)>)
-		      
-		      (T 
+
+		      (T
 		       <DEC MLIVES>
 		       <COND (<ZERO? ,MLIVES>
 			      <DEQUEUE I-TMEEP>
@@ -4007,14 +4006,14 @@ D ,TOWER " sweeps away suddenly." CR>)>)
 		       <COND (<AND <ZERO? ,MLIVES>
 				   <HERE? W75 D5 D9>>
 			      <SET V T>
-			      <TELL CR 
+			      <TELL CR
 "A distant gunshot rings across the " D ,GDESERT ,PERIOD>)>)>)>
-	 
+
 	 ; "Handle countdown."
-	  
+
 	  <COND (<ZERO? .W>
 		 <RETURN .V>)
-	        (<EQUAL? ,MINUTES 29>
+		(<EQUAL? ,MINUTES 29>
 		 <COND (<ZERO? ,SECONDS>
 			<Z-MINUS-45>
 			<RTRUE>)
@@ -4025,18 +4024,18 @@ D ,TOWER " sweeps away suddenly." CR>)>)
 			<Z-MINUS-15>
 			<RTRUE>)>
 		 <FINAL-SECONDS>
-		 <RTRUE>)		
+		 <RTRUE>)
 		(<EQUAL? ,MINUTES 9>
 		 <DO-NINE>
 		 <RTRUE>)
 		(<EQUAL? ,MINUTES 28>
 		 <DO-28>
-		 <RTRUE>)		 
+		 <RTRUE>)
 		(<AND <EQUAL? ,MINUTES 27>
 		      <EQUAL? ,SECONDS 30>>
 		 <TELL CR "\"Ninety seconds to auto-sequencer. Mark.\"" CR>
 		 <RTRUE>)
-	        (<L? ,MINUTES 9>
+		(<L? ,MINUTES 9>
 		 <COND (<OR <T? ,QUIET?>
 			    <T? .V>
 			    <EQUAL? ,SECONDS 15 45>>
@@ -4065,7 +4064,7 @@ D ,TOWER " sweeps away suddenly." CR>)>)
 		 <COND (<PROB 50>
 			<TELL " a voice on">)>
 		 <TELL " the " D ,WTK ,PERIOD>
-		 <RTRUE>)			
+		 <RTRUE>)
 		(<EQUAL? ,SECONDS 15>
 		 <TELL CR <GET ,TECHNOBABBLE <- 27 ,MINUTES>> CR>
 		 <RTRUE>)
@@ -4076,27 +4075,27 @@ D ,TOWER " sweeps away suddenly." CR>)>)
 	   	 <TELL ,Z-MINUS <GET ,CDOWN .X> " minutes">
 	   	 <COND (<HERE? W100 S100>
 			T)
-		       (<EQUAL? ,MINUTES 27>			     
+		       (<EQUAL? ,MINUTES 27>
 			<TWO-MINUTE-WARNING>
 			<TELL CR "A siren wails through the " D ,WTK ,PERIOD>
 			<RTRUE>)
 		       (<EQUAL? ,MINUTES 24>
 			<FIVE-MINUTE-WARNING>
-			<TELL CR CTHE ,WTK 
+			<TELL CR CTHE ,WTK
 " emits a short blast of distortion. It sounded like a siren." CR>
 			<RTRUE>)>
 		 <TELL ".\"" CR>)>
 	  <RTRUE>>
 
 <ROUTINE TWO-MINUTE-WARNING ()
-	 <TELL 
+	 <TELL
 ". All personnel whose duties do not specifically require otherwise will now assume a prone position, with face and eyes directed ">
 	 <ITALICIZE "away">
 	 <TELL " from Zero.\"" CR>
 	 <RTRUE>>
 
 <ROUTINE FIVE-MINUTE-WARNING ()
-	 <TELL 
+	 <TELL
 ". Personnel, prepare to assume safe positions.\"" CR>
 	 <RTRUE>>
 
@@ -4153,33 +4152,33 @@ The talkie clicks twice. \"Keep on it.\""
 
 "The phrase \"gas for the generator\" emerges from a background of hiss."
 
-"A lush string ensemble begin to swell above the talkie's hiss." 
+"A lush string ensemble begin to swell above the talkie's hiss."
 
 "Distant announcers rasp beneath a wash of static.">>
 
 <ROUTINE DO-28 ()
 	 <COND (<EQUAL? ,SECONDS 45>
-	        <TELL ,Z-MINUS 
+		<TELL ,Z-MINUS
 "one minute. Sequencer will assume control in fifteen seconds.\"" CR>
 		<RTRUE>)>
 	 <CRLF>
 	 <COND (<ZERO? ,SECONDS>
-	        <TELL "\"Auto-sequencer in sixty.\"|
+		<TELL "\"Auto-sequencer in sixty.\"|
 |
 \"Roger. Six-oh seconds.\"" CR>
 		<RTRUE>)
 	       (<EQUAL? ,SECONDS 15>
 		<TELL "\"Forty-five seconds to auto-sequencer.\"" CR>
 		<RTRUE>)>
-	 <TELL 
+	 <TELL
 "The music on the " D  ,WTK
 " distorts badly. \"Thirty seconds to auto-sequencer.\"" CR>
-	 <RTRUE>>	 
+	 <RTRUE>>
 
 <ROUTINE DO-NINE ()
 	 <CRLF>
 	 <COND (<ZERO? ,SECONDS>
-		<TELL CTHE ,WTK 
+		<TELL CTHE ,WTK
 " whines softly. \""  D ,BAKER " to all units. Are we all in on this?\"" CR>
 		<RTRUE>)
 	       (<EQUAL? ,SECONDS 15>
@@ -4189,12 +4188,12 @@ The talkie clicks twice. \"Keep on it.\""
 \"Roger, " D ,ABLE ".\"" CR>
 		<RTRUE>)
 	       (<EQUAL? ,SECONDS 30>
-		<TELL 
+		<TELL
 "\"Everything's go at Forbes Field.\"|
 |
 \"Roger.\" (A pop of static.) \"It's time, gentlemen.\"" CR>
 		 <RTRUE>)>
-	 <TELL CTHE ,WTK 
+	 <TELL CTHE ,WTK
 " emits a burst of interference, followed by faint strains of music. It's \"The Star-Spangled Banner.\"|
 |
 A lone voice speaks, half-buried in the melody. \"It is now zero minus twenty minutes.\"" CR>
@@ -4207,16 +4206,16 @@ A lone voice speaks, half-buried in the melody. \"It is now zero minus twenty mi
 
 <GLOBAL CDOWN:TABLE
 	<PTABLE "nineteen" "eighteen" "seventeen" "sixteen" "fifteen"
-	        "fourteen" "thirteen" "twelve" "eleven" "ten" "nine"
+		"fourteen" "thirteen" "twelve" "eleven" "ten" "nine"
 		"eight" "seven" "six" "five" "four" "three" "two"
 		"one" "[BUG!]">>
-	
+
 <ROUTINE REVEAL-WIRE ()
-	 <TELL CR "\"What the... ?\" mutters the " D ,WTK ,PCR 
+	 <TELL CR "\"What the... ?\" mutters the " D ,WTK ,PCR
 "\"I didn't copy, " D ,BAKER ".\"|
 |
-\"Aw, hell.\" You hear a flurry of excited " D ,VOICES 
-". \"" D ,BAKER 
+\"Aw, hell.\" You hear a flurry of excited " D ,VOICES
+". \"" D ,BAKER
 " to all units. We have 100% continuity loss towerside. Repeat, ">
 	 <ITALICIZE "zero">
 	 <TELL " continuity.\"|
@@ -4228,7 +4227,7 @@ A chorus of expletives fills the airwaves. \"">
 \"Affirmative, " D ,ABLE ". Sequencer's going. Too late to risk it. This is a scrub, everybody. Repeat, scrub it.\"" CR>
 		<POLICE-CONVERGE>
 		<RTRUE>)>
-	 <TELL 
+	 <TELL
 "Check your idiot bulb, " D ,BAKER ". I replaced two duds last night.\"|
 |
 \"" D ,ABLE ", my bulb lights up real pretty. Is this a scrub?\"|
@@ -4267,7 +4266,7 @@ A burst of static. \"The kid ain't laughin', " D ,ABLE ".\"" CR>
 \"Kid's board says it's the ">
 	 <WIRE-ID>
 	 <TELL ,PTHE "others look okay. We're lettin' it go, "
-D ,ABLE ,PTHE "sequencer's running.\"" CR CR CTHE ,WTK 
+D ,ABLE ,PTHE "sequencer's running.\"" CR CR CTHE ,WTK
 <PICK-NEXT ,HISSES> ,PERIOD>
 	 <RTRUE>>
 
@@ -4281,7 +4280,7 @@ A steady hiss fills the silence. \"Damn,\" sobs a bitter voice.|
 
 <ROUTINE NO-TOLERANCE ()
 	 <TELL CR
-"\"" D ,PITTS " to all units. We've definitely got something moving on that " 
+"\"" D ,PITTS " to all units. We've definitely got something moving on that "
 D ,TOWER "!\"|
 |
 \"Roger. Attention, all units. Security alert. Scrub the shot and get Anderson out there. This is a scrub. Repeat, scrub.\"" CR>
@@ -4304,7 +4303,7 @@ There's a brief pause. The " D ,WTK " crackles.|
 |
 \"Sure it ain't one your buzzards, " D ,PITTS "?\"|
 |
-\"Har har, " D ,ABLE ". " D ,PITTS 
+\"Har har, " D ,ABLE ". " D ,PITTS
 ", double-check and get back to us on that spook.\"|
 |
 \"Roger and out, " D ,BAKER ".\"" CR>
@@ -4313,7 +4312,7 @@ There's a brief pause. The " D ,WTK " crackles.|
 |
 \"This one better be good, " D ,PITTS ".\"|
 |
-\"Checkin' it twice, " D ,BAKER ". Stand by.\"" CR>	       
+\"Checkin' it twice, " D ,BAKER ". Stand by.\"" CR>
 	 <RTRUE>>
 
 <ROUTINE I-EYE ()
@@ -4348,14 +4347,14 @@ There's a brief pause. The " D ,WTK " crackles.|
 |
 \"" D ,BAKER ", are we holding?\"|
 |
-\"Negative, " D ,ABLE ". No hold. " D ,PITTS 
+\"Negative, " D ,ABLE ". No hold. " D ,PITTS
 ", get a line on that disturbance and report on the double.\"|
 |
 \"Will do. " D ,PITTS ".\"" CR>
 	 <RTRUE>>
 
 <ROUTINE BARK-CONTINUES ()
-	 <TELL CR "The barking on the " D ,WTK 
+	 <TELL CR "The barking on the " D ,WTK
 		  " continues for a few moments">
 	 <COND (<ZERO? ,MLIVES>
 		<TELL ". Then you hear a sharp ">
@@ -4368,10 +4367,10 @@ There's a brief pause. The " D ,WTK " crackles.|
 <ROUTINE SOME-BUZZARD ()
 	 <TELL CR "\"" D ,PITTS " to " D ,BAKER ".">
 	 <COND (<ZERO? ,MLIVES>
-		<TELL 
+		<TELL
 "\" An evil chuckle. \"That buzzard ain't botherin' us again.\"" CR CR>)
 	       (T
-		<TELL 
+		<TELL
 " Just some buzzard raisin' hell with the dog. I chased it away.\"|
 |
 A nervous chortle. ">)>
@@ -4398,7 +4397,7 @@ A nervous chortle. ">)>
 	 <RTRUE>>
 
 <ROUTINE Z-MINUS-15 ()
-	 <TELL ,Z-MINUS 
+	 <TELL ,Z-MINUS
 "fifteen seconds. Fourteen. Thirteen. Twelve. Eleven.\"" CR>
 	 <RTRUE>>
 
@@ -4413,7 +4412,7 @@ You hear a loud ">
 
 <ROUTINE I-BIKES ()
 	 <COND (<HERE? LAN-WALK>
-	        <DEQUEUE I-BIKES>
+		<DEQUEUE I-BIKES>
 		<MAKE ,BIKES ,SEEN>
 		<TELL CR
 "A young couple zooms down the " D ,LAN-WALK
@@ -4430,7 +4429,7 @@ You hear a loud ">
 		<DEC WIGHTER>
 		<CRLF>
 		<COND (<EQUAL? ,WIGHTER 3>
-		       <TELL 
+		       <TELL
 "Something is breathing in the darkness." CR>
 		       <WIGHT-ID>)
 		      (<EQUAL? ,WIGHTER 2>
@@ -4444,9 +4443,9 @@ You hear a loud ">
 		<COND (<AND <IN? ,KEY ,KEYHOLE>
 			    <NOT <IS? ,SLOPE ,OPENED>>>
 		       <MOVE ,KEY ,WIGHT>
-		       <TELL CR 
-"You hear a noise that sounds suspiciously like a " 
-D ,KEY " being drawn from a hole." CR>)>		
+		       <TELL CR
+"You hear a noise that sounds suspiciously like a "
+D ,KEY " being drawn from a hole." CR>)>
 		<RTRUE>)
 	       (<IS? ,WIGHT ,SEEN>
 		<UNMAKE ,WIGHT ,SEEN>
@@ -4455,19 +4454,19 @@ D ,KEY " being drawn from a hole." CR>)>
 		<RFALSE>)>
 	 <TELL CR CTHE ,WIGHT <PICK-NEXT ,WIGHT-DOINGS> ,PERIOD>
 	 <RTRUE>>
-	 
+
 <GLOBAL WIGHT-DOINGS:TABLE
 	<LTABLE 2
 	 " studies you with its red eye"
 	 " licks a stream of drool off its chin"
 	 "'s breathing echoes in the tunnel"
 	 " sharpens its claws on a rock"
-	 " is watching you with interest"	 
+	 " is watching you with interest"
 	 " rubs its eye, then turns to squint at you"
 	 " growls in its throat">>
 
 <ROUTINE WIGHT-KILLS-YOU ()
-	 <TELL 
+	 <TELL
 "Something sharp closes around your throat. It caresses your chin and the nape of your neck, delighting in the living warmth. Then, with a quick, practiced ">
 	 <ITALICIZE "snap,">
 	 <TELL " it breaks your neck at the collarbone.">
@@ -4478,11 +4477,11 @@ D ,KEY " being drawn from a hole." CR>)>
 	 <COND (<AND <HERE? ICE-CAVE>
 		     <IS? ,SLOPE ,OPENED>>
 		<UNMAKE ,SLOPE ,OPENED>
-		<TELL CR 
+		<TELL CR
 "With a rusty creak, the " D ,SLOPE
 " behind you retracts into the " D ,CEILING ,PA "clatter and ">
 		<ITALICIZE "thump">
-		<TELL 
+		<TELL
 " fill the " D ,CAVE " with a sinister echo">
 		<ALL-IS-STILL>
 		<RTRUE>)
@@ -4495,7 +4494,7 @@ D ,KEY " being drawn from a hole." CR>)>
 	 <DEC BEAM>
 	 <COND (<ZERO? ,BEAM>
 		<DEQUEUE I-HARDHAT>
-	        <UNMAKE ,LAMP ,LIGHTED>
+		<UNMAKE ,LAMP ,LIGHTED>
 		<COND (<T? .V>
 		       <LAMPLIGHT "flickers and goes out">
 		       <SAY-IF-HERE-LIT>
@@ -4540,12 +4539,12 @@ D ,KEY " being drawn from a hole." CR>)>
 	 " whines gently"
 	 " snuffles"
 	 " scratches itself">>
-	 
+
 <ROUTINE I-VOICES ()
 	 <COND (<HERE? ON-TOWER>
 		<HOLD-IT>
 		<TELL CR
-"You hear boots stomping up the " D ,TLADDER ". Before you can move, an MP is shoving a barrel into the small of your back. "> 
+"You hear boots stomping up the " D ,TLADDER ". Before you can move, an MP is shoving a barrel into the small of your back. ">
 		<EXCUSES>
 		<RTRUE>)
 	       (<AND <HERE? TOWER-PLAT>
@@ -4554,7 +4553,7 @@ D ,KEY " being drawn from a hole." CR>)>
 	 <COND (<ZERO? ,MINUTES>
 		<DEQUEUE I-VOICES>
 		<QUEUE I-FLARE -1>
-	 	<QUEUE I-TRINITY -1>	 
+	 	<QUEUE I-TRINITY -1>
 	 	<QUEUE I-DOG -1>
 		<QUEUE I-OPPIE -1>
 		<UNMAKE ,VOICES ,SEEN>
@@ -4567,7 +4566,7 @@ D ,KEY " being drawn from a hole." CR>)>
 		       <TELL "the motor fades into the distance">
 		       <ALL-IS-STILL>
 		       <RTRUE>)>
-		<TELL 
+		<TELL
 "a jeep appears on the south road. You watch the headlights dwindle into the distance." CR>
 		<RTRUE>)
 	       (<EQUAL? ,MINUTES 58>
@@ -4582,7 +4581,7 @@ D ,KEY " being drawn from a hole." CR>)>
 			      <TELL "up from somewhere far below">)>
 		       <TELL ". It sounded like a man's voice." CR>
 		       <RTRUE>)>
-		<TELL CR 
+		<TELL CR
 "You hear the voice again, followed by a sharp clatter. There's definitely somebody ">
 		<COND (<HERE? IN-SHACK>
 		       <TELL "outside." CR>
@@ -4598,7 +4597,7 @@ D ,KEY " being drawn from a hole." CR>)>
 |
 \"" D ,PITTS "'s on the line, Lieutenant.\"|
 |
-\"Give him to me, Joe.\"" CR>   
+\"Give him to me, Joe.\"" CR>
 		<RTRUE>)
 	       (<EQUAL? ,SECONDS 15>
 		<TELL
@@ -4607,7 +4606,7 @@ D ,KEY " being drawn from a hole." CR>)>
 		       <TELL "outside">)
 		      (T
 		       <TELL "below">)>
-		<TELL 
+		<TELL
 " for a few moments. You can pick out the words \"focus,\" \"groves\" and \"surveillance,\" but little else." CR>
 		<RTRUE>)
 	       (<EQUAL? ,SECONDS 30>
@@ -4640,20 +4639,20 @@ The light brightens to a hard, steady glare." CR>
 		<COND (<T? .CR>
 		       <CRLF>)>
 		<COND (<HERE? ON-PLATFORM UNDER-PLAT>
-		       <TELL 
+		       <TELL
 "\"Pyat, chetirye, tree, dva, adeen,\" barks the " D ,RSPEAKER ,PCR>)
 		      (T
 		       <TELL "A searing glare engulfs the mountaintops! ">)>
 		<COND (<HERE? CLIFF-EDGE>
-		       <TELL 
+		       <TELL
 "You turn, and stare in horror at a seething mass of flame billowing above the tundra.|
 |
 Seconds later, ">
 		       <HURRICANE>
 		       <CLIFF-DROWN>
 		       <RTRUE>)>
-		<TELL 
-"For an instant, you see your own " D ,DSHADOW 
+		<TELL
+"For an instant, you see your own " D ,DSHADOW
 " cast in stark silhouette across the ">
 		<COND (<HERE? ON-PLATFORM>
 		       <TELL D ,PLATFORM>)
@@ -4745,11 +4744,11 @@ Seconds later, ">
 	 <RTRUE>>
 
 <GLOBAL RMINUTES
-	<PTABLE "Dyevianatsat" "Vosyemnatsat" "Syemnatsat" "Shestnatsat" 
-		"Pyatnatsat" "Chetirnatsat" "Treenatsat" "Dvenatsat" 
-		"Adeenatsat" "Dyesiat" "Dyeviat" "Vosyem" "Syem" "Shest" 
-		"Pyat" "Chetirye" "Tree" "[BUG!]">>	       
-		       
+	<PTABLE "Dyevianatsat" "Vosyemnatsat" "Syemnatsat" "Shestnatsat"
+		"Pyatnatsat" "Chetirnatsat" "Treenatsat" "Dvenatsat"
+		"Adeenatsat" "Dyesiat" "Dyeviat" "Vosyem" "Syem" "Shest"
+		"Pyat" "Chetirye" "Tree" "[BUG!]">>
+
 <ROUTINE HURRICANE ()
 	 <TELL "a gale of radioactive debris sweeps you ">
 	 <RTRUE>>
@@ -4775,7 +4774,7 @@ Seconds later, ">
 		       <TELL CTHE ,OPPIE " reappears">)
 		      (T
 		       <MAKE ,OPPIE ,SEEN>
-		       <TELL 
+		       <TELL
 "A " D ,OPPIE " steps into view, standing just">)>
 		<TELL " inside the " D ,SHELTER "'s " D ,SBENTRY ,PERIOD>
 		<RTRUE>)
@@ -4788,8 +4787,8 @@ Seconds later, ">
 		       <CRLF>)>
 		<SETG P-HIM-OBJECT ,NOT-HERE-OBJECT>
 		<MAKE ,OPPIE ,SEEN>
-		<TELL 
-"With a nervous sigh, the " D ,OPPIE 
+		<TELL
+"With a nervous sigh, the " D ,OPPIE
 " disappears into the " D ,SHELTER ,PERIOD>
 		<COND (<G? ,MINUTES 27>
 		       <DEQUEUE I-OPPIE>)>
@@ -4801,7 +4800,7 @@ Seconds later, ">
 		<COND (<T? .CR>
 		       <CRLF>)>
 		<COND (<EQUAL? ,OSC 3>
-		       <TELL 
+		       <TELL
 "Pushing back his porkpie hat, the " D ,OPPIE
 " peers up at the overcast sky." CR>
 		       <RTRUE>)
@@ -4809,11 +4808,11 @@ Seconds later, ">
 		       <TELL
 "You notice the " D ,OPPIE " glancing at his watch." CR>
 		       <RTRUE>)>
-		<TELL CTHE ,OPPIE 
-		      " draws thoughtfully on his pipe." CR>		
+		<TELL CTHE ,OPPIE
+		      " draws thoughtfully on his pipe." CR>
 		<RTRUE>)>
 	 <RFALSE>>
-		
+
 <ROUTINE I-LUMP ("OPTIONAL" (V <>) "AUX" (OBJ <>) X Y)
 	 <COND (<T? .V>
 		T)
@@ -4865,6 +4864,3 @@ Seconds later, ">
 		<TELL THE .X>)>
 	 <TELL " pulling towards the " D ,LUMP ,PERIOD>
 	 <RTRUE>>
-	 
-		 
-		
