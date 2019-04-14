@@ -1,0 +1,22 @@
+Assembling TR.XZAP.1 on Friday, September 26, 1986 12:35:36
+Release(last was 12): 12
+
+    64	Inserting TRFREQ.ZAP.1	   (630 bytes)
+   694	Inserting TRDAT.ZAP.1	 (64279 bytes)
+ 64973	Inserting SYNTAX.ZAP.1	     (0 bytes)
+ 64973	Inserting MISC.ZAP.1	  (6441 bytes)
+ 71414	Inserting PARSER.ZAP.1	 (11123 bytes)
+ 82537	Inserting VERBS.ZAP.1	 (14826 bytes)
+ 97363	Inserting EVENTS.ZAP.1	 (29946 bytes)
+127309	Inserting PEOPLE.ZAP.1	 (12038 bytes)
+139347	Inserting PLACES.ZAP.1	 (27976 bytes)
+167323	Inserting THINGS.ZAP.2	 (83848 bytes)
+251171	Inserting TRSTR.ZAP.1	 (10891 bytes)
+593 objects.
+238 globals.
+2120 word vocabulary.
+
+262062 bytes (256K).
+ 63423 bytes of preload.
+ 37726 bytes of impure.
+Outputting symbol tables

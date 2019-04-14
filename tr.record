@@ -1,0 +1,2679 @@
+
+Combined ZIL Compiler Ver 2.0 (MIM)
+-----------------------------------
+Input file: SS:<TRINITY>TR.ZIL.1
+Input file: SS:<TRINITY>MACROS.ZIL.1
+Input file: SS:<TRINITY>SYNTAX.ZIL.1
+Input file: SS:<TRINITY>MISC.ZIL.2
+Compiling routine: GO
+Compiling routine: GET-KEY
+Compiling routine: DO-MAIN-LOOP
+Compiling routine: MAIN-LOOP
+Compiling routine: DONT-ALL?
+Compiling routine: ACCESSIBLE?
+Compiling routine: VISIBLE?
+Compiling routine: SEE-INSIDE?
+Compiling routine: META-LOC
+Compiling routine: INIT-STATUS-LINE
+Compiling routine: DISPLAY-PLACE
+Compiling routine: PRINT-SPACES
+Compiling routine: SAY-HERE
+Compiling routine: TELL-TIME
+Compiling routine: CTHE-PRINT
+Compiling routine: THE-PRINT
+Compiling routine: CTHEI-PRINT
+Compiling routine: THEI-PRINT
+Compiling routine: PRINTA
+Compiling routine: BE-SPECIFIC
+Compiling routine: TO-DO-THING-USE
+Compiling routine: CANT-USE
+Compiling routine: DONT-UNDERSTAND
+Compiling routine: NOT-IN-SENTENCE
+Compiling routine: WALLS-F
+Compiling routine: CEILING-F
+Compiling routine: HANDS-F
+Compiling routine: FEET-F
+Compiling routine: ANKLE-F
+Compiling routine: MOUTH-F
+Compiling routine: EYES-F
+Compiling routine: HEAD-F
+Compiling routine: ME-F
+Compiling routine: YOU-F
+Compiling routine: CLOTHES-F
+Compiling routine: INAPPROPRIATE
+Compiling routine: WONT-HELP
+Compiling routine: GLOBAL-ROOM-F
+Compiling routine: OBJECT-IS-LOCKED
+Compiling routine: CANT-SEE-ANY
+Compiling routine: HOW?
+Compiling routine: NOT-LIKELY
+Compiling routine: YOUD-HAVE-TO
+Compiling routine: PLANET-F
+Compiling routine: GROUND-F
+Compiling routine: FLOOR-F
+Compiling routine: POCKET-F
+Compiling routine: IN-POCKET
+Compiling routine: NO-NEED
+Compiling routine: ITALICIZE
+Compiling routine: WRONG-WINNER?
+Compiling routine: NOT-IN
+Compiling routine: ALREADY-IN
+Compiling routine: ALREADY-AT-TOP
+Compiling routine: ALREADY-AT-BOTTOM
+Compiling routine: ALREADY-AT
+Compiling routine: CANT-SEE-MUCH
+Compiling routine: CANT-SEE-FROM-HERE
+Compiling routine: NOT-A
+Compiling routine: OPEN-CLOSED
+Compiling routine: CANT-FROM-HERE
+Compiling routine: MORE-THAN-ONE
+Compiling routine: GENERIC-DOOR-F
+Compiling routine: HANDLE-PLACE?
+Compiling routine: ALREADY-DOING-THAT
+Compiling routine: CANT-REACH
+Compiling routine: TOO-HIGH
+Compiling routine: PRSO-TOO-BIG
+Compiling routine: PRSO-WONT-FIT
+Compiling routine: IS-ARE
+Compiling routine: ISNT-ARENT
+Compiling routine: CARRIAGE-RETURNS
+Compiling routine: VANISH
+Compiling routine: DROP-ALL
+Compiling routine: BREATH-F
+Compiling routine: TAKE-A-MOMENT-TO
+Compiling routine: WHICH-WAY-IN
+Compiling routine: WHICH-WAY-OUT
+Compiling routine: WHICH-WAY-DOWN
+Compiling routine: WHICH-WAY
+Compiling routine: SAY-EAST
+Compiling routine: SAY-WEST
+Compiling routine: PRSO-WONT-BUDGE
+Compiling routine: FIRMLY-ATTACHED
+Compiling routine: ATTACHED-TO
+Compiling routine: NOUN-USED?
+Compiling routine: ADJ-USED?
+Compiling routine: HERE-F
+Compiling routine: WINDOW
+Compiling routine: SOUND-F
+Compiling routine: CORNER-F
+Compiling routine: PCLEAR
+Compiling routine: RL-F
+Compiling routine: YOUD-FALL-OFF
+Compiling routine: YOUD-FALL
+Compiling routine: USELESS
+Compiling routine: YOU-DONT-NEED
+Compiling routine: TO-COMPLETE
+Compiling routine: VOICE-MUTTERS
+Compiling routine: THIS-IS-NOT
+Compiling routine: NO-DETECTION
+Compiling routine: ST-QUOTE
+Compiling routine: NONE-AT-MOMENT
+Input file: SS:<TRINITY>PARSER.ZIL.1
+Compiling routine: PARSER
+Compiling routine: CHANGE-LEXV
+Compiling routine: WAY-TO-TALK
+Compiling routine: WT?
+Compiling routine: CLAUSE
+Compiling routine: SPOKEN-TO
+Compiling routine: THIS-IS-IT
+Compiling routine: FAKE-ORPHAN
+Compiling routine: PERFORM
+Compiling routine: NO-OTHER?
+Compiling routine: NOBODY-TO-ASK
+Compiling routine: CANT-REACH-THRU-FILM
+Compiling routine: TALK-TO-SELF
+Compiling routine: BUZZER-WORD?
+Compiling routine: VERB-DIR-ONLY?
+Compiling routine: STUFF
+Compiling routine: INBUF-STUFF
+Compiling routine: INBUF-ADD
+Compiling routine: NUMBER?
+Compiling routine: ORPHAN-MERGE
+Compiling routine: ACLAUSE-WIN
+Compiling routine: NCLAUSE-WIN
+Compiling routine: WORD-PRINT
+Compiling routine: UNKNOWN-WORD
+Compiling routine: SYNTAX-CHECK
+Compiling routine: VERB-PRINT
+Compiling routine: ORPHAN
+Compiling routine: CLAUSE-PRINT
+Compiling routine: BUFFER-PRINT
+Compiling routine: CAPITALIZE
+Compiling routine: PREP-PRINT
+Compiling routine: CLAUSE-COPY
+Compiling routine: CLAUSE-ADD
+Compiling routine: PREP-FIND
+Compiling routine: SYNTAX-FOUND
+Compiling routine: GWIM
+Compiling routine: SNARF-OBJECTS
+Compiling routine: BUT-MERGE
+Compiling routine: SNARFEM
+Compiling routine: GET-OBJECT
+Compiling routine: MOBY-FIND
+Compiling routine: WHICH-PRINT
+Compiling routine: GLOBAL-CHECK
+Compiling routine: DO-SL
+Compiling routine: SEARCH-LIST
+Compiling routine: THIS-IT?
+Compiling routine: OBJ-FOUND
+Compiling routine: ITAKE-CHECK
+Compiling routine: MANY-CHECK
+Compiling routine: SAY-IF-HERE-LIT
+Compiling routine: IS-LIT?
+Compiling routine: PICK-NEXT
+Compiling routine: DONT-HAVE?
+Compiling routine: WINNER-NOT-HOLDING
+Compiling routine: GETTING-INTO?
+Compiling routine: ENTERING?
+Compiling routine: EXITING?
+Compiling routine: ANYONE-HERE?
+Compiling routine: QCONTEXT-GOOD?
+Compiling routine: NOT-HERE-OBJECT-F
+Compiling routine: FIND-NOT-HERE
+Compiling routine: NOT-HERE-PRINT
+Compiling routine: PRINT-CONTENTS
+Compiling routine: MOVE-ALL
+Compiling routine: REMOVE-ALL
+Compiling routine: DESCRIBE-OBJECTS
+Compiling routine: SEE-ANYTHING-IN?
+Compiling routine: GLOBAL-IN?
+Compiling routine: GOT?
+Compiling routine: HELD?
+Compiling routine: ITS-CLOSED
+Compiling routine: PRINT-SENTENCE
+Compiling routine: SAVE-INPUT
+Input file: SS:<TRINITY>VERBS.ZIL.1
+Compiling routine: V-$REFRESH
+Compiling routine: V-VERBOSE
+Compiling routine: V-BRIEF
+Compiling routine: V-SUPER-BRIEF 
+Compiling routine: V-DIAGNOSE
+Compiling routine: V-INVENTORY
+Compiling routine: SAY-SURE
+Compiling routine: V-QUIT
+Compiling routine: V-RESTART
+Compiling routine: YES?
+Compiling routine: V-RESTORE
+Compiling routine: V-SAVE
+Compiling routine: COMPLETED
+Compiling routine: FAILED
+Compiling routine: V-SCORE
+Compiling routine: V-NOTIFY
+Compiling routine: UPDATE-SCORE
+Compiling routine: V-TIME
+Compiling routine: V-SCRIPT
+Compiling routine: V-UNSCRIPT
+Compiling routine: TRANSCRIPT
+Compiling routine: V-VERSION
+Compiling routine: FANTASY
+Compiling routine: COPYRIGHT
+Compiling routine: TRADEMARK
+Compiling routine: V-$ID
+Compiling routine: V-$VERIFY
+Compiling routine: V-$COMMAND
+Compiling routine: V-USE
+Compiling routine: V-BITE
+Compiling routine: V-BLOW-INTO
+Compiling routine: V-LIGHT-WITH
+Compiling routine: V-BURN-WITH
+Compiling routine: V-BUY
+Compiling routine: V-BUY-FROM
+Compiling routine: ALREADY-HAVE-PRSO
+Compiling routine: NO-MONEY
+Compiling routine: V-CHARGE
+Compiling routine: NOT-ACCEPTED
+Compiling routine: V-CLEAN
+Compiling routine: V-CLEAN-OFF
+Compiling routine: V-CLIMB-DOWN
+Compiling routine: V-CLIMB-ON
+Compiling routine: V-CLIMB-OVER
+Compiling routine: V-CLIMB-UP
+Compiling routine: V-OPEN-WITH
+Compiling routine: CANT-OPEN-PRSO
+Compiling routine: V-OPEN
+Compiling routine: YOU-OPEN
+Compiling routine: V-CLOSE
+Compiling routine: YOU-CLOSE
+Compiling routine: CANT-CLOSE-THAT
+Compiling routine: V-COUNT
+Compiling routine: V-COVER
+Compiling routine: V-HOLD-OVER
+Compiling routine: V-CROSS
+Compiling routine: V-CUT
+Compiling routine: AXE-HURT
+Compiling routine: V-RIP
+Compiling routine: V-DEFLATE
+Compiling routine: V-DETONATE
+Compiling routine: V-DIG
+Compiling routine: V-SDIG
+Compiling routine: V-DRINK
+Compiling routine: V-DRINK-FROM
+Compiling routine: V-DRIVE
+Compiling routine: V-DROP
+Compiling routine: SAY-DROPPED
+Compiling routine: IDROP
+Compiling routine: PRSO-SLIDES-OFF-PRSI
+Compiling routine: LANDS-AT-YOUR-FEET
+Compiling routine: BOUNCES-IN-FILM
+Compiling routine: V-EAT
+Compiling routine: V-ENTER
+Compiling routine: V-ESCAPE
+Compiling routine: PRE-DUMB-EXAMINE
+Compiling routine: V-DUMB-EXAMINE
+Compiling routine: LOOK-INTDIR?
+Compiling routine: SEE-DIR
+Compiling routine: PRE-EXAMINE
+Compiling routine: V-EXAMINE
+Compiling routine: NOTHING-INTERESTING
+Compiling routine: PRE-WATCH
+Compiling routine: V-WATCH
+Compiling routine: V-EXIT
+Compiling routine: V-FILL
+Compiling routine: V-FIND
+Compiling routine: DO-IT-YOURSELF
+Compiling routine: ITS-RIGHT-HERE
+Compiling routine: SAY-ITS
+Compiling routine: V-FLUSH
+Compiling routine: V-FLY
+Compiling routine: V-FOLD
+Compiling routine: V-UNFOLD
+Compiling routine: V-UNTANGLE
+Compiling routine: V-FOLLOW
+Compiling routine: PRE-FEED
+Compiling routine: V-FEED
+Compiling routine: V-SFEED
+Compiling routine: PRE-GIVE
+Compiling routine: CRUMBS-GONE?
+Compiling routine: V-SGIVE
+Compiling routine: V-GIVE
+Compiling routine: V-SELL
+Compiling routine: V-SSELL
+Compiling routine: PRE-SHOW
+Compiling routine: V-SSHOW
+Compiling routine: V-SHOW
+Compiling routine: V-REFUSE
+Compiling routine: V-HIDE
+Compiling routine: V-KICK
+Compiling routine: V-BOUNCE
+Compiling routine: V-KILL
+Compiling routine: V-HIT
+Compiling routine: V-KNOCK
+Compiling routine: V-KISS
+Compiling routine: V-LAMP-OFF
+Compiling routine: V-LAMP-ON
+Compiling routine: V-LEAP
+Compiling routine: V-LEAVE
+Compiling routine: V-SLEEP
+Compiling routine: V-LIE-DOWN
+Compiling routine: V-LISTEN
+Compiling routine: V-LOCK
+Compiling routine: V-UNLOCK
+Compiling routine: CANT-LOCK
+Compiling routine: THING-WONT-LOCK
+Compiling routine: V-SCREW
+Compiling routine: V-SCREW-WITH
+Compiling routine: V-UNSCREW
+Compiling routine: V-UNSCREW-FROM
+Compiling routine: V-UNTIE
+Compiling routine: V-LOOK
+Compiling routine: MENTION-PRAM
+Compiling routine: V-LOOK-ON
+Compiling routine: V-LOOK-BEHIND
+Compiling routine: V-LOOK-DOWN
+Compiling routine: V-LOOK-UP
+Compiling routine: V-LOOK-INSIDE
+Compiling routine: V-LOOK-OUTSIDE
+Compiling routine: V-SLOOK-THRU
+Compiling routine: V-LOOK-THRU
+Compiling routine: V-LOOK-UNDER
+Compiling routine: V-WEDGE
+Compiling routine: V-LOOSEN
+Compiling routine: V-LOWER
+Compiling routine: V-MAKE
+Compiling routine: V-MELT
+Compiling routine: V-MOVE
+Compiling routine: V-MUNG
+Compiling routine: V-PAY
+Compiling routine: V-PLAY
+Compiling routine: V-PICK
+Compiling routine: V-POINT
+Compiling routine: V-SSHINE-AT
+Compiling routine: V-SHINE-AT
+Compiling routine: V-SPOINT-AT
+Compiling routine: V-POINT-AT
+Compiling routine: V-POP
+Compiling routine: V-POUR
+Compiling routine: V-POUR-FROM
+Compiling routine: V-EMPTY-INTO
+Compiling routine: V-EMPTY
+Compiling routine: EMPTY-PRSO
+Compiling routine: V-PULL
+Compiling routine: V-PUSH
+Compiling routine: V-PUSH-TO
+Compiling routine: PRE-POCKET
+Compiling routine: V-POCKET
+Compiling routine: PRE-PUT
+Compiling routine: CRANE-LIT?
+Compiling routine: TAKE-OFF-PRSO-FIRST
+Compiling routine: PRE-PUT-ON
+Compiling routine: NO-GOOD-SURFACE
+Compiling routine: V-PUT-ON
+Compiling routine: V-PUT
+Compiling routine: V-PLUG
+Compiling routine: V-UNPLUG
+Compiling routine: V-PUT-BEHIND
+Compiling routine: V-PUT-UNDER
+Compiling routine: V-RAPE
+Compiling routine: V-RAISE
+Compiling routine: V-REACH-IN
+Compiling routine: V-READ
+Compiling routine: V-READ-TO
+Compiling routine: HOW-READ
+Compiling routine: V-RELEASE
+Compiling routine: V-REPLACE
+Compiling routine: V-REPAIR
+Compiling routine: V-HELP
+Compiling routine: V-RESCUE
+Compiling routine: V-RIDE
+Compiling routine: V-TOUCH
+Compiling routine: V-STOUCH-TO
+Compiling routine: V-TOUCH-TO
+Compiling routine: V-TUNE-TO
+Compiling routine: V-BOW
+Compiling routine: V-SEARCH
+Compiling routine: V-SHAKE
+Compiling routine: V-SHOOT
+Compiling routine: V-SIT
+Compiling routine: V-SMELL
+Compiling routine: V-SPIN
+Compiling routine: V-SQUEEZE
+Compiling routine: V-DUCK
+Compiling routine: V-STAND
+Compiling routine: ALREADY-STANDING
+Compiling routine: V-STAND-ON
+Compiling routine: V-STAND-UNDER
+Compiling routine: V-SWING
+Compiling routine: V-SWIM
+Compiling routine: NO-SWIM
+Compiling routine: V-DIVE
+Compiling routine: V-SGET-FOR
+Compiling routine: V-GET-FOR
+Compiling routine: V-TAKE-WITH
+Compiling routine: V-TAKE-OFF
+Compiling routine: V-TASTE
+Compiling routine: V-ADJUST
+Compiling routine: V-FOCUS-ON
+Compiling routine: SILLY-SPEAK?
+Compiling routine: NO-RESPONSE
+Compiling routine: V-ASK-ABOUT
+Compiling routine: V-REPLY
+Compiling routine: V-QUESTION
+Compiling routine: V-ALARM
+Compiling routine: V-YELL
+Compiling routine: V-SAY
+Compiling routine: V-GOODBYE
+Compiling routine: V-HELLO
+Compiling routine: V-WAVE-AT
+Compiling routine: V-ASK-FOR
+Compiling routine: V-TELL
+Compiling routine: V-TELL-ABOUT
+Compiling routine: V-THANK
+Compiling routine: V-WHO
+Compiling routine: V-WHERE
+Compiling routine: V-WHAT
+Compiling routine: V-THROUGH
+Compiling routine: V-STHROW
+Compiling routine: PRE-THROW-OVER
+Compiling routine: V-THROW-OVER
+Compiling routine: PRE-THROW
+Compiling routine: V-THROW
+Compiling routine: V-TIE
+Compiling routine: V-TIE-UP
+Compiling routine: V-TURN
+Compiling routine: V-TURN-TO
+Compiling routine: DO-WALK
+Compiling routine: V-WALK
+Compiling routine: FLY-TO?
+Compiling routine: AIMLESS
+Compiling routine: IFENCE-BLOCKS
+Compiling routine: VICTORIA-BLOCKS
+Compiling routine: THICKET-BLOCKS
+Compiling routine: GFENCE-BLOCKS
+Compiling routine: CLIFF-BLOCKS
+Compiling routine: HEDGE-BLOCKS
+Compiling routine: LANDSLIDE-BLOCKS
+Compiling routine: ESHED-BLOCKS
+Compiling routine: BUILDING-BLOCKS
+Compiling routine: SWALL-BLOCKS
+Compiling routine: RESERVOIR-BLOCKS
+Compiling routine: BLOCKS-YOUR-PATH
+Compiling routine: V-WALK-AROUND
+Compiling routine: V-WALK-TO
+Compiling routine: V-WAIT
+Compiling routine: V-WAIT-FOR
+Compiling routine: V-WEAR
+Compiling routine: V-WIND
+Compiling routine: PRE-TAKE
+Compiling routine: V-TAKE
+Compiling routine: ITAKE
+Compiling routine: CCOUNT
+Compiling routine: WEIGHT
+Compiling routine: DESCRIBE-ROOM
+Compiling routine: GOTO
+Compiling routine: RESET-THEM
+Compiling routine: HACK-HACK
+Compiling routine: IMPOSSIBLE
+Compiling routine: TOO-DARK
+Compiling routine: CANT-GO
+Compiling routine: ITS-ALREADY
+Compiling routine: REFERRING
+Compiling routine: MORE-SPECIFIC
+Compiling routine: WASTE-OF-TIME
+Compiling routine: LOOKS-PUZZLED
+Compiling routine: V-INHALE
+Compiling routine: CLUTCH-THROAT
+Compiling routine: V-EXHALE
+Compiling routine: NOT-RECOMMENDED
+Compiling routine: V-SURFACE
+Compiling routine: V-SWRAP
+Compiling routine: V-WRAP-AROUND
+Compiling routine: V-DRESS
+Compiling routine: V-UNDRESS
+Compiling routine: V-WISH
+Compiling routine: V-HEEL
+Compiling routine: V-PISS
+Compiling routine: V-SUCK
+Compiling routine: CRUDITY
+Compiling routine: V-BANDAGE
+Input file: SS:<TRINITY>EVENTS.ZIL.1
+Compiling routine: DEQUEUE
+Compiling routine: QUEUED?
+Compiling routine: QUEUE
+Compiling routine: DO-MOVES
+Compiling routine: CLOCKER
+Compiling routine: I-BLOW
+Compiling routine: V-$PRAMS
+Compiling routine: I-CRANE-APPEARS
+Compiling routine: I-BWOMAN
+Compiling routine: BWOMAN-CRY
+Compiling routine: I-RUBY
+Compiling routine: MEEP-GETS-RUBY
+Compiling routine: I-MEEP
+Compiling routine: MOVE-MEEP
+Compiling routine: I-FMEEP
+Compiling routine: I-AIR-RAID
+Compiling routine: VAPORIZE-GARDENS
+Compiling routine: I-LONDON-HOLE
+Compiling routine: I-HOLD-BREATH
+Compiling routine: NEW-OSIGN
+Compiling routine: RESET-SHDIRS
+Compiling routine: I-SHADOW
+Compiling routine: SHADOW-CREEPS
+Compiling routine: SHDIRWARD
+Compiling routine: SHADOW-COMES
+Compiling routine: EDGE-OF
+Compiling routine: SHADOW-GOES
+Compiling routine: REPORT-SUNSET
+Compiling routine: I-DROP-OAK
+Compiling routine: I-ORBIT
+Compiling routine: STAR-WARS
+Compiling routine: CLANGS
+Compiling routine: I-BUBBLES
+Compiling routine: I-BOY
+Compiling routine: BOY-DIPS
+Compiling routine: BOY-BLOWS-BUBBLE
+Compiling routine: BOY-WAITS
+Compiling routine: SAY-POP
+Compiling routine: SAY-BOY-BOPS
+Compiling routine: I-VACUUM
+Compiling routine: I-BUBBLE-SUIT
+Compiling routine: I-ICE
+Compiling routine: ICE-VAC
+Compiling routine: ICE-HARDENS-IN
+Compiling routine: CHILLY?
+Compiling routine: I-LEM
+Compiling routine: SNAKE-LUNCH
+Compiling routine: HEAR-LEM-IN
+Compiling routine: FREE-LEM
+Compiling routine: SCAMPER-OFF-TO
+Compiling routine: OUT-THE-DOOR
+Compiling routine: EXIT-LEM
+Compiling routine: I-RODENTS
+Compiling routine: I-METEOR
+Compiling routine: I-MAGPIE
+Compiling routine: EXIT-MAGPIE
+Compiling routine: I-JAWS
+Compiling routine: I-BEE
+Compiling routine: BEE-ENTERS-TRAP
+Compiling routine: I-SKINK
+Compiling routine: SKINK-TO-TUN2
+Compiling routine: FIRST-SKINK-EXIT
+Compiling routine: FREE-SKINK
+Compiling routine: EXIT-SKINK
+Compiling routine: I-STYX
+Compiling routine: DORY-APPEARS
+Compiling routine: MAKE-OUT-CHARON
+Compiling routine: SOUNDLESS-LANDING
+Compiling routine: ONE-BY-ONE
+Compiling routine: I-CHARON
+Compiling routine: I-CRABS
+Compiling routine: I-FLIPPER
+Compiling routine: I-TIDE
+Compiling routine: BURNS-QUOTED?
+Compiling routine: I-FALLING
+Compiling routine: I-NAGASAKI
+Compiling routine: GIRL-APPEARS
+Compiling routine: GIRL-SEES-YOU
+Compiling routine: OVER-OR-OUT
+Compiling routine: TEACHERS-COME
+Compiling routine: I-GIRL
+Compiling routine: I-NEWCRANE
+Compiling routine: I-MCRANE
+Compiling routine: I-FLIGHT
+Compiling routine: SAY-DRONE-LOUDER
+Compiling routine: I-MILK
+Compiling routine: LAST-DROPS
+Compiling routine: KILL-MILK
+Compiling routine: I-EXPLODE
+Compiling routine: I-WHOOSH
+Compiling routine: I-MILL
+Compiling routine: I-TMEEP
+Compiling routine: EXIT-MEEP
+Compiling routine: MEEP-SEES-DOG
+Compiling routine: LAST-PECK
+Compiling routine: SAY-PECKS
+Compiling routine: UPDATE-APPETITE
+Compiling routine: MEEP-ARRIVES
+Compiling routine: RANCH-OPEN?
+Compiling routine: MEEP-ESCAPES
+Compiling routine: MEEP-SEES-BAG
+Compiling routine: I-SNAKE
+Compiling routine: SEE-SNAKE?
+Compiling routine: SNAKE-LEAVES
+Compiling routine: I-BITTEN
+Compiling routine: I-TUNNEL
+Compiling routine: I-WTK
+Compiling routine: I-FLARE
+Compiling routine: HINGE-SQUEAK
+Compiling routine: FIRST-SEE-FLARE
+Compiling routine: CRACKLES
+Compiling routine: KABOOM
+Compiling routine: DO-KABOOM
+Compiling routine: BLIGHT
+Compiling routine: DAZZLE
+Compiling routine: I-TRINITY
+Compiling routine: TWO-MINUTE-WARNING
+Compiling routine: FIVE-MINUTE-WARNING
+Compiling routine: DO-28
+Compiling routine: DO-NINE
+Compiling routine: SPOT-SWEEPS
+Compiling routine: REVEAL-WIRE
+Compiling routine: WIRE-ID
+Compiling routine: KSCRUB
+Compiling routine: BITTER-VOICE
+Compiling routine: NO-TOLERANCE
+Compiling routine: EYES-SEE-MOVEMENT
+Compiling routine: I-EYE
+Compiling routine: HEAR-BARKING
+Compiling routine: BARK-CONTINUES
+Compiling routine: SOME-BUZZARD
+Compiling routine: Z-MINUS-45
+Compiling routine: Z-MINUS-30
+Compiling routine: Z-MINUS-15
+Compiling routine: FINAL-SECONDS
+Compiling routine: I-BIKES
+Compiling routine: I-WIGHT
+Compiling routine: WIGHT-KILLS-YOU
+Compiling routine: I-SLOPE
+Compiling routine: I-HARDHAT
+Compiling routine: LAMPLIGHT
+Compiling routine: I-DOG
+Compiling routine: I-VOICES
+Compiling routine: I-RCOUNT
+Compiling routine: RSPEAKER-BARKS
+Compiling routine: BARKS-RSPEAKER
+Compiling routine: SAY-BARKS
+Compiling routine: HURRICANE
+Compiling routine: I-OPPIE
+Compiling routine: I-LUMP
+Input file: SS:<TRINITY>PEOPLE.ZIL.2
+Compiling routine: JWOMAN-F
+Compiling routine: DIN-DROWNS
+Compiling routine: BWOMAN-F
+Compiling routine: BAD-COO
+Compiling routine: NOT-A-FARTHING
+Compiling routine: BWOMAN-SNORTS
+Compiling routine: ASK-BWOMAN-ABOUT
+Compiling routine: GOON-F
+Compiling routine: ONE-CLAD
+Compiling routine: GOON-MOUTH-F
+Compiling routine: BANDAGE-STOPS-YOU
+Compiling routine: HANDLE-CORPSE?
+Compiling routine: CHARON-F
+Compiling routine: SOLEMNLY
+Compiling routine: DEMEANOR
+Compiling routine: STYX-TRIP
+Compiling routine: IN-GIRL
+Compiling routine: DESCRIBE-GIRL
+Compiling routine: GIRL-F
+Compiling routine: GIRL-SHIES
+Compiling routine: START-MCRANE
+Compiling routine: EYES-BRIGHTEN
+Compiling routine: SEE-TWINKLE?
+Compiling routine: BROLLY-BETTER
+Compiling routine: BROLLY-INTEREST
+Compiling routine: GENERIC-KID-F
+Compiling routine: DESCRIBE-BOY
+Compiling routine: BOY-F
+Compiling routine: HANDLE-BOY?
+Compiling routine: GIANT-F
+Compiling routine: BOY-NO-HEED
+Compiling routine: HURT-GIANT
+Compiling routine: EXIT-DISH-FIRST
+Compiling routine: THROW-TO-CHASM
+Compiling routine: HEAR-GIANT-MUSIC
+Compiling routine: RAPE-SCOUT
+Compiling routine: GENERIC-BIRD-F
+Compiling routine: DESCRIBE-MEEP
+Compiling routine: OPEN-FOR-MEEP
+Compiling routine: AFTER-YOU
+Compiling routine: MEEP-F
+Compiling routine: ADDRESS-MEEP?
+Compiling routine: MEEP-COCKS
+Compiling routine: GIVE-PRSO-TO-MEEP
+Compiling routine: SOUR-LOOK
+Compiling routine: MEEP-GETS-TKEY?
+Compiling routine: PERPLEXED
+Compiling routine: BUSY-EATING
+Compiling routine: SHOW-TO-MEEP
+Compiling routine: DOG-F
+Compiling routine: ALMOST-WAKE-DOG
+Compiling routine: AT-YOUR-TOUCH
+Compiling routine: WAKE-DOG
+Compiling routine: DOG-ALERT
+Compiling routine: IN-WIGHT
+Compiling routine: VERY-CLOSE
+Compiling routine: DESCRIBE-WIGHT
+Compiling routine: WIGHT-HAS
+Compiling routine: WIGHT-F
+Compiling routine: WIGHT-RESPONDS
+Compiling routine: THROWS-BACK
+Compiling routine: GENERIC-GI-F
+Compiling routine: GONE-NOW
+Compiling routine: OPPIE-F
+Compiling routine: GIS-F
+Compiling routine: HANDLE-GIS?
+Compiling routine: AT-YOUR-VOICE
+Input file: SS:<TRINITY>PLACES.ZIL.2
+Compiling routine: PAL-GATE-F
+Compiling routine: EXIT-GARDEN
+Compiling routine: SAY-TOURISTS
+Compiling routine: FLOWER-WALK-F
+Compiling routine: GARDEN-OUT
+Compiling routine: BROAD-WALK-F
+Compiling routine: ROUND-POND-F
+Compiling routine: WABE-F
+Compiling routine: WABE-OUT
+Compiling routine: WABE-N
+Compiling routine: WABE-NE
+Compiling routine: WABE-SE
+Compiling routine: WABE-SW
+Compiling routine: WABE-NW
+Compiling routine: WOBBLE
+Compiling routine: LION-GATE-F
+Compiling routine: NO-FOOTHOLDS
+Compiling routine: LAN-GATE-F
+Compiling routine: TWEEN-TREES
+Compiling routine: S-LAN-GATE
+Compiling routine: W-LAN-GATE
+Compiling routine: SW-LAN-GATE
+Compiling routine: SEE-JWOMAN?
+Compiling routine: LAN-WALK-F
+Compiling routine: WALK-ON-GRASS
+Compiling routine: READ-NOTICE-FIRST
+Compiling routine: AT-TERRACE-F
+Compiling routine: LONG-WATER-F
+Compiling routine: SWIM-IN-LWATER
+Compiling routine: DONT-MISS-MISSILE
+Compiling routine: MISSED-MEEP?
+Compiling routine: IN-WATER-F
+Compiling routine: ENTER-HOLE
+Compiling routine: BEACH-TOO-FAR
+Compiling routine: EXIT-WATER
+Compiling routine: OSSUARY-F
+Compiling routine: MENTION-DOOR
+Compiling routine: OSSUARY-S
+Compiling routine: HOLLOW-TOO-STEEP
+Compiling routine: OSSUARY-IN
+Compiling routine: PROM-F
+Compiling routine: PROM-IN
+Compiling routine: PROM-OUT
+Compiling routine: ON-MESA-F
+Compiling routine: CROSS-CHASM
+Compiling routine: ON-MESA-IN
+Compiling routine: ON-BLUFF-F
+Compiling routine: LOOK-AT-VALLEY
+Compiling routine: IN-COTTAGE-F
+Compiling routine: DOOR-LEADING
+Compiling routine: IN-GARDEN-F
+Compiling routine: IN-GARDEN-IN
+Compiling routine: BONEYARD-F
+Compiling routine: UP-SSTEPS
+Compiling routine: DOWN-SSTEPS
+Compiling routine: SCEND
+Compiling routine: IN-BARROW-F
+Compiling routine: WIGHT-ID
+Compiling routine: IN-BARROW-N
+Compiling routine: WIGHT-BLOCKS-DESPITE
+Compiling routine: WIGHT-COVERS
+Compiling routine: WIGHT-STUMBLES
+Compiling routine: BARROW-EXIT
+Compiling routine: DOWN-SLOPE
+Compiling routine: NBOG-F
+Compiling routine: AT-CHASM-F
+Compiling routine: CROSS-TO-MESA
+Compiling routine: OAK-STEP
+Compiling routine: CHASM-FALL
+Compiling routine: CLIMB-OAK
+Compiling routine: UNDER-CLIFF-F
+Compiling routine: HEAR-HIVE
+Compiling routine: AT-CRATER-F
+Compiling routine: ENTER-CRATER
+Compiling routine: IN-CRATER-UP
+Compiling routine: IN-CRATER-F
+Compiling routine: EXIT-CRATER
+Compiling routine: AT-FALLS-F
+Compiling routine: AT-FALLS-W
+Compiling routine: AT-FALLS-IN
+Compiling routine: BROLLY-OPEN?
+Compiling routine: ICE-CAVE-F
+Compiling routine: THROUGH-FALLS
+Compiling routine: SLOPE-GONE
+Compiling routine: SBOG-F
+Compiling routine: GBASE-F
+Compiling routine: WALK-UP-STAIRS
+Compiling routine: HALFWAY-F
+Compiling routine: HALFWAY-UP
+Compiling routine: HALFWAY-DOWN
+Compiling routine: MOVE-HALFWAY?
+Compiling routine: ON-GNOMON-F
+Compiling routine: WALK-DOWN-STAIRS
+Compiling routine: ON-MOOR-F
+Compiling routine: ON-MOOR-IN
+Compiling routine: ON-HILL-F
+Compiling routine: HUNDREDS-OF-THEM
+Compiling routine: FCLEARING-F
+Compiling routine: AT-TRELS-F
+Compiling routine: DOCKSIDE-F
+Compiling routine: DESCRIBE-DOCKSIDE
+Compiling routine: DOCKSIDE-OUT
+Compiling routine: AT-BEND-F
+Compiling routine: IN-MEADOW-F
+Compiling routine: MEADOW-EXIT
+Compiling routine: UP-HILL
+Compiling routine: SWPATH-F
+Compiling routine: SEPATH-F
+Compiling routine: SAY-HEDGE-PATH
+Compiling routine: WHICH-WAY-UP-NS
+Compiling routine: WHICH-WAY-IN-NS
+Compiling routine: ARBORETUM-F
+Compiling routine: DESCRIBE-PERGOLA
+Compiling routine: ENTER-ARBOR-N
+Compiling routine: ENTER-ARBOR-S
+Compiling routine: ENTER-ARBOR
+Compiling routine: TO-ARBOR-TOP
+Compiling routine: FLOOR-TWISTS
+Compiling routine: ARBORSIDE-F
+Compiling routine: EXIT-ARBOR-N
+Compiling routine: EXIT-ARBOR-S
+Compiling routine: EXIT-ARBOR
+Compiling routine: ARBOR-TOP-F
+Compiling routine: SOMETHING-BUSHY
+Compiling routine: ON-BEACH-F
+Compiling routine: ON-ISLE-F
+Compiling routine: ENTICINGLY
+Compiling routine: ON-ISLE-IN
+Compiling routine: GO-TO-SHACK
+Compiling routine: PICK-ONE
+Compiling routine: IN-ORBIT-F
+Compiling routine: DONT-PROPAGATE
+Compiling routine: NO-PROPULSION
+Compiling routine: ON-SAT-F
+Compiling routine: LOOK-AT-XRAY
+Compiling routine: ON-PLATFORM-F
+Compiling routine: PLAT-FALL
+Compiling routine: ON-PLATFORM-IN
+Compiling routine: EXIT-HOLE
+Compiling routine: DOWN-PLADDER
+Compiling routine: UNDER-PLAT-F
+Compiling routine: UP-PLADDER
+Compiling routine: ATUN-F
+Compiling routine: DESOLATION
+Compiling routine: BTUN-F
+Compiling routine: CTUN-F
+Compiling routine: TO-CLIFF
+Compiling routine: DTUN-F
+Compiling routine: ETUN-F
+Compiling routine: FTUN-F
+Compiling routine: GTUN-F
+Compiling routine: HTUN-F
+Compiling routine: CLIFF-EDGE-F
+Compiling routine: OVER-CLIFF
+Compiling routine: CLIFF-DROWN
+Compiling routine: TO-TUNDRA
+Compiling routine: TUN1-F
+Compiling routine: TUN1-IN
+Compiling routine: LOOK-AT-RWALLS
+Compiling routine: EXIT-CAVE
+Compiling routine: TUN2-F
+Compiling routine: TUN3-F
+Compiling routine: ON-SCAFFOLD-F
+Compiling routine: DOWN-SCAFFOLD
+Compiling routine: ON-SCAFFOLD-IN
+Compiling routine: AT-SDOORS-F
+Compiling routine: CLIMB-SCAFFOLD
+Compiling routine: SSAND-F
+Compiling routine: TO-ESAND
+Compiling routine: TO-WSAND
+Compiling routine: TO-NSAND
+Compiling routine: TO-SSAND
+Compiling routine: WALK-BEACH
+Compiling routine: LAGOON-SWIMMING
+Compiling routine: ESAND-F
+Compiling routine: NSAND-F
+Compiling routine: WSAND-F
+Compiling routine: CRABS-ATTACK
+Compiling routine: IN-SKY-F
+Compiling routine: ON-BIRD-F
+Compiling routine: EXIT-NAGASAKI
+Compiling routine: PLAYGROUND-F
+Compiling routine: LOOK-IN-SPILE
+Compiling routine: EXIT-SPILE
+Compiling routine: ENTER-SCHOOL
+Compiling routine: ENTER-SHELTER
+Compiling routine: TEACHERS-CATCH
+Compiling routine: TEACHERS-NOTICE
+Compiling routine: CHILDREN-CATCH
+Compiling routine: CHICKEN-OUT?
+Compiling routine: IN-SHELTER-F
+Compiling routine: EXIT-SHELTER
+Compiling routine: IN-SHACK-F
+Compiling routine: IN-SHACK-OUT
+Compiling routine: SLAM-TS6-DOOR
+Compiling routine: KILL-TS6-DOOR
+Compiling routine: TOWER-PLAT-F
+Compiling routine: TOWER-PLAT-D
+Compiling routine: ON-TOWER-F
+Compiling routine: TOWER-FALL
+Compiling routine: ON-TOWER-U
+Compiling routine: ON-TOWER-D
+Compiling routine: AT-ZERO-F
+Compiling routine: AT-ZERO-U
+Compiling routine: N75-F
+Compiling routine: GO-TO-NBUNKERS
+Compiling routine: ENTER-JEEP
+Compiling routine: IN-JEEP-F
+Compiling routine: EXIT-JEEP
+Compiling routine: N50-F
+Compiling routine: N25-F
+Compiling routine: NZERO-F
+Compiling routine: NEZERO-F
+Compiling routine: EZERO-F
+Compiling routine: AT-TNT-F
+Compiling routine: WZERO-F
+Compiling routine: W25-F
+Compiling routine: W50-F
+Compiling routine: W75-F
+Compiling routine: W100-F
+Compiling routine: W100-NW
+Compiling routine: W100-SW
+Compiling routine: S25-F
+Compiling routine: S50-F
+Compiling routine: S75-F
+Compiling routine: S100-F
+Compiling routine: S100-NE
+Compiling routine: S100-S
+Compiling routine: BUT-HESITATE
+Compiling routine: YOU-MARCH
+Compiling routine: S100-E
+Compiling routine: HEAR-SBUNK
+Compiling routine: NEPASS-F
+Compiling routine: D0-F
+Compiling routine: D0-S
+Compiling routine: D0-E
+Compiling routine: BORING-DESERT
+Compiling routine: D1-F
+Compiling routine: D1-SE
+Compiling routine: D1-S
+Compiling routine: D1-SW
+Compiling routine: D1-W
+Compiling routine: D2-F
+Compiling routine: D2-S
+Compiling routine: D2-SW
+Compiling routine: D3-F
+Compiling routine: D3-N
+Compiling routine: D3-NE
+Compiling routine: D3-E
+Compiling routine: D3-SE
+Compiling routine: D5-F
+Compiling routine: D5-E
+Compiling routine: D5-SE
+Compiling routine: D5-S
+Compiling routine: D6-F
+Compiling routine: D6-SE
+Compiling routine: D6-S
+Compiling routine: D6-SW
+Compiling routine: D6-W
+Compiling routine: D6-NW
+Compiling routine: D6A-F
+Compiling routine: D6A-N
+Compiling routine: D6A-NE
+Compiling routine: D6A-W
+Compiling routine: D6A-NW
+Compiling routine: D7-F
+Compiling routine: D7-N
+Compiling routine: D7-NE
+Compiling routine: D7-NW
+Compiling routine: D7-W
+Compiling routine: D8-F
+Compiling routine: D8-N
+Compiling routine: D8-NE
+Compiling routine: D8-E
+Compiling routine: D8-SE
+Compiling routine: D8-SW
+Compiling routine: D8-NW
+Compiling routine: D9-F
+Compiling routine: D9-N
+Compiling routine: D9-NE
+Compiling routine: D9-E
+Compiling routine: D10-F
+Compiling routine: D10-N
+Compiling routine: D10-SE
+Compiling routine: D10-NEE
+Compiling routine: D10-W
+Compiling routine: D11-F
+Compiling routine: D11-NWW
+Compiling routine: NWRANCH-F
+Compiling routine: NWYARD-F
+Compiling routine: NERANCH-F
+Compiling routine: BROOM-F
+Compiling routine: IN-BATH-F
+Compiling routine: NROOM-F
+Compiling routine: NWROOM-F
+Compiling routine: NEROOM-F
+Compiling routine: HEAR-SNAKE
+Compiling routine: IN-CLOSET-F
+Compiling routine: SWROOM-F
+Compiling routine: SEROOM-F
+Compiling routine: IN-HALL-F
+Compiling routine: ENTER-IHOUSE
+Compiling routine: IHOUSE-F
+Compiling routine: FEEL-IHOUSE
+Compiling routine: EXIT-IHOUSE
+Compiling routine: SWRANCH-F
+Compiling routine: ENTER-SHALL
+Compiling routine: SEYARD-F
+Compiling routine: CLIMB-PORCH
+Compiling routine: SERANCH-F
+Compiling routine: NEYARD-F
+Compiling routine: SWYARD-F
+Compiling routine: ON-PORCH-F
+Compiling routine: SAY-A-DOOR
+Compiling routine: ENTER-RANCH
+Compiling routine: DOWN-RAMP
+Compiling routine: ON-PORCH-N
+Compiling routine: ON-PORCH-S
+Compiling routine: CLIMB-OFF-PORCH
+Compiling routine: ERANCH-F
+Compiling routine: ASCEND-RAMP
+Compiling routine: NCIST-F
+Compiling routine: UNDERM-F
+Compiling routine: CLIMB-MILL
+Compiling routine: IN-MILL-F
+Compiling routine: DOWN-MLADDER
+Compiling routine: SAY-GROANS
+Compiling routine: SCIST-F
+Compiling routine: ENTER-RESERVOIR
+Compiling routine: ON-CIST-F
+Compiling routine: RES-FALL
+Compiling routine: INTO-RESERVOIR
+Compiling routine: DOWN-CISTAIR
+Compiling routine: ONLY-SOUTH
+Compiling routine: IN-CIST-F
+Compiling routine: EXIT-CIST
+Compiling routine: IN-CIST-D
+Compiling routine: UNDER-WATER-F
+Compiling routine: RISE-TO-SURFACE
+Compiling routine: JIGS-UP
+Compiling routine: DEATH-F
+Compiling routine: FINISH
+Input file: SS:<TRINITY>THINGS.ZIL.4
+Compiling routine: GTRINITY-F
+Compiling routine: GENERIC-LONDON-F
+Compiling routine: LONDON-F
+Compiling routine: PATH-F
+Compiling routine: METEOR-F
+Compiling routine: SKY-F
+Compiling routine: BREEZE-F
+Compiling routine: HORIZON-F
+Compiling routine: SUN-F
+Compiling routine: GARDENS-F
+Compiling routine: WRISTWATCH-F
+Compiling routine: FORGOT-HOW
+Compiling routine: COIN-F
+Compiling routine: HANDLE-COIN?
+Compiling routine: SCOIN-F
+Compiling routine: CREDIT-CARD-F
+Compiling routine: PIGEONS-F
+Compiling routine: FEED-THE-BIRDS?
+Compiling routine: FLWALK-F
+Compiling routine: PGATE-F
+Compiling routine: GENERIC-GATE-F
+Compiling routine: BLGATE-F
+Compiling routine: LGATE-F
+Compiling routine: HANDLE-GATES?
+Compiling routine: DESCRIBE-GATE
+Compiling routine: TOURISTS-SNICKER
+Compiling routine: IFENCE-F
+Compiling routine: GENERIC-WALK-F
+Compiling routine: LNWALK-F
+Compiling routine: TERRACE-F
+Compiling routine: GENERIC-WATER-F
+Compiling routine: LWATER-F
+Compiling routine: SEE-IT-SPARKLE
+Compiling routine: GRPOND-F
+Compiling routine: RPOND-F
+Compiling routine: HANDLE-WATER?
+Compiling routine: OPAQUE-WATER
+Compiling routine: SAY-IN-WATER
+Compiling routine: CRANE-F
+Compiling routine: RUIN-LOVELY-CRANE
+Compiling routine: OCRANE-F
+Compiling routine: BAD-CRANE-F
+Compiling routine: HANDLE-OPEN-BIRD?
+Compiling routine: FUMBLE
+Compiling routine: POND-BIRDS-F
+Compiling routine: BOAT-F
+Compiling routine: DESCRIBE-DIAL
+Compiling routine: DIAL-F
+Compiling routine: LOOK-AT-DIAL
+Compiling routine: DESCRIBE-BDIAL
+Compiling routine: BDIAL-F
+Compiling routine: HANDLE-DIAL?
+Compiling routine: LOOK-UNDER-DIAL
+Compiling routine: READ-DIAL
+Compiling routine: SAY-BETWEEN
+Compiling routine: RING-F
+Compiling routine: WOBBLES
+Compiling routine: ALREADY-POINTING
+Compiling routine: SPECIFY-SYMBOL
+Compiling routine: READ-ARROW
+Compiling routine: FIRST-MOVE
+Compiling routine: SECOND-MOVE
+Compiling routine: DIAL-HOLE-F
+Compiling routine: BDIAL-HOLE-F
+Compiling routine: HANDLE-HOLE?
+Compiling routine: EXAMINE-HOLE
+Compiling routine: ROSE-F
+Compiling routine: SYMBOLS-F
+Compiling routine: HANDLE-GLYPHS?
+Compiling routine: GNOMON-F
+Compiling routine: GNOMON-FITS?
+Compiling routine: DESCRIBE-LEVER
+Compiling routine: SAY-LEVER
+Compiling routine: LEVER-F
+Compiling routine: LOWER-LEVER
+Compiling routine: RAISE-LEVER
+Compiling routine: SAY-GRIND
+Compiling routine: ALL-IS-STILL
+Compiling routine: LEVER-MOVED
+Compiling routine: CANT-PRSA-LEVER
+Compiling routine: BEDS-F
+Compiling routine: LOOK-IN-BEDS
+Compiling routine: SMELL-FLOWERS
+Compiling routine: UNTIDY-BEDS
+Compiling routine: LOVELY
+Compiling routine: NO-PICKING
+Compiling routine: FLOWERS-F
+Compiling routine: THICKET-F
+Compiling routine: CLEARING-F
+Compiling routine: MEMORIAL-F
+Compiling routine: BWALK-F
+Compiling routine: VICTORIA-F
+Compiling routine: SAID-CRUMBS?
+Compiling routine: CRUMBS?
+Compiling routine: BAG-F
+Compiling routine: DO-BAG?
+Compiling routine: LOOK-ON-HUNGRY
+Compiling routine: PIGEONS-EAT-BAG
+Compiling routine: FEEL-RUBY
+Compiling routine: EMPTY-PRSO-FIRST
+Compiling routine: CRUMBS-INTO-PRAM
+Compiling routine: SAY-CRUMBS-FALL
+Compiling routine: EMPTY-OUT-BAG
+Compiling routine: LOOK-IN-BAG
+Compiling routine: EMPTY-BAG
+Compiling routine: SAY-HANDFUL
+Compiling routine: TAKE-CRUMBS
+Compiling routine: DROP-CRUMBS
+Compiling routine: NOTICE-RUBY
+Compiling routine: FEEL-STALE
+Compiling routine: IN-EBAG
+Compiling routine: TAKE-OUT-EBAG?
+Compiling routine: EBAG-F
+Compiling routine: GBAG-F
+Compiling routine: NO-TOUCHIN
+Compiling routine: GENERIC-BAG-F
+Compiling routine: TRY-BUY
+Compiling routine: BUY-WITH
+Compiling routine: GET-RUBY
+Compiling routine: RUBY-F
+Compiling routine: TRUBY-F
+Compiling routine: SPARKLE-WITH
+Compiling routine: EMERALD-F
+Compiling routine: GPRAM-F
+Compiling routine: GENERIC-PRAM-F
+Compiling routine: DESCRIBE-PRAM
+Compiling routine: PRAM-F
+Compiling routine: CANT-WHILE-IN-PRAM
+Compiling routine: BPRAM-F
+Compiling routine: NOTICE-F
+Compiling routine: GRASS-F
+Compiling routine: GRASS-STOPS-YOU
+Compiling routine: ENERGY-F
+Compiling routine: BALL-F
+Compiling routine: PARASOL-F
+Compiling routine: READ-SLOGAN
+Compiling routine: TREE-SWITCH
+Compiling routine: NICE-TRY
+Compiling routine: GO-TO-LONG-WATER
+Compiling routine: PAIN-REGAIN
+Compiling routine: AND-SNAP
+Compiling routine: DESCRIBE-TREE
+Compiling routine: TREE-F
+Compiling routine: PAN-F
+Compiling routine: SIRENS-F
+Compiling routine: MISSILE-F
+Compiling routine: LWDOOR-F
+Compiling routine: UNEASY-DOOR
+Compiling routine: GO-INTO-LWDOOR
+Compiling routine: MEEP-TO-ZERO
+Compiling routine: SEE-NO-ONE
+Compiling routine: ARTICULATES
+Compiling routine: SAY-WIND
+Compiling routine: EWIND-F
+Compiling routine: GENERIC-WIND-F
+Compiling routine: WWIND-F
+Compiling routine: HANDLE-WIND?
+Compiling routine: STAIR-F
+Compiling routine: HANDLE-STAIRS?
+Compiling routine: GPLATFORM-F
+Compiling routine: GENERIC-TRIANGLE-F
+Compiling routine: STRUCTURE-F
+Compiling routine: DESCRIBE-OUTER-SHADOW
+Compiling routine: OUTER-SHADOW-F
+Compiling routine: EXAMINE-OUTER-SHADOW
+Compiling routine: DESCRIBE-INNER-SHADOW
+Compiling routine: INNER-SHADOW-F
+Compiling routine: FOLLOW-SHADOW?
+Compiling routine: MOVING-SHADOW?
+Compiling routine: PRSO-NOT-MOVING
+Compiling routine: DSHADOW-F
+Compiling routine: GENERIC-TS-F
+Compiling routine: HTS-F
+Compiling routine: IN-TS6
+Compiling routine: TS-F
+Compiling routine: PRSI-TOP-TOO-HIGH
+Compiling routine: SLIDE-OFF-STOOL?
+Compiling routine: TS0-DOOR-F
+Compiling routine: DOOR-NOT-HERE
+Compiling routine: TS1-DOOR-F
+Compiling routine: THRU-DOOR?
+Compiling routine: HANDLE-TSDOOR?
+Compiling routine: TS2-DOOR-F
+Compiling routine: TS3-DOOR-F
+Compiling routine: TS4-DOOR-F
+Compiling routine: TS5-DOOR-F
+Compiling routine: TS6-DOOR-F
+Compiling routine: DESCRIBE-SCULPTURE
+Compiling routine: READ-KLEIN
+Compiling routine: SCULPTURE-F
+Compiling routine: INSIDE-BEGINS
+Compiling routine: AXE-F
+Compiling routine: GENERIC-TREE-F
+Compiling routine: OAK-F
+Compiling routine: TRY-MOVING-OAK
+Compiling routine: CAVORTING
+Compiling routine: HAPHAZARD
+Compiling routine: CHASM-F
+Compiling routine: TREETOPS-F
+Compiling routine: MESA-F
+Compiling routine: AUX-TS3-F
+Compiling routine: DESCRIBE-LOG
+Compiling routine: SAY-GLOWS
+Compiling routine: GLOWING-LOG-F
+Compiling routine: HANDLE-LOG?
+Compiling routine: INTO-CORRUPTION
+Compiling routine: SHARD-F
+Compiling routine: HEAP-F
+Compiling routine: XRAY-F
+Compiling routine: FILM-HOLDS-YOU
+Compiling routine: XRAY-TOO-FAR
+Compiling routine: STARS-F
+Compiling routine: ICBM-F
+Compiling routine: THRUSTERS-F
+Compiling routine: SPHONES-F
+Compiling routine: PHONES-F
+Compiling routine: DISH-F
+Compiling routine: SDISH-F
+Compiling routine: IS-FILLED
+Compiling routine: SOAPY-WATER-F
+Compiling routine: SPLASHES
+Compiling routine: HANDLE-SOAPY-WATER?
+Compiling routine: WET-AND-SLIPPERY
+Compiling routine: PRSO-INTO-SOAPY-WATER
+Compiling routine: ENTER-DISH
+Compiling routine: POP-BUBBLE-SUIT
+Compiling routine: EXIT-DISH
+Compiling routine: WAND-F
+Compiling routine: ANNOY-BOY
+Compiling routine: LAST-BUBBLE
+Compiling routine: BOY-SCRAMS
+Compiling routine: SBUBBLE-F
+Compiling routine: GENERIC-BUBBLE-F
+Compiling routine: FILM-F
+Compiling routine: PRSO-BOUNCES
+Compiling routine: BREAK-FILM-WITH
+Compiling routine: BROLLY-FILLS?
+Compiling routine: GENERIC-METAL-F
+Compiling routine: DESCRIBE-LUMP
+Compiling routine: LUMP-F
+Compiling routine: MAGNETIC
+Compiling routine: TOUCH-LUMP
+Compiling routine: SPADE-LUMP
+Compiling routine: COOL-LUMP
+Compiling routine: CRATER-F
+Compiling routine: SMOKE-F
+Compiling routine: RUBBLE-F
+Compiling routine: WATERFALL-F
+Compiling routine: CAVE-HOLE-F
+Compiling routine: POOL-F
+Compiling routine: STREAM-F
+Compiling routine: GENERIC-RIVER-F
+Compiling routine: HANDLE-MOUNTAIN-WATER?
+Compiling routine: SAY-IN-MOUNTAIN-WATER
+Compiling routine: DO-WATER?
+Compiling routine: SSTEPS-F
+Compiling routine: CLIFF-F
+Compiling routine: CLIFF-TOO-STEEP
+Compiling routine: HEADS-F
+Compiling routine: STATUARY-F
+Compiling routine: COLD-PRSOS
+Compiling routine: GENERIC-TOMB-F
+Compiling routine: TOMBS-F
+Compiling routine: CRYPT-F
+Compiling routine: LID-F
+Compiling routine: LIFT-LID
+Compiling routine: LEAN-ON-LID
+Compiling routine: DESCRIBE-LID
+Compiling routine: BROKEN-LID-F
+Compiling routine: DISRESPECT?
+Compiling routine: BARROW-F
+Compiling routine: BARROW-DOOR-F
+Compiling routine: NO-AVAIL
+Compiling routine: SHROUD-F
+Compiling routine: HANDLE-CLOTH?
+Compiling routine: SMELLS-OF-DEATH
+Compiling routine: BANDAGE-F
+Compiling routine: GENERIC-BOOT-F
+Compiling routine: RBOOT-F
+Compiling routine: GBOOT-F
+Compiling routine: BAD-BOOT-PART?
+Compiling routine: ONE-AT-A-TIME
+Compiling routine: MULTIBOOT?
+Compiling routine: HANDLE-BOOT?
+Compiling routine: BCOIN-F
+Compiling routine: GENERIC-ICE-F
+Compiling routine: ICICLES-F
+Compiling routine: BREAK-OFF-ICE
+Compiling routine: ICE-F
+Compiling routine: SHATTER-ICE
+Compiling routine: REMOVE-ICE
+Compiling routine: DESCRIBE-KEYHOLE
+Compiling routine: KEYHOLE-F
+Compiling routine: TOO-SMALL
+Compiling routine: SLOPE-F
+Compiling routine: CAVE-F
+Compiling routine: COTTAGE-F
+Compiling routine: STOOLS-F
+Compiling routine: COPSE-F
+Compiling routine: GARDEN-F
+Compiling routine: DIG-IN-GARDEN
+Compiling routine: COTTAGE-DOOR-F
+Compiling routine: GARDEN-DOOR-F
+Compiling routine: DO-COTTAGE-DOOR?
+Compiling routine: GFENCE-F
+Compiling routine: HERBS-F
+Compiling routine: DESCRIBE-PILE
+Compiling routine: LOOK-ON-PILE
+Compiling routine: PILE-F
+Compiling routine: GARLIC-F
+Compiling routine: SMELL-GARLIC
+Compiling routine: PATCH-F
+Compiling routine: PLAYING-IN?
+Compiling routine: PLATFORM-F
+Compiling routine: TUNDRA-F
+Compiling routine: PLADDER-F
+Compiling routine: TMOUNTS-F
+Compiling routine: PASS-F
+Compiling routine: RODENTS-F
+Compiling routine: GENERIC-LEMMINGS-F
+Compiling routine: SWITCH-LEMMINGS
+Compiling routine: LEMMINGS-F
+Compiling routine: LONG-BROWN
+Compiling routine: RUN-OR-LEAPING
+Compiling routine: LEM-F
+Compiling routine: FISSURE-F
+Compiling routine: TCLIFF-F
+Compiling routine: LOOK-DOWN-TCLIFF
+Compiling routine: TSEA-F
+Compiling routine: TBOMB-F
+Compiling routine: TCABLES-F
+Compiling routine: GROUP-F
+Compiling routine: RUSSIANS-F
+Compiling routine: RUSSIA?
+Compiling routine: MEET-RUSKIES
+Compiling routine: VALLEY-F
+Compiling routine: FOREST-F
+Compiling routine: TRELS-F
+Compiling routine: RTREL-F
+Compiling routine: LTREL-F
+Compiling routine: SEE-TRELLIS
+Compiling routine: THRU-TRELLIS?
+Compiling routine: HANDLE-TRELS?
+Compiling routine: ATREL-F
+Compiling routine: BTREL-F
+Compiling routine: GENERIC-ARBS-F
+Compiling routine: HEDGE-F
+Compiling routine: SMELL-HEDGE
+Compiling routine: ARBOR-F
+Compiling routine: MIASMA-F
+Compiling routine: SUFFOCATE
+Compiling routine: DESCRIBE-TRAP
+Compiling routine: TRAP-F
+Compiling routine: DESCRIBE-ICHOR
+Compiling routine: HANDLE-TRAP?
+Compiling routine: TOUCH-TRAP
+Compiling routine: SMELL-TRAP
+Compiling routine: CLOSE-TRAP
+Compiling routine: LEAP-FROM-TRAP
+Compiling routine: LOOK-INTO-TRAP
+Compiling routine: ICHOR-F
+Compiling routine: BOG-F
+Compiling routine: HEAR-DRIPPING
+Compiling routine: HIVE-F
+Compiling routine: MUNG-HIVE
+Compiling routine: PUT-HAND-IN-HIVE
+Compiling routine: YANK-ARM
+Compiling routine: RUPTURES-HIVE
+Compiling routine: BEES-ATTACK
+Compiling routine: FEEL-HIVE
+Compiling routine: BUZZ-RISES
+Compiling routine: HONEY-F
+Compiling routine: HONEYFY
+Compiling routine: HONEY-STICKS
+Compiling routine: GENERIC-BEE-F
+Compiling routine: BEES-F
+Compiling routine: EARS-RING
+Compiling routine: BEE-F
+Compiling routine: UBOMB-F
+Compiling routine: HANDLE-BOMB?
+Compiling routine: RESULTING-BLAST
+Compiling routine: NO-OPENINGS
+Compiling routine: READ-UBOMB
+Compiling routine: UCABLES-F
+Compiling routine: IN-CREVICE
+Compiling routine: DEEP-CREVICE
+Compiling routine: TOO-DARK-IN-CREVICE
+Compiling routine: CREVICE-F
+Compiling routine: PRSO-FALLS-DEEP
+Compiling routine: SKINK-F
+Compiling routine: SKINK-SCAMP
+Compiling routine: DSKINK-F
+Compiling routine: EAT-SKINK
+Compiling routine: HOLLOW-F
+Compiling routine: BONES-F
+Compiling routine: KEY-F
+Compiling routine: HOPENING-F
+Compiling routine: SCAF-STAIR-F
+Compiling routine: SCAFFOLD-F
+Compiling routine: MIKE-F
+Compiling routine: RWALLS-F
+Compiling routine: IN-CAGE
+Compiling routine: CAGE-F
+Compiling routine: FREE-MAG
+Compiling routine: MAGPIE-F
+Compiling routine: CAULDRON-F
+Compiling routine: HOLD-OCOCO-OVER-CAULDRON
+Compiling routine: UPDATE-RECIPE
+Compiling routine: STEAM-F
+Compiling routine: WET-AND-OILY
+Compiling routine: CWATER-F
+Compiling routine: SMELL-CWATER
+Compiling routine: TOUCH-CWATER
+Compiling routine: EXIT-HONEY
+Compiling routine: DORY-F
+Compiling routine: EXIT-DORY
+Compiling routine: DORY-IN
+Compiling routine: GET-IN-DORY
+Compiling routine: SHADES-F
+Compiling routine: STYX-F
+Compiling routine: MBOX-F
+Compiling routine: LOOK-IN-MBOX
+Compiling routine: SWING-BOX
+Compiling routine: TSWITCH-F
+Compiling routine: FLIP-SWITCH
+Compiling routine: ALREADY-SWITCHED
+Compiling routine: GENERIC-BUTTON-F
+Compiling routine: BUTTON-F
+Compiling routine: HANDLE-SWITCH?
+Compiling routine: SDOORS-F
+Compiling routine: SPEAKER-F
+Compiling routine: LSPEAKERS-F
+Compiling routine: ESHED-F
+Compiling routine: LAGOON-F
+Compiling routine: ISLAND-F
+Compiling routine: IN-ISLET
+Compiling routine: ISLET-F
+Compiling routine: CTREE-F
+Compiling routine: NUTS-F
+Compiling routine: GENERIC-COCO-F
+Compiling routine: DESCRIBE-COCO
+Compiling routine: COCO-F
+Compiling routine: SAY-MILK
+Compiling routine: OCOCO-F
+Compiling routine: BEST-KARATE
+Compiling routine: DULL-THUD
+Compiling routine: MILK-HARD
+Compiling routine: NARROW-OCOCO
+Compiling routine: GENERIC-LIQUID-F
+Compiling routine: MILK-F
+Compiling routine: FIN-F
+Compiling routine: FLIPPER-F
+Compiling routine: FTOUCH?
+Compiling routine: SHOW-TO-FLIPPER
+Compiling routine: LOOKS-INTDIR
+Compiling routine: THROW-PRSO-AT-FLIPPER
+Compiling routine: CRABS-F
+Compiling routine: CATS-F
+Compiling routine: GENERIC-CITY-F
+Compiling routine: CITY-F
+Compiling routine: DESCRIBE-SPILE
+Compiling routine: SPILE-F
+Compiling routine: GENERIC-DIRT-F
+Compiling routine: SDIRT-F
+Compiling routine: SHELTER-F
+Compiling routine: SHELHOLE-F
+Compiling routine: HANDLE-SHELTER?
+Compiling routine: TEACHERS-F
+Compiling routine: GENERIC-JAPS-F
+Compiling routine: WATCHING-SKY
+Compiling routine: KIDS-F
+Compiling routine: HANDLE-JAPS?
+Compiling routine: DFLIES-F
+Compiling routine: SCHOOL-F
+Compiling routine: SCHOOL-WINDOWS-F
+Compiling routine: DECOR-F
+Compiling routine: LOOK-IN-SCHOOL
+Compiling routine: CCLOCK-F
+Compiling routine: GENERIC-CLOCK-F
+Compiling routine: SWINGS-F
+Compiling routine: BACK-AND-FORTH
+Compiling routine: PLANES-F
+Compiling routine: DSTRUCT-F
+Compiling routine: SUMMIT-F
+Compiling routine: SPADE-F
+Compiling routine: PEE-F
+Compiling routine: MCRANE-F
+Compiling routine: REPROACH
+Compiling routine: MOON-F
+Compiling routine: GADGET-F
+Compiling routine: SEE-GADGET-IN-MANUAL
+Compiling routine: IN-X5
+Compiling routine: SEE-IN-X5?
+Compiling routine: X5-F
+Compiling routine: HANDLE-X5?
+Compiling routine: APANEL-F
+Compiling routine: GET-WIRES
+Compiling routine: WATT-F
+Compiling routine: SWITCH-WATT
+Compiling routine: GENERIC-WIRE-F
+Compiling routine: WIRE-F
+Compiling routine: PULL-ON-WIRE
+Compiling routine: AXE-TOO-BIG
+Compiling routine: WIRES-F
+Compiling routine: PULL-WIRES
+Compiling routine: GCABLES-F
+Compiling routine: SPARK
+Compiling routine: GBOLTS-F
+Compiling routine: GROPES-F
+Compiling routine: HOPELESS-TANGLE
+Compiling routine: HARDWARE-F
+Compiling routine: SHACK-F
+Compiling routine: TOUCH-SHACK?
+Compiling routine: SHACK-HOLE-F
+Compiling routine: BROOM-DOOR-F
+Compiling routine: ONLY-ONE-DOOR?
+Compiling routine: NROOM-DOOR-F
+Compiling routine: LEFT-DOOR-F
+Compiling routine: RIGHT-DOOR-F
+Compiling routine: MULTIDOOR?
+Compiling routine: PORCH-DOOR-F
+Compiling routine: NEROOM-DOOR-F
+Compiling routine: SEROOM-DOOR-F
+Compiling routine: CLOSET-DOOR-F
+Compiling routine: CLOSET-F
+Compiling routine: SHALL-F
+Compiling routine: BATHROOM-F
+Compiling routine: BEDROOM-F
+Compiling routine: KITCHEN-F
+Compiling routine: RANCH-F
+Compiling routine: RAMP-F
+Compiling routine: PORCH-F
+Compiling routine: ICEHOUSE-F
+Compiling routine: ISTAIR-F
+Compiling routine: CISTAIR-F
+Compiling routine: RESERVOIR-F
+Compiling routine: NOT-CLEAN?
+Compiling routine: LOOK-IN-RWATER
+Compiling routine: MILL-F
+Compiling routine: GENERIC-LANDING-F
+Compiling routine: LANDING-F
+Compiling routine: MLADDER-F
+Compiling routine: TOWER-F
+Compiling routine: DTOWER-F
+Compiling routine: TLADDER-F
+Compiling routine: LOOK-AT-ZERO
+Compiling routine: TPLAT-F
+Compiling routine: RAIL-F
+Compiling routine: TROPES-F
+Compiling routine: NWROAD-F
+Compiling routine: SWROAD-F
+Compiling routine: SROAD-F
+Compiling routine: HANDLE-DESERT-ROAD?
+Compiling routine: D5ROAD-F
+Compiling routine: D11ROAD-F
+Compiling routine: BORING-ROAD?
+Compiling routine: EXAMINING-ROAD?
+Compiling routine: USING-ROAD?
+Compiling routine: SEROAD-F
+Compiling routine: NROAD-F
+Compiling routine: PROAD-F
+Compiling routine: DTRAIL-F
+Compiling routine: RANCH-ROAD-F
+Compiling routine: FHILLS-F
+Compiling routine: FHILLS-TOO-STEEP
+Compiling routine: DMOUNTS-F
+Compiling routine: BOOK-F
+Compiling routine: MARKER-F
+Compiling routine: SAY-SCRIBBLED
+Compiling routine: CSURFACE-F
+Compiling routine: WITH-BINOS
+Compiling routine: BINOS-F
+Compiling routine: MENTION-TKEY
+Compiling routine: SPILL-MILL
+Compiling routine: DO-DROWN
+Compiling routine: DEAD-ANIMAL-F
+Compiling routine: DESCRIBE-BOX
+Compiling routine: BOX-LOCKED?
+Compiling routine: BAG-IN-BOX?
+Compiling routine: BOX-F
+Compiling routine: HURT-BOX
+Compiling routine: BOX-NOT-LOCKED
+Compiling routine: OPEN-BOX
+Compiling routine: PADLOCK-F
+Compiling routine: OPEN-PADLOCK
+Compiling routine: PANEL-F
+Compiling routine: METERS-F
+Compiling routine: BREAKER-F
+Compiling routine: HEAR-BAKER?
+Compiling routine: GROVES-F
+Compiling routine: SBUNK-F
+Compiling routine: HANDLE-SBUNK?
+Compiling routine: SBENTRY-F
+Compiling routine: SEE-SBENTRY
+Compiling routine: SHED-F
+Compiling routine: NO-SHED-HOLE
+Compiling routine: TKEY-F
+Compiling routine: BBOX-F
+Compiling routine: LOOK-THRU-BINOS
+Compiling routine: NOT-WITHOUT-BINOS
+Compiling routine: AWINDOWS-F
+Compiling routine: WINDOWS-F
+Compiling routine: DESCRIBE-WBENCH
+Compiling routine: AND-OTHER-DEBRIS
+Compiling routine: WBENCH-F
+Compiling routine: BPAPER-F
+Compiling routine: LOOK-ON-BPAPER
+Compiling routine: HANDLE-BPAPER?
+Compiling routine: SDRIVER-F
+Compiling routine: AJUNK-F
+Compiling routine: SNAKE-F
+Compiling routine: SNAKE-RESPONSE
+Compiling routine: WTK-F
+Compiling routine: ANTENNA-F
+Compiling routine: SLIDER-F
+Compiling routine: FAR-AS-IT-GOES
+Compiling routine: MOVE-TO-RL
+Compiling routine: RDIAL-F
+Compiling routine: TILL-POINTS
+Compiling routine: PRSO-CALIBRATED
+Compiling routine: NOW-SET-TO
+Compiling routine: RANGE-ERROR?
+Compiling routine: FIDDLE
+Compiling routine: HANDLE-TUNER?
+Compiling routine: HOW-TO-USE-TUNER
+Compiling routine: WSWITCH-F
+Compiling routine: FLIP-WSWITCH
+Compiling routine: WBUTTON-F
+Compiling routine: TOUCH-WBUTTON
+Compiling routine: JEEP-F
+Compiling routine: SEAT-F
+Compiling routine: JDOOR-F
+Compiling routine: WALLET-F
+Compiling routine: GENERIC-PHOTO-F
+Compiling routine: PHOTO-F
+Compiling routine: GENERIC-RADIO-F
+Compiling routine: RADIO-F
+Compiling routine: RADIO-BOLTED
+Compiling routine: RSWITCH-F
+Compiling routine: FLIP-RSWITCH
+Compiling routine: NBUNKERS-F
+Compiling routine: ENDGAME
+Compiling routine: BOOT-SCREEN
+Compiling routine: BHOUSE-F
+Compiling routine: SLIGHT-F
+Compiling routine: AKC
+Compiling routine: HOLD-IT
+Compiling routine: KINDA-SPY
+Compiling routine: POLICE-CONVERGE
+Compiling routine: SURROUNDED
+Compiling routine: EXCUSES
+Compiling routine: MUCH-OF
+Compiling routine: MAP-F
+Compiling routine: FLARE-F
+Compiling routine: FRAME-F
+Compiling routine: HANDLE-JUMBO?
+Compiling routine: JUMBO-F
+Compiling routine: JUMBO-CLOSED
+Compiling routine: SWALL-F
+Compiling routine: RELEASE
+Compiling routine: BIKES-F
+Compiling routine: NANNIES-F
+Compiling routine: TOUCH-T?
+Compiling routine: TOO-HAUGHTY
+Compiling routine: CHILDREN-F
+Compiling routine: TOURISTS-F
+Compiling routine: T-SNOBS
+Compiling routine: BABIES-F
+Compiling routine: HANDLE-CHARGES?
+Compiling routine: EARSHOT
+Compiling routine: TOO-BUSY-RUNNING
+Compiling routine: HANDLE-BABES?
+Compiling routine: GTREES-F
+Compiling routine: BENCH-F
+Compiling routine: GENERIC-BULB-F
+Compiling routine: LAMP-F
+Compiling routine: LAMP-SEALED
+Compiling routine: SWITCH-STATE
+Compiling routine: MUNG-LAMP
+Compiling routine: TURN-OFF-LAMP
+Compiling routine: TURN-ON-LAMP
+Compiling routine: KILL-LAMP
+Compiling routine: FEATHERS-F
+Compiling routine: SPOT-F
+Compiling routine: VOICES-F
+Compiling routine: TCRATER-F
+Compiling routine: GMAP-F
+Compiling routine: DESCRIBE-PEDESTAL
+Compiling routine: PEDESTAL-F
+Compiling routine: TOME-F
+Compiling routine: PAGES-F
+Compiling routine: AND-RUIN
+Compiling routine: HANDLE-BOOK?
+Compiling routine: TELEPHONE
+Compiling routine: READ-TOME
+Compiling routine: PRINT-LINE
+Compiling routine: DESCRIBE-CINDERS
+Compiling routine: ALL-THATS-LEFT
+Compiling routine: CINDERS-F
+Compiling routine: SINK-F
+Compiling routine: CUPBOARD-F
+Compiling routine: KNIFE-F
+Compiling routine: GIBINOS-F
+Compiling routine: PITTS-F
+Compiling routine: ABLE-F
+Compiling routine: BAKER-F
+Compiling routine: DO-SHELTER?
+Compiling routine: TUBE-F
+Compiling routine: TUBE-CLOSED
+Compiling routine: TRENCHES-F
+Compiling routine: PIPES-F
+Compiling routine: MALLARDS-F
+Compiling routine: FOG-F
+Compiling routine: SHADOW-F
+Compiling routine: PTREES-F
+Compiling routine: SJUNK-F
+Compiling routine: VERTEX-F
+Compiling routine: FARAWAY?
+Compiling routine: BEACH-F
+Compiling routine: GENERIC-SHORE-F
+Compiling routine: OPSHORE-F
+Compiling routine: GGRASS-F
+Compiling routine: FATMAN-F
+Compiling routine: TOO-NARROW
+Compiling routine: V-$CREDITS
+Compiling routine: BIG-TRINITY
+Compiling routine: PLUTONIUM-F
+ ** Note: OBJECT has no properties: THE-END
+ ** Note: OBJECT has no properties: WEARING
+ ** Note: OBJECT has no properties: GLOBAL-OBJECTS
+ ** Note: OBJECT has no properties: X-OBJECT
+ ** Note: OBJECT has no properties: IN-BOX
+ ** Note: OBJECT has no properties: DUMMY-OBJECT
+ ** Note: OBJECT has no properties: C-OBJECT
+Vocabulary: 2120
+Prepositions: 22
+	 GO
+	 IN
+	 TO
+	 WITH
+	 THROUGH
+	 ON
+	 OUT
+	 UNDER
+	 AROUND
+	 OVER
+	 BEHIND
+	 AGAINST
+	 DOWN
+	 UP
+	 APART
+	 AT
+	 OFF
+	 FROM
+	 AWAY
+	 FOR
+	 ABOUT
+Objects: 593
+	 GGRASS
+	 FATMAN
+	 PLUTONIUM
+	 VICTORIA
+	 TS0-DOOR
+	 MEEP
+	 HOLLOW
+	 D11ROAD
+	 ISLET
+	 SERANCH
+	 LAN-WALK
+	 PROM
+	 CAULDRON
+	 SEGATE
+	 STAIR
+	 DTOWER
+	 CWATER
+	 TRAP
+	 STOOLS
+	 BEES
+	 HARDWARE
+	 NUTS
+	 LCITY
+	 LAMP
+	 TS4-DOOR
+	 LION-GATE
+	 BROAD-WALK
+	 IN-BARROW
+	 IN-CLOSET
+	 PLATFORM
+	 HEDGE
+	 WALLET
+	 NBUNKERS
+	 DSTRUCT
+	 SOGGY
+	 IHOUSE
+	 AT-SDOORS
+	 SCAF-STAIR
+	 SDISH
+	 EYES
+	 JUMBO
+	 IN-BOX
+	 RWIRE
+	 HIM
+	 ON-CIST
+	 DMOUNTS
+	 TLADDER
+	 ISLAND
+	 RIGHT
+	 RUSSIANS
+	 UCABLES
+	 SSTEPS
+	 IN-COTTAGE
+	 DEBRIS
+	 SKINK
+	 SDIRT
+	 ON-HILL
+	 FLOWERS
+	 MLADDER
+	 BTUN
+	 SBOG
+	 DECOR
+	 AT-TRELS
+	 ON-GNOMON
+	 GLOBAL-ROOM
+	 SOUND
+	 PADLOCK
+	 FIN
+	 WZERO
+	 TCRATER
+	 CORNER
+	 KEYHOLE
+	 THRUSTERS
+	 AT-CHASM
+	 GBAG
+	 BIKES
+	 ATREL
+	 CLEARING
+	 RING
+	 UNDERM
+	 CATS
+	 NWYARD
+	 NZERO
+	 OBUTTON
+	 GBOOT
+	 NEPASS
+	 NCIST
+	 CLIFF
+	 EZERO
+	 TOWER
+	 HEADS
+	 LEVER
+	 PORCH
+	 GTREES
+	 SHED
+	 COCO
+	 CRYPT
+	 OPSHORE
+	 LID
+	 EMERALD
+	 PGATE
+	 SNAKE
+	 SEROOM-DOOR
+	 BLUFF
+	 BARROW
+	 X-OBJECT
+	 FEATHERS
+	 DLEM
+	 ICE
+	 TS2
+	 COTTAGE
+	 SWIRE
+	 THICKET
+	 ROSE
+	 WATERFALL
+	 XRAY
+	 TREE
+	 TCABLES
+	 FOG
+	 BPAPER
+	 BOX
+	 CHASM
+	 CTUN
+	 MALLARDS
+	 STREAM
+	 FLOWER-WALK
+	 PILE
+	 TS6
+	 ON-TOWER
+	 JEEPARTS
+	 LANDING
+	 BTREL
+	 UNDER-WATER
+	 CHARON
+	 IN-HALL
+	 D8
+	 WSWITCH
+	 TBOMB
+	 PAL-GATE
+	 RUBY
+	 SLOPE
+	 WIRES
+	 RESERVOIR
+	 WSAND
+	 TS1-DOOR
+	 TOURISTS
+	 SCHOOL-WINDOWS
+	 S75
+	 D6
+	 NSAND
+	 GROPES
+	 D6A
+	 NWROAD
+	 OPPIE-THINGS
+	 W25
+	 CTREE
+	 RANCH-ROAD
+	 ESAND
+	 BROOM
+	 ON-BLUFF
+	 BREAKER
+	 TOMBS
+	 N25
+	 ILINES
+	 IN-SKY
+	 PASS
+	 WWIND
+	 MEMORIAL
+	 BDIAL-HOLE
+	 SCULPTURE
+	 GPLATFORM
+	 CHILDREN
+	 SPILE
+	 ON-PLATFORM
+	 TS5-DOOR
+	 DMAGPIE
+	 MOON
+	 PIGEONS
+	 BEACH
+	 GBOLTS
+	 BWIRE
+	 GADGET
+	 SDOORS
+	 CAVERN
+	 DTUN
+	 EWIND
+	 FLARE
+	 SPHONES
+	 TMOUNTS
+	 LTREL
+	 INNER-SHADOW
+	 PAN
+	 D2
+	 LAN-GATE
+	 XSNAKE
+	 RAIL
+	 IN-BATH
+	 W100
+	 MCRANE
+	 RBOOT
+	 SMOKE
+	 CLOTHES
+	 TEACHERS
+	 GROUP
+	 SHELHOLE
+	 ON-BIRD
+	 CREVICE
+	 PRAM
+	 UBOMB
+	 GLOWING-LOG
+	 TSEA
+	 DIAL-HOLE
+	 D0
+	 TOWER-PLAT
+	 BALL
+	 SUN
+	 GIRL
+	 WALLS
+	 MILK
+	 VALLEY
+	 SCHOOL
+	 IT
+	 BEE
+	 STEAM
+	 AT-ZERO
+	 IN-CRATER
+	 ROUND-POND
+	 GLOBAL-OBJECTS
+	 PHOTO
+	 SKY
+	 SHALL
+	 NEYARD
+	 ESHED
+	 PHONES
+	 DSHADOW
+	 TKEY
+	 WATT
+	 SCOIN
+	 D10
+	 TUN1
+	 NROAD
+	 HEAP
+	 NROOM-DOOR
+	 PLAYGROUND
+	 JDOOR
+	 SHACK-HOLE
+	 ON-SAT
+	 VERTEX
+	 NWRANCH
+	 LONG-WATER
+	 W50
+	 ETUN
+	 HOPENING
+	 HERBS
+	 AUX-TS3
+	 DFLIES
+	 OAK
+	 TCLIFF
+	 TS3
+	 N50
+	 HER
+	 TPLAT
+	 HEAD
+	 LOCAL-GLOBALS
+	 ARBS
+	 PLAYER
+	 RADIO
+	 MILL
+	 CLOSET-DOOR
+	 TRELS
+	 COPSE
+	 LWATER
+	 LEMMINGS
+	 OPPIE
+	 MESA
+	 BOY
+	 GOON-MOUTH
+	 TS2-DOOR
+	 LEFT
+	 POOL
+	 ROOMS
+	 TUN2
+	 INTDIR
+	 BREATH
+	 OCOCO
+	 AXE
+	 CITY
+	 SCAFFOLD
+	 HALFWAY
+	 WABE
+	 PANEL
+	 LIMBS
+	 ON-MESA
+	 SBUBBLE
+	 SHELTER
+	 BHOUSE
+	 KITCHEN
+	 PLADDER
+	 TS6-DOOR
+	 MAP
+	 BANDAGE
+	 BROKEN-LID
+	 POCKET
+	 HONEY
+	 CAVE
+	 BREEZE
+	 RANCH
+	 GPRAM
+	 WTK
+	 GIS
+	 BCOIN
+	 CREDIT-CARD
+	 FTUN
+	 WEARING
+	 ME
+	 FLWALK
+	 NWGATE
+	 DTRAIL
+	 MISSILE
+	 GRASS
+	 THE-END
+	 RDIAL
+	 WAND
+	 GCABLES
+	 CLIFF-EDGE
+	 NBOG
+	 BWOMAN
+	 RIGHT-DOOR
+	 GTRINITY
+	 SWYARD
+	 IN-SHELTER
+	 FEET
+	 OCRANE
+	 TREETOPS
+	 NOTICE
+	 VOICES
+	 TUN3
+	 ICBM
+	 SPADE
+	 LEM
+	 LEFT-DOOR
+	 TSWITCH
+	 SUMMIT
+	 DIAL
+	 CRANE
+	 SWROOM
+	 SHROUD
+	 COTTAGE-DOOR
+	 BBOX
+	 RUBBLE
+	 METERS
+	 KEY
+	 SHADES
+	 CAGE
+	 NROOM
+	 CRATER
+	 HANDS
+	 ICAVE
+	 MARKER
+	 WWIRE
+	 ON-PORCH
+	 ON-ISLE
+	 NORTH-ARBOR
+	 FOREST
+	 PROAD
+	 NWROOM
+	 GMAP
+	 PEDESTAL
+	 TOME
+	 PAGES
+	 CINDERS
+	 SINK
+	 CUPBOARD
+	 KNIFE
+	 CEMETERY
+	 OSS
+	 PITTS
+	 ABLE
+	 BAKER
+	 MEADOW
+	 TUBE
+	 JEEPS
+	 TRENCHES
+	 PIPES
+	 SHADOW
+	 PTREES
+	 MOOR
+	 TAPE
+	 SJUNK
+	 MIKE
+	 WIGHT
+	 HELLO-OBJECT
+	 COIN
+	 GARDEN
+	 C-OBJECT
+	 GTUN
+	 MAGPIE
+	 RSPEAKER
+	 GOON
+	 TS0
+	 SWPATH
+	 SOAPY-WATER
+	 SHACK
+	 D11
+	 IN-MEADOW
+	 GBASE
+	 GRPOND
+	 ERANCH
+	 ISTAIR
+	 SWALL
+	 SLIGHT
+	 PATH
+	 JEEP
+	 JWOMAN
+	 PLANES
+	 DOCKSIDE
+	 MIASMA
+	 DSKINK
+	 D5ROAD
+	 GFENCE
+	 METEOR
+	 SCIST
+	 NERANCH
+	 AT-BEND
+	 DMEEP
+	 SIRENS
+	 RWALLS
+	 KIDS
+	 FLIPPER
+	 TS4
+	 OUTER-SHADOW
+	 PARASOL
+	 RAMP
+	 FHILLS
+	 SWROAD
+	 NAGASAKI
+	 W75
+	 LONDON
+	 WBITS
+	 BINOS
+	 IN-MILL
+	 BENCH
+	 NEROOM-DOOR
+	 APANEL
+	 ANTENNA
+	 LGATE
+	 N75
+	 GARDEN-DOOR
+	 BROOM-DOOR
+	 AT-TERRACE
+	 TERRACE
+	 D9
+	 TUNDRA
+	 FISSURE
+	 STRUCTURE
+	 TS3-DOOR
+	 BABIES
+	 OSSUARY
+	 CRABS
+	 SLIDER
+	 SDRIVER
+	 LUMP
+	 SWRANCH
+	 TUNNEL
+	 SWGATE
+	 STARS
+	 GROVES
+	 D7
+	 HTUN
+	 BOG
+	 IN-SHACK
+	 WBUTTON
+	 FILM
+	 GARLIC
+	 BLGATE
+	 WINDOWS
+	 ON-BEACH
+	 ENERGY
+	 BEDS
+	 IFENCE
+	 D5
+	 GIANT
+	 PLANET
+	 IBUTTON
+	 IN-JEEP
+	 AWINDOWS
+	 SWINGS
+	 BWALK
+	 BDIAL
+	 UNDER-PLAT
+	 WISH-OBJECT
+	 CCLOCK
+	 MBOX
+	 SHARD
+	 DUMMY-OBJECT
+	 STYX
+	 CAVE-HOLE
+	 D3
+	 BONES
+	 ICICLES
+	 SEYARD
+	 SSAND
+	 ARBOR
+	 CISTAIR
+	 AT-FALLS
+	 ON-MOOR
+	 CEILING
+	 FRAME
+	 GARDENS
+	 S25
+	 D1
+	 NANNIES
+	 TROPES
+	 ARBORETUM
+	 SBENTRY
+	 SEROOM
+	 BATHROOM
+	 RODENTS
+	 IN-CIST
+	 AT-TNT
+	 LNWALK
+	 FLOOR
+	 SBUNK
+	 BOOK
+	 INTNUM
+	 ICE-CAVE
+	 PATCH
+	 PGROUND
+	 NOT-HERE-OBJECT
+	 BARROW-DOOR
+	 ANKLE
+	 GROUND
+	 NEROOM
+	 AT-CRATER
+	 STATUES
+	 DEATH
+	 IN-WATER
+	 S100
+	 EBAG
+	 SWROOM-DOOR
+	 GIBINOS
+	 POND-BIRDS
+	 BAD-CRANE
+	 ICEHOUSE
+	 SOUTH-ARBOR
+	 LANDSLIDE
+	 LSPEAKERS
+	 SPEAKER
+	 FCLEARING
+	 IN-ORBIT
+	 RSWITCH
+	 PEE
+	 TS1
+	 RPOND
+	 BOAT
+	 SEPATH
+	 IN-GARDEN
+	 WBENCH
+	 LWDOOR
+	 BONEYARD
+	 CLOSET
+	 SEAT
+	 SPOT
+	 YOU
+	 HORIZON
+	 ARBOR-TOP
+	 WRISTWATCH
+	 SROAD
+	 HIVE
+	 CSURFACE
+	 TS5
+	 BAG
+	 LAGOON
+	 UNDER-CLIFF
+	 BEDROOM
+	 SEROAD
+	 MOUTH
+	 GNOMON
+	 ON-SCAFFOLD
+	 DISH
+	 DOG
+	 X5
+	 HTS
+	 BPRAM
+	 GDESERT
+	 SYMBOLS
+	 THEM
+	 ICHOR
+	 RTREL
+	 S50
+	 NEZERO
+	 ATUN
+	 DORY
+Properties: 43
+	 P?SEE-N
+	 P?SEE-E
+	 P?SEE-S
+	 P?SEE-W
+	 P?SEE-NE
+	 P?SEE-NW
+	 P?SEE-SE
+	 P?SEE-SW
+	 P?NORTH
+	 P?EAST
+	 P?SOUTH
+	 P?WEST
+	 P?NE
+	 P?NW
+	 P?SE
+	 P?SW
+	 P?WALL-DIR
+	 P?WALL-SIDE
+	 P?TDIR
+	 P?PLAT-DIR
+	 P?OVER-ARBOR
+	 P?OVER-HEDGE
+	 P?HEAR
+	 P?OVERHEAD
+	 P?ODOR
+	 P?SEE-ALL
+	 P?GLOBAL
+	 P?GENERIC
+	 P?DESCFCN
+	 P?FDESC
+	 P?CONTFCN
+	 P?CAPACITY
+	 P?VALUE
+	 P?SIZE
+	 P?MASS
+	 P?ADJECTIVE
+	 P?ACTION
+	 P?SYNONYM
+	 P?OUT
+	 P?IN
+	 P?DOWN
+	 P?UP
+Globals: 234
+	 P-AND
+	 P-AADJ
+	 P-XADJ
+	 P-GWIMBIT
+	 P-MERGED
+	 P-ADJ
+	 P-MOBY-FLAG
+	 DO-WINDOW
+	 P-DIRECTION
+	 P-ANAM
+	 P-MOBY-FOUND
+	 P-XNAM
+	 P-NAM
+	 P-SLOCBITS
+	 P-ACLAUSE
+	 P-PHR
+	 P-END-ON-PREP
+	 MAPCNT
+	 OLDCNT
+	 STUDY
+	 PONDERINGS
+	 HEADINGS
+	 INSAVE-A
+	 DOGGIE-DOOS
+	 CANT
+	 P-HER-OBJECT
+	 P-NCN
+	 GIRL-TABLE
+	 ORBCNT
+	 PECKINGS
+	 RAZOR
+	 PRSA
+	 P-OCLAUSE
+	 RAID?
+	 MEEP-TABLE
+	 YES-INBUF
+	 VERBOSITY
+	 INSAVE-C
+	 IN-PRAM?
+	 APPETITE
+	 XWIRE
+	 WIRE-COLORS
+	 P-TYPES
+	 WIGHTER
+	 ILIFE
+	 CLOCK-WAIT?
+	 PCR
+	 PERIOD
+	 AS-IF
+	 PUTVERBS
+	 DESERT-BORES
+	 RUBYROOM
+	 BWOMAN-CRIES
+	 BREATH-HELD?
+	 PIE-TABLE
+	 STICKS
+	 INSAVE-B
+	 P-IT-OBJECT
+	 CTHEMEEP
+	 CTHELEM
+	 HO-HUM
+	 DROOM
+	 IROOMS
+	 PRSO
+	 PRSI
+	 WIGHT-DOINGS
+	 YUKS
+	 P-DIR
+	 P-LEN
+	 P-OFW
+	 P-ADJW
+	 P-HIM-OBJECT
+	 SYMBOL-NAMES
+	 IN-SAND?
+	 FLIP-SAYS
+	 Z-MINUS
+	 INTO-DESERT
+	 TALKVERBS
+	 DISTRACTION
+	 HISSES
+	 FCOUNT
+	 LAGOON-TABLE
+	 P-PRSO
+	 P-PRSI
+	 P-VTBL
+	 P-OTBL
+	 P-ITBL
+	 DIRTABLES
+	 C-INTS
+	 LLIFE
+	 P-DOLLAR-FLAG
+	 TECHNOBABBLE
+	 SCORE
+	 MOVES
+	 PA-TABLE
+	 STAIR-DIR
+	 ENTERED-ARBOR
+	 CREEPERS
+	 SL-TABLE
+	 BEE-TABLE
+	 BABBLE
+	 MLIVES
+	 P-NAMW
+	 AGROUND
+	 SKINK-TABLE
+	 CDOWN
+	 OSC
+	 FREEZE?
+	 P-MULT?
+	 MIDSCREEN
+	 DO-SCORE?
+	 SUN-MOVING?
+	 IN-DORY?
+	 INGREDIENTS
+	 RATS
+	 IN-DISH?
+	 GAME-VERBS
+	 BWOMAN-SUBJECTS
+	 GIRL-HUHS
+	 QUIET?
+	 LAYAWAY
+	 TOS
+	 BSEEN
+	 TFREQ
+	 MAGICFREQ
+	 RFREQ
+	 BEAM
+	 TON
+	 ALLPRAMS
+	 FIXTURES
+	 HCNT
+	 SNAKE-DOINGS
+	 P-NUMBER
+	 BUZZTABLE
+	 P-PRSA-WORD
+	 AGAIN-DIR
+	 HURTVERBS
+	 MOVEVERBS
+	 QCONTEXT
+	 QCONTEXT-ROOM
+	 YES-LEXV
+	 BACTION
+	 MCOUNT
+	 RMINUTES
+	 HOURS
+	 CLOCK-HAND
+	 P-DIR-WORD
+	 INLEN
+	 TOLERANCE
+	 QUOTES
+	 P-TABLE
+	 WINNER
+	 NOW-PRSI?
+	 IDEG
+	 OSIGN
+	 RAT-TABLE
+	 WTK-TABLE
+	 OUTASITE
+	 BRACKET
+	 ALLATONCE
+	 LIT?
+	 ALWAYS-LIT?
+	 PA
+	 PTHE
+	 CHANGES
+	 YOU-SEE
+	 YOURE-ALREADY
+	 ONE-SHADE
+	 PLUMMETS
+	 WIRE-TYPES
+	 TR?
+	 JAW-TIME
+	 FLIPPERS
+	 OSIGN-DOORS
+	 DONT
+	 AT-MOMENT
+	 P-AMOUNT
+	 HAVEVERBS
+	 ARROW-ON
+	 RESERVE-INBUF
+	 CCNT
+	 P-INBUF
+	 OOPS-INBUF
+	 RESERVE-LEXV
+	 IF-YOU-DID
+	 INRANCH
+	 QUOTE-FLAG
+	 P-OVTBL
+	 P-WON
+	 FDEFAULTS
+	 ALLBIRDS
+	 COULDNTS
+	 LIKELIES
+	 P-BUTS
+	 WALK-TYPES
+	 MDELAY
+	 P-WALK-DIR
+	 AGAIN-LEXV
+	 UNKNOWN-MSGS
+	 CAPS
+	 FLIP?
+	 YAWNS
+	 TOW
+	 TOE
+	 P-SYNTAX
+	 BOY-BOPS
+	 XCOUNT
+	 DRIBBLE
+	 P-CONT
+	 C-TABLE
+	 POINTLESS
+	 PUZZLES
+	 SHDIRS
+	 OLD-HERE
+	 OLD-LEN
+	 P-OFLAG
+	 P-THEM-OBJECT
+	 TOUCHVERBS
+	 PATIENCE
+	 VACUUM
+	 SUITED?
+	 P-MERGE
+	 OOPS-TABLE
+	 P-LEXV
+	 HERE
+	 ODEG
+	 MUTTERS
+	 OROOMS
+	 ISIGN
+	 SEEVERBS
+	 MINUTES
+	 SECONDS
+	 RESERVE-PTR
+	 P-GETFLAGS
